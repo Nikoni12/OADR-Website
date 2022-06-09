@@ -17,5 +17,8 @@ class User extends CI_Controller {
 	public function quality(){
 		$this->load->view('quality');
 	}
+	public function resources(){
+		$this->load->view('resources');
+	}
 	
 }
