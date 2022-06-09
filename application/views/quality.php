@@ -18,7 +18,7 @@
         <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
     </head>
-    <body>
+    <body style = "background-color:#fff5ee;">
         <?php include_once('header.php');?>
         <section id="hero" class="d-flex justify-cntent-center align-items-center">
       <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
@@ -32,37 +32,28 @@
       </div>
     </section>
         <main id="main">
-            <section class="features">
-                <div class="container">
-                    <div class="row text-center">
-                        <div class="col-md-6">
-                            <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-                        </div>
-                        <div class="col-md-6">
-                            <br>
-                            <h5 class="text-center">ABOUT OADR</h5>
-                            <h2 class="text-center">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION</h2><br>
-                            <p style = "text-align:justify;">The Office for Alternative Dispute Resolution (OADR) is an attached agency of the Department of Justice created pursuant to Republic Act (R.A.) No. 9285 or the Alternative Dispute Resolution (ADR) Act of 2004.</p><br>
-                            <p style = "text-align:justify;">It is mandated to promote, develop and expand the use of ADR in the private and public sectors; assist the government in monitoring, studying and evaluating the use of ADR by the public and private sectors; and recommend to Congress needful statutory changes to develop, strengthen and improve ADR practices in accordance with world standards.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="features" >
-                <div class="container" style = "background-color:#e5e4e2; padding:30px;" >
-                    <hr style = "border-top: 3px double #8c8b8b;">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">M</span>ission</p>
-                            <p>To promote and institutionalize the effective and ethical use and practice of ADR in the country.</p>
-                        </div>
-                        <div class="col-md-12">
-                            <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">V</span>ision</p>
-                            <p>We envision an enlightened society that rises above conflicts and empowers parties in making arrangements to settle their own disputes that is fair and just for all.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <section class="features" style = "padding:0px;">
+        <div class="container px-5 my-5">
+        <h2>QUALITY POLICY</h2> <br><br>
+          <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class="" ><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/presentation.png');?>"></div><br>
+              <h2 class="h4 fw-bolder">ADR TRAINING</h2><br>
+              <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class=""><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/auction.png');?>"></i></div><br>
+              <h2 class="h4 fw-bolder">ADR PROMOTION</h2><br>
+              <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+            <div class="col-lg-4">
+              <div class=""><img class="img-fluid" style = "max-width:200px;" src="<?php echo base_url('assets/img/search.png');?>"></i></div><br>
+              <h5 class="fw-bolder">ACCREDITATION AND COMPLIANCE MONITORING</h5>
+              <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+          </div>
+        </div>
+      </section>
         </main>
         <div class="footer-basic">
             <footer>
