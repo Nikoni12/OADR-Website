@@ -35,28 +35,28 @@
 		<main id="main">
 			<section class="features">
 				<div class="container">
-					<div class="row">
+					<div class="row ">
 						<h2>Announcements</h2><br>
-						<div class="col-md-12">
+						<div class="col-md-12" >
 							<div id="demo" class="carousel slide" data-bs-ride="carousel">
 								<div class="carousel-indicators">
 									<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
 									<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
 									<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
 								</div>
-								<div class="carousel-inner">
+								<div class="carousel-inner" >
 									<div class="carousel-item active">
 										<section class="features">
-											<div class="container">
-												<div class="row">
-													<div class="col-md-8">
+											<div class="container ">
+												<div class="row ">
+													<div class="col-md-8" style>
 														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/doj.jpg');?>">
 													</div>
-													<div class="col-md-4">
+													<div class="col-md-4" style = "background-color:#E0AA3E;">
 														<br>
 														<h2 class="text-center">TITLE1</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-														<button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+														<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 													</div>
 												</div>
 											</div>
@@ -69,11 +69,11 @@
 													<div class="col-md-8">
 														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/news1.jpg');?>">
 													</div>
-													<div class="col-md-4">
+													<div class="col-md-4" style = "background-color:#E0AA3E;">
 														<br>
 														<h2 class="text-center">TITLE2</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-														<button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+														<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 													</div>
 												</div>
 											</div>
@@ -86,11 +86,11 @@
 													<div class="col-md-8">
 														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/news2.jpg');?>">
 													</div>
-													<div class="col-md-4">
+													<div class="col-md-4" style = "background-color:#E0AA3E;">
 														<br>
 														<h2 class="text-center">TITLE3</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-														<button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+														<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 													</div>
 												</div>
 											</div>

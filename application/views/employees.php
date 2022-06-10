@@ -33,7 +33,7 @@
 		</section>
 		<main id="main">
 			<section class="features">
-				<div class="container">
+				<div class="container" >
 					<div class="row text-center" style = "padding: 0px 0px 0px 0px;">
 					<h2>Employees</h2><br>
 						<div class="col-md-12">
