@@ -37,6 +37,7 @@
       <section class="features">
         <div class="container">
           <div class="row" style = "padding: 0px 0px 0px 0px;">
+		  <h2>Announcements</h2><br>
             <div class="col-md-12">
               <div id="demo" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -54,7 +55,6 @@
                             </div>
                             <div class="col-md-4">
                                 <br>
-                                <h3>Announcements</h3><br>
                                 <h2 class="text-center">TITLE</h2><br>
                                 <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                                 <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
@@ -72,7 +72,6 @@
                             </div>
                             <div class="col-md-4">
                                 <br>
-                                <h3>Announcements</h3><br>
                                 <h2 class="text-center">TITLE</h2><br>
                                 <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                                 <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
@@ -90,7 +89,6 @@
                             </div>
                             <div class="col-md-4">
                                 <br>
-                                <h3>Announcements</h3><br>
                                 <h2 class="text-center">TITLE</h2><br>
                                 <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                                 <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
@@ -113,30 +111,70 @@
         </div>
 
       </section>
-      
-     
-      
-    
-      
-      <section class="py-5 border-bottom" id="features">
-        <div class="container px-5 my-5">
-        <h1 style = "text-align:center;">PROGRAMS</h1> <br><br>
-          <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class="" ><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/presentation.png');?>"></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ADR TRAINING</h2>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class=""><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/auction.png');?>"></i></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ADR PROMOTION</h2>
-            </div>
-            <div class="col-lg-4">
-              <div class=""><img class="img-fluid" style = "max-width:200px;" src="<?php echo base_url('assets/img/search.png');?>"></i></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ACCREDITATION AND COMPLIANCE MONITORING</h2>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="features"  >
+				<div class="container">
+					<div class="row">
+					<h2>Upcoming Events</h2><br>
+						<div class="col-md-12" >
+							<div id="demo2" class="carousel carousel-dark slide" data-interval="false" data-bs-ride="carousel">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<section class="features " >
+											<div class="container" style = "" >
+												<div class="row ">
+													<div class="col-md-4" style = "border: 2px solid #0f4d92; border-radius: 0 20px; background-color: #6a93cb; background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);" >
+														<h1 class = "month">JUNE <br>2022</h1>
+													</div>
+													<div class="col-md-8" style = "background-color:#fffff0; border: 2px solid #0f4d92; border-radius: 30px 20px;" >
+														<br>
+														<h3>NO EVENTS</h3><br>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+									<div class="carousel-item">
+										<section class="features ">
+											<div class="container">
+												<div class="row ">
+												<div class="col-md-4" style = "border: 2px solid #0f4d92; border-radius: 0 20px; background-color: #6a93cb; background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);" >
+														<h1 class = "month">JULY <br>2022</h1>
+													</div>
+													<div class="col-md-8" style = "background-color:#fffff0; border: 2px solid #0f4d92; border-radius: 30px 20px;" >
+														<br>
+														<h3>NO EVENTS</h3><br>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+									<div class="carousel-item">
+										<section class="features ">
+											<div class="container">
+												<div class="row ">
+												<div class="col-md-4" style = "border: 2px solid #0f4d92; border-radius: 0 20px; background-color: #6a93cb; background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);" >
+														<h1 class = "month">AUGUST <br> 2022</h1>
+													</div>
+													<div class="col-md-8" style = "background-color:#fffff0; border: 2px solid #0f4d92; border-radius: 30px 20px;" >
+														<br>
+														<h3>NO EVENTS</h3><br>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon"></span>
+								</button>
+								<button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+									<span class="carousel-control-next-icon"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
       <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
