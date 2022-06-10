@@ -33,110 +33,91 @@
         </div>
       </div>
     </section>
-    <main id="main">
-      <section class="features">
-        <div class="container">
-          <div class="row" style = "padding: 0px 0px 0px 0px;">
-            <div class="col-md-12">
-              <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <section class="features">
-                      <div class="container">
-                        <div class="row" style = "padding: 0px 0px 0px 0px;">
-                            <div class="col-md-8">
-                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-                            </div>
-                            <div class="col-md-4">
-                                <br>
-                                <h3>Announcements</h3><br>
-                                <h2 class="text-center">TITLE</h2><br>
-                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="carousel-item">
-                  <section class="features">
-                      <div class="container">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-                            </div>
-                            <div class="col-md-4">
-                                <br>
-                                <h3>Announcements</h3><br>
-                                <h2 class="text-center">TITLE</h2><br>
-                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="carousel-item">
-                  <section class="features">
-                      <div class="container">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-                            </div>
-                            <div class="col-md-4">
-                                <br>
-                                <h3>Announcements</h3><br>
-                                <h2 class="text-center">TITLE</h2><br>
-                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </button>
-              </div>
-            </div>
-            
-          </div>
-        </div>
 
-      </section>
-      
-     
-      
+    <main id="main">
     
-      
-      <section class="py-5 border-bottom" id="features">
-        <div class="container px-5 my-5">
-        <h1 style = "text-align:center;">PROGRAMS</h1> <br><br>
-          <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class="" ><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/presentation.png');?>"></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ADR TRAINING</h2>
+    <section class="d-flex justify-cntent-center align-items-center w-75 p-3">
+            <div style="padding-left:15px;">
+            <h1>Recent News</h1>
+              <hr/>
+              <!-- News -->
+              <a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
+                <div class="row mb-4 border-bottom pb-2">
+                  <div class="col-3">
+                    <img src="<?php echo base_url('assets/img/doj.jpg');?>"
+                      class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
+                  </div>
+
+                  <div class="col-9">
+                    <p class="mb-2"><strong>Title</strong></p>
+                    <p>
+                      <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u>
+                    </p>
+                    <p>10 June 2022, 11:32:04 PM</p>
+                  </div>
+                </div>
+              </a>
+
+              <!-- News -->
+              <a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
+                <div class="row mb-4 border-bottom pb-2">
+                  <div class="col-3">
+                    <img src="<?php echo base_url('assets/img/doj.jpg');?>"
+                      class="img-fluid shadow-1-strong rounded" alt="Palm Springs Road" />
+                  </div>
+
+                  <div class="col-9">
+                    <p class="mb-2"><strong>Lorem ipsum dolor sit amet</strong></p>
+                    <p>
+                      <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u>
+                    </p>
+                    <p>10 June 2022, 11:32:04 PM</p>
+                  </div>
+                </div>
+              </a>
+
+              <!-- News -->
+              <a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
+                <div class="row mb-4 border-bottom pb-2">
+                  <div class="col-3">
+                    <img src="<?php echo base_url('assets/img/doj.jpg');?>"
+                      class="img-fluid shadow-1-strong rounded" alt="Los Angeles Skyscrapers" />
+                  </div>
+
+                  <div class="col-9">
+                    <p class="mb-2"><strong>Lorem ipsum dolor sit amet</strong></p>
+                    <p>
+                      <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u>
+                    </p>
+                    <p>10 June 2022, 11:32:04 PM</p>
+
+                  </div>
+                </div>
+              </a>
+
+              <!-- News -->
+              <a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
+                <div class="row mb-4 border-bottom pb-2">
+                  <div class="col-3">
+                    <img src="<?php echo base_url('assets/img/doj.jpg');?>"
+                      class="img-fluid shadow-1-strong rounded" alt="Skyscrapers" />
+                  </div>
+
+                  <div class="col-9">
+                    <p class="mb-2"><strong>Lorem ipsum dolor sit amet</strong></p>
+                    <p>
+                      <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u>
+                    </p>
+                    <p>10 June 2022, 11:32:04 PM</p>
+                  </div>
+                </div>
+              </a>
             </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class=""><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/auction.png');?>"></i></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ADR PROMOTION</h2>
-            </div>
-            <div class="col-lg-4">
-              <div class=""><img class="img-fluid" style = "max-width:200px;" src="<?php echo base_url('assets/img/search.png');?>"></i></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ACCREDITATION AND COMPLIANCE MONITORING</h2>
-            </div>
+            <!-- News block -->
           </div>
-        </div>
-      </section>
+</section>
+      
+
       <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
