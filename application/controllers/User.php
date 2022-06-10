@@ -26,4 +26,7 @@ class User extends CI_Controller {
 	public function newstitle(){
 		$this->load->view('newstitle');
 	}
+	public function contact(){
+		$this->load->view('contactus');
+	}
 }
