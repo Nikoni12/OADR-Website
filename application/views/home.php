@@ -17,8 +17,7 @@
     <link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
   </head>
   <body style = "background-color:#fff5ee;">
     <?php include_once('header.php');?>
@@ -36,8 +35,8 @@
     <main id="main">
       <section class="features">
         <div class="container">
-          <div class="row" style = "background-color:#E0AA3E;">
-            <div class="col-md-8">
+          <div class="row" style = "padding: 0px 0px 0px 0px;">
+            <div class="col-md-12">
               <div id="demo" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
@@ -46,13 +45,58 @@
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="d-block" style="width:100%" src="<?php echo base_url('assets/img/doj.jpg');?>">
+                    <section class="features">
+                      <div class="container">
+                        <div class="row" style = "padding: 0px 0px 0px 0px;">
+                            <div class="col-md-8">
+                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+                            </div>
+                            <div class="col-md-4">
+                                <br>
+                                <h3>Announcements</h3><br>
+                                <h2 class="text-center">TITLE</h2><br>
+                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                      </div>
+                    </section>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block" style="width:100%" src="<?php echo base_url('assets/img/doj.jpg');?>">
+                  <section class="features">
+                      <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+                            </div>
+                            <div class="col-md-4">
+                                <br>
+                                <h3>Announcements</h3><br>
+                                <h2 class="text-center">TITLE</h2><br>
+                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                      </div>
+                    </section>
                   </div>
                   <div class="carousel-item">
-                    <img  class="d-block" style="width:100%" src="<?php echo base_url('assets/img/doj.jpg');?>">
+                  <section class="features">
+                      <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+                            </div>
+                            <div class="col-md-4">
+                                <br>
+                                <h3>Announcements</h3><br>
+                                <h2 class="text-center">TITLE</h2><br>
+                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                      </div>
+                    </section>
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
@@ -63,17 +107,12 @@
                 </button>
               </div>
             </div>
-            <div class="col-md-4 ">
-              <br>
-              <h3>Announcements</h3><br>
-              <h2 class="text-center">TITLE</h2><br>
-              <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-            </div>
+            
           </div>
         </div>
       </section>
-
+      
+    
       
       <section class="py-5 border-bottom" id="features">
         <div class="container px-5 my-5">
@@ -161,5 +200,6 @@
     <script src="<?php echo base_url('assets/vendor/waypoints/noframework.waypoints.js');?>"></script>
     <script src="<?php echo base_url('assets/vendor/php-email-form/validate.js');?>"></script>
     <script src="<?php echo base_url('assets/js/main.js');?>"></script>
+    <script src="<?php echo base_url('assets/js/script.js');?>"></script>
   </body> 
 </html>
