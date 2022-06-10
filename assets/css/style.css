@@ -221,6 +221,7 @@ a:hover {
   background-color: #fff;
   overflow-y: auto;
   transition: 0.3s;
+  height:50%;
 }
 .navbar-mobile a, .navbar-mobile a:focus {
   padding: 10px 20px;
@@ -1964,6 +1965,29 @@ section {
     
   }
 }	
+.contact-info-box {
+  float: left;
+  width: 100%;
+  padding: 20px;
+}
+.contact-info-box > i {
+  font-size: 80px;
+  color: #999;
+  margin-bottom: 10px;
+}
+.contact-info-box > h5 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+.contact-info-box > p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 24px;
+	width: 100%;
+}
 
 
 

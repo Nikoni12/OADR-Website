@@ -11,7 +11,7 @@
                 <li ><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/about">About</a></li>
                 <li><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/quality">Quality Policy</a></li>
                 <li><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/employees">Employees</a></li>
-                <li><a style = "text-decoration: none;" href="">Contact Us</a></li>
+                <li><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/contact">Contact Us</a></li>
                 <li><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/resources">Resources</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
