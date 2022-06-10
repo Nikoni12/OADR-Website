@@ -77,11 +77,11 @@
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0">
               <div class=""><img class="img-fluid" style = "max-width:350px;" src="<?php echo base_url('assets/img/doj.jpg');?>"></i></div><br>
-              <h5 class="fw-bolder">NEWS ARTICLE 3</h5>
+              <a href=""><h5 class="fw-bolder">NEWS ARTICLE 2</h5></a>
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0">
               <div class=""><img class="img-fluid" style = "max-width:350px;" src="<?php echo base_url('assets/img/doj.jpg');?>"></i></div><br>
-              <h5 class="fw-bolder">NEWS ARTICLE 4</h5>
+              <a href=""><h5 class="fw-bolder">NEWS ARTICLE 2</h5></a>
             </div>
           </div>
         </div>
