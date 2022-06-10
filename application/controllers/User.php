@@ -20,5 +20,10 @@ class User extends CI_Controller {
 	public function resources(){
 		$this->load->view('resources');
 	}
-	
+	public function news(){
+		$this->load->view('news');
+	}
+	public function newstitle(){
+		$this->load->view('newstitle');
+	}
 }

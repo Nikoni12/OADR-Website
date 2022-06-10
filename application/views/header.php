@@ -7,6 +7,7 @@
         </div>
         <nav id="navbar" class="navbar">
             <ul>
+            <li ><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/news">News</a></li>
                 <li ><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/about">About</a></li>
                 <li><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/quality">Quality Policy</a></li>
                 <li><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/employees">Employees</a></li>

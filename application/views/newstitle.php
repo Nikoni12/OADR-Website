@@ -19,6 +19,18 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
+
+    <style>
+        .infohead{
+            font-weight:bold;
+        }
+        .infodiv{
+            text-align: justify;
+        }
+        .infotext{
+            line-height: 1.8;
+        }
+    </style>
   </head>
   <body style = "background-color:#fff5ee;">
     <?php include_once('header.php');?>
@@ -34,109 +46,48 @@
       </div>
     </section>
     <main id="main">
-      <section class="features">
-        <div class="container">
-          <div class="row" style = "padding: 0px 0px 0px 0px;">
-            <div class="col-md-12">
-              <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                  <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <section class="features">
-                      <div class="container">
-                        <div class="row" style = "padding: 0px 0px 0px 0px;">
-                            <div class="col-md-8">
-                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-                            </div>
-                            <div class="col-md-4">
-                                <br>
-                                <h3>Announcements</h3><br>
-                                <h2 class="text-center">TITLE</h2><br>
-                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="carousel-item">
-                  <section class="features">
-                      <div class="container">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-                            </div>
-                            <div class="col-md-4">
-                                <br>
-                                <h3>Announcements</h3><br>
-                                <h2 class="text-center">TITLE</h2><br>
-                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="carousel-item">
-                  <section class="features">
-                      <div class="container">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-                            </div>
-                            <div class="col-md-4">
-                                <br>
-                                <h3>Announcements</h3><br>
-                                <h2 class="text-center">TITLE</h2><br>
-                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                <button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </button>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-
-      </section>
-      
-     
-      
     
-      
-      <section class="py-5 border-bottom" id="features">
-        <div class="container px-5 my-5">
-        <h1 style = "text-align:center;">PROGRAMS</h1> <br><br>
+    <section>
+    <div class="container">
+        <h6 style="color:#031261;">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION (OADR)</h6>
+        <h1>TITLE OF NEWS ARTICLE TITLE OF NEWS ARTICLE TITLE OF NEWS ARTICLE </h1>
+        <h8 style="color:#828386;">June 10, 2022</h8><br><br>
+        <div class="containbox">
+                <div class="nutritionheader"><a href="http://localhost/OADR-Website/User/news" style="text-decoration: none;">News & Announcements</a> > 
+                <a href="" style="text-decoration: none;">Title</a></div>
+        </div>
+        <h2 id="border"></h2>
+        <div class="infodiv">
+            <img class="infoimg" src="<?php echo base_url('assets/img/doj.jpg');?>" style="width:100%; height:auto;">
+            <p class="infohead"><br>Some Details About Article / Picture</p>
+            <p class="infotext">
+            The Department of Justice celebrated the 2022 International AIDS Candlelight Memorial (IACM) on 16 May 2022 with the theme, “Keeping the light, honoring our rights, radiating pride.” The short program started with a message of support from Assistant Secretary Margaret V. Castillo-Padilla highlighting the Department’s adoption of non-discriminatory policy on HIV and AIDS that guaranteed a workplace environment free from HIV-related stigma and discrimination. She also underscored the programs and activities of the Department that championed the rights of people living with and affected by HIV (PLHIV) for the last four (4) years. Thereafter, ASec Padilla led the candlelighting ceremony and prayer. The event was participated in by Secretary Menardo I. Guevarra, Undersecretary Juliana G. Sunga, OIC Undersecretary Nicholas Felix L. Ty, Directors and Chiefs and other employees of the Department. She also thanked the Project Red Ribbon Care Management Foundation, a civil society organization-member of the Philippine National AIDS Council (PNAC) for lending the Department its symbolic red ribbon, an emblem of the battle against HIV and AIDS.
+            </p>
+        </div>
+           
+    </section>
+
+    <section>
+        <div class="container px-3 my-3">
+        <a href="http://localhost/OADR-Website/User/news" style="text-decoration:none; color:black;"><h2>More News</h2></a> <br><br>
           <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class="" ><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/presentation.png');?>"></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ADR TRAINING</h2>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+              <div class=""><img class="img-fluid" style = "max-width:350px;" src="<?php echo base_url('assets/img/doj.jpg');?>"></i></div><br>
+              <a href=""><h5 class="fw-bolder">NEWS ARTICLE 2</h5></a>
             </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class=""><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/auction.png');?>"></i></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ADR PROMOTION</h2>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <div class=""><img class="img-fluid" style = "max-width:350px;" src="<?php echo base_url('assets/img/doj.jpg');?>"></i></div><br>
+              <h5 class="fw-bolder">NEWS ARTICLE 3</h5>
             </div>
-            <div class="col-lg-4">
-              <div class=""><img class="img-fluid" style = "max-width:200px;" src="<?php echo base_url('assets/img/search.png');?>"></i></div>
-              <h2 style = "text-align:center;" class="h4 fw-bolder">ACCREDITATION AND COMPLIANCE MONITORING</h2>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <div class=""><img class="img-fluid" style = "max-width:350px;" src="<?php echo base_url('assets/img/doj.jpg');?>"></i></div><br>
+              <h5 class="fw-bolder">NEWS ARTICLE 4</h5>
             </div>
           </div>
         </div>
       </section>
+      
+
       <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
