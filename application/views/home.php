@@ -50,11 +50,11 @@
 											<div class="container">
 												<div class="row">
 													<div class="col-md-8">
-														<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/doj.jpg');?>">
 													</div>
 													<div class="col-md-4">
 														<br>
-														<h2 class="text-center">TITLE</h2><br>
+														<h2 class="text-center">TITLE1</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 														<button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 													</div>
@@ -67,11 +67,11 @@
 											<div class="container">
 												<div class="row">
 													<div class="col-md-8">
-														<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/news1.jpg');?>">
 													</div>
 													<div class="col-md-4">
 														<br>
-														<h2 class="text-center">TITLE</h2><br>
+														<h2 class="text-center">TITLE2</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 														<button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 													</div>
@@ -84,11 +84,11 @@
 											<div class="container">
 												<div class="row">
 													<div class="col-md-8">
-														<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/news2.jpg');?>">
 													</div>
 													<div class="col-md-4">
 														<br>
-														<h2 class="text-center">TITLE</h2><br>
+														<h2 class="text-center">TITLE3</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 														<button type="button" class="btn btn-outline-primary">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 													</div>
