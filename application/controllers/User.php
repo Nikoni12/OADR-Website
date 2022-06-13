@@ -29,4 +29,7 @@ class User extends CI_Controller {
 	public function contact(){
 		$this->load->view('contactus');
 	}
+	public function adminlogin(){
+		$this->load->view('administrator-panel-login');
+	}
 }

@@ -277,7 +277,7 @@ a:hover {
   top: 0;
   width: 130%;
   height: 95%;
-  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("../img/doj.jpg") center top no-repeat;
+  background: linear-gradient(to right, rgba(218, 165, 32, 0.8), rgba(218, 165, 32, 0.6)), url("../img/doj.jpg") center top no-repeat;
   z-index: 0;
   border-radius: 0 0 50% 30%;
   transform: translateX(-50%) rotate(0deg);
@@ -289,7 +289,7 @@ a:hover {
   top: 0;
   width: 130%;
   height: 96%;
-  background: #68A4C4;
+  background: #E0AA3E;
   opacity: 0.3;
   z-index: 0;
   border-radius: 0 0 50% 50%;
@@ -454,7 +454,7 @@ a:hover {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 .section-bg {
@@ -1995,5 +1995,39 @@ section {
 
 
 
+.arrow_box {
+	position: relative;
+	background: #88b7d5;
+	border: 4px solid #E0AA3E;
+}
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 90%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
 
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #E0AA3E;
+	border-width: 30px;
+	margin-top: -30px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-right-color: #E0AA3E;
+	border-width: 36px;
+	margin-top: -36px;
+}
+
+.bg {
+  background-image: url("../img/doj.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 

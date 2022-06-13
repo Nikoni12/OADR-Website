@@ -55,7 +55,7 @@
                             <div class="contact-info-box">
                                 <i class="fa fa-envelope"></i>
                                 <h5 itemprop="headline">EMAIL</h5>
-                                <p itemprop="description">doj@gmail.com</p>
+                                <p itemprop="description">info.oadr@gmail.com</p>
                             </div>
                         </div>
                     </div>

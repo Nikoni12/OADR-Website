@@ -35,7 +35,7 @@
 		<main id="main">
 			<section class="features">
 				<div class="container">
-					<div class="row ">
+					<div class="row n">
 						<h2>Announcements</h2><br>
 						<div class="col-md-12" >
 							<div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -49,10 +49,10 @@
 										<section class="features">
 											<div class="container ">
 												<div class="row ">
-													<div class="col-md-8" style>
-														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/doj.jpg');?>">
+													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
+														<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
 													</div>
-													<div class="col-md-4" style = "background-color:#E0AA3E;">
+													<div class="col-md-4 arrow_box" style = "background-color:#E0AA3E;">
 														<br>
 														<h2 class="text-center">TITLE1</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -66,10 +66,10 @@
 										<section class="features">
 											<div class="container">
 												<div class="row">
-													<div class="col-md-8">
-														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/news1.jpg');?>">
+													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
+														<img class="img-fluid" src="<?php echo base_url('assets/img/news1.jpg');?>">
 													</div>
-													<div class="col-md-4" style = "background-color:#E0AA3E;">
+													<div class="col-md-4 arrow_box" style = "background-color:#E0AA3E;">
 														<br>
 														<h2 class="text-center">TITLE2</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -83,10 +83,10 @@
 										<section class="features">
 											<div class="container">
 												<div class="row">
-													<div class="col-md-8">
-														<img class="img-fluid" style = "max-width:800px;" src="<?php echo base_url('assets/img/news2.jpg');?>">
+													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
+														<img class="img-fluid" src="<?php echo base_url('assets/img/news2.jpg');?>">
 													</div>
-													<div class="col-md-4" style = "background-color:#E0AA3E;">
+													<div class="col-md-4 arrow_box" style = "background-color:#E0AA3E;">
 														<br>
 														<h2 class="text-center">TITLE3</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
