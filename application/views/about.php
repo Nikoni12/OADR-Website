@@ -54,11 +54,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">M</span>ission</p>
-                            <p>To promote and institutionalize the effective and ethical use and practice of ADR in the country.</p>
+                            <p style = "text-align:justify;">To promote and institutionalize the effective and ethical use and practice of ADR in the country.</p>
                         </div>
                         <div class="col-md-12">
                             <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">V</span>ision</p>
-                            <p>We envision an enlightened society that rises above conflicts and empowers parties in making arrangements to settle their own disputes that is fair and just for all.</p>
+                            <p style = "text-align:justify;">We envision an enlightened society that rises above conflicts and empowers parties in making arrangements to settle their own disputes that is fair and just for all.</p>
                         </div>
                     </div>
                 </div>
