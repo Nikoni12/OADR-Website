@@ -35,28 +35,57 @@
             <section class="features">
                 <div class="container">
                     <div class="row text-center">
-                    <h2>Contact Us</h2><br>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7722.551312168215!2d120.9784970744707!3d14.58336225925373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca26262c231f%3A0x5593ae3bc7dc3624!2sDepartment%20of%20Justice!5e0!3m2!1sen!2sph!4v1654844790351!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <div class="col-md-4 col-sm-4 col-lg-4">
-                        <div class="contact-info-box">
-                            <i class="fa fa-phone-square"></i>
-                            <h5 itemprop="headline">PHONE</h5>
-                            <p itemprop="description">(+632) 523 8482, (+632) 523 6826.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-lg-4">
+                        <h2>Contact Us</h2><br>
+                        <div class="col-md-4 col-sm-4 col-lg-4 shadow p-3 mb-5 bg-body rounded" style = "border-right:.25rem solid #E0AA3E!important;border-left:.25rem solid #E0AA3E!important">
                             <div class="contact-info-box">
-                                <i class="fa fa-map-marker"></i>
-                                <h5 itemprop="headline">ADDRESS</h5>
-                                <p itemprop="description">Department of Justice Padre Faura Street Ermita, Manila 1000</p>
+                                <i class="fa fa-phone-square"></i>
+                                <h5 itemprop="headline">PHONE</h5>
+                                <p itemprop="description">(+632) 523 8482, (+632) 523 6826.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-lg-4">
-                            <div class="contact-info-box">
-                                <i class="fa fa-envelope"></i>
-                                <h5 itemprop="headline">EMAIL</h5>
-                                <p itemprop="description">info.oadr@gmail.com</p>
+                            <div class="col-md-4 col-sm-4 col-lg-4 shadow p-3 mb-5 bg-body rounded" style = "border-right:.25rem solid #E0AA3E!important;border-left:.25rem solid #E0AA3E!important">
+                                <div class="contact-info-box">
+                                    <i class="fa fa-map-marker"></i>
+                                    <h5 itemprop="headline">ADDRESS</h5>
+                                    <p itemprop="description">Department of Justice Padre Faura Street Ermita, Manila 1000</p>
+                                </div>
                             </div>
+                            <div class="col-md-4 col-sm-4 col-lg-4 shadow p-3 mb-5 bg-body rounded" style = "border-right:.25rem solid #E0AA3E!important;border-left:.25rem solid #E0AA3E!important">
+                                <div class="contact-info-box">
+                                    <i class="fa fa-envelope"></i>
+                                    <h5 itemprop="headline">EMAIL</h5>
+                                    <p itemprop="description">info.oadr@gmail.com</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>  
+                </div>
+            </section>
+            <section class="features">
+                <div class="container">
+                    <div class="row">
+                        <iframe class="col-md-6" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.982959976328!2d121.04382741481925!3d14.656908489766622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4d29f24eb168db9b!2sNATIONAL%20FOOD%20AUTHORITY%20NFA!5e0!3m2!1sen!2sph!4v1655110690166!5m2!1sen!2sph" width="355" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="col-md-6" style = "padding-right:0; padding-left:10px;">
+                            <br>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juan Dela Cruz">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="juandelacruz@gmail.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inquiry">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>
+                            </form>
                         </div>
                     </div>
                 </div>

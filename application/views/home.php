@@ -35,7 +35,7 @@
 		<main id="main">
 			<section class="features">
 				<div class="container">
-					<div class="row n">
+					<div class="row ">
 						<h2>Announcements</h2><br>
 						<div class="col-md-12" >
 							<div id="demo" class="carousel slide" data-bs-ride="carousel">
