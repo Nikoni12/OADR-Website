@@ -32,4 +32,7 @@ class User extends CI_Controller {
 	public function adminlogin(){
 		$this->load->view('administrator-panel-login');
 	}
+	public function dashboard(){
+		$this->load->view('administrator-dashboard');
+	}
 }
