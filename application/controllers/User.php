@@ -11,6 +11,9 @@ class User extends CI_Controller {
 	public function about(){
 		$this->load->view('about');
 	}
+	public function mvision(){
+		$this->load->view('mvision');
+	}
 	public function employees(){
 		$this->load->view('employees');
 	}
@@ -51,4 +54,10 @@ class User extends CI_Controller {
 		$this->load->view('trainingspecialist');
 	}
 	
+	public function gallery(){
+		$this->load->view('gallery');
+	}
+	public function newsadmin(){
+		$this->load->view('newsadmin');
+	}
 }
