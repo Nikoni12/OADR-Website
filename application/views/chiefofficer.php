@@ -43,6 +43,7 @@
             <div id="box-1">
             <div class="sidebar">
                 <nav>
+                <h4 style="font-weight:bold;">Job Opportunities</h4>
                 <a href="http://localhost/OADR-Website/User/chiefofficer">Chief Administrative Officer</a>
                 <a href="http://localhost/OADR-Website/User/trainingspecialist">Training Specialist</a>
                 <a href="http://localhost/OADR-Website/User/administrativeassistant">Administrative Assistant</a>
