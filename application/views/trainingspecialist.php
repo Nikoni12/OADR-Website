@@ -37,7 +37,7 @@
 		<main id="main">
         <section class="features">
 		<div class="container">
-        <div class="newscarhead"><h1>Chief Administrative Officer</h1><br></div>
+        <div class="newscarhead"><h1>Training Specialist</h1><br></div>
 		<hr>
             <div id="grid-container">
             <div id="box-1">
@@ -54,7 +54,7 @@
             <div id="box-5"></div>
             <div id="box-6">Place of Assignment: Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
             <div id="box-7"></div>
-            <div id="box-8">Position Title : Chief Administrative Officer</div>
+            <div id="box-8">Position Title : Training Specialist</div>
             <div id="box-9"></div>
             <div id="box-10">Plantilla Item No. : CADOF-5-2021</div>
             <div id="box-11"></div>

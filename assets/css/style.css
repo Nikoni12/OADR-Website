@@ -2139,22 +2139,22 @@ align-items: center;
 #grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-template-rows: 100px;
+  grid-template-rows: 55px 55px 55px 55px 55px 55px 55px 55px 55px 55px 55px 55px;
   grid-gap: 8px;
   padding: 8px;
   
   }
   
   #grid-container div {
-  background-color: #0892d0;
   text-align: left;
   padding: 30px;
   font-size: 16px;
   }
   
   #box-1 {
+    border-right: 1px solid #031261;
   grid-row-start: 1;
-  grid-row-end: 7;
+  grid-row-end: 12;
   }
 
 
