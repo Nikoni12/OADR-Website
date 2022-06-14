@@ -34,6 +34,7 @@
         <main id="main">
             <section class="features">
                 <div class="container">
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Who we are?</h1><br> 
                     <div class="row text-center">
                         <div class="col-md-6">
                             <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
@@ -48,21 +49,7 @@
                     </div>
                 </div>
             </section>
-            <section class="features" >
-                <div class="container" style = "background-color:#e5e4e2; padding:30px;" >
-                    <hr style = "border-top: 3px double #8c8b8b;">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">M</span>ission</p>
-                            <p style = "text-align:justify;">To promote and institutionalize the effective and ethical use and practice of ADR in the country.</p>
-                        </div>
-                        <div class="col-md-12">
-                            <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">V</span>ision</p>
-                            <p style = "text-align:justify;">We envision an enlightened society that rises above conflicts and empowers parties in making arrangements to settle their own disputes that is fair and just for all.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <br>
         </main>
         <div class="footer-basic">
             <footer>
