@@ -38,6 +38,22 @@ class User extends CI_Controller {
 	public function dashboard(){
 		$this->load->view('administrator-dashboard');
 	}
+	public function careers(){
+		$this->load->view('careers');
+	}
+	public function chiefofficer(){
+		$this->load->view('chiefofficer');
+	}
+	public function administrativeassistant(){
+		$this->load->view('administrativeassistant');
+	}
+	public function technicalconsultant(){
+		$this->load->view('technicalconsultant');
+	}
+	public function trainingspecialist(){
+		$this->load->view('trainingspecialist');
+	}
+	
 	public function gallery(){
 		$this->load->view('gallery');
 	}
