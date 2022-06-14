@@ -34,22 +34,23 @@
         <main id="main">
         <section class="features" style = "padding:0px;">
         <div class="container px-5 my-5">
-        <h2>QUALITY POLICY</h2> <br><br>
+        <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Quality Policy</h1><br> 
+        <p style = "font-size:20px;text-align:justify;"><span style = "font-size: 60px;line-height: 70px;">W</span>e, the OADR, are committed to promote, develop and expand the use of ADR in the public and private sectors. As we strive to be a world-class, dynamic policy-making body in promoting the effective and ethical use of ADR in the country, we commit to:</p>
           <div class="row gx-5">
             <div class="col-lg-4 mb-5 mb-lg-0">
               <div class="" ><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/presentation.png');?>"></div><br>
-              <h2 class="h4 fw-bolder">ADR TRAINING</h2><br>
-              <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <h2 class="h4 fw-bolder">DELIVER</h2>
+              <p style = "text-align:justify;">Deliver quality services relating to promotion, training, accreditation and certification, policy and development of ADR use in the public and private sectors;</p>
             </div>
             <div class="col-lg-4 mb-5 mb-lg-0">
               <div class=""><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/auction.png');?>"></i></div><br>
-              <h2 class="h4 fw-bolder">ADR PROMOTION</h2><br>
-              <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <h2 class="h4 fw-bolder">COMPLY</h2>
+              <p style = "text-align:justify;">Comply with applicable statutory and regulatory requirements; and</p>
             </div>
             <div class="col-lg-4">
               <div class=""><img class="img-fluid" style = "max-width:200px;" src="<?php echo base_url('assets/img/search.png');?>"></i></div><br>
-              <h5 class="fw-bolder">ACCREDITATION AND COMPLIANCE MONITORING</h5>
-              <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <h5 class="fw-bolder">IMPROVE</h5>
+              <p style = "text-align:justify;">Continually improve our organization's systems and approaches to ensure the highest level of satisfaction of all our stakeholders.</p>
             </div>
           </div>
         </div>

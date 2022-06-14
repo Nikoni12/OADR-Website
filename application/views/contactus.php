@@ -34,8 +34,8 @@
         <main id="main">
             <section class="features">
                 <div class="container">
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Contact Us</h1><br> 
                     <div class="row text-center">
-                        <h2>Contact Us</h2><br>
                         <div class="col-md-4 col-sm-4 col-lg-4 shadow p-3 mb-5 bg-body rounded" style = "border-right:.25rem solid #E0AA3E!important;border-left:.25rem solid #E0AA3E!important">
                             <div class="contact-info-box">
                                 <i class="fa fa-phone-square"></i>
@@ -66,7 +66,6 @@
                     <div class="row">
                         <iframe class="col-md-6" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.982959976328!2d121.04382741481925!3d14.656908489766622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4d29f24eb168db9b!2sNATIONAL%20FOOD%20AUTHORITY%20NFA!5e0!3m2!1sen!2sph!4v1655110690166!5m2!1sen!2sph" width="355" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <div class="col-md-6" style = "padding-right:0; padding-left:10px;">
-                            <br>
                             <form>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Full Name</label>

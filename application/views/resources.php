@@ -35,7 +35,7 @@
         <section class="features">
             <div class="container">
                 <div class="row">
-                <h2 style = "text-align:center;">RESOURCES</h2> <br><br>
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Resources</h1><br>
                     <div class="col-md-4 mt-3 col-lg-4 containerimg">
                         <img class="img-fluid"  src="<?php echo base_url('assets/img/placeholder.jpg');?>">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#oadr1">
