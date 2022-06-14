@@ -2073,6 +2073,7 @@ align-items: center;
 	justify-content: center;
 	background-color: white;
 	padding: 0 1.5rem;
+
 }
 
 .sect_post{
@@ -2095,7 +2096,7 @@ align-items: center;
 }
 
 .sect_text{
-	margin-bottom: 3rem;
+	padding-top: 20px;
 	font-size: 14px;
 	color: rgba(0,0,0,.7);
 }
