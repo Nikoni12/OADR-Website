@@ -60,4 +60,31 @@ class User extends CI_Controller {
 	public function newsadmin(){
 		$this->load->view('newsadmin');
 	}
+	public function announcementsadmin(){
+		$this->load->view('announcementsadmin');
+	}
+	public function eventadmin(){
+		$this->load->view('eventsadmin');
+	}
+	public function adminresources(){
+		$this->load->view('adminresources');
+	}
+	public function announcement(){
+		$this->load->view('announcement');
+	}
+	public function admininquiries(){
+		$this->load->view('admininquiries');
+	}
+	public function adminapplications(){
+		$this->load->view('adminapplications');
+	}
+	public function adminusers(){
+		$this->load->view('adminusers');
+	}
+	public function admincatresources(){
+		$this->load->view('admincatresources');
+	}
+	public function addnews(){
+		$this->load->view('addnews');
+	}
 }

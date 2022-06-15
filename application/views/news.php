@@ -35,9 +35,8 @@
 		<main id="main">
 			<section class="features">
 				<div class="container">
+				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Recent News</h1><br> 
 					<div class="row">
-						<h1>Recent News</h1>
-						<hr/>
 						<a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-3">
