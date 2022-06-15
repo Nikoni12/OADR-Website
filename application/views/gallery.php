@@ -33,44 +33,72 @@
         </section>
         <main id="main">
             <section class="image-grid">
-                <div class="container-xxl">
-                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Photo Gallery</h1><br> 
-                    <div class="row gy-4">
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <figure>
-                                <a class="d-block" href="">
-                                    <img width="1920" height="1280" class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>" alt="IMAGE1" data-caption="Image Title">
-                                </a>
-                            </figure>
+                <div class="container">
+                    <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Photo Gallery</h1><br> 
+                    <div class="row text-center text-lg-start">
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <figure>
-                                <a class="d-block" href="">
-                                    <img width="1920" height="1280" class="img-fluid" src="<?php echo base_url('assets/img/placeholder.jpg');?>" alt="IMAGE2" data-caption="Image Title">
-                                </a>
-                            </figure>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <figure>
-                                <a class="d-block" href="">
-                                    <img width="1920" height="1280" src="https://images.unsplash.com/photo-1579353977828-2a4eab540b9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2FtcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80" class="img-fluid" alt="Image 3" data-caption="Image Title">
-                                </a>
-                            </figure>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
-            <div class="modal lightbox-modal" id="lightbox-modal" tabindex="-1">
-                <div class="modal-dialog modal-fullscreen">
-                    <div class="modal-content">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <div class="modal-body">
-                            <div class="container-fluid p-0">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </main>
         <div class="footer-basic">
             <footer>
@@ -99,78 +127,6 @@
         <script src="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.js');?>"></script>
         <script src="<?php echo base_url('assets/vendor/waypoints/noframework.waypoints.js');?>"></script>
         <script src="<?php echo base_url('assets/vendor/php-email-form/validate.js');?>"></script>
-
         <script src="<?php echo base_url('assets/js/main.js');?>"></script>
-        <script>
-            const imageGrid = document.querySelector(".image-grid");
-            const links = imageGrid.querySelectorAll("a");
-            const imgs = imageGrid.querySelectorAll("img");
-            const lightboxModal = document.getElementById("lightbox-modal");
-            const bsModal = new bootstrap.Modal(lightboxModal);
-            const modalBody = document.querySelector(".modal-body .container-fluid");
-
-            for (const link of links) {
-            link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const currentImg = link.querySelector("img");
-            const lightboxCarousel = document.getElementById("lightboxCarousel");
-            if (lightboxCarousel) {
-            const parentCol = link.parentElement.parentElement;
-            const index = [...parentCol.parentElement.children].indexOf(parentCol);
-            const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
-            bsCarousel.to(index);
-            } else {
-            createCarousel(currentImg);
-            }
-            bsModal.show();
-            });
-            }
-
-            function createCarousel(img) {
-            const markup = `
-            <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
-            <div class="carousel-inner">
-            ${createSlides(img)}
-            </div> 
-            <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-            </button>
-            </div>
-            `;
-
-            modalBody.innerHTML = markup;
-            }
-
-            function createSlides(img) {
-            let markup = "";
-            const currentImgSrc = img.getAttribute("src");
-
-            for (const img of imgs) {
-            const imgSrc = img.getAttribute("src");
-            const imgAlt = img.getAttribute("alt");
-            const imgCaption = img.getAttribute("data-caption");
-
-            markup += `
-            <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-            <img src=${imgSrc} alt=${imgAlt}>
-            ${imgCaption ? createCaption(imgCaption) : ""}
-            </div>
-            `;
-            }
-
-            return markup;
-            }
-
-            function createCaption(caption) {
-            return `<div class="carousel-caption">
-            <p class="m-0">${caption}</p>
-            </div>`;
-            }
-        </script>
     </body>
 </html>
