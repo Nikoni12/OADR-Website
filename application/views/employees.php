@@ -269,24 +269,7 @@
 				</div>
 			</section>
 		</main>
-		<div class="footer-basic">
-			<footer>
-				<div class="social">
-					<a href="#"><i class="fa fa-facebook-square"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-linkedin-square"></i></a>
-					<a href="#"><i class="fa fa-twitter-square"></i></a>
-				</div>
-				<ul class="list-inline">
-					<li class="list-inline-item"><a href="http://localhost/OADR-Website/User/about">About</a></li>
-					<li class="list-inline-item"><a href="">Quality Policy</a></li>
-					<li class="list-inline-item"><a href="">Employees</a></li>
-					<li class="list-inline-item"><a href="">Contact Us</a></li>
-					<li class="list-inline-item"><a href="">Resources</a></li>
-				</ul>
-				<p class="copyright">Office for Alternative Dispute Resolution © 2022</p>
-			</footer>
-		</div>
+		<?php $this->view('footer'); ?>
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 		<script src="<?php echo base_url('assets/vendor/purecounter/purecounter.js');?>"></script>
 		<script src="<?php echo base_url('assets/vendor/aos/aos.js');?>"></script>

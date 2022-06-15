@@ -99,7 +99,7 @@
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
 					<div class="row ">
 						
-						<div class="col-md-12" >
+						<div class="col-md-12 " >
 							<div id="demo" class="carousel slide" data-bs-ride="carousel">
 								<div class="carousel-indicators">
 									<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
@@ -114,7 +114,7 @@
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
 														<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
 													</div>
-													<div class="col-md-4 arrow_box" style = "background-color:#0892d0;color:white;">
+													<div class="col-md-4" style = "background-color:#0892d0;color:white;">
 														<br>
 														<h2 class="text-center">TITLE1</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -131,7 +131,7 @@
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
 														<img class="img-fluid" src="<?php echo base_url('assets/img/news1.jpg');?>">
 													</div>
-													<div class="col-md-4 arrow_box" style = "background-color:#0892d0;color:white;">
+													<div class="col-md-4" style = "background-color:#0892d0;color:white;">
 														<br>
 														<h2 class="text-center">TITLE2</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -148,7 +148,7 @@
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
 														<img class="img-fluid" src="<?php echo base_url('assets/img/news2.jpg');?>">
 													</div>
-													<div class="col-md-4 arrow_box" style = "background-color:#0892d0;color:white;">
+													<div class="col-md-4" style = "background-color:#0892d0;color:white;">
 														<br>
 														<h2 class="text-center">TITLE3</h2><br>
 														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -170,70 +170,40 @@
 					</div>
 				</div>
 			</section>
-			<section class="features"  >
-				<div class="container">
-					<div class="row">
-						<h2>Upcoming Events</h2><br>
-						<div class="col-md-12" >
-							<div id="demo2" class="carousel carousel-dark slide" data-interval="false">
-								<div class="carousel-inner">
-									<div class="carousel-item active">
-										<section class="features " >
-											<div class="container" style = "" >
-												<div class="row ">
-													<div class="col-md-4" style = "border: 2px solid #0f4d92; border-radius: 0 20px; background-color: #6a93cb; background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);" >
-														<h1 class = "month">JUNE <br>2022</h1>
-													</div>
-													<div class="col-md-8" style = "background-color:#fffff0; border: 2px solid #0f4d92; border-radius: 30px 20px;" >
-														<br>
-														<h3>NO EVENTS</h3><br>
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-									<div class="carousel-item">
-										<section class="features ">
-											<div class="container">
-												<div class="row ">
-													<div class="col-md-4" style = "border: 2px solid #0f4d92; border-radius: 0 20px; background-color: #6a93cb; background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);" >
-														<h1 class = "month">JULY <br>2022</h1>
-													</div>
-													<div class="col-md-8" style = "background-color:#fffff0; border: 2px solid #0f4d92; border-radius: 30px 20px;" >
-														<br>
-														<h3>NO EVENTS</h3><br>
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-									<div class="carousel-item">
-										<section class="features ">
-											<div class="container">
-												<div class="row ">
-													<div class="col-md-4" style = "border: 2px solid #0f4d92; border-radius: 0 20px; background-color: #6a93cb; background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);" >
-														<h1 class = "month">AUGUST <br> 2022</h1>
-													</div>
-													<div class="col-md-8" style = "background-color:#fffff0; border: 2px solid #0f4d92; border-radius: 30px 20px;" >
-														<br>
-														<h3>NO EVENTS</h3><br>
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-								</div>
-								<button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
-									<span class="carousel-control-prev-icon"></span>
-								</button>
-								<button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
-									<span class="carousel-control-next-icon"></span>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			<section class="features ">
+                <div class="container">
+				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Upcoming Events</h1><br> 
+					<div class="row mt-4 ">
+      					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
+        					<div class="card border-0 mb-4 ">
+          						<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute">June<span class="d-block">15</span></div>
+          						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link">Event Title</a></h5>
+          						<p class="mt-3">Short Description</p>
+        					</div>
+      					</div>
+      					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
+						  	<div class="card border-0 mb-4 ">
+          						<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute">June<span class="d-block">15</span></div>
+          						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link">Event Title</a></h5>
+          						<p class="mt-3">Short Description</p>
+        					</div>
+      					</div>
+      					<div class="col-md-4 on-hover shadow-lg p-3 mb-5 bg-body rounded">
+						  	<div class="card border-0 mb-4 ">
+          						<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute">June<span class="d-block">15</span></div>
+          						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link">Event Title</a></h5>
+          						<p class="mt-3">Short Description</p>
+        					</div>
+      					</div>
+						<div class="col-md-4 mx-auto text-center">
+							<a href="http://localhost/OADR-Website/User/events"><button type="button" class="btn btn-warning">View All Events</button></a>
+      					</div> 
+    				</div>
+                </div>
+            </section>
 			<section class="page-section" id="services">
 				<div class="container px-4 px-lg-5">
 					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
@@ -273,24 +243,7 @@
 				</div>
 			</section>
 		</main>
-		<div class="footer-basic">
-			<footer>
-				<div class="social">
-					<a href="#"><i class="fa fa-facebook-square"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-linkedin-square"></i></a>
-					<a href="#"><i class="fa fa-twitter-square"></i></a>
-				</div>
-				<ul class="list-inline">
-					<li class="list-inline-item"><a href="http://localhost/OADR-Website/User/about">About</a></li>
-					<li class="list-inline-item"><a href="">Quality Policy</a></li>
-					<li class="list-inline-item"><a href="">Employees</a></li>
-					<li class="list-inline-item"><a href="">Contact Us</a></li>
-					<li class="list-inline-item"><a href="">Resources</a></li>
-				</ul>
-				<p class="copyright">Office for Alternative Dispute Resolution © 2022</p>
-			</footer>
-		</div>
+		<?php $this->view('footer'); ?>
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 		<script src="<?php echo base_url('assets/vendor/purecounter/purecounter.js');?>"></script>
 		<script src="<?php echo base_url('assets/vendor/aos/aos.js');?>"></script>
