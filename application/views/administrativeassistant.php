@@ -51,29 +51,16 @@
                 </nav>
             </div>
             </div> 
-            <div id="box-4">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</div>
-            <div id="box-5"></div>
-            <div id="box-6">Place of Assignment: Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
-            <div id="box-7"></div>
-            <div id="box-8">Position Title : Administrative Assistant</div>
-            <div id="box-9"></div>
-            <div id="box-10">Plantilla Item No. : CADOF-5-2021</div>
-            <div id="box-11"></div>
-            <div id="box-10">Salary/Job/Pay Grade : 24</div>
-            <div id="box-11"></div>
-            <div id="box-10">Monthly Salary : Php 88,410.00</div>
-            <div id="box-11"></div>
-            <div id="box-10">Eligibility : CS Professional/ Second Level Eligibility</div>
-            <div id="box-11"></div>
-            <div id="box-10">Education : Master`s Degree or Certificate in Leadership and
-Management from the CSC</div>
-            <div id="box-11"></div>
-            <div id="box-10">Training : 40 hours of supervisory and management learning and
-development</div>
-            <div id="box-11"></div>
-            <div id="box-10">Work Experience : 4 years of supervisory and management experience</div>
-            <div id="box-11"></div>
-            
+            <div id="">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</div>
+            <div id="">Place of Assignment: Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
+            <div id="">Position Title : Administrative Assistant</div>
+            <div id="">Plantilla Item No. : CADOF-5-2021</div>
+            <div id="">Salary/Job/Pay Grade : 24</div>
+            <div id="">Monthly Salary : Php 88,410.00</div>
+            <div id="">Eligibility : CS Professional/ Second Level Eligibility</div>
+            <div id="">Education : Master`s Degree or Certificate in Leadership and Management from the CSC</div>
+            <div id="">Training : 40 hours of supervisory and management learning and development</div>
+            <div id="">Work Experience : 4 years of supervisory and management experience</div>
 
             </div>
 

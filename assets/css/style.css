@@ -2139,8 +2139,7 @@ align-items: center;
 /*sidebar*/
 #grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 55px 55px 55px 55px 55px 55px 55px 55px 55px 55px 55px 55px;
+  grid-template-columns: 250px auto;
   grid-gap: 8px;
   padding: 8px;
   
@@ -2153,7 +2152,7 @@ align-items: center;
   }
   
   #box-1 {
-    border-right: 1px solid #031261;
+  border-right: 1px solid #031261;
   grid-row-start: 1;
   grid-row-end: 12;
   }
@@ -2161,7 +2160,7 @@ align-items: center;
 
   .sidebar {
     height: 100%;
-    width: 300px;
+    width: 200px;
     left: 0;
     top: 0;
     padding-top: 40px;

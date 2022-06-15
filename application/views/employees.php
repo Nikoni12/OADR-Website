@@ -34,7 +34,20 @@
 		<main id="main">
 			<section class="features">
 				<div class="container" >
-					<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Employees</h1><br> 
+				<div id="grid-container">
+            <div id="box-1">
+            <div class="sidebar">
+                <nav>
+                <h4 style="font-weight:bold;">About</h4>
+                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
+                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
+                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
+                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
+                </nav>
+            </div>
+            </div> 
+            <div id="box-4">
+			<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Employees</h1><br> 
 					<div class="row text-center" style = "padding: 0px 0px 0px 0px;">
 						<div class="col-md-12">
 							<div id="demo" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -210,6 +223,11 @@
 							</div>
 						</div>
 					</div>
+            </div>
+
+            </div>
+			
+					
 				</div>
 			</section>
 		</main>
