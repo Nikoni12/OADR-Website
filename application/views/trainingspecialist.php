@@ -37,7 +37,6 @@
 		<main id="main">
         <section class="features">
 		<div class="container">
-        <div class="newscarhead"><h1>Training Specialist</h1><br></div>
 		<hr>
             <div id="grid-container">
             <div id="box-1">
@@ -50,7 +49,8 @@
                 <a href="http://localhost/OADR-Website/User/technicalconsultant">Technical Consultant</a>
                 </nav>
             </div>
-            </div> 
+            </div>
+			<div class="newscarhead"><h1><u>Training Specialist</u></h1><br></div>  
             <div id="">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</div>
             <div id="">Place of Assignment: Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
             <div id="">Position Title : Administrative Assistant</div>

@@ -16,7 +16,7 @@
 					</ul>
 				</li>
 				<li ><a style = "text-decoration: none;" href="http://localhost/OADR-Website/User/careers">Careers</a></li>
-				<li class="dropdown "><a href="#"><span>Updates</span> <i class="bi bi-chevron-down"></i></a>
+				<li class="dropdown "><a href="http://localhost/OADR-Website/User/news"><span>Updates</span> <i class="bi bi-chevron-down"></i></a>
 					<ul class = "bg-white py-2 collapse-inner rounded">
 						<li><a href="http://localhost/OADR-Website/User/news">News</a></li>
 						<li><a href="http://localhost/OADR-Website/User/announcement">Announcements</a></li>
