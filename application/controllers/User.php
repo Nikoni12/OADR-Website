@@ -114,4 +114,7 @@ class User extends CI_Controller {
 	public function addalbum(){
 		$this->load->view('addalbum');
 	}
+	public function events(){
+		$this->load->view('events');
+	}
 }
