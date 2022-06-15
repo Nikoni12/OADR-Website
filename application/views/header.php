@@ -20,6 +20,7 @@
 					<ul class = "bg-white py-2 collapse-inner rounded">
 						<li><a href="http://localhost/OADR-Website/User/news">News</a></li>
 						<li><a href="http://localhost/OADR-Website/User/announcement">Announcements</a></li>
+						<li><a href="http://localhost/OADR-Website/User/events">Events</a></li>
 						<li><a href="http://localhost/OADR-Website/User/gallery">Photo Gallery</a></li>
 					</ul>
 				</li>
