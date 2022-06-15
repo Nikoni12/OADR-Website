@@ -22,16 +22,31 @@
             <div class="bg-white py-2 collapse-inner rounded"  style = "border-left:.25rem solid black!important;">
                 <h6 class="collapse-header">Select:</h6>
                 <a class="collapse-item" href="http://localhost/OADR-Website/User/newsadmin"><i style = "color:black;"class="fa fa-newspaper-o"></i> News </a>
-                <a class="collapse-item" href="#"> <i style = "color:black;"class="fa fa-bullhorn"></i> Announcement</a>
-                <a class="collapse-item" href="#"><i style = "color:black;"class="fa fa-calendar"></i> Events</a>
-                <a class="collapse-item" href="#"><i style = "color:black;"class="fa fa-file-archive-o"></i> Resources</a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/announcementsadmin"> <i style = "color:black;"class="fa fa-bullhorn"></i> Announcement</a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/eventadmin"><i style = "color:black;"class="fa fa-calendar"></i> Events</a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/adminresources"><i style = "color:black;"class="fa fa-file-image-o"></i> Gallery</a>
+            </div>
+        </div>
+    </li>
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading"> Resources </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
+            <i style = "color:black;" class="fa fa-file"></i>
+            <span>Resources</span>
+        </a>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+            <div class="bg-white py-2 collapse-inner rounded"  style = "border-left:.25rem solid black!important;">
+                <h6 class="collapse-header">Select:</h6>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/admincatresources"><i style = "color:black;"class="fa fa-bars"></i> Category </a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/adminresources"> <i style = "color:black;"class="fa fa-file"></i> Resources</a>
             </div>
         </div>
     </li>
     <hr class="sidebar-divider">
     <div class="sidebar-heading"> Inquiries </div>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="http://localhost/OADR-Website/User/admininquiries">
             <i style = "color:black;"class="fa fa-calendar"></i>
             <span>Inquiries</span> <span style = "background-color:white;color:black;"class="badge badge-secondary">0</span>
         </a>
@@ -39,24 +54,17 @@
     <hr class="sidebar-divider">
     <div class="sidebar-heading"> Job Applications </div>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="http://localhost/OADR-Website/User/adminapplications">
             <i style = "color:black;"class="fa fa-file"></i>
             <span>Applications</span> <span style = "background-color:white;color:black;"class="badge badge-secondary">0</span>
         </a>
     </li>
-    <hr class="sidebar-divider">
     <div class="sidebar-heading"> Account </div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true" aria-controls="collapseAdmin">
-            <i style = "color:black;"class="fas fa-users"></i>
+        <a class="nav-link" href="http://localhost/OADR-Website/User/adminusers">
+            <i style = "color:black;"class="fa fa-users"></i>
             <span>Users</span>
         </a>
-        <div id="collapseAdmin" class="collapse" aria-labelledby="headingAdmin" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded"  style = "border-left:.25rem solid black!important;">
-                <h6 class="collapse-header">User Settings:</h6>
-                <a class="collapse-item" href="#"> <i style = "color:black;"class="fas fa-user"></i> All Users</a>
-                <a class="collapse-item" href="#"><i style = "color:black;"class="fas fa-plus"></i> Add User</a>
-            </div>
-        </div>
     </li>
+    <hr class="sidebar-divider">
 </ul>

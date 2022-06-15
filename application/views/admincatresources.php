@@ -23,17 +23,19 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">NEWS</h1>
+                            <h1 class="retro1 retroshadow">Resources Category</h1>
                         </div>
-                        <a href="http://localhost/OADR-Website/User/addnews" class="btn btn-warning btn-icon-split">
+                        <a href="#" class="btn btn-warning btn-icon-split">
                             <span class="icon text-white-50">
                                 <i style = "color:black;" class="fas fa-plus"></i>
                             </span>
-                            <span style = "color:black;" class="text">Add News</span>
-                        </a><br><br>
+                            <span style = "color:black;" class="text">Add Resources Category</span>
+                        </a>
+                        <br><br>
+                        
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">News</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Resources</h6>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
