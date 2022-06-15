@@ -33,6 +33,8 @@
 			</div>
 		</section>
 		<main id="main">
+
+
 		<section class="features adrcontain">
                 <div class="container sect_post">
                     <div class="row">
@@ -47,6 +49,7 @@
                     </div>
                 </div>
             </section>
+			
 			<!-- <div class="adrcontain">
 	  			<div class="sect_post">
 					<div class="sect_img">
@@ -80,6 +83,17 @@
                     </div>
                 </div>
             </section>-->
+			<section style="padding:0; margin:0;">
+				<div class="row resourceimg">
+				<div class="column" >
+					<div style="margin-left:32px;"><h2 class="resourcetxt">Solve Problems with Alternative Resolutions.</h2></div>
+				</div>
+				<div class="column">
+				<a href="http://localhost/OADR-Website/User/resources"><button class="button">DOWNLOAD</button><a>
+				<a href="http://localhost/OADR-Website/User/about"><button class="button">LEARN MORE</button></a>
+				</div>
+				</div>
+			</section>
 			<section class="features">
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 

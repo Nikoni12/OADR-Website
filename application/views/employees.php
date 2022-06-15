@@ -34,7 +34,20 @@
 		<main id="main">
 			<section class="features">
 				<div class="container" >
-					<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Employees</h1><br> 
+				<div id="grid-container">
+            <div id="box-1">
+            <div class="sidebar">
+                <nav>
+                <h4 style="font-weight:bold;">About</h4>
+                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
+                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
+                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
+                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
+                </nav>
+            </div>
+            </div> 
+            <div id="box-4">
+			<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Employees</h1><br> 
 					<div class="row text-center" style = "padding: 0px 0px 0px 0px;">
 						<div class="col-md-12">
 							<div id="demo" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -207,6 +220,49 @@
 									<span class="carousel-control-next-icon"></span>
 									<span class="visually-hidden">Next</span>
 								</button>
+							</div>
+						</div>
+					</div>
+            </div>
+
+            </div>
+			
+					
+				</div>
+			</section>
+			<section class="page-section" id="services">
+				<div class="container px-4 px-lg-5">
+					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
+					<hr class="divider" />
+					<div class="row gx-4 gx-lg-5">
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/1.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/2.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/3.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/4.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/5.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/6.png');?>"></div>
 							</div>
 						</div>
 					</div>

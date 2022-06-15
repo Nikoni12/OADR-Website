@@ -32,9 +32,23 @@
       </div>
     </section>
         <main id="main">
-            <section class="features">
-                <div class="container">
-                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Who we are?</h1><br> 
+        <section class="features">
+		<div class="container">
+        
+            <div id="grid-container">
+            <div id="box-1">
+            <div class="sidebar">
+                <nav>
+                <h4 style="font-weight:bold;">ABOUT</h4>
+                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
+                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
+                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
+                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
+                </nav>
+            </div>
+            </div> 
+            <div id="box-4">
+            <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Who we are?</h1><br> 
                     <div class="row text-center">
                         <div class="col-md-6">
                             <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
@@ -46,9 +60,50 @@
                             <p style = "text-align:justify;">The Office for Alternative Dispute Resolution (OADR) is an attached agency of the Department of Justice created pursuant to Republic Act (R.A.) No. 9285 or the Alternative Dispute Resolution (ADR) Act of 2004.</p><br>
                             <p style = "text-align:justify;">It is mandated to promote, develop and expand the use of ADR in the private and public sectors; assist the government in monitoring, studying and evaluating the use of ADR by the public and private sectors; and recommend to Congress needful statutory changes to develop, strengthen and improve ADR practices in accordance with world standards.</p>
                         </div>
-                    </div>
-                </div>
-            </section>
+            </div>
+
+            </div>
+
+        </div>
+        </section>
+            <section class="page-section" id="services">
+				<div class="container px-4 px-lg-5">
+					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
+					<hr class="divider" />
+					<div class="row gx-4 gx-lg-5">
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/1.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/2.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/3.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/4.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/5.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/6.png');?>"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
             <br>
         </main>
         <?php $this->view('footer'); ?>

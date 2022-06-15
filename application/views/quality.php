@@ -34,7 +34,20 @@
         <main id="main">
         <section class="features" style = "padding:0px;">
         <div class="container px-5 my-5">
-        <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Quality Policy</h1><br> 
+        <div id="grid-container">
+            <div id="box-1">
+            <div class="sidebar">
+                <nav>
+                <h4 style="font-weight:bold;">About</h4>
+                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
+                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
+                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
+                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
+                </nav>
+            </div>
+            </div> 
+            <div id="box-4">
+            <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Quality Policy</h1><br> 
         <p style = "font-size:20px;text-align:justify;"><span style = "font-size: 60px;line-height: 70px;">W</span>e, the OADR, are committed to promote, develop and expand the use of ADR in the public and private sectors. As we strive to be a world-class, dynamic policy-making body in promoting the effective and ethical use of ADR in the country, we commit to:</p>
           <div class="row gx-5">
             <div class="col-lg-4 mb-5 mb-lg-0">
@@ -53,8 +66,50 @@
               <p style = "text-align:justify;">Continually improve our organization's systems and approaches to ensure the highest level of satisfaction of all our stakeholders.</p>
             </div>
           </div>
+            </div>
+
+            </div>
+        
         </div>
       </section>
+      <section class="page-section" id="services">
+				<div class="container px-4 px-lg-5">
+					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
+					<hr class="divider" />
+					<div class="row gx-4 gx-lg-5">
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/1.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/2.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/3.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/4.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/5.png');?>"></div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-5 text-center">
+							<div class="mt-5">
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/6.png');?>"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
         </main>
         <?php $this->view('footer'); ?>
 

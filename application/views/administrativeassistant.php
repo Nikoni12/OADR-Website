@@ -37,7 +37,6 @@
 		<main id="main">
         <section class="features">
 		<div class="container">
-        <div class="newscarhead"><h1>Administrative Assistant</h1><br></div>
 		<hr>
             <div id="grid-container">
             <div id="box-1">
@@ -50,30 +49,18 @@
                 <a href="http://localhost/OADR-Website/User/technicalconsultant">Technical Consultant</a>
                 </nav>
             </div>
-            </div> 
-            <div id="box-4">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</div>
-            <div id="box-5"></div>
-            <div id="box-6">Place of Assignment: Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
-            <div id="box-7"></div>
-            <div id="box-8">Position Title : Administrative Assistant</div>
-            <div id="box-9"></div>
-            <div id="box-10">Plantilla Item No. : CADOF-5-2021</div>
-            <div id="box-11"></div>
-            <div id="box-10">Salary/Job/Pay Grade : 24</div>
-            <div id="box-11"></div>
-            <div id="box-10">Monthly Salary : Php 88,410.00</div>
-            <div id="box-11"></div>
-            <div id="box-10">Eligibility : CS Professional/ Second Level Eligibility</div>
-            <div id="box-11"></div>
-            <div id="box-10">Education : Master`s Degree or Certificate in Leadership and
-Management from the CSC</div>
-            <div id="box-11"></div>
-            <div id="box-10">Training : 40 hours of supervisory and management learning and
-development</div>
-            <div id="box-11"></div>
-            <div id="box-10">Work Experience : 4 years of supervisory and management experience</div>
-            <div id="box-11"></div>
-            
+            </div>
+			<div class="newscarhead"><h1><u>Administrative Assistant</u></h1><br></div> 
+            <div id="">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</div>
+            <div id="">Place of Assignment: Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
+            <div id="">Position Title : Administrative Assistant</div>
+            <div id="">Plantilla Item No. : CADOF-5-2021</div>
+            <div id="">Salary/Job/Pay Grade : 24</div>
+            <div id="">Monthly Salary : Php 88,410.00</div>
+            <div id="">Eligibility : CS Professional/ Second Level Eligibility</div>
+            <div id="">Education : Master`s Degree or Certificate in Leadership and Management from the CSC</div>
+            <div id="">Training : 40 hours of supervisory and management learning and development</div>
+            <div id="">Work Experience : 4 years of supervisory and management experience</div>
 
             </div>
 
@@ -81,24 +68,8 @@ development</div>
         </section>
                 
 		</main>
-		<div class="footer-basic">
-			<footer>
-				<div class="social">
-					<a href="#"><i class="fa fa-facebook-square"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-linkedin-square"></i></a>
-					<a href="#"><i class="fa fa-twitter-square"></i></a>
-				</div>
-				<ul class="list-inline">
-					<li class="list-inline-item"><a href="http://localhost/OADR-Website/User/about">About</a></li>
-					<li class="list-inline-item"><a href="">Quality Policy</a></li>
-					<li class="list-inline-item"><a href="">Employees</a></li>
-					<li class="list-inline-item"><a href="">Contact Us</a></li>
-					<li class="list-inline-item"><a href="">Resources</a></li>
-				</ul>
-				<p class="copyright">Office for Alternative Dispute Resolution © 2022</p>
-		</footer>
-		</div>
+
+		<?php $this->view('footer'); ?>
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 		<script src="<?php echo base_url('assets/vendor/purecounter/purecounter.js');?>"></script>
 		<script src="<?php echo base_url('assets/vendor/aos/aos.js');?>"></script>
