@@ -35,7 +35,7 @@
 		<main id="main">
 
 
-		<section class="features adrcontain">
+		<section class="features adrcontain" style="padding:0;">
                 <div class="container sect_post">
                     <div class="row">
 					<iframe class="col-md-6" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
@@ -65,7 +65,6 @@
 					</div>
 				</div>
 			</div> -->
-			<br>
 			<!--ADR-
 			<section class="features" style="background-color:lightskyblue;">
                 <div class="adrcontain">
