@@ -26,62 +26,124 @@
                             <h1 class="retro1 retroshadow">APPLICATIONS</h1>
                         </div>
                         <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Applications</h6>
-                            </div>
+                            <div class="card-header py-3"></div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
+                                        <thead style = "text-align:center;">
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th>ID</th>
+                                                <th>Title</th>
+                                                <th>Date Added</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
+                                                <td>1</td>
+                                                <td>John Doe</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <a href="#" class="btn btn-warning">--Status--</a>
+                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accepted</a>
+                                                            <a class="dropdown-item" href="#">Rejected</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
+                                                <td>2</td>
+                                                <td>John Doe</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <a href="#" class="btn btn-warning">--Status--</a>
+                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accepted</a>
+                                                            <a class="dropdown-item" href="#">Rejected</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>66</td>
-                                                <td>2009/01/12</td>
-                                                <td>$86,000</td>
+                                                <td>3</td>
+                                                <td>John Doe</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <a href="#" class="btn btn-warning">--Status--</a>
+                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accepted</a>
+                                                            <a class="dropdown-item" href="#">Rejected</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012/03/29</td>
-                                                <td>$433,060</td>
+                                                <td>4</td>
+                                                <td>John Doe</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <a href="#" class="btn btn-warning">--Status--</a>
+                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accepted</a>
+                                                            <a class="dropdown-item" href="#">Rejected</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>$162,700</td>
+                                                <td>5</td>
+                                                <td>John Doe</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <a href="#" class="btn btn-warning">--Status--</a>
+                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#">Accepted</a>
+                                                            <a class="dropdown-item" href="#">Rejected</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

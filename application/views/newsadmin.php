@@ -14,6 +14,9 @@
         <link href="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+        <style>
+            .container-scroll {max-height: 300px; max-width: 500px;overflow: hidden; overflow-y: scroll;}
+        </style>
     </head>
     <body id="page-top">
         <div id="wrapper">
@@ -21,7 +24,7 @@
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     <?php $this->view('navbar'); ?>
-                    <div class="container-fluid">
+                    <div class="container-fluid ">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="retro1 retroshadow">NEWS</h1>
                         </div>
@@ -32,62 +35,63 @@
                             <span style = "color:black;" class="text">Add News</span>
                         </a><br><br>
                         <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">News</h6>
-                            </div>
+                            <div class="card-header py-3"></div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
+                                        <thead style = "text-align:center;">
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th>ID</th>
+                                                <th>Title</th>
+                                                <th>Date Added</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
+                                                <td>1</td>
+                                                <td>News Title 1</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
+                                                <td>2</td>
+                                                <td>News Title 2</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>66</td>
-                                                <td>2009/01/12</td>
-                                                <td>$86,000</td>
+                                                <td>3</td>
+                                                <td>News Title 3</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012/03/29</td>
-                                                <td>$433,060</td>
+                                                <td>4</td>
+                                                <td>News Title 4</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>$162,700</td>
+                                                <td>5</td>
+                                                <td>News Title 5</td>
+                                                <td>2022-01-01 12:00 NN</td>
+                                                <td style = "text-align:center; font-size:20px;">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

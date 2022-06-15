@@ -23,56 +23,36 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">Users</h1>
+                            <h1 class="retro1 retroshadow">Add Event</h1>
                         </div>
-                        <a href="http://localhost/OADR-Website/User/adduser" class="btn btn-warning btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i style = "color:black;" class="fas fa-plus"></i>
-                            </span>
-                            <span style = "color:black;" class="text">Add User</span>
-                        </a><br><br>
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Users</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Username</th>
-                                                <th>Role</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Administrator</td>
-                                                <td>admin</td>
-                                                <td>Admin</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Staff1</td>
-                                                <td>staff</td>
-                                                <td>Staff</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                        <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-10 col-md-6">
+                            <div class="card o-hidden border-0 shadow-lg my-5">
+                                <div class="card-body " data-aos="slide-up">
+                                <form method="POST" class="user">
+                        <div class="form-group">
+                            <label for="username">Title:</label>
+                            <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Content:</label>
+                            <textarea class="form-control" id="support-reply" name="support-reply" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Image:</label>
+                            <input type="file" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Image:</label>
+                            <input type="date" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
+                        </form>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
                 <footer class="sticky-footer bg-white">
