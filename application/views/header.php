@@ -7,7 +7,7 @@
         </div>
         <nav id="navbar" class="navbar">
             <ul>
-				<li class="dropdown "><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+				<li class="dropdown "><a href="http://localhost/OADR-Website/User/about"><span>About</span> <i class="bi bi-chevron-down"></i></a>
 					<ul class = "bg-white py-2 collapse-inner rounded">
 						<li><a href="http://localhost/OADR-Website/User/about">Who we are?</a></li>
 						<li><a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a></li>

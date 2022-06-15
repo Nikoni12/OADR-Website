@@ -90,7 +90,7 @@
 				</div>
 				<div class="column">
 				<a href="http://localhost/OADR-Website/User/resources"><button class="button">DOWNLOAD</button><a>
-				<button class="button">LEARN MORE</button>
+				<a href="http://localhost/OADR-Website/User/about"><button class="button">LEARN MORE</button></a>
 				</div>
 				</div>
 			</section>
