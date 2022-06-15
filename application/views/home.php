@@ -42,6 +42,12 @@
 			<div class="sect_info">
 
 				<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>
+		<section class="features adrcontain">
+                <div class="container sect_post">
+                    <div class="row">
+					<iframe class="col-md-6" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
+                        <div class="col-md-6 sect_info">
+						<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>
 				<div class="border"></div>
 				<p class="sect_text">
 					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -51,6 +57,26 @@
 		</div>
 	</div>
 
+                        </div>
+                    </div>
+                </div>
+            </section>
+			<!-- <div class="adrcontain">
+	  			<div class="sect_post">
+					<div class="sect_img">
+						<iframe class="col-md-12" width="600" height="480" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="sect_info">
+						<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>
+						<div class="border"></div>
+							<p class="sect_text">
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+							</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<br>
 			<!--ADR-
 			<section class="features" style="background-color:lightskyblue;">
                 <div class="adrcontain">
@@ -70,8 +96,9 @@
             </section>-->
 			<section class="features">
 				<div class="container">
+				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
 					<div class="row ">
-						<div class="newscarhead"><h2>Announcements</h2><br></div>
+						
 						<div class="col-md-12" >
 							<div id="demo" class="carousel slide" data-bs-ride="carousel">
 								<div class="carousel-indicators">

@@ -87,4 +87,31 @@ class User extends CI_Controller {
 	public function addnews(){
 		$this->load->view('addnews');
 	}
+	public function addannouncement(){
+		$this->load->view('addannouncement');
+	}
+	public function addevent(){
+		$this->load->view('addevent');
+	}
+	public function addcategory(){
+		$this->load->view('addcategory');
+	}
+	public function addresources(){
+		$this->load->view('addresources');
+	}
+	public function adduser(){
+		$this->load->view('adduser');
+	}
+	public function edituser(){
+		$this->load->view('edituser');
+	}
+	public function admingallery(){
+		$this->load->view('admingallery');
+	}
+	public function adminalbum(){
+		$this->load->view('adminalbum');
+	}
+	public function addalbum(){
+		$this->load->view('addalbum');
+	}
 }

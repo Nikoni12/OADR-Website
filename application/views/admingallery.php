@@ -23,8 +23,16 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">INQUIRIES</h1>
+                            <h1 class="retro1 retroshadow">Photo Gallery</h1>
                         </div>
+                        <a href="http://localhost/OADR-Website/User/addalbum" class="btn btn-warning btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i style = "color:black;" class="fas fa-plus"></i>
+                            </span>
+                            <span style = "color:black;" class="text">Add New Album</span>
+                        </a>
+                        <br><br>
+                        
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"></div>
                             <div class="card-body">
@@ -33,115 +41,54 @@
                                         <thead style = "text-align:center;">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Title</th>
+                                                <th>Album Name</th>
                                                 <th>Date Added</th>
-                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>John Doe</td>
+                                                <td>Album Name 1</td>
                                                 <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <a href= "http://localhost/OADR-Website/User/adminalbum"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>&ensp;
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>John Doe</td>
+                                                <td>Album Name 2</td>
                                                 <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
-                                                <td>John Doe</td>
+                                                <td>Album Name 3</td>
                                                 <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
-                                                <td>John Doe</td>
+                                                <td>Album Name 4</td>
                                                 <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
-                                                <td>John Doe</td>
+                                                <td>Album Name 5</td>
                                                 <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </td>
                                             </tr>

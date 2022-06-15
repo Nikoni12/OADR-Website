@@ -24,7 +24,7 @@
                 <a class="collapse-item" href="http://localhost/OADR-Website/User/newsadmin"><i style = "color:black;"class="fa fa-newspaper-o"></i> News </a>
                 <a class="collapse-item" href="http://localhost/OADR-Website/User/announcementsadmin"> <i style = "color:black;"class="fa fa-bullhorn"></i> Announcement</a>
                 <a class="collapse-item" href="http://localhost/OADR-Website/User/eventadmin"><i style = "color:black;"class="fa fa-calendar"></i> Events</a>
-                <a class="collapse-item" href="http://localhost/OADR-Website/User/adminresources"><i style = "color:black;"class="fa fa-file-image-o"></i> Gallery</a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/admingallery"><i style = "color:black;"class="fa fa-file-image-o"></i> Gallery</a>
             </div>
         </div>
     </li>
