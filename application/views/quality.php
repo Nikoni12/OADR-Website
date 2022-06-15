@@ -34,6 +34,7 @@
         <main id="main">
         <section class="features" style = "padding:0px;">
         <div class="container px-5 my-5">
+        <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Quality Policy</h1><br> 
         <div id="grid-container">
             <div id="box-1">
             <div class="sidebar">
@@ -47,7 +48,7 @@
             </div>
             </div> 
             <div id="box-4">
-            <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Quality Policy</h1><br> 
+            
         <p style = "font-size:20px;text-align:justify;"><span style = "font-size: 60px;line-height: 70px;">W</span>e, the OADR, are committed to promote, develop and expand the use of ADR in the public and private sectors. As we strive to be a world-class, dynamic policy-making body in promoting the effective and ethical use of ADR in the country, we commit to:</p>
           <div class="row gx-5">
             <div class="col-lg-4 mb-5 mb-lg-0">
