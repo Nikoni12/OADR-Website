@@ -9,6 +9,7 @@
                     <h6 class=" fw-bold mb-4">Social Media Links</h6>
                     <a target = "_blank" href = "https://www.facebook.com/people/Office-for-Alternative-Dispute-Resolution-OADR/100064519667093/"><i style = "font-size:35px;" class="fa fa-facebook-official" aria-hidden="true"></i></a>
                     <a target = "_blank" href = "https://twitter.com/dojph"><i style = "font-size:35px;" class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    <a target = "_blank" href = "https://www.linkedin.com/company/department-of-justice-philippines"><i style = "font-size:35px;" class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                     <h6 class="text-uppercase fw-bold mb-4">

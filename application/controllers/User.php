@@ -117,4 +117,7 @@ class User extends CI_Controller {
 	public function events(){
 		$this->load->view('events');
 	}
+	public function careerform(){
+		$this->load->view('careerform');
+	}
 }
