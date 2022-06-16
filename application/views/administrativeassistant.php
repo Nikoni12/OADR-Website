@@ -47,7 +47,7 @@
                                 </nav>
                             </div>
                             <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
-							<div class="newscarhead"><h1><u>Administrative Assistant</u></h1><br></div> 
+							<div class="newscarhead"><h1>Administrative Assistant</h1><br></div> 
 							<h4>OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</h4>
 							<div id=""><b>Place of Assignment:</b>Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
 							<div id=""><b>Position Title :</b> Administrative Assistant</div>
