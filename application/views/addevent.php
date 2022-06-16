@@ -14,6 +14,15 @@
         <link href="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"rel="stylesheet">
+        <script crossorigin="anonymous" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="<?php echo base_url('adminassets/css/bootstrap-datetimepicker.min.css');?>" type="text/css" media="all" />
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url('adminassets/js/bootstrap-datetimepicker.min.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('adminassets/js/demo.js');?>"></script>
     </head>
     <body id="page-top">
         <div id="wrapper">
@@ -43,10 +52,27 @@
                             <input type="file" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
                         </div>
                         <div class="form-group">
-                            <label for="username">Image:</label>
-                            <input type="date" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                            <label for="id_start_datetime">Start Date</label>
+                            <div class="input-group date" id="id_0">
+                                <input type="text" id="picker1" value="" class="form-control" required/>
+                                <div class="input-group-addon input-group-append">
+                                    <div class="input-group-text">
+                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
+                        <div class="form-group">
+                            <label for="id_start_datetime">End Date</label>
+                            <div class="input-group date" id="id_1">
+                                <input type="text" id="picker2"value="" class="form-control" required/>
+                                <div class="input-group-addon input-group-append">
+                                    <div class="input-group-text">
+                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                         </form>
                                 </div>
