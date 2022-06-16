@@ -74,9 +74,8 @@
 				</div>
 				</div>
 			</section>
-			<br><br><br><br><br>
-
-		<section class="features" id="announcement">
+			<br><br><br><br>
+			<section class="features" id="announcement">
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
 					<div class="row ">
@@ -98,8 +97,9 @@
 													<div class="col-md-4" style = "background-color:#0892d0;color:white;">
 														<br>
 														<h2 class="text-center">TITLE1</h2><br>
-														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
 														<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-light">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+														<br><br>
 													</div>
 												</div>
 											</div>
@@ -115,8 +115,9 @@
 													<div class="col-md-4" style = "background-color:#0892d0;color:white;">
 														<br>
 														<h2 class="text-center">TITLE2</h2><br>
-														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
 														<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-light">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+														<br><br>
 													</div>
 												</div>
 											</div>
@@ -132,8 +133,9 @@
 													<div class="col-md-4" style = "background-color:#0892d0;color:white;">
 														<br>
 														<h2 class="text-center">TITLE3</h2><br>
-														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+														<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
 														<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-light">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+														<br><br>
 													</div>
 												</div>
 											</div>
