@@ -2161,32 +2161,46 @@ align-items: center;
   }
 
 
-  .sidebar .sidenav{
+.sidenav{
     height: 100%;
     width: 350px;
     left: 0;
     top: 0;
-    padding-top: 40px;
     }
 
     .sidenav{
       padding-top: 0;
     }
     
-    .sidebar .sidenav a {
+  .sidenav a {
     padding: 8px;
-    width: 250px;
+    width: 100%;
     font-size: 16px;
     display: block;
     text-decoration: none;
     }
+    .sidebar {
+      height: 100%;
+      left: 0;
+      top: 0;
+      }
+      
+      .sidebar a {
+      padding: 8px;
+      width: 100%;
+      font-size: 16px;
+      display: block;
+      text-decoration: none;
+      }
+      
+      .sidebar a:hover {
+      cursor: pointer;
+      opacity: .7;
+      background-color:  #031261;
+      color:white;
+      }
     
-    .sidebar a:hover {
-    cursor: pointer;
-    opacity: .7;
-    background-color:  #031261;
-    color:white;
-    }
+
 
     .sidenav a:hover{
       cursor: pointer;
@@ -2477,8 +2491,8 @@ align-items: center;
   display: block;
   color: black;
   text-align: center;
-  width: 310px;
-  padding: 14px 30px;
+  width: 20%;
+  padding: 14px 26px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -2542,3 +2556,10 @@ align-items: center;
   justify-content: center;
   padding: 10px 10px 60px 10px;
 }
+.carousel-control-prev-icon {
+  background-image: url("https://www.vippng.com/png/full/12-123312_circle-arrow-left-comments-icon-shock.png") !important;
+ }
+ 
+ .carousel-control-next-icon {
+   background-image: url("https://cdn-icons-png.flaticon.com/512/44/44567.png") !important;
+ }

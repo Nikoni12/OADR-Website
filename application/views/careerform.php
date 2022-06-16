@@ -47,17 +47,40 @@
                                 </nav>
                             </div>
                             <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
-							<div class="newscarhead"><h1><u>Chief Administrative Officer</u></h1><br></div> 
-							<h4>OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</h4>
-							<div id=""><b>Place of Assignment:</b>Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
-							<div id=""><b>Position Title :</b> Administrative Assistant</div>
-							<div id=""><b>Plantilla Item No. :</b> CADOF-5-2021</div>
-							<div id=""><b>Salary/Job/Pay Grade :</b> 24</div>
-							<div id=""><b>Monthly Salary :</b> Php 88,410.00</div>
-							<div id=""><b>Eligibility :</b> CS Professional/ Second Level Eligibility</div>
-							<div id=""><b>Education :</b> Master`s Degree or Certificate in Leadership and Management from the CSC</div>
-							<div id=""><b>Training :</b> 40 hours of supervisory and management learning and development</div>
-							<div id=""><b>Work Experience :</b> 4 years of supervisory and management experience</div>
+							<div class="newscarhead"><h1><u>Application Form</u></h1><br></div>
+							<form>
+                    <div class="form-group">
+                        <label for="username">Name:</label>
+                        <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Email:</label>
+                        <input type="email" class="form-control" id="adminname" name="adminname"  placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Phone Number:</label>
+                        <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Position:</label>
+                        <select class="select form-control" name="support-category" id="support-category" style = "max-width:100%;" required>
+                            <option value ="" disabled selected>Select Category</option>
+                            <option value="Hardware">Chief Administrative Officer</option>
+                            <option value="Software">Training Specialist</option>
+                            <option value="Software">Administrative Assistant</option>
+                            <option value="Software">Technical Consultant</option>
+                        </select>
+                    </div>
+					<div class="form-group">
+                        <label for="username">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+					<div class="form-group">
+                        <label for="username">CV or Resume (PDF)</label>
+                        <input type="file" class="form-control" id="adminname" name="adminname"   required>
+                    </div><br>
+                    <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>
+                </form>
                             </div>
                         </div>
                     </div>

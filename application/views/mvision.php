@@ -32,39 +32,29 @@
       </div>
     </section>
         <main id="main">
-            <section class="features" >
-                <div class="container" >
+        <section class="features">
+            <div class="container">
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Mission and Vision</h1><br> 
-                <div id="grid-container">
-            <div id="box-1">
-            <div class="sidebar">
-                <nav>
-                <h4 style="font-weight:bold;">About</h4>
-                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
-                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
-                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
-                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
-                </nav>
-            </div>
-            </div> 
-            <div id="box-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">M</span>ission</p>
-                            <p style = "text-align:justify;">To promote and institutionalize the effective and ethical use and practice of ADR in the country.</p>
-                        </div>
-                        <div class="col-md-12">
-                            <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">V</span>ision</p>
-                            <p style = "text-align:justify;">We envision an enlightened society that rises above conflicts and empowers parties in making arrangements to settle their own disputes that is fair and just for all.</p>
+                    <div class="row ">
+                        <div class="col-md-3 sidebar" style = "">
+                            <nav>
+                                <h4 style="font-weight:bold;">ABOUT</h4>
+                                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
+                                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
+                                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
+                                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
+                                </nav>
+                            </div>
+                            <div class="col-md-8"  style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
+                                <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">M</span>ission</p>
+                                <p style = "text-align:justify;">To promote and institutionalize the effective and ethical use and practice of ADR in the country.</p>
+                                <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">V</span>ision</p>
+                                <p style = "text-align:justify;">We envision an enlightened society that rises above conflicts and empowers parties in making arrangements to settle their own disputes that is fair and just for all.</p>
+                            </div>
                         </div>
                     </div>
-            </div>
-
-            </div>
-
                 </div>
-            </section>
-            <br>
+        </section>
             <section class="page-section" id="services">
 				<div class="container px-4 px-lg-5">
 					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
@@ -103,6 +93,7 @@
 					</div>
 				</div>
 			</section>
+            <br>
         </main>
         <?php $this->view('footer'); ?>
 

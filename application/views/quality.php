@@ -18,7 +18,7 @@
         <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
     </head>
-    <body style = "background-color:#fff5ee;">
+    <body>
         <?php include_once('header.php');?>
         <section id="hero" class="d-flex justify-cntent-center align-items-center">
       <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
@@ -32,48 +32,44 @@
       </div>
     </section>
         <main id="main">
-        <section class="features" style = "padding:0px;">
-        <div class="container px-5 my-5">
-        <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Quality Policy</h1><br> 
-        <div id="grid-container">
-            <div id="box-1">
-            <div class="sidebar">
-                <nav>
-                <h4 style="font-weight:bold;">About</h4>
-                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
-                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
-                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
-                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
-                </nav>
-            </div>
-            </div> 
-            <div id="box-4">
-            
-        <p style = "font-size:20px;text-align:justify;"><span style = "font-size: 60px;line-height: 70px;">W</span>e, the OADR, are committed to promote, develop and expand the use of ADR in the public and private sectors. As we strive to be a world-class, dynamic policy-making body in promoting the effective and ethical use of ADR in the country, we commit to:</p>
-          <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class="" ><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/presentation.png');?>"></div><br>
-              <h2 class="h4 fw-bolder">DELIVER</h2>
-              <p style = "text-align:justify;">Deliver quality services relating to promotion, training, accreditation and certification, policy and development of ADR use in the public and private sectors;</p>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class=""><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/auction.png');?>"></i></div><br>
-              <h2 class="h4 fw-bolder">COMPLY</h2>
-              <p style = "text-align:justify;">Comply with applicable statutory and regulatory requirements; and</p>
-            </div>
-            <div class="col-lg-4">
-              <div class=""><img class="img-fluid" style = "max-width:200px;" src="<?php echo base_url('assets/img/search.png');?>"></i></div><br>
-              <h5 class="fw-bolder">IMPROVE</h5>
-              <p style = "text-align:justify;">Continually improve our organization's systems and approaches to ensure the highest level of satisfaction of all our stakeholders.</p>
-            </div>
-          </div>
-            </div>
-
-            </div>
-        
-        </div>
-      </section>
       <section class="page-section" id="services">
+        <section class="features">
+            <div class="container">
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Quality Policy</h1><br> 
+                    <div class="row ">
+                        <div class="col-md-3 sidebar" style = "">
+                            <nav>
+                                <h4 style="font-weight:bold;">ABOUT</h4>
+                                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
+                                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
+                                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
+                                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
+                                </nav>
+                            </div>
+                            <div class="col-md-8"  style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
+								<div class="row gx-5">
+            						<div class="col-lg-4 mb-5 mb-lg-0">
+              							<div class="" ><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/presentation.png');?>"></div><br>
+              							<h2 class="h4 fw-bolder">DELIVER</h2>
+              							<p style = "text-align:justify;">Deliver quality services relating to promotion, training, accreditation and certification, policy and development of ADR use in the public and private sectors;</p>
+            						</div>
+									<div class="col-lg-4 mb-5 mb-lg-0">
+										<div class=""><img class="img-fluid"  style = "max-width:200px;"src="<?php echo base_url('assets/img/auction.png');?>"></i></div><br>
+										<h2 class="h4 fw-bolder">COMPLY</h2>
+										<p style = "text-align:justify;">Comply with applicable statutory and regulatory requirements; and</p>
+									</div>
+									<div class="col-lg-4">
+										<div class=""><img class="img-fluid" style = "max-width:200px;" src="<?php echo base_url('assets/img/search.png');?>"></i></div><br>
+										<h5 class="fw-bolder">IMPROVE</h5>
+										<p style = "text-align:justify;">Continually improve our organization's systems and approaches to ensure the highest level of satisfaction of all our stakeholders.</p>
+									</div>
+          						</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+            <section class="page-section" id="services">
 				<div class="container px-4 px-lg-5">
 					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
 					<hr class="divider" />
@@ -111,6 +107,7 @@
 					</div>
 				</div>
 			</section>
+            <br>
         </main>
         <?php $this->view('footer'); ?>
 
