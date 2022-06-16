@@ -34,7 +34,7 @@
         <main id="main">
             <section class="features" >
                 <div class="container" >
-
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Mission and Vision</h1><br> 
                 <div id="grid-container">
             <div id="box-1">
             <div class="sidebar">
@@ -48,7 +48,6 @@
             </div>
             </div> 
             <div id="box-4">
-            <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Mission and Vision</h1><br> 
                     <div class="row">
                         <div class="col-md-12">
                             <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">M</span>ission</p>

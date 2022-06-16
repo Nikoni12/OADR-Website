@@ -33,57 +33,38 @@
 			</div>
 		</section>
 		<main id="main">
-
-
-		<section class="features adrcontain" style="padding:0;">
+		<div class="topnav">
+			<a href="#adr">Alternative Dispute Resolution</a>
+			<a href="#announcement">Announcement</a>
+			<a href="#upcomingevent">Upcoming Events</a>
+			<a href="#mediafeed">Media Feed</a>
+			<div class="search-container">
+				<form action="">
+				<input type="text" placeholder="Search.." name="search">
+				<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>
+		</div>
+		<section class="features adrcontain" style="padding:0;" id="adr">
                 <div class="container sect_post">
                     <div class="row">
+					<div class="logobar">
+								<div class="mb-2"><img style = "max-width:150px;"class="img-fluid" src="<?php echo base_url('assets/img/dojlogo.png');?>"></div>
+								<div class="mb-2"><img style = "max-width:250px;"class="img-fluid" src="<?php echo base_url('assets/img/OADRNOBG.png');?>"></div>
+					</div>
 					<iframe class="col-md-6" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
                         <div class="col-md-6 sect_info">
 						<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>
 				<div class="border"></div>
 				<p class="sect_text">
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p>
                         </div>
                     </div>
                 </div>
             </section>
-			
-			<!-- <div class="adrcontain">
-	  			<div class="sect_post">
-					<div class="sect_img">
-						<iframe class="col-md-12" width="600" height="480" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="sect_info">
-						<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>
-						<div class="border"></div>
-							<p class="sect_text">
-								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-							</p>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			<!--ADR-
-			<section class="features" style="background-color:lightskyblue;">
-                <div class="adrcontain">
-                    <div class="row text-center">
-                        <div class="col-md-5">
-                            <br>
-                            <h5 class="text-center">WHAT IS ADR?</h5>
-                            <h2 class="text-center">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION</h2><br>
-                            <p style = "text-align:justify;">The Office for Alternative Dispute Resolution (OADR) is an attached agency of the Department of Justice created pursuant to Republic Act (R.A.) No. 9285 or the Alternative Dispute Resolution (ADR) Act of 2004.</p><br>
-                            <p style = "text-align:justify;">It is mandated to promote, develop and expand the use of ADR in the private and public sectors; assist the government in monitoring, studying and evaluating the use of ADR by the public and private sectors; and recommend to Congress needful statutory changes to develop, strengthen and improve ADR practices in accordance with world standards.</p>
-                        </div>
-						<div class="col-md-6">
-                            <iframe class="responsive-iframe" width="800" height="480" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
 			<section style="padding:0; margin:0;">
-				<div class="row resourceimg">
+				<div class="row resourceimg" style="margin-right:0;">
 				<div class="column" >
 					<div style="margin-left:32px;"><h2 class="resourcetxt">Solve Problems with Alternative Resolutions.</h2></div>
 				</div>
@@ -93,12 +74,11 @@
 				</div>
 				</div>
 			</section>
-			<br><br>
-			<section class="features">
+			<br><br><br><br>
+			<section class="features" id="announcement">
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
 					<div class="row ">
-						
 						<div class="col-md-12 " >
 							<div id="demo" class="carousel slide" data-bs-ride="carousel">
 								<div class="carousel-indicators">
@@ -173,7 +153,45 @@
 					</div>
 				</div>
 			</section>
-			<section class="features ">
+
+
+
+			
+			<!-- <div class="adrcontain">
+	  			<div class="sect_post">
+					<div class="sect_img">
+						<iframe class="col-md-12" width="600" height="480" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="sect_info">
+						<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>
+						<div class="border"></div>
+							<p class="sect_text">
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+							</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<!--ADR-
+			<section class="features" style="background-color:lightskyblue;">
+                <div class="adrcontain">
+                    <div class="row text-center">
+                        <div class="col-md-5">
+                            <br>
+                            <h5 class="text-center">WHAT IS ADR?</h5>
+                            <h2 class="text-center">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION</h2><br>
+                            <p style = "text-align:justify;">The Office for Alternative Dispute Resolution (OADR) is an attached agency of the Department of Justice created pursuant to Republic Act (R.A.) No. 9285 or the Alternative Dispute Resolution (ADR) Act of 2004.</p><br>
+                            <p style = "text-align:justify;">It is mandated to promote, develop and expand the use of ADR in the private and public sectors; assist the government in monitoring, studying and evaluating the use of ADR by the public and private sectors; and recommend to Congress needful statutory changes to develop, strengthen and improve ADR practices in accordance with world standards.</p>
+                        </div>
+						<div class="col-md-6">
+                            <iframe class="responsive-iframe" width="800" height="480" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+
+
+			<section class="features" id="upcomingevent">
                 <div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Upcoming Events</h1><br> 
 					<div class="row mt-4 ">
@@ -204,6 +222,28 @@
 						<div class="col-md-4 mx-auto text-center">
 							<a href="http://localhost/OADR-Website/User/events"><button type="button" class="btn btn-warning">View All Events</button></a>
       					</div> 
+    				</div>
+                </div>
+            </section>
+			<section class="features" id="mediafeed">
+                <div class="container">
+				<div class="row mt-4 ">
+					<div id="grid-container">
+					<div id="box-1">
+					<div class="sidenav">
+						<nav>
+						<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+						<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+						<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+						<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+						</nav>
+					</div>
+					</div>
+					<div style="overflow-y: scroll; height:600px; background:skyblue;">
+						<a class="twitter-timeline" href="https://twitter.com/DOJPH?ref_src=twsrc%5Etfw">Tweets by DOJPH</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+
+            	</div>
     				</div>
                 </div>
             </section>
