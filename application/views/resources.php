@@ -37,7 +37,7 @@
                 <div class="row">
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Resources</h1><br>
                     <div class="col-md-4 mt-3 col-lg-4 containerimg">
-                        <img class="img-fluid"  src="<?php echo base_url('assets/img/placeholder.jpg');?>">
+                        <img class="img-fluid"  src="<?php echo base_url('assets/img/materials.jpg');?>">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#oadr1">
                         <div class="overlay">
                             <div class="text">OADR IEC MATHERIALS</div>
@@ -45,7 +45,7 @@
                         </a>
                     </div>
                     <div class="col-md-4 mt-3 col-lg-4 containerimg">
-                        <img class="img-fluid"  src="<?php echo base_url('assets/img/placeholder.jpg');?>">
+                        <img class="img-fluid"  src="<?php echo base_url('assets/img/practition.jpg');?>">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#oadr2">
                             <div class="overlay">
                                 <div style = "font-size:16px;"class="text">OADR-ACCREDITED ADR PRACTITIONERS, <br>APOs AND PUBLIC ADR PROGRAM <br>(As of April 2022)</div>
@@ -53,7 +53,7 @@
                         </a>
                     </div>
                     <div class="col-md-4 mt-3 col-lg-4 containerimg">
-                        <img class="img-fluid"  src="<?php echo base_url('assets/img/placeholder.jpg');?>">
+                        <img class="img-fluid"  src="<?php echo base_url('assets/img/individuals.jpg');?>">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#oadr3">
                             <div class="overlay">
                                 <div class="text">OADR-TRAINED INDIVIDUALS</div>
@@ -61,7 +61,7 @@
                         </a>
                     </div>
                     <div class="col-md-4 mt-3 col-lg-4 containerimg">
-                        <img class="img-fluid"  src="<?php echo base_url('assets/img/placeholder.jpg');?>">
+                        <img class="img-fluid"  src="<?php echo base_url('assets/img/lawpolicies.jpg');?>">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#oadr4">
                             <div class="overlay">
                                 <div class="text">ADR-RELATED LAWS, POLICIES <br>AND ISSUANCES</div>
@@ -69,7 +69,7 @@
                         </a>
                     </div>
                     <div class="col-md-4 mt-3 col-lg-4 containerimg">
-                        <img class="img-fluid"  src="<?php echo base_url('assets/img/placeholder.jpg');?>">
+                        <img class="img-fluid"  src="<?php echo base_url('assets/img/schedule.jpg');?>">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#oadr5">
                             <div class="overlay">
                                 <div class="text">ADR TRAINING AND ORIENTATION <br>SEMINAR SCHEDULES FOR 2022</div>
@@ -77,7 +77,7 @@
                         </a>
                     </div>
                     <div class="col-md-4 mt-3 col-lg-4 containerimg">
-                        <img class="img-fluid"  src="<?php echo base_url('assets/img/placeholder.jpg');?>">
+                        <img class="img-fluid"  src="<?php echo base_url('assets/img/downloadforms.jpg');?>">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#oadr6">
                             <div class="overlay">
                                 <div class="text">DOWNLOADABLE FORMS <br> (As of January 2022)</div>
@@ -85,7 +85,7 @@
                         </a>
                     </div>
                     <div class="col-md-4 mt-3 col-lg-4 containerimg">
-                        <img class="img-fluid"  src="<?php echo base_url('assets/img/placeholder.jpg');?>">
+                        <img class="img-fluid"  src="<?php echo base_url('assets/img/citizenscharter.jpg');?>">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#oadr7">
                             <div class="overlay">
                                 <div class="text">CITIZEN’S CHARTER</div>
