@@ -47,7 +47,7 @@
                                 </nav>
                             </div>
                             <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
-							<div class="newscarhead"><h1><u>Application Form</u></h1><br></div>
+							<div class="newscarhead"><h1>Application Form</h1><br></div>
 							<form>
                     <div class="form-group">
                         <label for="username">Name:</label>
