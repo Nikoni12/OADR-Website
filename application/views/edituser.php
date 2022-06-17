@@ -53,12 +53,12 @@
                                                         <form method="POST" class="user">
                                                             <div class="form-group">
                                                                 <label for="username">Admin Name </label></button>
-                                                                <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Admin Name" value = "Administrator">
+                                                                <input type="text" class="form-control" id="adminname" name="nameadmin"  placeholder="Enter Admin Name" value = "Administrator">
                                                                 
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="username">Username</label>
-                                                                <input type="text" class="form-control" id="username" name="username"  placeholder="Enter Username" value = "admin">
+                                                                <input type="text" class="form-control" id="username" name="usernameadmin"  placeholder="Enter Username" value = "admin">
                                                             </div>
                                                             <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                                                         </form>

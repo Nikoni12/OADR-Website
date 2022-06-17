@@ -43,31 +43,24 @@
                                                 <th>ID</th>
                                                 <th>Name</th>
                                                 <th>Username</th>
+                                                <th>Mobile Number</th>
                                                 <th>Role</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Administrator</td>
-                                                <td>admin</td>
-                                                <td>Admin</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Staff1</td>
-                                                <td>staff</td>
-                                                <td>Staff</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                                foreach($users->result() as $lp){
+                                                    echo "<tr>";
+                                                    echo "<td align = 'center'>".$lp->ID."</td>";
+                                                    echo "<td align = 'center'>".$lp->AdminName."</td>";
+                                                    echo "<td align = 'center'>".$lp->UserName."</td>";
+                                                    echo "<td align = 'center'>".$lp->MobileNumber."</td>";
+                                                    echo "<td align = 'center'>".$lp->role."</td>";
+                                                    echo "<td style = 'text-align:center; font-size:20px;'><i class='fa fa-pencil-square-o' aria-hidden='true'></i>&ensp; <i class='fa fa-trash-o' aria-hidden='true'></i></td>";
+                                                    echo "</tr>";
+                                                }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>

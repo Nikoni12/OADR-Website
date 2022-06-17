@@ -50,4 +50,32 @@ class Users_model extends CI_Model {
         return $this->db->insert_id(); 
 	}
 
+    public function checkticket($ticket){
+        $this->db->select('ticket');
+        $this->db->from('inquiries');
+        $this->db->where('ticket', $ticket);
+        $query = $this->db->get();
+        if($query->num_rows() > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function insertinquiry($inq){
+		$this->db->insert('inquiries', $inq);
+		return $this->db->insert_id(); 
+	}
+    public function view_users(){
+        $result = $this->db->get('admin');
+        return $result;
+    }
+    public function insertuser($add){
+		$this->db->insert('admin', $add);
+		return $this->db->insert_id(); 
+	}
+    public function updateuser($uname,$data){
+        $this->db->where('UserName',$uname);
+        $this->db->update('users',$data);
+    }
+
 }

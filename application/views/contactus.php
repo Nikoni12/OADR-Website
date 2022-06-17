@@ -66,22 +66,26 @@
                     <div class="row">
                         <iframe class="col-md-6" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.982959976328!2d121.04382741481925!3d14.656908489766622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4d29f24eb168db9b!2sNATIONAL%20FOOD%20AUTHORITY%20NFA!5e0!3m2!1sen!2sph!4v1655110690166!5m2!1sen!2sph" width="355" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <div class="col-md-6" style = "padding-right:0; padding-left:10px;">
-                            <form>
+                        <form method="post"  action="<?php echo base_url();?>User/inquiryform">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juan Dela Cruz">
+                                    <input name = "fullname" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Juan Dela Cruz">
+                                    <span class="text-danger fontColor"><?php echo form_error('fullname'); ?></span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="juandelacruz@gmail.com">
+                                    <input name = "emailaddress" type="email" class="form-control" id="exampleFormControlInput1" placeholder="juandelacruz@gmail.com">
+                                    <span class="text-danger fontColor"><?php echo form_error('emailaddress'); ?></span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Subject</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inquiry">
+                                    <input name = "subject" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inquiry">
+                                    <span class="text-danger fontColor"><?php echo form_error('subject'); ?></span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea name = "message"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <span class="text-danger fontColor"><?php echo form_error('message'); ?></span>
                                 </div>
                                 <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>
                             </form>
