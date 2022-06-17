@@ -9,6 +9,7 @@ class User extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
         $this->load->library('session');
+		$this->load->library('session');
 	}
 	
 	public function index(){
@@ -89,7 +90,8 @@ class User extends CI_Controller {
 		$this->load->view('adminapplications');
 	}
 	public function adminusers(){
-		$this->load->view('adminusers');
+		$data['users'] = $this->users_model->view_users();
+		$this->load->view('adminusers', $data);
 	}
 	public function admincatresources(){
 		$this->load->view('admincatresources');
@@ -116,8 +118,6 @@ class User extends CI_Controller {
 			$this->users_model->insertannouncement($ann);
 			redirect(base_url() . 'User/announcementsadmin');
 		}
-
-
 
 	}
 	public function addevent(){
@@ -161,7 +161,7 @@ class User extends CI_Controller {
         if($this->form_validation->run()){
             if($this->users_model->check_login($username,$password)){
 				redirect("./User/dashboard/","refresh");
-				$this->session->set_flashdata('uname',$username);
+				$this->session->set_flashdata('username',$username);
             } else {
 				echo "<script>alert('Invalid Username or Password');</script>";
                 $this->adminlogin();
@@ -216,6 +216,82 @@ class User extends CI_Controller {
 		} else {
 			$this->careerform();
 		}
-		
+    }
+	public function inquiryform(){
+        $this->load->model('Users_model');
+        $fullname = $this->input->post('fullname');
+        $emailaddress = $this->input->post('emailaddress');
+		$subject = $this->input->post('subject');
+		$message = $this->input->post('message');
+        $this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('fullname', 'Full Name', 'required');
+        $this->form_validation->set_rules('emailaddress', 'Email Address', 'required');
+		$this->form_validation->set_rules('subject', 'Subject', 'required');
+		$this->form_validation->set_rules('message', 'Message', 'required');
+		$inq['Name'] = $fullname;
+		$inq['Email'] = $emailaddress;
+		$inq['Subject'] = $subject;
+		$inq['message'] = $message;
+		$inq['status'] = 'Not Addressed';
+		$ticket = sprintf("%'.09d\n", mt_rand(1,999999999999));
+		if($this->Users_model->checkticket($ticket) == true){
+			$ticket = sprintf("%'.09d\n", mt_rand(1,999999999999));
+		}
+		$inq['ticket'] = $ticket;
+		if($this->form_validation->run()){
+			$this->users_model->insertinquiry($inq);
+			redirect("./User/contact/","refresh"); 
+		} else {
+			$this->contact();
+		}
+    }
+	public function add_user(){
+        $this->load->model('Users_model');
+        $adminName = $this->input->post('adminName');
+        $adminUsername = $this->input->post('adminUsername');
+		$adminPassword = $this->input->post('adminPassword');
+		$adminconfirmpass = $this->input->post('adminconfirmpass');
+		$adminrole = $this->input->post('adminrole');
+		$adminnumber = $this->input->post('adminnumber');
+        $this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('adminName', 'Admin Name', 'required');
+        $this->form_validation->set_rules('adminUsername', 'Admin Username', 'required');
+		$this->form_validation->set_rules('adminnumber', 'Admin Phone Number', 'required');
+		$this->form_validation->set_rules('adminPassword', 'Admin Password', 'required');
+		$this->form_validation->set_rules('adminconfirmpass', 'Admin Confirm Password', 'required|matches[adminPassword]');
+		$this->form_validation->set_rules('adminrole', 'Admin Role', 'required');
+		$add['AdminName'] = $adminName;
+		$add['UserName'] = $adminUsername;
+		$add['MobileNumber'] = $adminnumber;
+		$add['Password'] = md5($adminPassword);
+		$add['role'] = $adminrole;
+		if($this->form_validation->run()){
+			$this->users_model->insertuser($add);
+			redirect("./User/adminusers/","refresh"); 
+		} else {
+			$this->adduser();
+		}
+    }
+	public function editaccount(){
+        $this->load->model('Users_model');
+        $nameadmin = $this->input->post('nameadmin');
+        $usernameadmin = $this->input->post('usernameadmin');
+        $this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('nameadmin', 'Admin Name', 'required');
+        $this->form_validation->set_rules('usernameadmin', 'Admin Username', 'required');
+        if($this->form_validation->run()){
+            if($this->users_model->check_login($username,$password)){
+				redirect("./User/dashboard/","refresh");
+				$this->session->set_flashdata('username',$username);
+            } else {
+				echo "<script>alert('Invalid Username or Password');</script>";
+                $this->adminlogin();
+            }
+        } else {
+            $this->adminlogin();
+        }
     }
 }
