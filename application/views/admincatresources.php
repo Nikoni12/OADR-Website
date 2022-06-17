@@ -32,6 +32,16 @@
                             <span style = "color:black;" class="text">Add Resources Category</span>
                         </a>
                         <br><br>
+
+                        <?php 
+                            foreach($announcement as $row) {
+                                echo "<tr>";
+                        ?>
+                        <?php 
+                                echo "<td>".$row->announcement_title."</td>";
+                                echo "<td>".$row->announcement_content."</td>";
+                            }
+                        ?>
                         
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"></div>

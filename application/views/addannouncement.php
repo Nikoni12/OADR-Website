@@ -29,18 +29,18 @@
                         <div class="col-xl-6 col-lg-10 col-md-6">
                             <div class="card o-hidden border-0 shadow-lg my-5">
                                 <div class="card-body " data-aos="slide-up">
-                                <form method="POST" class="user">
+                        <form method="POST" action="<?php echo base_url();?>User/submitannouncement" enctype="multipart/form-data" class="user">
                         <div class="form-group">
                             <label for="username">Title:</label>
-                            <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                            <input type="text" class="form-control" id="announcement_title" name="announcement_title"  placeholder="Enter Article Title" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Content:</label>
-                            <textarea class="form-control" id="support-reply" name="support-reply" rows="3"></textarea>
+                            <textarea class="form-control" id="announcement_content" name="announcement_content" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                            <input type="file" class="form-control" id="announcement_image" name="announcement_image" required>
                         </div>
 
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>

@@ -37,4 +37,17 @@ class Users_model extends CI_Model {
 		$this->db->where('Name',$name);
         $this->db->update('careers',$data);
 	}
+
+    public function getannouncement(){
+        $this->db->select('*');
+        $this->db->from('announcements');
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+    public function insertannouncement($ann){
+		$this->db->insert('announcements', $ann);
+        return $this->db->insert_id(); 
+	}
+
 }

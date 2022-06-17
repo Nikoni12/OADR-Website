@@ -31,6 +31,7 @@
                             </span>
                             <span style = "color:black;" class="text">Add Announcement</span>
                         </a><br><br>
+                        
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"></div>
                             <div class="card-body">
@@ -45,51 +46,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php 
+                                            foreach($announcement as $row) {
+                                            ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Announcement Title 1</td>
-                                                <td>2022-01-01 12:00 NN</td>
+                                            <?php 
+                                                echo "<td>".$row->ID."</td>";
+                                                echo "<td>".$row->announcement_title."</td>";
+                                                echo "<td>".$row->announcement_content."</td>";
+                                                echo "<td>2022-01-01 12:00 NN</td>";
+                                            ?>
                                                 <td style = "text-align:center; font-size:20px;">
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </td>
+                                                <?php
+                                             } 
+                                             ?>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Announcement Title 2</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Announcement Title 3</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Announcement Title 4</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Announcement Title 5</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>

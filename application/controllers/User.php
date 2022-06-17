@@ -68,16 +68,19 @@ class User extends CI_Controller {
 		$this->load->view('newsadmin');
 	}
 	public function announcementsadmin(){
-		$this->load->view('announcementsadmin');
+		$data['announcement'] = $this->users_model->getannouncement();
+		$this->load->view('announcementsadmin', $data);
 	}
 	public function eventadmin(){
 		$this->load->view('eventsadmin');
 	}
 	public function adminresources(){
+		
 		$this->load->view('adminresources');
 	}
 	public function announcement(){
-		$this->load->view('announcement');
+		$data['announcement'] = $this->users_model->getannouncement();
+		$this->load->view('announcement', $data);
 	}
 	public function admininquiries(){
 		$this->load->view('admininquiries');
@@ -96,6 +99,26 @@ class User extends CI_Controller {
 	}
 	public function addannouncement(){
 		$this->load->view('addannouncement');
+	}
+
+	public function submitannouncement(){
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('announcement_image')) {
+			$announcement_image = $this->upload->data('file_name');
+			$ann = array(
+				'announcement_title' => $this->input->post('announcement_title'),
+				'announcement_content' => $this->input->post('announcement_content'),
+				'announcement_image' => $announcement_image
+			);
+			$this->users_model->insertannouncement($ann);
+			redirect(base_url() . 'User/announcementsadmin');
+		}
+
+
+
 	}
 	public function addevent(){
 		$this->load->view('addevent');

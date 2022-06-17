@@ -36,51 +36,25 @@
 			<section class="features">
 				<div class="container">
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
+				<?php 
+                    foreach($announcement as $row) {
+				?>
 					<div class="row">
                         <div class="row mb-12 border-bottom pb-2">
                             <div class="col-md-3">
-                                <img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
+								<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->announcement_image."' class='img-fluid shadow-1-strong rounded'>"."</td>"; ?>
+                                <!--<img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />-->
                             </div>
                             <div class="col-md-9">
-                                <p class="mb-2"><strong>Title</strong></p>
-                                <p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
+                               	<?php echo "<p class='mb-2'><strong>$row->announcement_title</strong></p>" ?>
+                                <?php echo "<p style = 'text-align:justify;'> <u>$row->announcement_content</u></p>" ?>
                                 <button data-bs-toggle="modal" data-bs-target="#oadr1" type="button" class="btn btn-outline-info">View <i class="fa fa-eye" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-						<!-- News -->
-						<div class="row mb-12 border-bottom pb-2">
-                            <div class="col-md-3">
-                                <img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
-                            </div>
-                            <div class="col-md-9">
-                                <p class="mb-2"><strong>Title</strong></p>
-                                <p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
-                                <button data-bs-toggle="modal" data-bs-target="#oadr1" type="button" class="btn btn-outline-info">View <i class="fa fa-eye" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-						<!-- News -->
-						<div class="row mb-12 border-bottom pb-2">
-                            <div class="col-md-3">
-                                <img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
-                            </div>
-                            <div class="col-md-9">
-                                <p class="mb-2"><strong>Title</strong></p>
-                                <p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
-                                <button data-bs-toggle="modal" data-bs-target="#oadr1" type="button" class="btn btn-outline-info">View <i class="fa fa-eye" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-						<!-- News -->
-						<div class="row mb-12 border-bottom pb-2">
-                            <div class="col-md-3">
-                                <img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
-                            </div>
-                            <div class="col-md-9">
-                                <p class="mb-2"><strong>Title</strong></p>
-                                <p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
-                                <button data-bs-toggle="modal" data-bs-target="#oadr1"type="button" class="btn btn-outline-info">View <i class="fa fa-eye" aria-hidden="true"></i></button>
                             </div>
                         </div>
 					</div>
+					<?php
+					}
+					?>
 				</div>
 			</section>
 		</main>
