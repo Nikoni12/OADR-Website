@@ -41,15 +41,15 @@
                                 <form method="POST" class="user">
                         <div class="form-group">
                             <label for="username">Title:</label>
-                            <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                            <input type="text" class="form-control" id="article_title" name="article_title"  placeholder="Enter Article Title" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Content:</label>
-                            <textarea class="form-control" id="support-reply" name="support-reply" rows="3"></textarea>
+                            <textarea class="form-control" id="article_content" name="article_content" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                            <input type="file" class="form-control" id="article_image" name="article_image"  placeholder="Enter Article Title" required>
                         </div>
                         <div class="form-group">
                             <label for="id_start_datetime">Start Date</label>
