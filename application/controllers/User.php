@@ -137,7 +137,7 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required');
         if($this->form_validation->run()){
             if($this->users_model->check_login($username,$password)){
-                $this->dashboard();
+				redirect("./User/dashboard/","refresh");
 				$this->session->set_flashdata('uname',$username);
             } else {
 				echo "<script>alert('Invalid Username or Password');</script>";
@@ -146,5 +146,53 @@ class User extends CI_Controller {
         } else {
             $this->adminlogin();
         }
+    }
+	public function applicationform(){
+        $this->load->model('Users_model');
+        $name = $this->input->post('name');
+        $email = $this->input->post('email');
+		$pnum = $this->input->post('pnum');
+		$category = $this->input->post('category');
+		$message = $this->input->post('message');
+        $this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('pnum', 'Phone Number', 'required');
+		$this->form_validation->set_rules('category', 'Category', 'required');
+		$this->form_validation->set_rules('message', 'Message', 'required');
+		$app['Name'] = $name;
+		$app['Email'] = $email;
+		$app['PhoneNum'] = $pnum;
+		$app['Category'] = $category;
+		$app['status'] = 'Not Addressed';
+		$app['Message'] = $message;
+		$appnum = sprintf("%'.09d\n", mt_rand(1,999999999999));
+		if($this->Users_model->checkappnum($appnum) == true){
+			$appnum = sprintf("%'.09d\n", mt_rand(1,999999999999));
+		}
+		$app['appnum'] = $appnum;
+		if($this->form_validation->run()){
+			$this->users_model->insertcareer($app);
+			$config1 = array('upload_path' => './uploads/', 
+                        'allowed_types' => 'pdf',
+                        'max_size' => 9999 ); 
+			$this->load->library('upload'); 
+			$this->upload->initialize($config1);
+			if (!$this->upload->do_upload('resume')) {
+				$error = array('error' => $this->upload->display_errors());
+				print_r($error);
+			} else {
+				$this->load->model('users_model');
+				$name = $this->input->post('name');
+				$filename = $name.'.pdf';
+				$filepass = array('resume_name' => $filename);
+				$this->users_model->insertcareer2($name, $filepass); 
+				redirect("./User/careerform/","refresh"); 
+			}
+		} else {
+			$this->careerform();
+		}
+		
     }
 }

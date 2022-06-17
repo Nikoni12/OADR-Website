@@ -48,39 +48,44 @@
                             </div>
                             <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
 							<div class="newscarhead"><h1>Application Form</h1><br></div>
-							<form>
-                    <div class="form-group">
-                        <label for="username">Name:</label>
-                        <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Email:</label>
-                        <input type="email" class="form-control" id="adminname" name="adminname"  placeholder="Enter Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Phone Number:</label>
-                        <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Position:</label>
-                        <select class="select form-control" name="support-category" id="support-category" style = "max-width:100%;" required>
-                            <option value ="" disabled selected>Select Category</option>
-                            <option value="Hardware">Chief Administrative Officer</option>
-                            <option value="Software">Training Specialist</option>
-                            <option value="Software">Administrative Assistant</option>
-                            <option value="Software">Technical Consultant</option>
-                        </select>
-                    </div>
-					<div class="form-group">
-                        <label for="username">Message</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-					<div class="form-group">
-                        <label for="username">CV or Resume (PDF)</label>
-                        <input type="file" class="form-control" id="adminname" name="adminname"   required>
-                    </div><br>
-                    <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>
-                </form>
+                                <form method="post"  action="<?php echo base_url();?>User/applicationform" enctype="multipart/form-data" >
+                                    <div class="form-group">
+                                        <label for="username">Name:</label>
+                                        <input type="text" class="form-control" id="adminname" name="name"  placeholder="Enter Name">
+                                        <span class="text-danger fontColor"><?php echo form_error('name'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Email:</label>
+                                        <input type="email" class="form-control" id="adminname" name="email"  placeholder="Enter Email">
+                                        <span class="text-danger fontColor"><?php echo form_error('email'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Phone Number:</label>
+                                        <input type="text" class="form-control" id="adminname" name="pnum"  placeholder="Enter Number">
+                                        <span class="text-danger fontColor"><?php echo form_error('pnum'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Position:</label>
+                                        <select class="select form-control" name="category" id="support-category" style = "max-width:100%;">
+                                            <option value ="" disabled selected>Select Category</option>
+                                            <option value="Hardware">Chief Administrative Officer</option>
+                                            <option value="Software">Training Specialist</option>
+                                            <option value="Software">Administrative Assistant</option>
+                                            <option value="Software">Technical Consultant</option>
+                                        </select>
+                                        <span class="text-danger fontColor"><?php echo form_error('category'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Message</label>
+                                        <textarea class="form-control" name = "message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <span class="text-danger fontColor"><?php echo form_error('message'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">CV or Resume (PDF)</label>
+                                        <input type="file" class="form-control" id="adminname" name="resume">
+                                    </div><br>
+                                    <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
