@@ -18,4 +18,23 @@ class Users_model extends CI_Model {
             return false;
         }
     }
+    public function checkappnum($appnum){
+        $this->db->select('appnum');
+        $this->db->from('careers');
+        $this->db->where('appnum', $appnum);
+        $query = $this->db->get();
+        if($query->num_rows() > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function insertcareer($app){
+		$this->db->insert('careers', $app);
+		return $this->db->insert_id(); 
+	}
+    public function insertcareer2($name, $data){
+		$this->db->where('Name',$name);
+        $this->db->update('careers',$data);
+	}
 }
