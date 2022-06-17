@@ -84,12 +84,10 @@ class User extends CI_Controller {
 		$this->load->view('announcement', $data);
 	}
 	public function admininquiries(){
-		$data['inq'] = $this->users_model->inquiries();
-		$this->load->view('admininquiries', $data);
+		$this->load->view('admininquiries');
 	}
 	public function adminapplications(){
-		$data['app'] = $this->users_model->applications();
-		$this->load->view('adminapplications', $data);
+		$this->load->view('adminapplications');
 	}
 	public function adminusers(){
 		$data['users'] = $this->users_model->view_users();

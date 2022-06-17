@@ -77,12 +77,5 @@ class Users_model extends CI_Model {
         $this->db->where('UserName',$uname);
         $this->db->update('users',$data);
     }
-    public function inquiries(){
-        $result = $this->db->get('inquiries');
-        return $result;
-    }
-    public function applications(){
-        $result = $this->db->get('careers');
-        return $result;
-    }
+
 }
