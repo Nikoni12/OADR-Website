@@ -3,6 +3,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
  
 class User extends CI_Controller {
+	function __construct(){
+		parent::__construct();
+		$this->load->model('users_model');
+		$this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+        $this->load->library('session');
+	}
 	
 	public function index(){
 		$this->load->helper('url');
@@ -120,4 +127,24 @@ class User extends CI_Controller {
 	public function careerform(){
 		$this->load->view('careerform');
 	}
+	public function login(){
+        $this->load->model('Users_model');
+        $username = $this->input->post('username');
+        $password = md5($this->input->post('password'));
+        $this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        if($this->form_validation->run()){
+            if($this->users_model->check_login($username,$password)){
+                $this->dashboard();
+				$this->session->set_flashdata('uname',$username);
+            } else {
+				echo "<script>alert('Invalid Username or Password');</script>";
+                $this->adminlogin();
+            }
+        } else {
+            $this->adminlogin();
+        }
+    }
 }

@@ -32,14 +32,16 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
                                     </div>
-                                    <form>
+                                    <form method="post"  action="<?php echo base_url();?>User/login">
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" style = "border-radius:10rem;font-size:.8rem;">
-                                            <label style = "font-size:.8rem;"for="floatingInput">Enter Email Address / Username</label>
+                                            <input type="text" name = "username" class="form-control" id="floatingInput" placeholder="Enter Username" style = "border-radius:10rem;font-size:.8rem;">
+                                            <label style = "font-size:.8rem;"for="floatingInput">Enter Username</label>
+                                            <span class="text-danger fontColor"><?php echo form_error('username'); ?></span>
                                         </div>
                                         <div class="form-floating">
-                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" style = "border-radius:10rem;font-size:.8rem;">
+                                            <input type="password" name = "password" class="form-control" id="floatingPassword" placeholder="Enter Password" style = "border-radius:10rem;font-size:.8rem;">
                                             <label style = "font-size:.8rem;" for="floatingPassword">Enter Password</label>
+                                            <span class="text-danger fontColor"><?php echo form_error('password'); ?></span>
                                         </div>
                                         <br>
                                         <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>

@@ -32,7 +32,9 @@
 				</div>
 			</div>
 		</section>
-		<main id="main">
+		<main id="main" style = "overflow-x: hidden;">
+		
+		<section class="features" >
 		<div class="topnav">
 			<a href="#adr">ADR</a>
 			<a href="#announcement">Announcement</a>
@@ -45,6 +47,7 @@
 				</form>
 			</div>
 		</div>
+		</section>
 		<section class="features adrcontain" style="padding:0;" id="adr">
 		
                 <div class="container sect_post">
@@ -230,27 +233,23 @@
                 </div>
             </section>
 			<section class="features" id="mediafeed">
-                <div class="container">
-				<div class="row mt-4 ">
-					<div id="grid-container">
-					<div id="box-1">
-					<div class="sidenav">
-						<nav>
-						<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
-						<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
-						<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
-						<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
-						</nav>
-					</div>
-					</div>
-					<div style="overflow-y: scroll; height:600px; background:skyblue;">
-						<a class="twitter-timeline" href="https://twitter.com/DOJPH?ref_src=twsrc%5Etfw">Tweets by DOJPH</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-					</div>
-
-            	</div>
-    				</div>
+            	<div class="container">
+                	<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Twitter Feed</h1><br> 
+                    <div class="row ">
+                        <div class="col-md-3 sidenav"	style = "border-right:1px solid #031261;">
+							<nav>
+								<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+								<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+								<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+								<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+							</nav>
+                        </div>&ensp;
+						<div class="col-md-8" style = "overflow-y: scroll; height:600px; background:skyblue;">
+							<a class="twitter-timeline" href="https://twitter.com/DOJPH?ref_src=twsrc%5Etfw">Tweets by DOJPH</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+                    </div>
                 </div>
-            </section>
+        	</section>
 			<section class="page-section" id="services">
 				<div class="container px-4 px-lg-5">
 					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
