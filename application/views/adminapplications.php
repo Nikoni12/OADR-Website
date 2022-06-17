@@ -33,118 +33,39 @@
                                         <thead style = "text-align:center;">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Title</th>
-                                                <th>Date Added</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Position</th>
+                                                <th>Date Applied</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Accepted</a>
-                                                            <a class="dropdown-item" href="#">Rejected</a>
+                                        <?php
+                                                foreach($app->result() as $lp){
+                                                    echo "<tr>";
+                                                    echo "<td align = 'center'>".$lp->ID."</td>";
+                                                    echo "<td align = 'center'>".$lp->Name."</td>";
+                                                    echo "<td align = 'center'>".$lp->Email."</td>";
+                                                    echo "<td align = 'center'>".$lp->Category."</td>";
+                                                    echo "<td align = 'center'>".$lp->date."</td>";
+                                                    echo "<td align = 'center'>
+                                                        <div class='btn-group btn-group-sm'>
+                                                            <a href='#' class='btn btn-warning'>".$lp->status."</a>
+                                                            <button type='button' class='btn btn-warning dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                                                <span class='sr-only'>Toggle Dropdown</span>
+                                                            </button>
+                                                            <div class='dropdown-menu dropdown-menu-right'>
+                                                                <a class='dropdown-item' href='#'>Addressed</a>
+                                                                <a class='dropdown-item' href='#'>Not Yet Addressed</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Accepted</a>
-                                                            <a class="dropdown-item" href="#">Rejected</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Accepted</a>
-                                                            <a class="dropdown-item" href="#">Rejected</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Accepted</a>
-                                                            <a class="dropdown-item" href="#">Rejected</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Accepted</a>
-                                                            <a class="dropdown-item" href="#">Rejected</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
+                                                    </td>";
+                                                    echo "<td style = 'text-align:center; font-size:20px;'><i class='fa fa-pencil-square-o' aria-hidden='true'></i>&ensp; <i class='fa fa-trash-o' aria-hidden='true'></i></td>";
+                                                    echo "</tr>";
+                                                }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>

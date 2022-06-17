@@ -68,10 +68,10 @@
                                         <label for="username">Position:</label>
                                         <select class="select form-control" name="category" id="support-category" style = "max-width:100%;">
                                             <option value ="" disabled selected>Select Category</option>
-                                            <option value="Hardware">Chief Administrative Officer</option>
-                                            <option value="Software">Training Specialist</option>
-                                            <option value="Software">Administrative Assistant</option>
-                                            <option value="Software">Technical Consultant</option>
+                                            <option value="Chief Administrative Officer">Chief Administrative Officer</option>
+                                            <option value="Training Specialist">Training Specialist</option>
+                                            <option value="Administrative Assistant">Administrative Assistant</option>
+                                            <option value="Technical Consultant">Technical Consultant</option>
                                         </select>
                                         <span class="text-danger fontColor"><?php echo form_error('category'); ?></span>
                                     </div>
