@@ -32,6 +32,11 @@
                         <?php
                             foreach ($album as $row) {
                         ?>
+                        <div class="col-lg-10 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src='<?php echo base_url() . 'uploads/' . $row->album_image; ?>'>
+                            </a>
+                        </div>
                         <form method="POST" action="<?php echo base_url();?>User/updatealbum" enctype="multipart/form-data" class="user">
                         <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                         <div class="form-group">
