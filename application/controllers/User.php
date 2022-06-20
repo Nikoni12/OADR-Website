@@ -202,6 +202,7 @@ class User extends CI_Controller {
 			$config1 = array('upload_path' => './uploads/', 
                         'allowed_types' => 'pdf',
                         'max_size' => 9999 ); 
+			$config1['encrypt_name'] = true;
 			$this->load->library('upload'); 
 			$this->upload->initialize($config1);
 			if (!$this->upload->do_upload('resume')) {
@@ -210,7 +211,8 @@ class User extends CI_Controller {
 			} else {
 				$this->load->model('users_model');
 				$name = $this->input->post('name');
-				$filename = $name.'.pdf';
+				$file = $this->upload->data();
+				$filename = $file['file_name'];
 				$filepass = array('resume_name' => $filename);
 				$this->users_model->insertcareer2($name, $filepass); 
 				redirect("./User/careerform/","refresh"); 
@@ -296,4 +298,68 @@ class User extends CI_Controller {
             $this->adminlogin();
         }
     }
+	public function deleteinquiry(){
+		$ticket = $this->uri->segment(3);
+		$this->load->model('Users_model');
+		$this->users_model->deleteaninquiry(intval($ticket));
+		redirect(base_url().'User/admininquiries'); 
+	}
+	public function viewinquiry(){
+		$this->load->model('Users_model');
+		$ticket = $this->uri->segment(3);
+		$data['inquiries'] = $this->users_model->fetchrowinquiry(intval($ticket));
+		$this->load->view('viewinquiry',$data);
+	}
+	public function addressstatus(){
+		$this->load->model('Users_model');
+		$ticket = $this->uri->segment(3);
+		$data = array(
+			'status'=>'Addressed',
+		 );
+		 $data = array_filter($data);
+		 $this->Users_model->updatestatus(intval($ticket),$data);
+		 redirect(base_url().'User/admininquiries'); 
+	}
+	public function notaddressstatus(){
+		$this->load->model('Users_model');
+		$ticket = $this->uri->segment(3);
+		$data = array(
+			'status'=>'Not Addressed',
+		 );
+		 $data = array_filter($data);
+		 $this->Users_model->updatestatus(intval($ticket),$data);
+		 redirect(base_url().'User/admininquiries'); 
+	}
+	public function deleteapplication(){
+		$appnum = $this->uri->segment(3);
+		$this->load->model('Users_model');
+		$this->users_model->deleteapplication(intval($appnum));
+		redirect(base_url().'User/adminapplications'); 
+	}
+	public function viewapplication(){
+		$this->load->model('Users_model');
+		$appnum = $this->uri->segment(3);
+		$data['applications'] = $this->users_model->fetchapplication(intval($appnum));
+		$this->load->view('viewapplication',$data);
+	}
+	public function acceptapp(){
+		$this->load->model('Users_model');
+		$appnum = $this->uri->segment(3);
+		$data = array(
+			'status'=>'Accepted',
+		 );
+		 $data = array_filter($data);
+		 $this->Users_model->updateapplication(intval($appnum),$data);
+		 redirect(base_url().'User/adminapplications'); 
+	}
+	public function rejectapp(){
+		$this->load->model('Users_model');
+		$appnum = $this->uri->segment(3);
+		$data = array(
+			'status'=>'Rejected',
+		 );
+		 $data = array_filter($data);
+		 $this->Users_model->updateapplication(intval($appnum),$data);
+		 redirect(base_url().'User/adminapplications'); 
+	}
 }
