@@ -87,17 +87,20 @@ class User extends CI_Controller {
 		$this->load->view('announcement', $data);
 	}
 	public function admininquiries(){
-		$this->load->view('admininquiries');
+		$data['inq'] = $this->users_model->inquiries();
+		$this->load->view('admininquiries', $data);
 	}
 	public function adminapplications(){
-		$this->load->view('adminapplications');
+		$data['app'] = $this->users_model->applications();
+		$this->load->view('adminapplications', $data);
 	}
 	public function adminusers(){
 		$data['users'] = $this->users_model->view_users();
 		$this->load->view('adminusers', $data);
 	}
 	public function admincatresources(){
-		$this->load->view('admincatresources');
+		$data['cat'] = $this->users_model->resourcescat();
+		$this->load->view('admincatresources', $data);
 	}
 	public function addnews(){
 		$this->load->view('addnews');
@@ -543,5 +546,42 @@ class User extends CI_Controller {
 		 $data = array_filter($data);
 		 $this->Users_model->updateapplication(intval($appnum),$data);
 		 redirect(base_url().'User/adminapplications'); 
+	}
+	public function addcat(){
+        $this->load->model('Users_model');
+        $catname = $this->input->post('catname');
+        $this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('catname', 'Category Name', 'required');
+		$category['categoryname'] = $catname;
+		if($this->form_validation->run()){
+			$this->users_model->insert_cat($category);
+			redirect("./User/admincatresources/","refresh"); 
+		} else {
+			$this->addcategory();
+		}
+    }
+	public function editcat(){
+		$this->load->model('Users_model');
+		$cat = $this->uri->segment(3);
+		$data['cat'] = $this->users_model->fetchcat(intval($cat));
+		$this->load->view('editcategory',$data);
+	}
+	public function updatecat(){
+		$this->load->model('Users_model');
+		$cat = $this->uri->segment(3);
+		$this->form_validation->set_rules('catname', 'Category Name', 'required');
+		$data = array(
+			'categoryname'=>$this->input->post('catname')
+		 );
+		 $data = array_filter($data);
+		 $this->Users_model->updatecat(intval($cat),$data);
+		 redirect(base_url().'User/admincatresources'); 
+	}
+	public function deletecat(){
+		$cat = $this->uri->segment(3);
+		$this->load->model('Users_model');
+		$this->users_model->deletecategory(intval($cat));
+		redirect(base_url().'User/admincatresources'); 
 	}
 }

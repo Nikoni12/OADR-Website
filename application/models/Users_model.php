@@ -224,4 +224,26 @@ class Users_model extends CI_Model {
         $this->db->where('appnum',$appnum);
         $this->db->update('careers',$data);
     }
+    public function resourcescat(){
+        $result = $this->db->get('resources_category');
+        return $result;
+    }
+    public function insert_cat($cat){
+		$this->db->insert('resources_category', $cat);
+		return $this->db->insert_id(); 
+	}
+    public function updatecat($cat,$data){
+        $this->db->where('ID',$cat);
+        $this->db->update('resources_category',$data);
+    }
+    function deletecategory($cat){  
+        $this->db->delete('resources_category',array('ID' => $cat));  
+    } 
+    function fetchcat($cat){ 
+        $this->db->select('*');
+        $this->db->from('resources_category');
+        $this->db->where('ID', $cat );
+        $query = $this->db->get(); 
+        return $query;
+    } 
 }

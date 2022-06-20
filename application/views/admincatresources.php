@@ -32,17 +32,6 @@
                             <span style = "color:black;" class="text">Add Resources Category</span>
                         </a>
                         <br><br>
-
-                        <?php 
-                            foreach($announcement as $row) {
-                                echo "<tr>";
-                        ?>
-                        <?php 
-                                echo "<td>".$row->announcement_title."</td>";
-                                echo "<td>".$row->announcement_content."</td>";
-                            }
-                        ?>
-                        
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"></div>
                             <div class="card-body">
@@ -57,51 +46,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Category 1</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        <?php
+                                            foreach($cat->result() as $lp){
+                                                echo "<tr>";
+                                                echo "<td>".$lp->ID."</td>";
+                                                echo "<td>".$lp->categoryname."</td>";
+                                                echo "<td>".$lp->date_added."</td>";
+                                                ?>
+                                                <td style = 'text-align:center; font-size:20px;'>
+                                                    <a href="<?php echo base_url();?>User/editcat/<?php echo $lp->ID;?>">
+                                                        <i class='fa fa-pencil' aria-hidden='true'></i>
+                                                    </a>
+                                                    <a href="#" class="delete_data" id="<?php echo $lp->ID; ?>">
+                                                        <i class='fa fa-trash-o' aria-hidden='true'></i>
+                                                    </a>
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Category 2</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Category 3</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Category 4</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Category 5</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
+                                                </tr>
+                                            <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -145,5 +106,20 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/jquery.dataTables.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
+        <script>  
+      $(document).ready(function(){  
+           $('.delete_data').click(function(){  
+                var ticket = $(this).attr("id");  
+                if(confirm("Are you sure you want to delete this?"))  
+                {  
+                     window.location="<?php echo base_url(); ?>User/deletecat/"+ticket;  
+                }  
+                else  
+                {  
+                     return false;  
+                }  
+           });  
+      });  
+      </script>  
     </body>
 </html>
