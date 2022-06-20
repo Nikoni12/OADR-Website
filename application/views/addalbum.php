@@ -29,14 +29,14 @@
                         <div class="col-xl-6 col-lg-10 col-md-6">
                             <div class="card o-hidden border-0 shadow-lg my-5">
                                 <div class="card-body " data-aos="slide-up">
-                                <form method="POST" class="user">
+                        <form method="POST" action="<?php echo base_url();?>User/submitalbum" enctype="multipart/form-data" class="user">
                         <div class="form-group">
                             <label for="username">Album Title:</label>
-                            <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                            <input type="text" class="form-control" id="album_title" name="album_title"  placeholder="Enter Album Title" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                            <input type="file" class="form-control" id="album_image" name="album_image" required>
                         </div>
 
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>

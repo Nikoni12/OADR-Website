@@ -45,9 +45,119 @@ class Users_model extends CI_Model {
         return $query->result();
 	}
 
+    public function get_announcement_edit($id){
+        $this->db->select('*');
+        $this->db->from('announcements');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+
     public function insertannouncement($ann){
 		$this->db->insert('announcements', $ann);
         return $this->db->insert_id(); 
+	}
+
+    public function update_announcement($id,$ann){
+        $this->db->where('id', $id);
+        $this->db->update('announcements', $ann);
+    }
+
+    public function delete_announcement($id){
+        $this->db->where('ID',$id);
+        $this -> db -> delete('announcements');
+	}
+
+    public function getnews(){
+        $this->db->select('*');
+        $this->db->from('news');
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+    public function get_news_edit($id){
+        $this->db->select('*');
+        $this->db->from('news');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+    public function insertnews($new){
+		$this->db->insert('news', $new);
+        return $this->db->insert_id(); 
+	}
+
+    public function update_news($id,$new){
+        $this->db->where('id', $id);
+        $this->db->update('news', $new);
+    }
+
+    public function delete_news($id){
+        $this->db->where('ID',$id);
+        $this -> db -> delete('news');
+	}
+
+    public function insertalbum($alb){
+		$this->db->insert('gallery', $alb);
+        return $this->db->insert_id(); 
+	}
+
+    public function getalbum(){
+        $this->db->select('*');
+        $this->db->from('gallery');
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+    public function get_album_edit($id){
+        $this->db->select('*');
+        $this->db->from('gallery');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+    public function update_album($id,$alb){
+        $this->db->where('id', $id);
+        $this->db->update('gallery', $alb);
+	}
+
+    public function delete_album($id){
+        $this->db->where('ID',$id);
+        $this -> db -> delete('gallery');
+	}
+
+
+    public function insertevent($eve){
+		$this->db->insert('events', $eve);
+        return $this->db->insert_id(); 
+	}
+
+    public function getevent(){
+        $this->db->select('*');
+        $this->db->from('events');
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+    public function get_event_edit($id){
+        $this->db->select('*');
+        $this->db->from('events');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+
+    public function update_event($id,$eve){
+        $this->db->where('id', $id);
+        $this->db->update('events', $eve);
+    }
+
+    public function delete_event($id){
+        $this->db->where('ID',$id);
+        $this -> db -> delete('events');
 	}
 
     public function checkticket($ticket){

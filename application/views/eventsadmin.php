@@ -40,56 +40,40 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Title</th>
-                                                <th>Date Added</th>
+                                                <th>Content</th>
+                                                <th>Event Start</th>
+                                                <th>Event End</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php 
+                                            foreach($event as $row) {
+                                            ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Event Title 1</td>
-                                                <td>2022-01-01 12:00 NN</td>
+                                            <?php 
+                                                echo "<td>".$row->ID."</td>";
+                                                echo "<td>".$row->event_title."</td>";
+                                                echo "<td>".$row->event_content."</td>";
+                                                echo "<td>".$row->event_start."</td>";
+                                                echo "<td>".$row->event_end."</td>";
+                                                /*echo "<td>2022-01-01 12:00 NN</td>";*/
+                                            ?>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editevents">
+                                                            <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
+                                                            <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                                    </form>
+                                                    <form style="display: inline;" method="post" action="<?php echo base_url();?>User/deleteevent">
+                                                            <input type ="hidden" name = "delete_id" value = "<?php  echo $row->ID;?>">
+                                                            <button type ="submit" class="btn btn-primary" name="delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                    </form>
                                                 </td>
+                                                <?php
+                                             } 
+                                             ?>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Event Title 2</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Event Title 3</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Event Title 4</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Event Title 5</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
