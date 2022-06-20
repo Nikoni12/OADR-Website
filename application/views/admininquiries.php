@@ -14,7 +14,7 @@
         <link href="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-    </head>
+    </head><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
     <body id="page-top">
         <div id="wrapper">
             <?php $this->view('sidebar'); ?>
@@ -40,111 +40,36 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
+                                        <?php
+                                                foreach($inq->result() as $lp){
+                                                    echo "<tr>";
+                                                    echo "<td align = 'center'>".$lp->ID."</td>";
+                                                    echo "<td align = 'center'>".$lp->Name."</td>";
+                                                    echo "<td align = 'center'>".$lp->Email."</td>";
+                                                    echo "<td align = 'center'>".$lp->Subject."</td>";
+                                                    echo "<td align = 'center'>".$lp->date."</td>";
+                                                    echo "<td align = 'center'>
+                                                        <div class='btn-group btn-group-sm'>
+                                                            <a href='#' class='btn btn-warning'>".$lp->status."</a>
+                                                            <button type='button' class='btn btn-warning dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                                                <span class='sr-only'>Toggle Dropdown</span>
+                                                            </button>
+                                                            <div class='dropdown-menu dropdown-menu-right'>
+                                                                <a class='dropdown-item' href='".base_url()."User/addressstatus/".$lp->ticket."'>Addressed</a>
+                                                                <a class='dropdown-item' href='".base_url()."User/notaddressstatus/".$lp->ticket."'>Not Addressed</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>John Doe</td>
-                                                <td>2022-01-01 12:00 NN</td>
-                                                <td class="text-center">
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a href="#" class="btn btn-warning">--Status--</a>
-                                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="sr-only">Toggle Dropdown</span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Addressed</a>
-                                                            <a class="dropdown-item" href="#">Not Yet Addressed</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
+                                                    </td>"; ?>
+                                                    <td style = 'text-align:center; font-size:20px;'>
+                                                        <a href="<?php echo base_url();?>User/viewinquiry/<?php echo $lp->ticket;?>">
+                                                            <i class='fa fa-eye' aria-hidden='true'></i>
+                                                        </a>
+                                                        <a href="#" class="delete_data" id="<?php echo $lp->ticket; ?>">
+                                                            <i class='fa fa-trash-o' aria-hidden='true'></i>
+                                                        </a>
+                                                    </td>
+                                                    </tr>
+                                                <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -189,4 +114,19 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
     </body>
+    <script>  
+      $(document).ready(function(){  
+           $('.delete_data').click(function(){  
+                var ticket = $(this).attr("id");  
+                if(confirm("Are you sure you want to delete this?"))  
+                {  
+                     window.location="<?php echo base_url(); ?>User/deleteinquiry/"+ticket;  
+                }  
+                else  
+                {  
+                     return false;  
+                }  
+           });  
+      });  
+      </script>  
 </html>

@@ -14,7 +14,7 @@
         <link href="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-    </head>
+    </head><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
     <body id="page-top">
         <div id="wrapper">
             <?php $this->view('sidebar'); ?>
@@ -23,55 +23,58 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">APPLICATIONS</h1>
+                        <?php
+                            foreach($applications->result() as $lp){
+                                echo "<h1 class='retro1 retroshadow'>Applicant Number: ".$lp->appnum."</h1>";
+                            }?>
+                           
                         </div>
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3"></div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead style = "text-align:center;">
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Title</th>
-                                                <th>Date Added</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                        <div class="col-xl-8 col-lg-10 col-md-8 mx-auto">
+                            <div class="card shadow mb-4 ">
+                                <div class="card-header py-3"></div>
+                                <div class="card-body">
+                                <table class="table table-borderless"  width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr style = "text-align:center;">
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php
-                                                foreach($app->result() as $lp){
-                                                    echo "<tr>";
-                                                    echo "<td align = 'center'>".$lp->ID."</td>";
-                                                    echo "<td align = 'center'>".$lp->Name."</td>";
-                                                    echo "<td align = 'center'>".$lp->Email."</td>";
-                                                    echo "<td align = 'center'>".$lp->Category."</td>";
-                                                    echo "<td align = 'center'>".$lp->date."</td>";
-                                                    echo "<td align = 'center'>
-                                                        <div class='btn-group btn-group-sm'>
-                                                            <a href='#' class='btn btn-warning'>".$lp->status."</a>
-                                                            <button type='button' class='btn btn-warning dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                                                                <span class='sr-only'>Toggle Dropdown</span>
-                                                            </button>
-                                                            <div class='dropdown-menu dropdown-menu-right'>
-                                                                <a class='dropdown-item' href='".base_url()."User/acceptapp/".$lp->appnum."'>Accepted</a>
-                                                                <a class='dropdown-item' href='".base_url()."User/rejectapp/".$lp->appnum."'>Not Addressed</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>"; ?>
-                                                    <td style = 'text-align:center; font-size:20px;'>
-                                                        <a href="<?php echo base_url();?>User/viewapplication/<?php echo $lp->appnum;?>">
-                                                            <i class='fa fa-eye' aria-hidden='true'></i>
-                                                        </a>
-                                                        <a href="#" class="delete_data" id="<?php echo $lp->appnum; ?>">
-                                                            <i class='fa fa-trash-o' aria-hidden='true'></i>
-                                                        </a>
-                                                    </td>
-                                                    </tr>
-                                                <?php } ?>
+                                            foreach($applications->result() as $lp){
+                                                echo    "<tr style = 'text-align:left;'>
+                                                            <td style = 'text-align:right;'><b>Name:</b> </td>
+                                                            <td>".$lp->Name."</td>
+                                                        </tr>";
+                                                echo    "<tr style = 'text-align:left;'>
+                                                            <td style = 'text-align:right;'><b>Email:</b> </td>
+                                                            <td>".$lp->Email."</td>
+                                                        </tr>";
+                                                echo    "<tr style = 'text-align:left;'>
+                                                            <td style = 'text-align:right;'><b>Applicant Number: </b></td>
+                                                            <td>".$lp->appnum."</td>
+                                                        </tr>";
+                                                echo    "<tr style = 'text-align:left;'>
+                                                            <td style = 'text-align:right;'><b>Phone Number: </b></td>
+                                                            <td>".$lp->PhoneNum."</td>
+                                                        </tr>";
+                                                echo    "<tr style = 'text-align:left;'>
+                                                            <td style = 'text-align:right;'><b>Position: </b></td>
+                                                            <td>".$lp->Category."</td>
+                                                        </tr>";
+                                                echo    "<tr style = 'text-align:left;'>
+                                                            <td style = 'text-align:right;'><b>Message: </b></td>
+                                                            <td>".$lp->message."</td>
+                                                        </tr>";
+                                                
+                                        }?>
                                         </tbody>
                                     </table>
+                                    <?php
+                                        foreach($applications->result() as $lp){
+                                            echo " <iframe src='".base_url()."/uploads/".$lp->resume_name."' width='100%' height='500px'></iframe>";
+                                        }?>
                                 </div>
                             </div>
                         </div>
@@ -113,13 +116,14 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/jquery.dataTables.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
-        <script>  
+    </body>
+    <script>  
       $(document).ready(function(){  
            $('.delete_data').click(function(){  
-                var appnum = $(this).attr("id");  
+                var ticket = $(this).attr("id");  
                 if(confirm("Are you sure you want to delete this?"))  
                 {  
-                     window.location="<?php echo base_url(); ?>User/deleteapplication/"+appnum;  
+                     window.location="<?php echo base_url(); ?>User/deleteinquiry/"+ticket;  
                 }  
                 else  
                 {  
@@ -128,5 +132,4 @@
            });  
       });  
       </script>  
-    </body>
-</html>
+</html>s
