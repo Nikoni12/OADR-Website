@@ -36,66 +36,17 @@
                 <div class="container">
                     <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Photo Gallery</h1><br> 
                     <div class="row text-center text-lg-start">
+                    <?php 
+                        foreach($album as $row) {
+                    ?>
                         <div class="col-lg-3 col-md-4 col-6">
                             <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
+                                <img class="img-fluid img-thumbnail" src='<?php echo base_url() . 'uploads/' . $row->album_image; ?>'>
                             </a>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/news1.jpg');?>">
-                            </a>
-                        </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </section>

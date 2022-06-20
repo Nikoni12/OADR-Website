@@ -38,23 +38,23 @@
                         <div class="col-xl-6 col-lg-10 col-md-6">
                             <div class="card o-hidden border-0 shadow-lg my-5">
                                 <div class="card-body " data-aos="slide-up">
-                                <form method="POST" class="user">
+                        <form method="POST" action="<?php echo base_url();?>User/submitevent" enctype="multipart/form-data" class="user">
                         <div class="form-group">
                             <label for="username">Title:</label>
-                            <input type="text" class="form-control" id="article_title" name="article_title"  placeholder="Enter Article Title" required>
+                            <input type="text" class="form-control" id="event_title" name="event_title"  placeholder="Enter Event Title" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Content:</label>
-                            <textarea class="form-control" id="article_content" name="article_content" rows="3"></textarea>
+                            <textarea class="form-control" id="event_content" name="event_content" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="article_image" name="article_image"  placeholder="Enter Article Title" required>
+                            <input type="file" class="form-control" id="event_image" name="event_image"  placeholder="Enter Image Title" required>
                         </div>
                         <div class="form-group">
                             <label for="id_start_datetime">Start Date</label>
                             <div class="input-group date" id="id_0">
-                                <input type="text" id="picker1" value="" class="form-control" required/>
+                                <input type="text" id="picker1" name="event_start" value="" class="form-control" required/>
                                 <div class="input-group-addon input-group-append">
                                     <div class="input-group-text">
                                         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
@@ -65,7 +65,7 @@
                         <div class="form-group">
                             <label for="id_start_datetime">End Date</label>
                             <div class="input-group date" id="id_1">
-                                <input type="text" id="picker2"value="" class="form-control" required/>
+                                <input type="text" id="picker2" name="event_end" value="" class="form-control" required/>
                                 <div class="input-group-addon input-group-append">
                                     <div class="input-group-text">
                                         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>

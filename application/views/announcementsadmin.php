@@ -58,8 +58,15 @@
                                                 echo "<td>2022-01-01 12:00 NN</td>";
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ensp;
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                    <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editannouncement">
+                                                            <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
+                                                            <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                                    </form>
+                                                    <!--<a href="editannouncement.php?id=<?php echo $row->ID;?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>&ensp;-->
+                                                    <form style="display: inline;" method="post" action="<?php echo base_url();?>User/deleteannouncement">
+                                                            <input type ="hidden" name = "delete_id" value = "<?php  echo $row->ID;?>">
+                                                            <button type ="submit" class="btn btn-primary" name="delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                    </form>
                                                 </td>
                                                 <?php
                                              } 

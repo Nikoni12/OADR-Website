@@ -37,6 +37,9 @@
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Events</h1><br> 
 					<div class="row">
+					<?php 
+                        foreach($event as $row) {
+                    ?>
                         <div class="row mb-12 border-bottom pb-2">
                             <div class="col-md-3">
                                 <figure class = "figurecal img-fluid">
@@ -45,39 +48,15 @@
                                 </figure>
                             </div>
                             <div class="col-md-9">
-                                <p class="mb-2"><strong>Event Title</strong></p>
-                                <p style = "text-align:justify;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <p>10 June 2022, 11:32:04 PM</p>
+								<?php echo "<p class='mb-2'><strong>$row->event_title</strong></p>" ?>
+                                <?php echo "<p style = 'text-align:justify;'>$row->event_content</p>"?>
+								<?php echo "<p>Start: $row->event_start</p>"?>
+								<?php echo "<p>End: $row->event_end</p>"?>
                             </div>
                         </div>
-						<!-- News -->
-                        <div class="row mb-12 border-bottom pb-2">
-                            <div class="col-md-3">
-                                <figure class = "figurecal img-fluid">
-                                    <header class = "headercal">June</header>
-                                    <section class = "sectioncal">15</section>
-                                </figure>
-                            </div>
-                            <div class="col-md-9">
-                                <p class="mb-2"><strong>Event Title</strong></p>
-                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <p>10 June 2022, 11:32:04 PM</p>
-                            </div>
-                        </div>
-						<!-- News -->
-                        <div class="row mb-12 border-bottom pb-2">
-                            <div class="col-md-3">
-                                <figure class = "figurecal img-fluid">
-                                    <header class = "headercal">June</header>
-                                    <section class = "sectioncal">15</section>
-                                </figure>
-                            </div>
-                            <div class="col-md-9">
-                                <p class="mb-2"><strong>Event Title</strong></p>
-                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <p>10 June 2022, 11:32:04 PM</p>
-                            </div>
-                        </div>
+						<?php
+                            }
+                        ?>
 					</div>
 				</div>
 			</section>

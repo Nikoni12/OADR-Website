@@ -23,63 +23,39 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">Photo Gallery</h1>
+                            <h1 class="retro1 retroshadow">Edit News</h1>
                         </div>
-                        <a href="http://localhost/OADR-Website/User/addalbum" class="btn btn-warning btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i style = "color:black;" class="fas fa-plus"></i>
-                            </span>
-                            <span style = "color:black;" class="text">Add New Album</span>
-                        </a>
-                        <br><br>
-                        
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3"></div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead style = "text-align:center;">
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Title</th>
-                                                <th>Content</th>
-                                                <th>Date Added</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php 
-                                            foreach($album as $row) {
-                                            ?>
-                                            <tr>
-                                            <?php 
-                                                echo "<td>".$row->ID."</td>";
-                                                echo "<td>".$row->album_title."</td>";
-                                                echo "<td>".$row->album_image."</td>";
-                                                echo "<td>2022-01-01 12:00 NN</td>";
-                                            ?>
-                                                <td style = "text-align:center; font-size:20px;">
-                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editalbum">
-                                                            <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
-                                                            <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                                    </form>
-                                                    <form style="display: inline;" method="post" action="<?php echo base_url();?>User/deletealbum">
-                                                            <input type ="hidden" name = "delete_id" value = "<?php  echo $row->ID;?>">
-                                                            <button type ="submit" class="btn btn-primary" name="delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </form>
-                                                </td>
-                                                <?php
-                                             } 
-                                             ?>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
+                        <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-10 col-md-6">
+                            <div class="card o-hidden border-0 shadow-lg my-5">
+                                <div class="card-body " data-aos="slide-up">
+                        <?php
+                            foreach ($news as $row) {
+                        ?>
+                        <form method="POST" action="<?php echo base_url();?>User/updatenews" enctype="multipart/form-data" class="user">
+                        <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
+                        <div class="form-group">
+                            <label for="username">Title:</label>
+                            <input type="text" class="form-control" id="news_title" name="news_title"  placeholder="<?php echo $row->news_title?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Content:</label>
+                            <textarea class="form-control" id="news_content" name="news_content" rows="3" placeholder="<?php echo $row->news_content?>" ></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Image:</label>
+                            <input type="file" class="form-control" id="news_image" name="news_image" required>
+                        </div>
+                        <?php
+                            }
+                        ?>
+                        <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
+                        </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    </div>
                 </div>
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">

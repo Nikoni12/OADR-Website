@@ -63,17 +63,20 @@ class User extends CI_Controller {
 	}
 	
 	public function gallery(){
-		$this->load->view('gallery');
+		$data['album'] = $this->users_model->getalbum();
+		$this->load->view('gallery',$data);
 	}
 	public function newsadmin(){
-		$this->load->view('newsadmin');
+		$data['news'] = $this->users_model->getnews();
+		$this->load->view('newsadmin', $data);
 	}
 	public function announcementsadmin(){
 		$data['announcement'] = $this->users_model->getannouncement();
 		$this->load->view('announcementsadmin', $data);
 	}
 	public function eventadmin(){
-		$this->load->view('eventsadmin');
+		$data['event'] = $this->users_model->getevent();
+		$this->load->view('eventsadmin',$data);
 	}
 	public function adminresources(){
 		
@@ -84,12 +87,10 @@ class User extends CI_Controller {
 		$this->load->view('announcement', $data);
 	}
 	public function admininquiries(){
-		$data['inq'] = $this->users_model->inquiries();
-		$this->load->view('admininquiries', $data);
+		$this->load->view('admininquiries');
 	}
 	public function adminapplications(){
-		$data['app'] = $this->users_model->applications();
-		$this->load->view('adminapplications', $data);
+		$this->load->view('adminapplications');
 	}
 	public function adminusers(){
 		$data['users'] = $this->users_model->view_users();
@@ -101,6 +102,30 @@ class User extends CI_Controller {
 	public function addnews(){
 		$this->load->view('addnews');
 	}
+	public function submitnews(){
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('news_image')) {
+			$news_image = $this->upload->data('file_name');
+			$new = array(
+				'news_title' => $this->input->post('news_title'),
+				'news_content' => $this->input->post('news_content'),
+				'news_image' => $news_image
+			);
+			$this->users_model->insertnews($new);
+			redirect(base_url() . 'User/newsadmin');
+		}
+
+	}
+
+	public function deletenews(){
+		$id = $_POST['delete_id'];
+		$this->users_model->delete_news($id);
+		redirect(base_url() . 'User/newsadmin');
+	}
+
 	public function addannouncement(){
 		$this->load->view('addannouncement');
 	}
@@ -122,9 +147,123 @@ class User extends CI_Controller {
 		}
 
 	}
+
+	public function editannouncement(){
+		$id = $_POST['edit_id'];
+		$data["announcement"] = $this->users_model->get_announcement_edit($id);
+		$this->load->view('editannouncement',$data);
+	}
+
+	public function editnews(){
+		$id = $_POST['edit_id'];
+		$data["news"] = $this->users_model->get_news_edit($id);
+		$this->load->view('editnews',$data);
+	}
+
+	public function editevents(){
+		$id = $_POST['edit_id'];
+		$data["event"] = $this->users_model->get_event_edit($id);
+		$this->load->view('editevents',$data);
+	}
+
+	public function editalbum(){
+		$id = $_POST['edit_id'];
+		$data["album"] = $this->users_model->get_album_edit($id);
+		$this->load->view('editalbum',$data);
+	}
+
+	public function updateannouncement(){
+		$id = $_POST['edit_id'];
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('announcement_image')) {
+			$announcement_image = $this->upload->data('file_name');
+			$ann = array(
+				'announcement_title' => $this->input->post('announcement_title'),
+				'announcement_content' => $this->input->post('announcement_content'),
+				'announcement_image' => $announcement_image
+			);
+			$this->users_model->update_announcement($id,$ann);
+			redirect(base_url() . 'User/announcementsadmin');
+	}
+
+	}
+
+	public function updatenews(){
+		$id = $_POST['edit_id'];
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('news_image')) {
+			$news_image = $this->upload->data('file_name');
+			$new = array(
+				'news_title' => $this->input->post('news_title'),
+				'news_content' => $this->input->post('news_content'),
+				'news_image' => $news_image
+			);
+			$this->users_model->update_news($id,$new);
+			redirect(base_url() . 'User/newsadmin');
+	}
+
+	}
+
+	public function updateevent(){
+		$id = $_POST['edit_id'];
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('event_image')) {
+			$event_image = $this->upload->data('file_name');
+			$eve = array(
+				'event_title' => $this->input->post('event_title'),
+				'event_content' => $this->input->post('event_content'),
+				'event_image' => $event_image,
+				'event_start' => $this->input->post('event_start'),
+				'event_end' => $this->input->post('event_end')
+			);
+			$this->users_model->update_event($id,$eve);
+			redirect(base_url() . 'User/eventadmin');
+	}
+
+	}
+	public function deleteannouncement(){
+		$id = $_POST['delete_id'];
+		$this->users_model->delete_announcement($id);
+		redirect(base_url() . 'User/announcementsadmin');
+	}
 	public function addevent(){
 		$this->load->view('addevent');
 	}
+	public function submitevent(){
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('event_image')) {
+			$event_image = $this->upload->data('file_name');
+			$eve = array(
+				'event_title' => $this->input->post('event_title'),
+				'event_content' => $this->input->post('event_content'),
+				'event_image' => $event_image,
+				'event_start' => $this->input->post('event_start'),
+				'event_end' => $this->input->post('event_end')
+			);
+			$this->users_model->insertevent($eve);
+			redirect(base_url() . 'User/eventadmin');
+		}
+
+	}
+
+	public function deleteevent(){
+		$id = $_POST['delete_id'];
+		$this->users_model->delete_event($id);
+		redirect(base_url() . 'User/eventadmin');
+	}
+
 	public function addcategory(){
 		$this->load->view('addcategory');
 	}
@@ -138,7 +277,8 @@ class User extends CI_Controller {
 		$this->load->view('edituser');
 	}
 	public function admingallery(){
-		$this->load->view('admingallery');
+		$data['album'] = $this->users_model->getalbum();
+		$this->load->view('admingallery', $data);
 	}
 	public function adminalbum(){
 		$this->load->view('adminalbum');
@@ -146,8 +286,50 @@ class User extends CI_Controller {
 	public function addalbum(){
 		$this->load->view('addalbum');
 	}
+	public function submitalbum(){
+		$id = $_POST['edit_id'];
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('album_image')) {
+			$album_image = $this->upload->data('file_name');
+			$alb = array(
+				'album_title' => $this->input->post('album_title'),
+				'album_image' => $album_image
+			);
+			$this->users_model->insertalbum($alb);
+			redirect(base_url() . 'User/admingallery');
+		}
+
+	}
+
+	public function updatealbum(){
+		$id = $_POST['edit_id'];
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('album_image')) {
+			$album_image = $this->upload->data('file_name');
+			$alb = array(
+				'album_title' => $this->input->post('album_title'),
+				'album_image' => $album_image
+			);
+			$this->users_model->update_album($id,$alb);
+			redirect(base_url() . 'User/admingallery');
+		}
+	}
+
+	public function deletealbum(){
+		$id = $_POST['delete_id'];
+		$this->users_model->delete_album($id);
+		redirect(base_url() . 'User/admingallery');
+	}
+
 	public function events(){
-		$this->load->view('events');
+		$data['event'] = $this->users_model->getevent();
+		$this->load->view('events',$data);
 	}
 	public function careerform(){
 		$this->load->view('careerform');
