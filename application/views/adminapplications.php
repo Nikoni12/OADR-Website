@@ -56,7 +56,7 @@
                                                             </button>
                                                             <div class='dropdown-menu dropdown-menu-right'>
                                                                 <a class='dropdown-item' href='".base_url()."User/acceptapp/".$lp->appnum."'>Accepted</a>
-                                                                <a class='dropdown-item' href='".base_url()."User/rejectapp/".$lp->appnum."'>Not Addressed</a>
+                                                                <a class='dropdown-item' href='".base_url()."User/rejectapp/".$lp->appnum."'>Rejected</a>
                                                             </div>
                                                         </div>
                                                     </td>"; ?>

@@ -29,10 +29,11 @@
                         <div class="col-xl-6 col-lg-10 col-md-6">
                             <div class="card o-hidden border-0 shadow-lg my-5">
                                 <div class="card-body " data-aos="slide-up">
-                                <form method="POST" class="user">
+                                <form method="post"  action="<?php echo base_url();?>User/addcat">
                         <div class="form-group">
                             <label for="username">Category Name:</label>
-                            <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                            <input type="text" class="form-control" id="adminname" name="catname"  placeholder="Enter Category Name">
+                            <span class="text-danger fontColor"><?php echo form_error('catname'); ?></span>
                         </div>
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                         </form>

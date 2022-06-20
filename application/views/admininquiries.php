@@ -33,8 +33,10 @@
                                         <thead style = "text-align:center;">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Title</th>
-                                                <th>Date Added</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Subject</th>
+                                                <th>Date</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
