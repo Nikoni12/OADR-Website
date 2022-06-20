@@ -85,4 +85,32 @@ class Users_model extends CI_Model {
         $result = $this->db->get('careers');
         return $result;
     }
+    function deleteaninquiry($ticket){  
+        $this->db->delete('inquiries',array('ticket' => $ticket));  
+    }  
+    function fetchrowinquiry($ticket){ 
+        $this->db->select('*');
+        $this->db->from('inquiries');
+        $this->db->where('ticket', $ticket );
+        $query = $this->db->get(); 
+        return $query;
+    }  
+    public function updatestatus($ticket,$data){
+        $this->db->where('ticket',$ticket);
+        $this->db->update('inquiries',$data);
+    }
+    function deleteapplication($appnum){  
+        $this->db->delete('careers',array('appnum' => $appnum));  
+    } 
+    function fetchapplication($appnum){ 
+        $this->db->select('*');
+        $this->db->from('careers');
+        $this->db->where('appnum', $appnum );
+        $query = $this->db->get(); 
+        return $query;
+    }  
+    public function updateapplication($appnum,$data){
+        $this->db->where('appnum',$appnum);
+        $this->db->update('careers',$data);
+    }
 }

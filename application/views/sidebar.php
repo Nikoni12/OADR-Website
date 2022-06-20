@@ -48,7 +48,11 @@
     <li class="nav-item">
         <a class="nav-link" href="http://localhost/OADR-Website/User/admininquiries">
             <i style = "color:black;"class="fa fa-calendar"></i>
-            <span>Inquiries</span> <span style = "background-color:white;color:black;"class="badge badge-secondary">0</span>
+            <span>Inquiries</span> 
+            <?php
+                $query = $this->db->query('SELECT * FROM inquiries');
+                echo "<span style = 'background-color:white;color:black;'class='badge badge-secondary'>".$query->num_rows()."</span>"
+            ?>
         </a>
     </li>
     <hr class="sidebar-divider">
@@ -56,7 +60,11 @@
     <li class="nav-item">
         <a class="nav-link" href="http://localhost/OADR-Website/User/adminapplications">
             <i style = "color:black;"class="fa fa-file"></i>
-            <span>Applications</span> <span style = "background-color:white;color:black;"class="badge badge-secondary">0</span>
+            <span>Applications</span>
+            <?php
+                $query = $this->db->query('SELECT * FROM careers');
+                echo "<span style = 'background-color:white;color:black;'class='badge badge-secondary'>".$query->num_rows()."</span>"
+            ?>
         </a>
     </li>
     <div class="sidebar-heading"> Account </div>
