@@ -287,7 +287,6 @@ class User extends CI_Controller {
 		$this->load->view('addalbum');
 	}
 	public function submitalbum(){
-		$id = $_POST['edit_id'];
 		$config['allowed_types'] = 'jpg|png';
 		$config['upload_path'] = './uploads/';
 		$config['encrypt_name'] = true;
@@ -299,8 +298,8 @@ class User extends CI_Controller {
 				'album_image' => $album_image
 			);
 			$this->users_model->insertalbum($alb);
-			redirect(base_url() . 'User/admingallery');
 		}
+		redirect(base_url() . 'User/admingallery');
 
 	}
 
@@ -317,8 +316,9 @@ class User extends CI_Controller {
 				'album_image' => $album_image
 			);
 			$this->users_model->update_album($id,$alb);
-			redirect(base_url() . 'User/admingallery');
+			
 		}
+		redirect(base_url() . 'User/admingallery');
 	}
 
 	public function deletealbum(){
