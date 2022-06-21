@@ -42,7 +42,7 @@
                             <label for="username">Image:</label>
                             <input type="file" class="form-control" id="announcement_image" name="announcement_image" required>
                         </div>
-
+                        <input type="hidden" class="form-control" id="date_added" name="date_added" value=<?php echo date("m-d-y");?>>
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                         </form>
                                 </div>

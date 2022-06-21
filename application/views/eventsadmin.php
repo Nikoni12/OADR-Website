@@ -14,6 +14,20 @@
         <link href="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+        <style>
+            .crop {        height: 18px;
+                                width: 300px;
+                                padding: 0;
+                                overflow: hidden;
+                                position: relative;
+                                display: inline-block;
+                                margin: 0 5px 0 5px;
+                                text-align: center;
+                                text-decoration: none;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+ }
+        </style>
     </head>
     <body id="page-top">
         <div id="wrapper">
@@ -54,7 +68,7 @@
                                             <?php 
                                                 echo "<td>".$row->ID."</td>";
                                                 echo "<td>".$row->event_title."</td>";
-                                                echo "<td>".$row->event_content."</td>";
+                                                echo "<td class='crop'>".$row->event_content."</td>";
                                                 echo "<td>".$row->event_start."</td>";
                                                 echo "<td>".$row->event_end."</td>";
                                                 /*echo "<td>2022-01-01 12:00 NN</td>";*/

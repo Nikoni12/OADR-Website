@@ -37,57 +37,20 @@
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Recent News</h1><br> 
 					<div class="row">
-						<a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
+						<?php foreach($news as $row) { ?> 
+							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark">
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-3">
-									<img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
+									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->news_image."' class='img-fluid shadow-1-strong rounded'>"."</td>"; ?>
 								</div>
 								<div class="col-md-9">
-									<p class="mb-2"><strong>Title</strong></p>
-									<p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
-									<p>10 June 2022, 11:32:04 PM</p>
+									<?php echo "<p class='mb-2'><strong>$row->news_title</strong></p>" ?>
+									<?php echo "<p style = 'text-align:justify;'> <u>$row->news_content</u></p>" ?>
+									<?php echo "<p>$row->date_added</p>" ?>
 								</div>
 							</div>
 						</a>
-						<!-- News -->
-						<a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
-							<div class="row mb-4 border-bottom pb-2">
-								<div class="col-md-3">
-									<img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
-								</div>
-								<div class="col-md-9">
-									<p class="mb-2"><strong>Title</strong></p>
-									<p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
-									<p>10 June 2022, 11:32:04 PM</p>
-								</div>
-							</div>
-						</a>
-						<!-- News -->
-						<a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
-							<div class="row mb-4 border-bottom pb-2">
-								<div class="col-md-3">
-									<img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
-								</div>
-								<div class="col-md-9">
-									<p class="mb-2"><strong>Title</strong></p>
-									<p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
-									<p>10 June 2022, 11:32:04 PM</p>
-								</div>
-							</div>
-						</a>
-						<!-- News -->
-						<a href="http://localhost/OADR-Website/User/newstitle" class="text-dark">
-							<div class="row mb-4 border-bottom pb-2">
-								<div class="col-md-3">
-									<img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
-								</div>
-								<div class="col-md-9">
-									<p class="mb-2"><strong>Title</strong></p>
-									<p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
-									<p>10 June 2022, 11:32:04 PM</p>
-								</div>
-							</div>
-						</a>
+						<?php }?>
 					</div>
 				</div>
 			</section>

@@ -83,6 +83,14 @@ class Users_model extends CI_Model {
         return $query->result();
 	}
 
+    public function getnewsbytitle($newstitle){
+        $this->db->select('*');
+        $this->db->from('news');
+        $this->db->where('news_title',$newstitle);
+        $query = $this->db->get();
+        return $query->result();
+	}
+
     public function insertnews($new){
 		$this->db->insert('news', $new);
         return $this->db->insert_id(); 

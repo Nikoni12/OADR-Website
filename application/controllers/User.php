@@ -38,10 +38,14 @@ class User extends CI_Controller {
 	}
 	
 	public function news(){
-		$this->load->view('news');
-	} 
+		$data['news'] = $this->users_model->getnews();
+		$this->load->view('news',$data);
+	}
 	public function newstitle(){
-		$this->load->view('newstitle');
+		$newstitle = $_GET['newstitle'];
+		$data['titleofnews'] = $this->users_model->getnewsbytitle($newstitle);
+		$data['news'] = $this->users_model->getnews();
+		$this->load->view('newstitle',$data);
 	}
 	public function contact(){
 		$this->load->view('contactus');
@@ -121,11 +125,12 @@ class User extends CI_Controller {
 			$new = array(
 				'news_title' => $this->input->post('news_title'),
 				'news_content' => $this->input->post('news_content'),
-				'news_image' => $news_image
+				'news_image' => $news_image,
+				'date_added' => $this->input->post('date_added')
 			);
 			$this->users_model->insertnews($new);
-			redirect(base_url() . 'User/newsadmin');
 		}
+		redirect(base_url() . 'User/newsadmin');
 
 	}
 
@@ -149,11 +154,12 @@ class User extends CI_Controller {
 			$ann = array(
 				'announcement_title' => $this->input->post('announcement_title'),
 				'announcement_content' => $this->input->post('announcement_content'),
-				'announcement_image' => $announcement_image
+				'announcement_image' => $announcement_image,
+				'date_added' => $this->input->post('date_added'),
 			);
 			$this->users_model->insertannouncement($ann);
-			redirect(base_url() . 'User/announcementsadmin');
 		}
+		redirect(base_url() . 'User/announcementsadmin');
 
 	}
 
@@ -259,7 +265,8 @@ class User extends CI_Controller {
 				'event_content' => $this->input->post('event_content'),
 				'event_image' => $event_image,
 				'event_start' => $this->input->post('event_start'),
-				'event_end' => $this->input->post('event_end')
+				'event_end' => $this->input->post('event_end'),
+				'date_added' => $this->input->post('date_added')
 			);
 			$this->users_model->insertevent($eve);
 			redirect(base_url() . 'User/eventadmin');
@@ -311,7 +318,8 @@ class User extends CI_Controller {
 			$album_image = $this->upload->data('file_name');
 			$alb = array(
 				'album_title' => $this->input->post('album_title'),
-				'album_image' => $album_image
+				'album_image' => $album_image,
+				'date_added' => $this->input->post('date_added')
 			);
 			$this->users_model->insertalbum($alb);
 		}

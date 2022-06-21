@@ -73,6 +73,7 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" class="form-control" id="date_added" name="date_added" value=<?php echo date("m-d-y");?>>
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                         </form>
                                 </div>

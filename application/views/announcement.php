@@ -43,7 +43,6 @@
                         <div class="row mb-12 border-bottom pb-2">
                             <div class="col-md-3">
 								<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->announcement_image."' class='img-fluid shadow-1-strong rounded'>"."</td>"; ?>
-                                <!--<img src="<?php echo base_url('assets/img/doj.jpg');?>" class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />-->
                             </div>
                             <div class="col-md-9">
                                	<?php echo "<p class='mb-2'><strong>$row->announcement_title</strong></p>" ?>
