@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Content:</label>
-                            <textarea class="form-control" id="event_content" name="event_content" rows="3" value="<?php echo $row->event_content?>" ></textarea>
+                            <textarea class="form-control" id="event_content" name="event_content" rows="3" ><?php echo $row->event_content?></textarea>
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>

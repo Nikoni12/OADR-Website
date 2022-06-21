@@ -16,6 +16,18 @@
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
         <style>
             .container-scroll {max-height: 300px; max-width: 500px;overflow: hidden; overflow-y: scroll;}
+            .crop {        height: 18px;
+                                width: 300px;
+                                padding: 0;
+                                overflow: hidden;
+                                position: relative;
+                                display: inline-block;
+                                margin: 0 5px 0 5px;
+                                text-align: center;
+                                text-decoration: none;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+ }
         </style>
     </head>
     <body id="page-top">
@@ -56,7 +68,7 @@
                                             <?php 
                                                 echo "<td>".$row->ID."</td>";
                                                 echo "<td>".$row->news_title."</td>";
-                                                echo "<td>".$row->news_content."</td>";
+                                                echo "<td class='crop'>".$row->news_content."</td>";
                                                 echo "<td>".$row->date_added."</td>";
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
@@ -64,16 +76,39 @@
                                                             <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                                                             <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                                     </form>
+                                                    <a href="#" data-toggle="modal" data-target="#deleteModal">
+                                                        <button type ="submit" class="btn btn-link" name="delete" value="Delete"><span class="bi bi-trash red-color"></span></button>
+                                                     </a>
+                                                     <!--
                                                     <form style="display: inline;" method="post" action="<?php echo base_url();?>User/deletenews">
                                                             <input type ="hidden" name = "delete_id" value = "<?php  echo $row->ID;?>">
                                                             <button type ="submit" class="btn btn-primary" name="delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </form>
+                                                    </form>-->
                                                 </td>
                                                 <?php
                                              } 
                                              ?>
                                             </tr>
-                                            
+                                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">Are you sure?</div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                            <form style="display: inline;" method="post" action="<?php echo base_url();?>User/deletenews">
+                                                            <input type ="hidden" name = "delete_id" value = "<?php  echo $row->ID;?>">
+                                                                <input type ="submit" class="btn btn-primary" name="delete" value = 'Delete'>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </tbody>
                                     </table>
                                 </div>

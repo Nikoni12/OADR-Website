@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Content:</label>
-                            <textarea class="form-control" id="news_content" name="news_content" rows="3" value="<?php echo $row->news_content?>" ></textarea>
+                            <textarea class="form-control" id="news_content" name="news_content" rows="3"  required><?php echo $row->news_content?></textarea>
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
