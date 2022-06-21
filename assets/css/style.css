@@ -2566,3 +2566,6 @@ align-items: center;
  .carousel-control-next-icon {
    background-image: url("https://cdn-icons-png.flaticon.com/512/44/44567.png") !important;
  }
+ .home-main::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}

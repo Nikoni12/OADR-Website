@@ -24,7 +24,7 @@
                     <div class="container-fluid">
                    
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">Add Resources Category</h1>
+                            <h1 class="retro1 retroshadow">Edit Resources Category</h1>
                         </div>
                         <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-10 col-md-6">
@@ -34,6 +34,7 @@
                                     <?php
                                         foreach($cat->result() as $lp){
                                             echo "<div class='form-group'>";
+                                            echo " <input type='hidden' name='rID'value='".$lp->ID."'>";
                                             echo "<label for='username'>Category Name:</label>";
                                             echo "<input type='text' class='form-control' id='adminname' name='catname'  value = '".$lp->categoryname."'>";
                                             echo "<span class='text-danger fontColor'>".form_error('catname')."</span>";
