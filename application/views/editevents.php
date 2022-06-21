@@ -45,11 +45,11 @@
                         <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                         <div class="form-group">
                             <label for="username">Title:</label>
-                            <input type="text" class="form-control" id="event_title" name="event_title"  placeholder="<?php echo $row->event_title?>" required>
+                            <input type="text" class="form-control" id="event_title" name="event_title"  value="<?php echo $row->event_title?>" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Content:</label>
-                            <textarea class="form-control" id="event_content" name="event_content" rows="3" placeholder="<?php echo $row->event_content?>" ></textarea>
+                            <textarea class="form-control" id="event_content" name="event_content" rows="3" value="<?php echo $row->event_content?>" ></textarea>
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label for="id_start_datetime">Start Date</label>
                             <div class="input-group date" id="id_0">
-                                <input type="text" id="picker1" name="event_start" value="" class="form-control"  placeholder="<?php echo $row->event_start?>" required/>
+                                <input type="text" id="picker1" name="event_start" value="" class="form-control"  value="<?php echo $row->event_start?>" required/>
                                 <div class="input-group-addon input-group-append">
                                     <div class="input-group-text">
                                         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
@@ -69,7 +69,7 @@
                         <div class="form-group">
                             <label for="id_start_datetime">End Date</label>
                             <div class="input-group date" id="id_1">
-                                <input type="text" id="picker2" name="event_end" value="" class="form-control"  placeholder="<?php echo $row->event_end?>" required/>
+                                <input type="text" id="picker2" name="event_end" value="" class="form-control"  value="<?php echo $row->event_end?>" required/>
                                 <div class="input-group-addon input-group-append">
                                     <div class="input-group-text">
                                         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>

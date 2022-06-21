@@ -50,40 +50,34 @@
     <section>
     <div class="container">
         <h6 style="color:#031261;">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION (OADR)</h6>
-        <h1>TITLE OF NEWS ARTICLE TITLE OF NEWS ARTICLE TITLE OF NEWS ARTICLE </h1>
-        <h8 style="color:#828386;">June 10, 2022</h8><br><br>
+        <?php foreach($titleofnews as $row) { ?> 
+        <?php echo "<h1>$row->news_title</h1>"?>
+        <h8 style="color:#828386;"><?php echo $row->date_added?></h8><br><br>
         <div class="containbox">
                 <div class="nutritionheader"><a href="http://localhost/OADR-Website/User/news" style="text-decoration: none;">News & Announcements</a> > 
                 <a href="" style="text-decoration: none;">Title</a></div>
         </div>
         <h2 id="border"></h2>
         <div class="infodiv">
-            <img class="infoimg" src="<?php echo base_url('assets/img/doj.jpg');?>" style="width:100%; height:auto;">
-            <p class="infohead"><br>Some Details About Article / Picture</p>
+            <img class="infoimg" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>' style="width:100%; height:auto;">
+            <p class="infohead"><br><?php echo $row->news_title ?></p>
             <p class="infotext">
-            The Department of Justice celebrated the 2022 International AIDS Candlelight Memorial (IACM) on 16 May 2022 with the theme, “Keeping the light, honoring our rights, radiating pride.” The short program started with a message of support from Assistant Secretary Margaret V. Castillo-Padilla highlighting the Department’s adoption of non-discriminatory policy on HIV and AIDS that guaranteed a workplace environment free from HIV-related stigma and discrimination. She also underscored the programs and activities of the Department that championed the rights of people living with and affected by HIV (PLHIV) for the last four (4) years. Thereafter, ASec Padilla led the candlelighting ceremony and prayer. The event was participated in by Secretary Menardo I. Guevarra, Undersecretary Juliana G. Sunga, OIC Undersecretary Nicholas Felix L. Ty, Directors and Chiefs and other employees of the Department. She also thanked the Project Red Ribbon Care Management Foundation, a civil society organization-member of the Philippine National AIDS Council (PNAC) for lending the Department its symbolic red ribbon, an emblem of the battle against HIV and AIDS.
+            <?php echo $row->news_content ?>
             </p>
         </div>
-           
+        <?php } ?>
     </section>
 
     <section>
         <div class="container px-3 my-3">
         <a href="http://localhost/OADR-Website/User/news" style="text-decoration:none; color:black;"><h2>More News</h2></a> <br><br>
           <div class="row gx-5">
+            <?php foreach ($news as $row){ ?> 
           <div class="col-lg-4 mb-4 mb-lg-0">
-              <div class=""><img class="img-fluid" style = "max-width:350px;" src="<?php echo base_url('assets/img/doj.jpg');?>"></i></div><br>
-              <a href=""><h5 class="fw-bolder">NEWS ARTICLE 2</h5></a>
-            </div>
-            <div class="col-lg-4 mb-4 mb-lg-0">
-              <div class=""><img class="img-fluid" style = "max-width:350px;" src="<?php echo base_url('assets/img/doj.jpg');?>"></i></div><br>
-              <a href=""><h5 class="fw-bolder">NEWS ARTICLE 2</h5></a>
-            </div>
-            <div class="col-lg-4 mb-4 mb-lg-0">
-              <div class=""><img class="img-fluid" style = "max-width:350px;" src="<?php echo base_url('assets/img/doj.jpg');?>"></i></div><br>
-              <a href=""><h5 class="fw-bolder">NEWS ARTICLE 2</h5></a>
-            </div>
+              <div class=""><img class="img-fluid" style = "max-width:350px;"  src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'></i></div><br>
+              <a href=""><h5 class="fw-bolder"><?php echo $row->news_title ?></h5></a>
           </div>
+          <?php } ?>
         </div>
       </section>
       

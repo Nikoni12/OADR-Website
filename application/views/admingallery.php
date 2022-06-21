@@ -55,7 +55,7 @@
                                                 echo "<td>".$row->ID."</td>";
                                                 echo "<td>".$row->album_title."</td>";
                                                 echo "<td>".$row->album_image."</td>";
-                                                echo "<td>2022-01-01 12:00 NN</td>";
+                                                echo "<td>".$row->date_added."</td>";
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
                                                 <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editalbum">
