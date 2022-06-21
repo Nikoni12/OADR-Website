@@ -39,7 +39,7 @@ class User extends CI_Controller {
 	
 	public function news(){
 		$this->load->view('news');
-	}
+	} 
 	public function newstitle(){
 		$this->load->view('newstitle');
 	}
@@ -285,6 +285,12 @@ class User extends CI_Controller {
 	}
 	public function edituser(){
 		$this->load->view('edituser');
+	}
+	public function deleteuser(){
+		$id = $this->uri->segment(3);
+		$this->load->model('Users_model');
+		$this->users_model->deleteuser(intval($id));
+		redirect(base_url().'User/adminusers'); 
 	}
 	public function admingallery(){
 		$data['album'] = $this->users_model->getalbum();

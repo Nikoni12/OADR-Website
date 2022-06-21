@@ -56,11 +56,14 @@
                                                     echo "<td align = 'center'>".$lp->AdminName."</td>";
                                                     echo "<td align = 'center'>".$lp->UserName."</td>";
                                                     echo "<td align = 'center'>".$lp->MobileNumber."</td>";
-                                                    echo "<td align = 'center'>".$lp->role."</td>";
-                                                    echo "<td style = 'text-align:center; font-size:20px;'><i class='fa fa-pencil-square-o' aria-hidden='true'></i>&ensp; <i class='fa fa-trash-o' aria-hidden='true'></i></td>";
-                                                    echo "</tr>";
-                                                }
-                                            ?>
+                                                    echo "<td align = 'center'>".$lp->role."</td>";?>
+                                                    <td style = 'text-align:center; font-size:20px;'>
+                                                        <a href="#" class="delete_data" id="<?php echo $lp->ID; ?>">
+                                                            <i class='fa fa-trash-o' aria-hidden='true'></i>
+                                                        </a>
+                                                    </td>
+                                                    </tr>
+                                                <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -104,5 +107,20 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/jquery.dataTables.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
+        <script>  
+      $(document).ready(function(){  
+           $('.delete_data').click(function(){  
+                var id = $(this).attr("id");  
+                if(confirm("Are you sure you want to delete this?"))  
+                {  
+                     window.location="<?php echo base_url(); ?>User/deleteuser/"+id;  
+                }  
+                else  
+                {  
+                     return false;  
+                }  
+           });  
+      });  
+      </script>  
     </body>
 </html>
