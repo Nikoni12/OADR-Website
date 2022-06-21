@@ -35,7 +35,10 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">News</h5>
-                                                <span class="h2 font-weight-bold mb-0">0</span>
+                                                <?php
+                                                    $query = $this->db->query('SELECT * FROM news');
+                                                    echo "<span class='h2 font-weight-bold mb-0'>".$query->num_rows()."</span>"
+                                                ?>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape rounded-circle shadow">
@@ -52,7 +55,10 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Announcements</h5>
-                                                <span class="h2 font-weight-bold mb-0">0</span>
+                                                <?php
+                                                    $query = $this->db->query('SELECT * FROM announcements');
+                                                    echo "<span class='h2 font-weight-bold mb-0'>".$query->num_rows()."</span>"
+                                                ?>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape rounded-circle shadow">
@@ -69,7 +75,10 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Events</h5>
-                                                <span class="h2 font-weight-bold mb-0">0</span>
+                                                <?php
+                                                    $query = $this->db->query('SELECT * FROM events');
+                                                    echo "<span class='h2 font-weight-bold mb-0'>".$query->num_rows()."</span>"
+                                                ?>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape rounded-circle shadow">
@@ -86,7 +95,10 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Inquiries</h5>
-                                                <span class="h2 font-weight-bold mb-0">0</span>
+                                                <?php
+                                                    $query = $this->db->query('SELECT * FROM inquiries');
+                                                    echo "<span class='h2 font-weight-bold mb-0'>".$query->num_rows()."</span>"
+                                                ?>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape rounded-circle shadow">
@@ -103,7 +115,10 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Applications</h5>
-                                                <span class="h2 font-weight-bold mb-0">0</span>
+                                                <?php
+                                                    $query = $this->db->query('SELECT * FROM careers');
+                                                    echo "<span class='h2 font-weight-bold mb-0'>".$query->num_rows()."</span>"
+                                                ?>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape rounded-circle shadow">
@@ -120,7 +135,10 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Users</h5>
-                                                <span class="h2 font-weight-bold mb-0">0</span>
+                                                <?php
+                                                    $query = $this->db->query('SELECT * FROM admin');
+                                                    echo "<span class='h2 font-weight-bold mb-0'>".$query->num_rows()."</span>"
+                                                ?>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape rounded-circle shadow">

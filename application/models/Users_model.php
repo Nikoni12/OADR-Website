@@ -261,4 +261,14 @@ class Users_model extends CI_Model {
         $query = $this->db->get(); 
         return $query;
     }  
+    public function fetchuser(){
+        $this->db->select('*');
+        $this->db->from('admin');
+        $this->db->where('role', $category );
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function deleteuser($id){  
+        $this->db->delete('admin',array('ID' => $id));  
+    } 
 }

@@ -50,7 +50,7 @@
             <i style = "color:black;"class="fa fa-calendar"></i>
             <span>Inquiries</span> 
             <?php
-                $query = $this->db->query('SELECT * FROM inquiries');
+                $query = $this->db->query('SELECT * FROM inquiries where status != "Addressed" ');
                 echo "<span style = 'background-color:white;color:black;'class='badge badge-secondary'>".$query->num_rows()."</span>"
             ?>
         </a>
@@ -62,7 +62,7 @@
             <i style = "color:black;"class="fa fa-file"></i>
             <span>Applications</span>
             <?php
-                $query = $this->db->query('SELECT * FROM careers');
+                $query = $this->db->query('SELECT * FROM careers where status = "Not Addressed"');
                 echo "<span style = 'background-color:white;color:black;'class='badge badge-secondary'>".$query->num_rows()."</span>"
             ?>
         </a>
