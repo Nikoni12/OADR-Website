@@ -29,8 +29,14 @@ class User extends CI_Controller {
 		$this->load->view('quality');
 	}
 	public function resources(){
-		$this->load->view('resources');
+		$this->load->model('Users_model');
+		$data['res'] = $this->users_model->resourcescat();
+		$category = $this->uri->segment(3);
+		if ($category == ""){ $category = 1;}
+		$data['ress'] = $this->users_model->fetchcategory(intval($category));
+		$this->load->view('resources',$data);
 	}
+	
 	public function news(){
 		$data['news'] = $this->users_model->getnews();
 		$this->load->view('news',$data);
@@ -83,8 +89,8 @@ class User extends CI_Controller {
 		$this->load->view('eventsadmin',$data);
 	}
 	public function adminresources(){
-		
-		$this->load->view('adminresources');
+		$data['res'] = $this->users_model->resources();
+		$this->load->view('adminresources',$data);
 	}
 	public function announcement(){
 		$data['announcement'] = $this->users_model->getannouncement();
@@ -214,7 +220,7 @@ class User extends CI_Controller {
 				'news_image' => $news_image
 			);
 			$this->users_model->update_news($id,$new);
-			redirect(base_url() . 'User/newsadmin');
+			redirect(base_url() . 'User/newsadmin'); 
 	}
 
 	}
@@ -278,13 +284,20 @@ class User extends CI_Controller {
 		$this->load->view('addcategory');
 	}
 	public function addresources(){
-		$this->load->view('addresources');
+		$data['cat'] = $this->users_model->resources2();
+		$this->load->view('addresources',$data);
 	}
 	public function adduser(){
 		$this->load->view('adduser');
 	}
 	public function edituser(){
 		$this->load->view('edituser');
+	}
+	public function deleteuser(){
+		$id = $this->uri->segment(3);
+		$this->load->model('Users_model');
+		$this->users_model->deleteuser(intval($id));
+		redirect(base_url().'User/adminusers'); 
 	}
 	public function admingallery(){
 		$data['album'] = $this->users_model->getalbum();
@@ -558,16 +571,26 @@ class User extends CI_Controller {
 	public function addcat(){
         $this->load->model('Users_model');
         $catname = $this->input->post('catname');
-        $this->load->helper(array('form','url'));
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './assets/img/';
+		$config['encrypt_name'] = true;
+		$this->load->helper(array('form','url'));
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('catname', 'Category Name', 'required');
-		$category['categoryname'] = $catname;
+		$this->load->library('upload', $config);
 		if($this->form_validation->run()){
-			$this->users_model->insert_cat($category);
-			redirect("./User/admincatresources/","refresh"); 
+			if ($this->upload->do_upload('album_image')) {
+				$album_image = $this->upload->data('file_name');
+				$alb = array(
+					'categoryname' => $catname,
+					'image' => $album_image
+				);
+				$this->users_model->insert_cat($id,$alb);
+				redirect("./User/admincatresources/","refresh"); 
+			}
 		} else {
 			$this->addcategory();
 		}
+		
     }
 	public function editcat(){
 		$this->load->model('Users_model');
@@ -577,13 +600,13 @@ class User extends CI_Controller {
 	}
 	public function updatecat(){
 		$this->load->model('Users_model');
-		$cat = $this->uri->segment(3);
+		$rid = $this->input->post('rID');
 		$this->form_validation->set_rules('catname', 'Category Name', 'required');
 		$data = array(
-			'categoryname'=>$this->input->post('catname')
+			'categoryname' => $this->input->post('catname')
 		 );
 		 $data = array_filter($data);
-		 $this->Users_model->updatecat(intval($cat),$data);
+		 $this->Users_model->updatecat($rid,$data);
 		 redirect(base_url().'User/admincatresources'); 
 	}
 	public function deletecat(){
@@ -592,4 +615,28 @@ class User extends CI_Controller {
 		$this->users_model->deletecategory(intval($cat));
 		redirect(base_url().'User/admincatresources'); 
 	}
+	public function addresourcefile(){
+        $this->load->model('Users_model');
+        $catname = $this->input->post('catname');
+		$config['allowed_types'] = 'pdf';
+		$config['upload_path'] = './resources/';
+		$config['encrypt_name'] = true;
+		$this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+		$this->load->library('upload', $config);
+		if($this->form_validation->run()){
+			if ($this->upload->do_upload('album_image')) {
+				$album_image = $this->upload->data('file_name');
+				$alb = array(
+					'categoryname' => $catname,
+					'image' => $album_image
+				);
+				$this->users_model->insert_cat($id,$alb);
+				redirect("./User/admincatresources/","refresh"); 
+			}
+		} else {
+			$this->addcategory();
+		}
+		
+    }
 }

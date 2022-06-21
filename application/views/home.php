@@ -32,10 +32,7 @@
 				</div>
 			</div>
 		</section>
-		<main id="main" style = "overflow-x: hidden;">
-		
-		<section class="features" >
-		<div class="topnav">
+		<div class="topnav" style = "position: -webkit-sticky; position: sticky; top: 0;">
 			<a href="#adr">ADR</a>
 			<a href="#announcement">Announcement</a>
 			<a href="#upcomingevent">Upcoming Events</a>
@@ -47,7 +44,8 @@
 				</form>
 			</div>
 		</div>
-		</section>
+		<main id="main" class = "home-main"style = "overflow-x: hidden;overflow-y: scroll; height:550px;">
+	
 		<section class="features adrcontain" style="padding:0;" id="adr">
 		
                 <div class="container sect_post">
@@ -288,8 +286,9 @@
 					</div>
 				</div>
 			</section>
+			<?php $this->view('footer'); ?>
 		</main>
-		<?php $this->view('footer'); ?>
+		
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 		<script src="<?php echo base_url('assets/vendor/purecounter/purecounter.js');?>"></script>
 		<script src="<?php echo base_url('assets/vendor/aos/aos.js');?>"></script>

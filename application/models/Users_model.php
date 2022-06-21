@@ -254,4 +254,29 @@ class Users_model extends CI_Model {
         $query = $this->db->get(); 
         return $query;
     } 
+    public function resources(){
+        $result = $this->db->get('resources');
+        return $result;
+    }
+    public function resources2(){
+        $result = $this->db->get('resources_category');
+        return $result;
+    }
+    function fetchcategory($category){ 
+        $this->db->select('*');
+        $this->db->from('resources');
+        $this->db->where('cat_id', $category );
+        $query = $this->db->get(); 
+        return $query;
+    }  
+    public function fetchuser(){
+        $this->db->select('*');
+        $this->db->from('admin');
+        $this->db->where('role', $category );
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function deleteuser($id){  
+        $this->db->delete('admin',array('ID' => $id));  
+    } 
 }

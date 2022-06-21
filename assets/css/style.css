@@ -2482,7 +2482,7 @@ align-items: center;
   
 .topnav {
   overflow: hidden;
-  background-color: #e9e9e9;
+  background-color: #ecd540;
   overflow-x: hidden; /* Hide horizontal scrollbar */
   position: -webkit-sticky;
   position: sticky;
@@ -2567,3 +2567,6 @@ align-items: center;
    background-image: url("https://cdn-icons-png.flaticon.com/512/44/44567.png") !important;
  }
 
+ .home-main::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}

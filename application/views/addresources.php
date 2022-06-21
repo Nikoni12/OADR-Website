@@ -33,8 +33,10 @@
                                             <div class="form-group">
                                                 <label for="username">Select Category:</label>
                                                 <select class="form-control " style = "max-width:100%;" name="datascientist-decision" required>
-                                                    <option value="Accepted">Category 1</option>
-                                                    <option value="Rejected">Category 2</option>
+                                                <?php
+                                                    foreach($cat->result() as $lp){
+                                                        echo '<option name = "catname" value="'.$lp->categoryname.'">'.$lp->categoryname.'</option>';
+                                                    }?>
                                                 </select>
                                             </div>
                                             <div class="form-group">
