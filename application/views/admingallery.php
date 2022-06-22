@@ -38,7 +38,11 @@
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead style = "text-align:center;">
+                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteAllGallery"><span class="icon text-white-50">
+                                                    <i style = "color:black;" class="fas fa-trash"></i>
+                                                </span><span style = "color:black;" class="text">Delete Selected</span></button>
                                             <tr>
+                                            <th><input type="checkbox" id="master"></th>
                                                 <th>ID</th>
                                                 <th>Title</th>
                                                 <th>Content</th>
@@ -52,6 +56,7 @@
                                             ?>
                                             <tr>
                                             <?php 
+                                            echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$row->ID."'></td>";
                                                 echo "<td>".$row->ID."</td>";
                                                 echo "<td>".$row->album_title."</td>";
                                                 echo "<td>".$row->album_image."</td>";
@@ -61,10 +66,6 @@
                                                 <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editalbum">
                                                             <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                                                             <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                                    </form>
-                                                    <form style="display: inline;" method="post" action="<?php echo base_url();?>User/deletealbum">
-                                                            <input type ="hidden" name = "delete_id" value = "<?php  echo $row->ID;?>">
-                                                            <button type ="submit" class="btn btn-primary" name="delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                     </form>
                                                 </td>
                                                 <?php
@@ -115,4 +116,57 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
     </body>
+    <script type="text/javascript">
+    $(document).ready(function () {
+ 
+        $('#master').on('click', function(e) {
+         if($(this).is(':checked',true))  
+         {
+            $(".sub_chk").prop('checked', true);  
+         } else {  
+            $(".sub_chk").prop('checked',false);  
+         }  
+        });
+ 
+        $('.delete_all').on('click', function(e) {
+ 
+            var allVals = [];  
+            $(".sub_chk:checked").each(function() {  
+                allVals.push($(this).attr('data-id'));
+            });  
+ 
+            if(allVals.length <=0)  
+            {  
+                alert("Please select row.");  
+            }  else {  
+ 
+                var check = confirm("Are you sure you want to delete this row?");  
+                if(check == true){  
+ 
+                    var join_selected_values = allVals.join(","); 
+ 
+                    $.ajax({
+                        url: $(this).data('url'),
+                        type: 'POST',
+                        data: 'ids='+join_selected_values,
+                        success: function (data) {
+                          console.log(data);
+                          $(".sub_chk:checked").each(function() {  
+                              $(this).parents("tr").remove();
+                          });
+                          alert("Item Deleted successfully.");
+                        },
+                        error: function (data) {
+                            alert(data.responseText);
+                        }
+                    });
+ 
+                  $.each(allVals, function( index, value ) {
+                      $('table tr').filter("[data-row-id='" + value + "']").remove();
+                  });
+                }  
+            }  
+        });
+    });
+</script>
 </html>

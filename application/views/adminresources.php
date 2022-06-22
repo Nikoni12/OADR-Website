@@ -40,7 +40,11 @@
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead style = "text-align:center;">
+                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteAllResources"><span class="icon text-white-50">
+                                                    <i style = "color:black;" class="fas fa-trash"></i>
+                                                </span><span style = "color:black;" class="text">Delete Selected</span></button>
                                             <tr>
+                                            <th><input type="checkbox" id="master"></th>
                                                 <th>ID</th>
                                                 <th>Category</th>
                                                 <th>Name</th>
@@ -52,6 +56,7 @@
                                         <?php
                                             foreach($res->result() as $lp){
                                                 echo "<tr>";
+                                                echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$lp->ID."'></td>";
                                                 echo "<td>".$lp->ID."</td>";
                                                 echo "<td>".$lp->ResourcesCat."</td>";
                                                 echo "<td>".$lp->ResourcesName."</td>";
@@ -60,9 +65,6 @@
                                                 <td style = 'text-align:center; font-size:20px;'>
                                                     <a href="<?php echo base_url();?>User/editcat/<?php echo $lp->ID;?>">
                                                         <i class='fa fa-pencil' aria-hidden='true'></i>
-                                                    </a>
-                                                    <a href="#" class="delete_data" id="<?php echo $lp->ID; ?>">
-                                                        <i class='fa fa-trash-o' aria-hidden='true'></i>
                                                     </a>
                                                 </td>
                                                 </tr>
@@ -111,4 +113,57 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
     </body>
+    <script type="text/javascript">
+    $(document).ready(function () {
+ 
+        $('#master').on('click', function(e) {
+         if($(this).is(':checked',true))  
+         {
+            $(".sub_chk").prop('checked', true);  
+         } else {  
+            $(".sub_chk").prop('checked',false);  
+         }  
+        });
+ 
+        $('.delete_all').on('click', function(e) {
+ 
+            var allVals = [];  
+            $(".sub_chk:checked").each(function() {  
+                allVals.push($(this).attr('data-id'));
+            });  
+ 
+            if(allVals.length <=0)  
+            {  
+                alert("Please select row.");  
+            }  else {  
+ 
+                var check = confirm("Are you sure you want to delete this row?");  
+                if(check == true){  
+ 
+                    var join_selected_values = allVals.join(","); 
+ 
+                    $.ajax({
+                        url: $(this).data('url'),
+                        type: 'POST',
+                        data: 'ids='+join_selected_values,
+                        success: function (data) {
+                          console.log(data);
+                          $(".sub_chk:checked").each(function() {  
+                              $(this).parents("tr").remove();
+                          });
+                          alert("Item Deleted successfully.");
+                        },
+                        error: function (data) {
+                            alert(data.responseText);
+                        }
+                    });
+ 
+                  $.each(allVals, function( index, value ) {
+                      $('table tr').filter("[data-row-id='" + value + "']").remove();
+                  });
+                }  
+            }  
+        });
+    });
+</script>
 </html>
