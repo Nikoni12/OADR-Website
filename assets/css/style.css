@@ -2570,3 +2570,122 @@ align-items: center;
  .home-main::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
 }
+
+.directcontain{
+	position: relative;
+	font-family:"Catamaran", sans-serif;
+	font-size: 10px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+
+}
+
+.direct_head{
+  font-size: 32px;
+  font-weight: 800;
+  color: #031261;
+  font-family: Verdana, sans-serif;
+  text-align: center;
+  
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: white;
+  --stroke-color: lightblue;
+  
+  text-shadow: 
+    
+    var(--x-offset)
+    var(--y-offset)
+    0px
+    var(--background-color), 
+    
+    calc( var(--x-offset) - var(--stroke) )
+    calc( var(--y-offset) + var(--stroke) )
+    0px
+    var(--stroke-color);
+}
+
+.direct_post{
+	width: 100%;
+	max-width: 98rem;
+	padding: 5rem;
+	display:flex;
+	align-items: center;
+
+}
+.direct_border{
+  border: 1px solid #03136186!important;
+}
+.direct_img{
+	min-width: 35rem;
+	max-width: 50rem;
+	height: 30rem;
+	transform: translateX(-3rem);
+	position:relative;
+}
+
+.direct_text{
+	padding-top: 20px;
+	font-size: 14px;
+	color: rgba(0,0,0,.7);
+  font-family: Verdana, sans-serif;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.direct_title{
+  font-weight: 600;
+  color: black;
+  font-family: Verdana, sans-serif;
+  font-size: 40px;
+}
+
+.direct_subtitle{
+  font-weight: 600;
+  color: #031261;
+  font-family: Verdana, sans-serif;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1068px){
+	.direct_post{
+		max-width: 80rem;
+	}
+	
+	.direct_img{
+		min-width: 30rem;
+		max-width: 30rem;
+	}
+
+  .direct_title{
+    font-weight: 600;
+    color: black;
+    font-family: Verdana, sans-serif;
+    font-size: 32px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px){
+	
+	.direct_img{
+		min-width: 100%;
+		max-width: 100%;
+		margin-left: 90px;
+		
+	}
+  .direct_title{
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .direct_subtitle{
+    text-align: center;
+  }
+}
+
