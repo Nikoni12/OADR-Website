@@ -13,7 +13,7 @@
 						<li><a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a></li>
 						<li><a href="http://localhost/OADR-Website/User/quality">Quality Policy</a></li>
 						<li><a href="http://localhost/OADR-Website/User/orgstructure">Organization Structure</a></li>
-						<li class="dropdown"><a href="http://localhost/OADR-Website/User/employees"><span>Employees</span></a>
+						<li class="dropdown"><a href="http://localhost/OADR-Website/User/employees"><span>Officials</span></a>
 							<ul class = "bg-white py-2 collapse-inner rounded">
 								<li><a href="http://localhost/OADR-Website/User/director">Director</a></li>
 								<li><a href="http://localhost/OADR-Website/User/employees">Employees</a></li>
