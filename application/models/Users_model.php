@@ -279,4 +279,10 @@ class Users_model extends CI_Model {
     function deleteuser($id){  
         $this->db->delete('admin',array('ID' => $id));  
     } 
+    public function fetchemail($appnum){
+        $this->db->select('Email');
+        $this->db->from('careers');
+        $this->db->where('appnum',$appnum);
+        return $this->db->get();
+    }
 }

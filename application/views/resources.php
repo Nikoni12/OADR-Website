@@ -39,7 +39,7 @@
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Resources</h1><br> 
                     <div class="row ">
                         <div class="col-md-3 sidebar" style = "">
-                                <h4 style="font-weight:bold;">ABOUT</h4>
+                                <h4 style="font-weight:bold;">Category</h4>
                                 <?php foreach($res->result() as $lp) {?> 
                                     <a href="<?php echo base_url();?>User/resources/<?php echo $lp->ID;?>"><?php echo $lp->categoryname?></a>
                                 <?php } ?>

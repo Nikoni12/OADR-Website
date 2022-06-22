@@ -1,4 +1,8 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\OAuth;
+use League\OAuth2\Client\Provider\Google;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
  
@@ -381,10 +385,10 @@ class User extends CI_Controller {
 	public function applicationform(){
         $this->load->model('Users_model');
         $name = $this->input->post('name');
-        $email = $this->input->post('email');
+        $emaill = $this->input->post('email');
 		$pnum = $this->input->post('pnum');
 		$category = $this->input->post('category');
-		$message = $this->input->post('message');
+		$mess = $this->input->post('message');
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name', 'Name', 'required');
@@ -393,11 +397,11 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('category', 'Category', 'required');
 		$this->form_validation->set_rules('message', 'Message', 'required');
 		$app['Name'] = $name;
-		$app['Email'] = $email;
+		$app['Email'] = $emaill;
 		$app['PhoneNum'] = $pnum;
 		$app['Category'] = $category;
 		$app['status'] = 'Not Addressed';
-		$app['Message'] = $message;
+		$app['Message'] = $mess;
 		$appnum = sprintf("%'.09d\n", mt_rand(1,999999999999));
 		if($this->Users_model->checkappnum($appnum) == true){
 			$appnum = sprintf("%'.09d\n", mt_rand(1,999999999999));
@@ -420,8 +424,58 @@ class User extends CI_Controller {
 				$file = $this->upload->data();
 				$filename = $file['file_name'];
 				$filepass = array('resume_name' => $filename);
-				$this->users_model->insertcareer2($name, $filepass); 
-				redirect("./User/careerform/","refresh"); 
+				$this->users_model->insertcareer2($name, $filepass);
+				$message = file_get_contents('careersemail.html'); 
+				$message = str_replace('%name%', $name, $message); 
+				$message = str_replace('%email%', $emaill, $message); 
+				$message = str_replace('%phone%', $pnum, $message); 
+				$message = str_replace('%cat%', $category, $message); 
+				$message = str_replace('%mess%', $mess, $message); 
+				$message = str_replace('%appnum%', $appnum, $message);  
+				require_once('vendor/autoload.php');
+				require_once('class-db.php');
+				$mail = new PHPMailer();
+				$mail->isSMTP();
+				$mail->Host = 'smtp.gmail.com';
+				$mail->Port = 465;
+				$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+				$mail->SMTPAuth = true;
+				$mail->AuthType = 'XOAUTH2';
+								$email = 'cobratest27@gmail.com'; // the email used to register google app
+				$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
+				$clientSecret = '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';
+				$db = new DB();
+				$refreshToken = $db->get_refersh_token();
+				$provider = new Google(
+					[
+					'clientId' => $clientId,
+					'clientSecret' => $clientSecret,
+					]
+					);
+					//Pass the OAuth provider instance to PHPMailer
+					$mail->setOAuth(
+					new OAuth(
+					[
+					'provider' => $provider,
+					'clientId' => $clientId,
+					'clientSecret' => $clientSecret,
+					'refreshToken' => $refreshToken,
+					'userName' => $email,
+					]
+					)
+					);
+				
+				$mail->setFrom($email, 'Test');
+				$mail->addAddress($emaill, 'TestTest');
+				$mail->isHTML(true);
+				$mail->Subject = 'OADR Application Form';
+				$mail->Body = $message;
+				if (!$mail->send()) {
+					echo 'Mailer Error: ' . $mail->ErrorInfo;
+				} else {
+					redirect("./User/careerform/","refresh"); 
+				}
+				
 			}
 		} else {
 			$this->careerform();
@@ -432,7 +486,7 @@ class User extends CI_Controller {
         $fullname = $this->input->post('fullname');
         $emailaddress = $this->input->post('emailaddress');
 		$subject = $this->input->post('subject');
-		$message = $this->input->post('message');
+		$mess = $this->input->post('message');
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
         $this->form_validation->set_rules('fullname', 'Full Name', 'required');
@@ -442,7 +496,7 @@ class User extends CI_Controller {
 		$inq['Name'] = $fullname;
 		$inq['Email'] = $emailaddress;
 		$inq['Subject'] = $subject;
-		$inq['message'] = $message;
+		$inq['message'] = $mess;
 		$inq['status'] = 'Not Addressed';
 		$ticket = sprintf("%'.09d\n", mt_rand(1,999999999999));
 		if($this->Users_model->checkticket($ticket) == true){
@@ -451,7 +505,55 @@ class User extends CI_Controller {
 		$inq['ticket'] = $ticket;
 		if($this->form_validation->run()){
 			$this->users_model->insertinquiry($inq);
-			redirect("./User/contact/","refresh"); 
+			$message = file_get_contents('contactemail.html'); 
+			$message = str_replace('%name%', $fullname, $message); 
+			$message = str_replace('%email%', $emailaddress, $message); 
+			$message = str_replace('%subject%', $subject, $message);  
+			$message = str_replace('%mess%', $mess, $message); 
+			$message = str_replace('%ticket%', $ticket, $message);  
+			require_once('vendor/autoload.php');
+			require_once('class-db.php');
+			$mail = new PHPMailer();
+			$mail->isSMTP();
+			$mail->Host = 'smtp.gmail.com';
+			$mail->Port = 465;
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+			$mail->SMTPAuth = true;
+			$mail->AuthType = 'XOAUTH2';
+							$email = 'cobratest27@gmail.com'; // the email used to register google app
+			$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
+			$clientSecret = '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';
+			$db = new DB();
+			$refreshToken = $db->get_refersh_token();
+			$provider = new Google(
+				[
+				'clientId' => $clientId,
+				'clientSecret' => $clientSecret,
+				]
+				);
+				//Pass the OAuth provider instance to PHPMailer
+				$mail->setOAuth(
+				new OAuth(
+				[
+				'provider' => $provider,
+				'clientId' => $clientId,
+				'clientSecret' => $clientSecret,
+				'refreshToken' => $refreshToken,
+				'userName' => $email,
+				]
+				)
+				);
+			
+			$mail->setFrom($email, 'Test');
+			$mail->addAddress($emailaddress, 'TestTest');
+			$mail->isHTML(true);
+			$mail->Subject = 'OADR Inquiry Form';
+			$mail->Body = $message;
+			if (!$mail->send()) {
+				echo 'Mailer Error: ' . $mail->ErrorInfo;
+			} else {
+				redirect("./User/contact/","refresh"); ; 
+			}
 		} else {
 			$this->contact();
 		}
@@ -556,7 +658,53 @@ class User extends CI_Controller {
 		 );
 		 $data = array_filter($data);
 		 $this->Users_model->updateapplication(intval($appnum),$data);
-		 redirect(base_url().'User/adminapplications'); 
+		 $result=$this->Users_model->fetchemail(intval($appnum))->row();
+		$emaill=$result->Email;
+		$message = file_get_contents('accepted.html');
+		require_once('vendor/autoload.php');
+		require_once('class-db.php');
+		$mail = new PHPMailer();
+		$mail->isSMTP();
+		$mail->Host = 'smtp.gmail.com';
+		$mail->Port = 465;
+		$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+		$mail->SMTPAuth = true;
+		$mail->AuthType = 'XOAUTH2';
+		$email = 'cobratest27@gmail.com'; // the email used to register google app
+		$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
+		$clientSecret = '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';
+		$db = new DB();
+		$refreshToken = $db->get_refersh_token();
+		$provider = new Google(
+			[
+			'clientId' => $clientId,
+			'clientSecret' => $clientSecret,
+			]
+			);
+			//Pass the OAuth provider instance to PHPMailer
+			$mail->setOAuth(
+			new OAuth(
+			[
+			'provider' => $provider,
+			'clientId' => $clientId,
+			'clientSecret' => $clientSecret,
+			'refreshToken' => $refreshToken,
+			'userName' => $email,
+			]
+			)
+			);
+		
+		$mail->setFrom($email, 'Test');
+		$mail->addAddress($emaill, 'TestTest');
+		$mail->isHTML(true);
+		$mail->Subject = 'OADR Application Status';
+		$mail->Body = $message;
+		if (!$mail->send()) {
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		} else {
+			redirect(base_url().'User/adminapplications');
+		}
+		
 	}
 	public function rejectapp(){
 		$this->load->model('Users_model');
@@ -566,7 +714,53 @@ class User extends CI_Controller {
 		 );
 		 $data = array_filter($data);
 		 $this->Users_model->updateapplication(intval($appnum),$data);
-		 redirect(base_url().'User/adminapplications'); 
+		 $result=$this->Users_model->fetchemail(intval($appnum))->row();
+		$emaill=$result->Email;
+		$message = file_get_contents('rejected.html');
+		require_once('vendor/autoload.php');
+		require_once('class-db.php');
+		$mail = new PHPMailer();
+		$mail->isSMTP();
+		$mail->Host = 'smtp.gmail.com';
+		$mail->Port = 465;
+		$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+		$mail->SMTPAuth = true;
+		$mail->AuthType = 'XOAUTH2';
+		$email = 'cobratest27@gmail.com'; // the email used to register google app
+		$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
+		$clientSecret = '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';
+		$db = new DB();
+		$refreshToken = $db->get_refersh_token();
+		$provider = new Google(
+			[
+			'clientId' => $clientId,
+			'clientSecret' => $clientSecret,
+			]
+			);
+			//Pass the OAuth provider instance to PHPMailer
+			$mail->setOAuth(
+			new OAuth(
+			[
+			'provider' => $provider,
+			'clientId' => $clientId,
+			'clientSecret' => $clientSecret,
+			'refreshToken' => $refreshToken,
+			'userName' => $email,
+			]
+			)
+			);
+		
+		$mail->setFrom($email, 'Test');
+		$mail->addAddress($emaill, 'TestTest');
+		$mail->isHTML(true);
+		$mail->Subject = 'OADR Application Status';
+		$mail->Body = $message;
+		if (!$mail->send()) {
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		} else {
+			redirect(base_url().'User/adminapplications');
+		}
+		  
 	}
 	public function addcat(){
         $this->load->model('Users_model');
@@ -639,4 +833,135 @@ class User extends CI_Controller {
 		}
 		
     }
+	public function sendreply(){
+		$reply = $this->input->post('reply');
+		$emaill = $this->input->post('email');
+		$this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('reply', 'Reply', 'required');
+		if($this->form_validation->run()){
+			$message = file_get_contents('reply.html'); 
+			$message = str_replace('%reply%', $reply, $message); 
+			
+			require_once('vendor/autoload.php');
+			require_once('class-db.php');
+			$mail = new PHPMailer();
+			$mail->isSMTP();
+			$mail->Host = 'smtp.gmail.com';
+			$mail->Port = 465;
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+			$mail->SMTPAuth = true;
+			$mail->AuthType = 'XOAUTH2';
+							$email = 'cobratest27@gmail.com'; // the email used to register google app
+			$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
+			$clientSecret = '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';
+			$db = new DB();
+			$refreshToken = $db->get_refersh_token();
+			$provider = new Google(
+				[
+				'clientId' => $clientId,
+				'clientSecret' => $clientSecret,
+				]
+				);
+				//Pass the OAuth provider instance to PHPMailer
+				$mail->setOAuth(
+				new OAuth(
+				[
+				'provider' => $provider,
+				'clientId' => $clientId,
+				'clientSecret' => $clientSecret,
+				'refreshToken' => $refreshToken,
+				'userName' => $email,
+				]
+				)
+				);
+			
+			$mail->setFrom($email, 'Test');
+			$mail->addAddress($emaill, 'TestTest');
+			$mail->isHTML(true);
+			$mail->Subject = 'OADR Inquiry Form';
+			$mail->Body = $message;
+			if (!$mail->send()) {
+				echo 'Mailer Error: ' . $mail->ErrorInfo;
+			} else {
+				redirect("./User/admininquiries/","refresh"); ; 
+			}
+			
+		} else {
+			$this->adduser();
+		}
+	}
+	public function deleteAllinquiry()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('inquiries');
+ 
+        redirect("./User/admininquiries/","refresh"); ; 
+    }
+	public function deleteAllapplications()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('careers');
+ 
+        redirect("./User/adminapplications/","refresh"); ; 
+    }
+	public function deleteAllNews()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('news');
+ 
+        redirect("./User/newsadmin/","refresh"); ; 
+    }
+	public function deleteAllAnnouncement()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('announcements');
+ 
+        redirect("./User/announcementsadmin/","refresh"); ; 
+    }
+	public function deleteAllEvent()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('events');
+ 
+        redirect("./User/eventadmin/","refresh"); ; 
+    }
+	public function deleteAllGallery()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('gallery');
+ 
+        redirect("./User/admingallery/","refresh"); ; 
+    }
+	public function deleteAllCat()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('resources_category');
+ 
+        redirect("./User/admincatresources/","refresh"); ; 
+    }
+	public function deleteAllResources()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('resources');
+ 
+        redirect("./User/adminresources/","refresh"); ; 
+    }
+	public function deleteAllUser()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('admin');
+ 
+        redirect("./User/adminusers/","refresh"); ; 
+    }
+	
 }

@@ -63,9 +63,19 @@
                                                             <td style = 'text-align:right;'><b>Message: </b></td>
                                                             <td>".$lp->message."</td>
                                                         </tr>";
+                                                        $email = $lp->Email;
                                         }?>
                                         </tbody>
                                     </table>
+                                    <form method="post"  action="<?php echo base_url();?>User/sendreply" >
+                                    <div class="form-group">
+                                        <label for="username">Reply</label>
+                                        <input type="hidden" id="custId" name="email" value=<?php echo $email;?>>
+                                        <textarea class="form-control" name = "reply" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <span class="text-danger fontColor"><?php echo form_error('message'); ?></span>
+                                    </div>
+                                    <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>
+                                </form>
                                 </div>
                             </div>
                         </div>
