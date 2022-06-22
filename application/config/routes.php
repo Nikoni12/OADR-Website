@@ -53,3 +53,5 @@ $route['default_controller'] = 'user';
 $route['register'] = 'user';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['item'] = "item";
+$route['itemDelete']['post'] = "item/deleteAll";
