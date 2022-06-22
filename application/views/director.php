@@ -34,24 +34,64 @@
         <main id="main">
         <section class="features">
             <div class="container">
-                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Mission and Vision</h1><br> 
+                <h1 class = "direct_head" >OFFICE OF EXECUTIVE DIRECTOR</h1><br>
+            </div>
+        </section> 
+        
+		<section class="features directcontain" style="padding:0;">
+                <div class="container direct_post">
+                    <div class="row">
+					<div class="col-md-6"><img class="img-fluid" style="display:block; margin: 0 auto; max-width:100%;" src="<?php echo base_url('assets/img/atty.png');?>"></div>
+                        <div class="col-md-6 sect_info">
+						<h2 class ="direct_title">ATTY. IRENE D.T. ALOGOC </h2>
+				<div class="border"></div><br>
+                <h2 class ="direct_subtitle">Executive Director V</h2>
+				<p class="direct_text">
+                Atty. Irene is the inaugural Executive Director V of the Office for Alternative Dispute
+                Resolution (OADR), an attached agency of the Department of Justice. She has more
+                than ten (10) years of extensive law practice and is a professor of Law at the University
+                of Santo Tomas (UST) Faculty of Civil Law, Arellano University School of Law (AUSL),
+                New Era University College Law (NEU-COL), Tarlac State University School of Law
+                (TSU-SOL), and Bicol University College of Law (BUCL). She is also a lecturer in
+                Mandatory Continuing Legal Education (MCLE) covering topics in Alternative Dispute
+                Resolution (ADR).
+				</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="features">
+            <div class="container direct_post">
                     <div class="row ">
-                        <div class="col-md-3 sidebar" style = "">
-                                <nav>
-                                <h4 style="font-weight:bold;">ABOUT</h4>
-                                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
-                                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
-                                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
-                                <a href="http://localhost/OADR-Website/User/orgstructure">Organizational Struture</a>
-                                <a href="http://localhost/OADR-Website/User/director">Director</a>
-                                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
-                                </nav>
-                            </div>
-                            <div class="col-md-8"  style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
-                                <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">M</span>ission</p>
-                                <p style = "text-align:justify;">To promote and institutionalize the effective and ethical use and practice of ADR in the country.</p>
-                                <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">V</span>ision</p>
-                                <p style = "text-align:justify;">We envision an enlightened society that rises above conflicts and empowers parties in making arrangements to settle their own disputes that is fair and just for all.</p>
+                            <div class="col-md-16">
+                                <br>
+                                <p style = "text-align:justify; line-height: 1.8;">Atty. Irene is a Career Executive Service Officer I (CESO I). Her
+                                    dynamic government record and desire to innovate is evident in the various key
+                                    positions she held in all three branches of the government, which include her
+                                    appointment as Acting Director IV of the Internal Audit Service of the Department of
+                                    Agriculture by then President Benigno Simeon C. Aquino III in 2013, her designation as
+                                    Court Attorney V at the Judicial and Bar Council, and as Director II at the House of
+                                    Representatives Electoral Tribunal prior to her appointment to her present position by
+                                    President Rodrigo Roa Duterte. She completed the Negotiation and Leadership Course
+                                    of the Harvard Law School - Program on Negotiation. She likewise had her
+                                    Comprehensive Course on International Commercial Arbitration under the Chartered
+                                    Institute of Arbitrators - New York Branch and the Columbia Law School, and Strategic
+                                    Conflict Management for Professionals (Modules I and II) at the Singapore Mediation
+                                    Centre (SMC). She is a trained Arbitrator and trained File Counsel of the Philippine
+                                    Dispute Resolution Center, Inc. (PDRCI). Atty. Irene represents the Philippines in the
+                                    United Nations Commission on International Trade Law (UNCITRAL) Working Group II
+                                    (Arbitration and Conciliation/Dispute Settlement) and Working Group III (Investor-State
+                                    Dispute Settlement Reform).
+                                </p><br>
+                                <p style = "text-align:justify; line-height: 1.8;">She is also the Principal Representative of the Justice
+                                Department to the Lupong Tagapamayapa Incentives Awards (LTIA) - National Board of
+                                Judges. Atty. Irene obtained her law degree from the Arellano University School of Law
+                                and Bachelor of Arts degree in Legal Management from the University of Santo Tomas.
+                                Among her advocacies are to mainstream ADR in the Philippine justice system,
+                                empower government agencies with effective ADR mechanisms, organize quality skills
+                                training programs for ADR practitioners, and standardize the ADR profession in the
+                                Philippines.</p>
+                                <div class="direct_border"></div><br>
                             </div>
                         </div>
                     </div>

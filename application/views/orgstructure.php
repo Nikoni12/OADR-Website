@@ -34,7 +34,7 @@
         <main id="main">
         <section class="features">
             <div class="container">
-                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Mission and Vision</h1><br> 
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Organizational Structure</h1><br> 
                     <div class="row ">
                         <div class="col-md-3 sidebar" style = "">
                                 <nav>
@@ -47,11 +47,25 @@
                                 <a href="http://localhost/OADR-Website/User/employees">Employees</a>
                                 </nav>
                             </div>
-                            <div class="col-md-8"  style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
-                                <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">M</span>ission</p>
-                                <p style = "text-align:justify;">To promote and institutionalize the effective and ethical use and practice of ADR in the country.</p>
-                                <p style = "font-size:30px;"><span style = "font-size: 60px;line-height: 70px;">V</span>ision</p>
-                                <p style = "text-align:justify;">We envision an enlightened society that rises above conflicts and empowers parties in making arrangements to settle their own disputes that is fair and just for all.</p>
+                            <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
+                                <br>
+                                <img class="img-fluid" src="<?php echo base_url('assets/img/orgstructurepic.png');?>">
+                                <br><br><h2 class="text-left" style="font-size:16px; opacity: 0.7;"><i>Office of Alternative Dispute Resolution (OADR) Organizational Structure</i></h2><br>
+                                <p style = "text-align:justify;">The Office of Alternative Dispute Resolution (OADR) Organizational structure is composed of the following units:</p>
+                                <ul style="list-style-type: square; padding-left:20px;">
+                                &nbsp;<li><p style = "text-align:justify;">Office of the Executive Director (OED)</p></li>
+                                &nbsp;<li><p style = "text-align:justify;">Finance and Administrative Division</p></li>
+                                &nbsp;<li><p style = "text-align:justify;">Training, Accrediation and Promotion Service (TAPS)</p></li>
+                                &nbsp;<li><p style = "text-align:justify;">Policy, Compliance and Monitoring Service</p></li>
+                                </ul>
+                                <p style = "text-align:justify; line-height:1.7;">The creation of key positions under the OED, which 
+                                    includes the Deputy Executive Director IV (SG28), and two(2)
+                                    Director III (SG27) positions for the service-level
+                                    units shall, however, be subject to the approval
+                                    of the president of the philippines pursuant
+                                    to section 89^3 of the General Provisions
+                                    of RA No.10717 (Fiscal Year 2016 General Approriations Act).
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -25,6 +25,12 @@ class User extends CI_Controller {
 	public function employees(){
 		$this->load->view('employees');
 	}
+	public function director(){
+		$this->load->view('director');
+	}
+	public function orgstructure(){
+		$this->load->view('orgstructure');
+	}
 	public function quality(){
 		$this->load->view('quality');
 	}

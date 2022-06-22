@@ -41,7 +41,7 @@
 							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark">
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-3">
-									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->news_image."' class='img-fluid shadow-1-strong rounded'>"."</td>"; ?>
+									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->news_image."' class='img-fluid shadow-1-strong rounded' style='max-height:210px; width:100%;'>"."</td>"; ?>
 								</div>
 								<div class="col-md-9">
 									<?php echo "<p class='mb-2'><strong>$row->news_title</strong></p>" ?>
