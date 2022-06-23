@@ -43,8 +43,8 @@
                         <div class="row mb-12 border-bottom pb-2">
                             <div class="col-md-3">
                                 <figure class = "figurecal img-fluid">
-                                    <header class = "headercal">June</header>
-                                    <section class = "sectioncal">15</section>
+                                    <header class = "headercal"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?></header>
+                                    <section class = "sectioncal"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></section>
                                 </figure>
                             </div>
                             <div class="col-md-9">

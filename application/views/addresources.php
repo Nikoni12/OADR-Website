@@ -29,23 +29,20 @@
                             <div class="col-xl-6 col-lg-10 col-md-6">
                                 <div class="card o-hidden border-0 shadow-lg my-5">
                                     <div class="card-body " data-aos="slide-up">
-                                        <form method="POST" class="user">
+                                        <form method="post" action="<?php echo base_url();?>User/resourcesadd" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label for="username">Select Category:</label>
-                                                <select class="form-control " style = "max-width:100%;" name="datascientist-decision" required>
+                                                <select class="form-control " style = "max-width:100%;" name="resourcecat">
                                                 <?php
-                                                    foreach($cat->result() as $lp){
-                                                        echo '<option name = "catname" value="'.$lp->categoryname.'">'.$lp->categoryname.'</option>';
-                                                    }?>
+                                                    foreach($cat->result() as $lp){ ?>
+                                                        <option value = "<?php echo $lp->categoryname; ?>"><?php echo $lp->categoryname; ?></option>
+                                                    <?php }?>
                                                 </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="username">Title:</label>
-                                                <input type="text" class="form-control" id="adminname" name="adminname"  placeholder="Enter Title" required>
+                                                <span class="text-danger fontColor"><?php echo form_error('resourcecat'); ?></span>
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">File: (PDF Format)</label>
-                                                <input type="file" class="form-control" id="adminname" name="adminname"  placeholder="Enter Article Title" required>
+                                                <input type="file" class="form-control" id="adminname" name="files[]"  placeholder="Enter Article Title" multiple>
                                             </div>
                                             <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                                         </form>

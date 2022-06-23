@@ -35,11 +35,7 @@
                             <input type="text" class="form-control" id="adminname" name="catname"  placeholder="Enter Category Name">
                             <span class="text-danger fontColor"><?php echo form_error('catname'); ?></span>
                         </div>
-                        <div class="form-group">
-                            <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="adminname" name="album_image"  placeholder="Enter Category Name">
-                            <span class="text-danger fontColor"><?php echo form_error('catname'); ?></span>
-                        </div>
+                        
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                         </form>
                                 </div>
