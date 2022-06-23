@@ -17,6 +17,9 @@
         <link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
     </head>
     <body>
         <?php include_once('header.php');?>
@@ -145,7 +148,17 @@
 <script src="<?php echo base_url('assets/vendor/php-email-form/validate.js');?>"></script>
 
 <script src="<?php echo base_url('assets/js/main.js');?>"></script>
-
+<?php if($this->session->userdata('sent')){   ?>
+    <script>
+		Swal.fire({
+					title: 'Application Sent',
+					text: "You successfully sent your application. You may check your email for further information.",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+<?php $this->session->unset_userdata('sent');}?>
 </body>
 
 </html>

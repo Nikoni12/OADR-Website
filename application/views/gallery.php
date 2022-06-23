@@ -35,18 +35,15 @@
             <section class="image-grid">
                 <div class="container">
                     <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Photo Gallery</h1><br> 
-                    <div class="row text-center text-lg-start">
-                    <?php 
-                        foreach($album as $row) {
-                    ?>
-                        <div class="col-lg-3 col-md-4 col-6">
+                    <div class="row">
+                    <?php foreach($pics as $row) { ?>
+                        <div class="col-md-4 mt-3 col-lg-3">
+                        <?php echo $row->album_title; ?>
                             <a href="#" class="d-block mb-4 h-100">
-                                <img class="img-fluid img-thumbnail" src='<?php echo base_url() . 'uploads/' . $row->album_image; ?>'>
+                                <img class=" img-fluid img-thumbnail" src='<?php echo base_url() . 'uploads/' . $row->album_image; ?>'>
                             </a>
                         </div>
-                        <?php
-                            }
-                        ?>
+                        <?php }?>
                     </div>
                 </div>
             </section>

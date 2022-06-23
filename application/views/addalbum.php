@@ -32,11 +32,11 @@
                         <form method="POST" action="<?php echo base_url();?>User/submitalbum" enctype="multipart/form-data" class="user">
                         <div class="form-group">
                             <label for="username">Album Title:</label>
-                            <input type="text" class="form-control" id="album_title" name="album_title"  placeholder="Enter Album Title" required>
+                            <input type="text" class="form-control" id="album_title" name="album_title"  placeholder="Enter Album Title">
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="album_image" name="album_image" required>
+                            <input type="file" class="form-control" id="album_image" name="files[]" multiple>
                         </div>
                         <input type="hidden" class="form-control" id="date_added" name="date_added" value=<?php echo date("m-d-y");?>>
 

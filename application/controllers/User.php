@@ -13,7 +13,6 @@ class User extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
         $this->load->library('session');
-		$this->load->library('session');
 	}
 	
 	public function index(){
@@ -64,7 +63,11 @@ class User extends CI_Controller {
 		$this->load->view('administrator-panel-login');
 	}
 	public function dashboard(){
-		$this->load->view('administrator-dashboard');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('administrator-dashboard');
+		}
 	}
 	public function careers(){
 		$this->load->view('careers');
@@ -83,9 +86,12 @@ class User extends CI_Controller {
 	}
 	
 	public function gallery(){
-		$data['album'] = $this->users_model->getalbum();
+		$this->load->model('Users_model');
+		$data['album'] = $this->users_model->fetchalbum();
+		$data['pics'] = $this->users_model->getalbum();
 		$this->load->view('gallery',$data);
 	}
+	
 	public function newsadmin(){
 		$data['news'] = $this->users_model->getnews();
 		$this->load->view('newsadmin', $data);
@@ -139,7 +145,9 @@ class User extends CI_Controller {
 				'date_added' => $this->input->post('date_added')
 			);
 			$this->users_model->insertnews($new);
+			$this->session->set_userdata('added','added');
 		}
+		
 		redirect(base_url() . 'User/newsadmin');
 
 	}
@@ -230,6 +238,7 @@ class User extends CI_Controller {
 				'news_image' => $news_image
 			);
 			$this->users_model->update_news($id,$new);
+			$this->session->set_userdata('added','added');
 			redirect(base_url() . 'User/newsadmin'); 
 	}
 
@@ -293,10 +302,8 @@ class User extends CI_Controller {
 	public function addcategory(){
 		$this->load->view('addcategory');
 	}
-	public function addresources(){
-		$data['cat'] = $this->users_model->resources2();
-		$this->load->view('addresources',$data);
-	}
+	
+	
 	public function adduser(){
 		$this->load->view('adduser');
 	}
@@ -320,21 +327,36 @@ class User extends CI_Controller {
 		$this->load->view('addalbum');
 	}
 	public function submitalbum(){
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './uploads/';
-		$config['encrypt_name'] = true;
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('album_image')) {
-			$album_image = $this->upload->data('file_name');
-			$alb = array(
-				'album_title' => $this->input->post('album_title'),
-				'album_image' => $album_image,
-				'date_added' => $this->input->post('date_added')
-			);
-			$this->users_model->insertalbum($alb);
+		if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
+			$filesCount = count($_FILES['files']['name']); 
+			for($i = 0; $i < $filesCount; $i++){ 
+				$_FILES['file']['name'] = $_FILES['files']['name'][$i]; 
+				$_FILES['file']['type'] = $_FILES['files']['type'][$i]; 
+				$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i]; 
+				$_FILES['file']['error'] = $_FILES['files']['error'][$i]; 
+				$_FILES['file']['size'] = $_FILES['files']['size'][$i]; 
+				$config['upload_path'] = './uploads/';
+				$config['allowed_types'] = 'jpg|jpeg|png|gif'; 
+				$config['encrypt_name'] = true;
+				$this->load->library('upload', $config); 
+                $this->upload->initialize($config);
+				if($this->upload->do_upload('file')){ 
+					$fileData = $this->upload->data(); 
+					$uploadData[$i]['album_title'] =  $this->input->post('album_title');
+					$uploadData[$i]['album_image'] = $fileData['file_name']; 
+				}else{  
+					$errorUploadType .= $_FILES['file']['name'].' | ';  
+				} 
+			}
+			$errorUploadType = !empty($errorUploadType)?'<br/>File Type Error: '.trim($errorUploadType, ' | '):'';
+			if(!empty($uploadData)){ 
+				/* Insert files data into the database */
+				$insert = $this->users_model->insertalbum($uploadData); 
+				redirect(base_url() . 'User/admingallery');
+				/* Upload status message */
+			}
 		}
-		redirect(base_url() . 'User/admingallery');
-
+		
 	}
 
 	public function updatealbum(){
@@ -378,8 +400,9 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required');
         if($this->form_validation->run()){
             if($this->users_model->check_login($username,$password)){
+				$this->session->set_userdata('username',$username);
 				redirect("./User/dashboard/","refresh");
-				$this->session->set_flashdata('username',$username);
+				
             } else {
 				echo "<script>alert('Invalid Username or Password');</script>";
                 $this->adminlogin();
@@ -397,9 +420,9 @@ class User extends CI_Controller {
 		$mess = $this->input->post('message');
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('pnum', 'Phone Number', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required|alpha');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('pnum', 'Phone Number', 'required|numeric');
 		$this->form_validation->set_rules('category', 'Category', 'required');
 		$this->form_validation->set_rules('message', 'Message', 'required');
 		$app['Name'] = $name;
@@ -479,6 +502,7 @@ class User extends CI_Controller {
 				if (!$mail->send()) {
 					echo 'Mailer Error: ' . $mail->ErrorInfo;
 				} else {
+					$this->session->set_userdata('sent','sent');
 					redirect("./User/careerform/","refresh"); 
 				}
 				
@@ -495,8 +519,8 @@ class User extends CI_Controller {
 		$mess = $this->input->post('message');
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('fullname', 'Full Name', 'required');
-        $this->form_validation->set_rules('emailaddress', 'Email Address', 'required');
+        $this->form_validation->set_rules('fullname', 'Full Name', 'required|alpha');
+        $this->form_validation->set_rules('emailaddress', 'Email Address', 'required|valid_email');
 		$this->form_validation->set_rules('subject', 'Subject', 'required');
 		$this->form_validation->set_rules('message', 'Message', 'required');
 		$inq['Name'] = $fullname;
@@ -558,6 +582,7 @@ class User extends CI_Controller {
 			if (!$mail->send()) {
 				echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
+				$this->session->set_userdata('sent','sent');
 				redirect("./User/contact/","refresh"); ; 
 			}
 		} else {
@@ -574,9 +599,9 @@ class User extends CI_Controller {
 		$adminnumber = $this->input->post('adminnumber');
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('adminName', 'Admin Name', 'required');
-        $this->form_validation->set_rules('adminUsername', 'Admin Username', 'required');
-		$this->form_validation->set_rules('adminnumber', 'Admin Phone Number', 'required');
+        $this->form_validation->set_rules('adminName', 'Admin Name', 'required|alpha');
+        $this->form_validation->set_rules('adminUsername', 'Admin Username', 'required||is_unique[admin.UserName]');
+		$this->form_validation->set_rules('adminnumber', 'Admin Phone Number', 'required|numeric');
 		$this->form_validation->set_rules('adminPassword', 'Admin Password', 'required');
 		$this->form_validation->set_rules('adminconfirmpass', 'Admin Confirm Password', 'required|matches[adminPassword]');
 		$this->form_validation->set_rules('adminrole', 'Admin Role', 'required');
@@ -599,7 +624,7 @@ class User extends CI_Controller {
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
         $this->form_validation->set_rules('nameadmin', 'Admin Name', 'required');
-        $this->form_validation->set_rules('usernameadmin', 'Admin Username', 'required');
+        $this->form_validation->set_rules('usernameadmin', 'Admin Username', 'required|is_unique[admin.UserName]');
         if($this->form_validation->run()){
             if($this->users_model->check_login($username,$password)){
 				redirect("./User/dashboard/","refresh");
@@ -771,22 +796,15 @@ class User extends CI_Controller {
 	public function addcat(){
         $this->load->model('Users_model');
         $catname = $this->input->post('catname');
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './assets/img/';
-		$config['encrypt_name'] = true;
 		$this->load->helper(array('form','url'));
         $this->load->library('form_validation');
-		$this->load->library('upload', $config);
+		$this->form_validation->set_rules('catname', 'Category', 'required');
 		if($this->form_validation->run()){
-			if ($this->upload->do_upload('album_image')) {
-				$album_image = $this->upload->data('file_name');
 				$alb = array(
 					'categoryname' => $catname,
-					'image' => $album_image
 				);
-				$this->users_model->insert_cat($id,$alb);
+				$this->users_model->insert_cat($alb);
 				redirect("./User/admincatresources/","refresh"); 
-			}
 		} else {
 			$this->addcategory();
 		}
@@ -818,22 +836,13 @@ class User extends CI_Controller {
 	public function addresourcefile(){
         $this->load->model('Users_model');
         $catname = $this->input->post('catname');
-		$config['allowed_types'] = 'pdf';
-		$config['upload_path'] = './resources/';
-		$config['encrypt_name'] = true;
-		$this->load->helper(array('form','url'));
-        $this->load->library('form_validation');
-		$this->load->library('upload', $config);
+		$this->form_validation->set_rules('reply', 'Reply', 'required');
 		if($this->form_validation->run()){
-			if ($this->upload->do_upload('album_image')) {
-				$album_image = $this->upload->data('file_name');
 				$alb = array(
 					'categoryname' => $catname,
-					'image' => $album_image
 				);
 				$this->users_model->insert_cat($id,$alb);
 				redirect("./User/admincatresources/","refresh"); 
-			}
 		} else {
 			$this->addcategory();
 		}
@@ -969,6 +978,52 @@ class User extends CI_Controller {
  
         redirect("./User/adminusers/","refresh"); ; 
     }
-
-	
+	public function addresources(){
+		$data['cat'] = $this->users_model->resources2();
+		$this->load->view('addresources',$data);
+	}
+	public function resourcesadd(){
+        $this->load->model('Users_model');
+        $resourcecat = $this->input->post('resourcecat');
+		$result=$this->Users_model->fetchid(strval($resourcecat))->row();
+		$cat_id = $result->ID;
+		$this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('resourcecat', 'Category', 'required');
+		if($this->form_validation->run()){
+			if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
+				$filesCount = count($_FILES['files']['name']); 
+				for($i = 0; $i < $filesCount; $i++){ 
+					$_FILES['file']['name'] = $_FILES['files']['name'][$i]; 
+					$_FILES['file']['type'] = $_FILES['files']['type'][$i]; 
+					$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i]; 
+					$_FILES['file']['error'] = $_FILES['files']['error'][$i]; 
+					$_FILES['file']['size'] = $_FILES['files']['size'][$i]; 
+					$config['upload_path'] = './resources/';
+					$config['allowed_types'] = 'pdf'; 
+					$this->load->library('upload', $config); 
+					$this->upload->initialize($config);
+					if($this->upload->do_upload('file')){ 
+						$fileData = $this->upload->data(); 
+						$filename = $fileData['file_name']."pdf";
+						$uploadData[$i]['ResourcesCat'] =  $resourcecat;
+						$uploadData[$i]['ResourcesName'] = $filename; 
+						$uploadData[$i]['cat_id'] = $cat_id; 
+					}else{  
+						$errorUploadType .= $_FILES['file']['name'].' | ';  
+					} 
+				}
+				$errorUploadType = !empty($errorUploadType)?'<br/>File Type Error: '.trim($errorUploadType, ' | '):'';
+				if(!empty($uploadData)){ 
+					/* Insert files data into the database */
+					$insert = $this->users_model->insert_res($uploadData); 
+					redirect(base_url() . 'User/adminresources');
+					/* Upload status message */
+				}
+			}
+		} else {
+			$this->addresources();
+		}
+    }
 }
+

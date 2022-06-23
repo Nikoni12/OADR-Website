@@ -47,7 +47,7 @@
                                         <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>
                                     </form>
                                 </div>
-                            </div>  
+                            </div>   
                         </div>  
                     </div>
                 </div>

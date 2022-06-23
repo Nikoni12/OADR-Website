@@ -106,8 +106,8 @@ class Users_model extends CI_Model {
         $this -> db -> delete('news');
 	}
 
-    public function insertalbum($alb){
-		$this->db->insert('gallery', $alb);
+    public function insertalbum($data = array()){
+		$this->db->insert_batch('gallery', $data);
         return $this->db->insert_id(); 
 	}
 
@@ -285,4 +285,28 @@ class Users_model extends CI_Model {
         $this->db->where('appnum',$appnum);
         return $this->db->get();
     }
+    public function fetchalbum(){
+        $this->db->select('album_title');
+        $this->db->from('gallery');
+        $this->db->group_by('album_title');
+        return $this->db->get();
+    }
+    function fetchgall($album){ 
+        $this->db->select('*');
+        $this->db->from('gallery');
+        $this->db->where('album_title', urldecode($album) );
+        $query = $this->db->get(); 
+        return $query;
+    }  
+    public function insert_res($data = array()){
+		$this->db->insert_batch('resources', $data);
+		return $this->db->insert_id(); 
+	}
+    public function fetchid($cat){
+        $this->db->select('ID');
+        $this->db->from('resources_category');
+        $this->db->where('categoryname',$cat);
+        return $this->db->get();
+    }
+	
 }
