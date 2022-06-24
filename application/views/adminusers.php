@@ -110,6 +110,17 @@
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
 
     </body>
+    <?php if($this->session->userdata('added')){   ?>
+    <script>
+		Swal.fire({
+					title: 'User Added',
+					text: "You successfully added an user.",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('added');}  ?>
     <script type="text/javascript">
     $(document).ready(function () {
  
@@ -133,32 +144,42 @@
             {  
                 alert("Please select row.");  
             }  else {  
- 
-                var check = confirm("Are you sure you want to delete this row?");  
-                if(check == true){  
- 
-                    var join_selected_values = allVals.join(","); 
- 
-                    $.ajax({
-                        url: $(this).data('url'),
-                        type: 'POST',
-                        data: 'ids='+join_selected_values,
-                        success: function (data) {
-                          console.log(data);
-                          $(".sub_chk:checked").each(function() {  
-                              $(this).parents("tr").remove();
-                          });
-                          alert("Item Deleted successfully.");
-                        },
-                        error: function (data) {
-                            alert(data.responseText);
+                Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                        }).then((result) => {
+                        if (result.isConfirmed) {
+                            var join_selected_values = allVals.join(","); 
+                            $.ajax({
+                                url: $(this).data('url'),
+                                type: 'POST',
+                                data: 'ids='+join_selected_values,
+                                success: function (data) {
+                                console.log(data);
+                                $(".sub_chk:checked").each(function() {  
+                                    $(this).parents("tr").remove();
+                                });
+                                Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                            )
+                                },
+                                error: function (data) {
+                                    alert(data.responseText);
+                                }
+                            });
+                            $.each(allVals, function( index, value ) {
+                                $('table tr').filter("[data-row-id='" + value + "']").remove();
+                            });
+                           
                         }
-                    });
- 
-                  $.each(allVals, function( index, value ) {
-                      $('table tr').filter("[data-row-id='" + value + "']").remove();
-                  });
-                }  
+                    })  
             }  
         });
     });

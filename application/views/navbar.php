@@ -16,7 +16,7 @@
         <li class="nav-item dropdown no-arrow">
         
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php if($this->session->userdata('username')){  echo $this->session->userdata('username'); }?></span>
                 <img class="img-profile rounded-circle"style = "max-width:90%;"src="<?php echo base_url('assets/img/avatarboy.png');?>">
             </a>
          	  
