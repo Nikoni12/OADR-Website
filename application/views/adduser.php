@@ -61,8 +61,8 @@
                                             <div class="form-group">
                                                 <label for="username">Select Role:</label>
                                                 <select class="form-control " style = "max-width:100%;" name="adminrole" required>
-                                                    <option value="Accepted">Category 1</option>
-                                                    <option value="Rejected">Category 2</option>
+                                                    <option value="Administrator">Administrator</option>
+                                                    <option value="Staff">Staff</option>
                                                 </select>
                                                 <span class="text-danger fontColor"><?php echo form_error('adminrole'); ?></span>
                                             </div>
@@ -111,78 +111,5 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
     </body>
-    <?php if($this->session->userdata('added')){   ?>
-    <script>
-		Swal.fire({
-					title: 'User Added',
-					text: "You successfully added an user.",
-					icon: 'success',
-					iconColor: 'gold',
-					confirmButtonColor: 'gold'
-				})
-		</script>
-    <?php $this->session->unset_userdata('added');}  ?>
-    <script type="text/javascript">
-    $(document).ready(function () {
- 
-        $('#master').on('click', function(e) {
-         if($(this).is(':checked',true))  
-         {
-            $(".sub_chk").prop('checked', true);  
-         } else {  
-            $(".sub_chk").prop('checked',false);  
-         }  
-        });
- 
-        $('.delete_all').on('click', function(e) {
- 
-            var allVals = [];  
-            $(".sub_chk:checked").each(function() {  
-                allVals.push($(this).attr('data-id'));
-            });  
- 
-            if(allVals.length <=0)  
-            {  
-                alert("Please select row.");  
-            }  else {  
-                Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                        }).then((result) => {
-                        if (result.isConfirmed) {
-                            var join_selected_values = allVals.join(","); 
-                            $.ajax({
-                                url: $(this).data('url'),
-                                type: 'POST',
-                                data: 'ids='+join_selected_values,
-                                success: function (data) {
-                                console.log(data);
-                                $(".sub_chk:checked").each(function() {  
-                                    $(this).parents("tr").remove();
-                                });
-                                Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                            )
-                                },
-                                error: function (data) {
-                                    alert(data.responseText);
-                                }
-                            });
-                            $.each(allVals, function( index, value ) {
-                                $('table tr').filter("[data-row-id='" + value + "']").remove();
-                            });
-                           
-                        }
-                    })  
-            }  
-        });
-    });
-</script>
+   
 </html>

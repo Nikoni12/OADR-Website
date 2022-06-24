@@ -589,8 +589,8 @@ class User extends CI_Controller {
 		$adminnumber = $this->input->post('adminnumber');
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('adminName', 'Admin Name', 'required|alpha');
-        $this->form_validation->set_rules('adminUsername', 'Admin Username', 'required||is_unique[admin.UserName]');
+        $this->form_validation->set_rules('adminName', 'Admin Name', 'required');
+        $this->form_validation->set_rules('adminUsername', 'Admin Username', 'required|is_unique[admin.UserName]');
 		$this->form_validation->set_rules('adminnumber', 'Admin Phone Number', 'required|numeric');
 		$this->form_validation->set_rules('adminPassword', 'Admin Password', 'required');
 		$this->form_validation->set_rules('adminconfirmpass', 'Admin Confirm Password', 'required|matches[adminPassword]');
@@ -813,18 +813,7 @@ class User extends CI_Controller {
 		$data['cat'] = $this->users_model->fetchcat(intval($cat));
 		$this->load->view('editcategory',$data);
 	}
-	public function updatecat(){
-		$this->load->model('Users_model');
-		$rid = $this->input->post('rID');
-		$this->form_validation->set_rules('catname', 'Category Name', 'required');
-		$data = array(
-			'categoryname' => $this->input->post('catname')
-		 );
-		 $data = array_filter($data);
-		 $this->Users_model->updatecat($rid,$data);
-		 $this->session->set_userdata('updated','updated');
-		redirect("./User/admincatresources/","refresh"); 
-	}
+	
 	public function deletecat(){
 		$cat = $this->uri->segment(3);
 		$this->load->model('Users_model');
@@ -980,16 +969,17 @@ class User extends CI_Controller {
 		$data['cat'] = $this->users_model->resources2();
 		$this->load->view('addresources',$data);
 	}
-	public function resourcesadd(){
-        $this->load->model('Users_model');
-        $resourcecat = $this->input->post('resourcecat');
-		$result=$this->Users_model->fetchid(strval($resourcecat))->row();
-		$cat_id = $result->ID;
-		$this->load->helper(array('form','url'));
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('resourcecat', 'Category', 'required');
+	public function updatecat(){
+		$this->load->model('Users_model');
+		$rid = $this->input->post('rID');
+		$catname = $this->input->post('catname');
+		$data = array(
+			'categoryname' => $this->input->post('catname')
+		 );
+		 $data = array_filter($data);
+		$this->form_validation->set_rules('catname', 'Category Name', 'required');
 		if($this->form_validation->run()){
-			if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
+			 if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
 				$filesCount = count($_FILES['files']['name']); 
 				for($i = 0; $i < $filesCount; $i++){ 
 					$_FILES['file']['name'] = $_FILES['files']['name'][$i]; 
@@ -1004,9 +994,9 @@ class User extends CI_Controller {
 					if($this->upload->do_upload('file')){ 
 						$fileData = $this->upload->data(); 
 						$filename = $fileData['file_name']."pdf";
-						$uploadData[$i]['ResourcesCat'] =  $resourcecat;
+						$uploadData[$i]['ResourcesCat'] =  $catname;
 						$uploadData[$i]['ResourcesName'] = $filename; 
-						$uploadData[$i]['cat_id'] = $cat_id; 
+						$uploadData[$i]['cat_id'] = $rid; 
 					}else{  
 						$errorUploadType .= $_FILES['file']['name'].' | ';  
 					} 
@@ -1015,14 +1005,13 @@ class User extends CI_Controller {
 				if(!empty($uploadData)){ 
 					/* Insert files data into the database */
 					$insert = $this->users_model->insert_res($uploadData); 
-					$this->session->set_userdata('added','added');
-					redirect("./User/adminresources/","refresh"); 
+					$this->Users_model->updatecat($rid,$data);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/admincatresources/","refresh"); 
 					/* Upload status message */
 				}
 			}
-		} else {
-			$this->addresources();
 		}
-    }
+	}
 }
 
