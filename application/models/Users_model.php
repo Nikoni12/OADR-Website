@@ -106,8 +106,8 @@ class Users_model extends CI_Model {
         $this -> db -> delete('news');
 	}
 
-    public function insertalbum($data = array()){
-		$this->db->insert_batch('gallery', $data);
+    public function insertalbum($data){
+		$this->db->insert('gallery', $data);
         return $this->db->insert_id(); 
 	}
 
