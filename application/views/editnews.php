@@ -97,15 +97,5 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
     </body>
-    <?php if($this->session->userdata('added')){   ?>
-    <script>
-		Swal.fire({
-					title: 'Inquiry Sent',
-					text: "You successfully sent your inquiry. You may check your email for further information.",
-					icon: 'success',
-					iconColor: 'gold',
-					confirmButtonColor: 'gold'
-				})
-		</script>
-<?php $this->session->unset_userdata('added');}?>
+    
 </html>

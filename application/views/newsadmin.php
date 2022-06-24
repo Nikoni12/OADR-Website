@@ -14,7 +14,11 @@
         <link href="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-        <style>
+       
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
+       <style>
             .container-scroll {max-height: 300px; max-width: 500px;overflow: hidden; overflow-y: scroll;}
             .crop {        height: 18px;
                                 width: 300px;
@@ -152,6 +156,27 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
     </body>
+    <?php if($this->session->userdata('added')){   ?>
+    <script>
+		Swal.fire({
+					title: 'News Added',
+					text: "You successfully added a news.",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('added');} else if($this->session->userdata('updated')){?>
+        <script>
+		Swal.fire({
+					title: 'News Updated',
+					text: "You successfully updated a news.",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('updated');} ?>
     <script type="text/javascript">
     $(document).ready(function () {
  
@@ -175,34 +200,45 @@
             {  
                 alert("Please select row.");  
             }  else {  
- 
-                var check = confirm("Are you sure you want to delete this row?");  
-                if(check == true){  
- 
-                    var join_selected_values = allVals.join(","); 
- 
-                    $.ajax({
-                        url: $(this).data('url'),
-                        type: 'POST',
-                        data: 'ids='+join_selected_values,
-                        success: function (data) {
-                          console.log(data);
-                          $(".sub_chk:checked").each(function() {  
-                              $(this).parents("tr").remove();
-                          });
-                          alert("Item Deleted successfully.");
-                        },
-                        error: function (data) {
-                            alert(data.responseText);
+                Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                        }).then((result) => {
+                        if (result.isConfirmed) {
+                            var join_selected_values = allVals.join(","); 
+                            $.ajax({
+                                url: $(this).data('url'),
+                                type: 'POST',
+                                data: 'ids='+join_selected_values,
+                                success: function (data) {
+                                console.log(data);
+                                $(".sub_chk:checked").each(function() {  
+                                    $(this).parents("tr").remove();
+                                });
+                                Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                            )
+                                },
+                                error: function (data) {
+                                    alert(data.responseText);
+                                }
+                            });
+                            $.each(allVals, function( index, value ) {
+                                $('table tr').filter("[data-row-id='" + value + "']").remove();
+                            });
+                           
                         }
-                    });
- 
-                  $.each(allVals, function( index, value ) {
-                      $('table tr').filter("[data-row-id='" + value + "']").remove();
-                  });
-                }  
+                    })  
             }  
         });
     });
 </script>
+
 </html>

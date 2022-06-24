@@ -145,10 +145,9 @@ class User extends CI_Controller {
 				'date_added' => $this->input->post('date_added')
 			);
 			$this->users_model->insertnews($new);
-			$this->session->set_userdata('added','added');
 		}
-		
-		redirect(base_url() . 'User/newsadmin');
+		$this->session->set_userdata('added','added');
+		redirect("./User/newsadmin/","refresh"); 
 
 	}
 
@@ -176,8 +175,10 @@ class User extends CI_Controller {
 				'date_added' => $this->input->post('date_added'),
 			);
 			$this->users_model->insertannouncement($ann);
+			
 		}
-		redirect(base_url() . 'User/announcementsadmin');
+		$this->session->set_userdata('added','added');
+		redirect("./User/announcementsadmin/","refresh"); 
 
 	}
 
@@ -219,7 +220,8 @@ class User extends CI_Controller {
 				'announcement_image' => $announcement_image
 			);
 			$this->users_model->update_announcement($id,$ann);
-			redirect(base_url() . 'User/announcementsadmin');
+			$this->session->set_userdata('updated','updated');
+			redirect("./User/announcementsadmin/","refresh"); 
 	}
 
 	}
@@ -238,7 +240,7 @@ class User extends CI_Controller {
 				'news_image' => $news_image
 			);
 			$this->users_model->update_news($id,$new);
-			$this->session->set_userdata('added','added');
+			$this->session->set_userdata('updated','updated');
 			redirect(base_url() . 'User/newsadmin'); 
 	}
 
@@ -260,7 +262,8 @@ class User extends CI_Controller {
 				'event_end' => $this->input->post('event_end')
 			);
 			$this->users_model->update_event($id,$eve);
-			redirect(base_url() . 'User/eventadmin');
+			$this->session->set_userdata('updated','updated');
+		redirect("./User/eventadmin/","refresh"); 
 	}
 
 	}
@@ -288,7 +291,9 @@ class User extends CI_Controller {
 				'date_added' => $this->input->post('date_added')
 			);
 			$this->users_model->insertevent($eve);
-			redirect(base_url() . 'User/eventadmin');
+			$this->session->set_userdata('added','added');
+		redirect("./User/eventadmin/","refresh"); 
+			
 		}
 
 	}
@@ -327,36 +332,20 @@ class User extends CI_Controller {
 		$this->load->view('addalbum');
 	}
 	public function submitalbum(){
-		if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
-			$filesCount = count($_FILES['files']['name']); 
-			for($i = 0; $i < $filesCount; $i++){ 
-				$_FILES['file']['name'] = $_FILES['files']['name'][$i]; 
-				$_FILES['file']['type'] = $_FILES['files']['type'][$i]; 
-				$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i]; 
-				$_FILES['file']['error'] = $_FILES['files']['error'][$i]; 
-				$_FILES['file']['size'] = $_FILES['files']['size'][$i]; 
-				$config['upload_path'] = './uploads/';
-				$config['allowed_types'] = 'jpg|jpeg|png|gif'; 
-				$config['encrypt_name'] = true;
-				$this->load->library('upload', $config); 
-                $this->upload->initialize($config);
-				if($this->upload->do_upload('file')){ 
-					$fileData = $this->upload->data(); 
-					$uploadData[$i]['album_title'] =  $this->input->post('album_title');
-					$uploadData[$i]['album_image'] = $fileData['file_name']; 
-				}else{  
-					$errorUploadType .= $_FILES['file']['name'].' | ';  
-				} 
-			}
-			$errorUploadType = !empty($errorUploadType)?'<br/>File Type Error: '.trim($errorUploadType, ' | '):'';
-			if(!empty($uploadData)){ 
-				/* Insert files data into the database */
-				$insert = $this->users_model->insertalbum($uploadData); 
-				redirect(base_url() . 'User/admingallery');
-				/* Upload status message */
-			}
+		$config['allowed_types'] = 'jpg|png';
+		$config['upload_path'] = './uploads/';
+		$config['encrypt_name'] = true;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('album_image')) {
+			$album_image = $this->upload->data('file_name');
+			$alb = array(
+				'album_title' => $this->input->post('album_title'),
+				'album_image' => $album_image
+			);
+			$this->users_model->insertalbum($alb);
+			$this->session->set_userdata('added','added');
+		redirect("./User/admingallery/","refresh"); 
 		}
-		
 	}
 
 	public function updatealbum(){
@@ -374,7 +363,8 @@ class User extends CI_Controller {
 			$this->users_model->update_album($id,$alb);
 			
 		}
-		redirect(base_url() . 'User/admingallery');
+		$this->session->set_userdata('updated','updated');
+		redirect("./User/admingallery/","refresh"); 
 	}
 
 	public function deletealbum(){
@@ -612,7 +602,9 @@ class User extends CI_Controller {
 		$add['role'] = $adminrole;
 		if($this->form_validation->run()){
 			$this->users_model->insertuser($add);
-			redirect("./User/adminusers/","refresh"); 
+			$this->session->set_userdata('added','added');
+		redirect("./User/adminusers/","refresh"); 
+			
 		} else {
 			$this->adduser();
 		}
@@ -657,7 +649,8 @@ class User extends CI_Controller {
 		 );
 		 $data = array_filter($data);
 		 $this->Users_model->updatestatus(intval($ticket),$data);
-		 redirect(base_url().'User/admininquiries'); 
+		 $this->session->set_userdata('addressed','addressed');
+		redirect("./User/admininquiries/","refresh");
 	}
 	public function notaddressstatus(){
 		$this->load->model('Users_model');
@@ -667,7 +660,8 @@ class User extends CI_Controller {
 		 );
 		 $data = array_filter($data);
 		 $this->Users_model->updatestatus(intval($ticket),$data);
-		 redirect(base_url().'User/admininquiries'); 
+		 $this->session->set_userdata('notaddressed','notaddressed');
+		redirect("./User/admininquiries/","refresh"); 
 	}
 	public function deleteapplication(){
 		$appnum = $this->uri->segment(3);
@@ -733,7 +727,8 @@ class User extends CI_Controller {
 		if (!$mail->send()) {
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 		} else {
-			redirect(base_url().'User/adminapplications');
+			$this->session->set_userdata('accepted','accepted');
+		redirect("./User/adminapplications/","refresh"); 
 		}
 		
 	}
@@ -789,7 +784,8 @@ class User extends CI_Controller {
 		if (!$mail->send()) {
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 		} else {
-			redirect(base_url().'User/adminapplications');
+			$this->session->set_userdata('rejected','rejected');
+		redirect("./User/adminapplications/","refresh"); 
 		}
 		  
 	}
@@ -804,6 +800,7 @@ class User extends CI_Controller {
 					'categoryname' => $catname,
 				);
 				$this->users_model->insert_cat($alb);
+				$this->session->set_userdata('added','added');
 				redirect("./User/admincatresources/","refresh"); 
 		} else {
 			$this->addcategory();
@@ -825,7 +822,8 @@ class User extends CI_Controller {
 		 );
 		 $data = array_filter($data);
 		 $this->Users_model->updatecat($rid,$data);
-		 redirect(base_url().'User/admincatresources'); 
+		 $this->session->set_userdata('updated','updated');
+		redirect("./User/admincatresources/","refresh"); 
 	}
 	public function deletecat(){
 		$cat = $this->uri->segment(3);
@@ -899,6 +897,7 @@ class User extends CI_Controller {
 			if (!$mail->send()) {
 				echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
+				$this->session->set_userdata('sent','sent');
 				redirect("./User/admininquiries/","refresh"); ; 
 			}
 			
@@ -927,7 +926,6 @@ class User extends CI_Controller {
         $ids = $this->input->post('ids');
         $this->db->where_in('ID', explode(",", $ids));
         $this->db->delete('news');
- 
         redirect("./User/newsadmin/","refresh"); ; 
     }
 	public function deleteAllAnnouncement()
@@ -1017,7 +1015,8 @@ class User extends CI_Controller {
 				if(!empty($uploadData)){ 
 					/* Insert files data into the database */
 					$insert = $this->users_model->insert_res($uploadData); 
-					redirect(base_url() . 'User/adminresources');
+					$this->session->set_userdata('added','added');
+					redirect("./User/adminresources/","refresh"); 
 					/* Upload status message */
 				}
 			}
