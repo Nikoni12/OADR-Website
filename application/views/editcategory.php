@@ -30,7 +30,7 @@
                         <div class="col-xl-6 col-lg-10 col-md-6">
                             <div class="card o-hidden border-0 shadow-lg my-5">
                                 <div class="card-body " data-aos="slide-up">
-                                    <form method="post"  action="<?php echo base_url();?>User/updatecat">
+                                    <form method="post"  action="<?php echo base_url();?>User/updatecat" enctype="multipart/form-data">
                                     <?php
                                         foreach($cat->result() as $lp){
                                             echo "<div class='form-group'>";
@@ -39,6 +39,10 @@
                                             echo "<input type='text' class='form-control' id='adminname' name='catname'  value = '".$lp->categoryname."'>";
                                             echo "<span class='text-danger fontColor'>".form_error('catname')."</span>";
                                             echo "</div>";
+                                            echo "<div class='form-group'>
+                                            <label for='username'>File: (PDF Format)</label>
+                                            <input type='file' class='form-control' id='adminname' name='files[]' multiple>
+                                        </div>";
                                             echo "<button type='submit' class='btn btn-outline-warning'>SUBMIT</button>";
                                         }?>
                                     </form>
