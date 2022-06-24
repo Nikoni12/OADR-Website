@@ -50,17 +50,23 @@
                                                 <div class="row">
                                                     <div class=" col-sm-12">
                                                         <br>
-                                                        <form method="POST" class="user">
+                                                        <?php
+                                                            foreach ($userdata as $row) {
+                                                        ?>
+                                                        <form method="POST" action="<?php echo base_url();?>User/updateusername" enctype="multipart/form-data" class="user">
+                                                        <input type ="hidden" name = "ID" value = "<?php  echo $row->ID;?>">
                                                             <div class="form-group">
                                                                 <label for="username">Admin Name </label></button>
-                                                                <input type="text" class="form-control" id="adminname" name="nameadmin"  placeholder="Enter Admin Name" value = "Administrator">
-                                                                
+                                                                <input type="text" class="form-control" id="adminname" name="nameadmin"  placeholder="Enter Admin Name" value="<?php echo $row->AdminName?>">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="username">Username</label>
-                                                                <input type="text" class="form-control" id="username" name="usernameadmin"  placeholder="Enter Username" value = "admin">
+                                                                <input type="text" class="form-control" id="username" name="usernameadmin"  placeholder="Enter Username" value="<?php echo $row->UserName?>">
                                                             </div>
                                                             <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
+                                                            <?php
+                                                                }
+                                                            ?>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -68,11 +74,12 @@
 				                            <div id="groups" class="tab-pane">
 					                            <div class="row">
 						                            <div class="col-sm-12">
-                                                        <form method="POST">
-                                                            <div class="form-group">
-                                                                <label for="username">Username</label>
-                                                                <input type="text" class="form-control" id="username" name="username"  placeholder="Enter Username">
-                                                            </div>
+                                                        <?php
+                                                            foreach ($userdata as $row) {
+                                                        ?>
+                                                        <form method="POST" action="<?php echo base_url();?>User/updateuserpass" enctype="multipart/form-data" class="user">
+                                                        <input type ="hidden" name = "ID" value = "<?php  echo $row->ID;?>">
+                                                        <input type ="hidden" name = "currentpassword" value = "<?php  echo $row->Password;?>">
                                                             <div class="form-group">
                                                                 <label for="exampleInputPassword1">Old Password</label>
                                                                 <input type="password" class="form-control" name="oldpassword" id="password"  placeholder="Old Password">
@@ -81,7 +88,14 @@
                                                                 <label for="exampleInputPassword2">New Password</label>
                                                                 <input type="password" class="form-control" name="newpassword" id="confirmpassword" placeholder="New Password">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label for="username">Confirm Password</label>
+                                                                <input type="text" class="form-control" id="confirmpassword" name="confirmpassword"  placeholder="Confirm Password">
+                                                            </div>
                                                             <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
+                                                            <?php
+                                                                }
+                                                            ?>
                                                         </form>
 						                            </div>
 					                            </div>

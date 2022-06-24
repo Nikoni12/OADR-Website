@@ -308,5 +308,28 @@ class Users_model extends CI_Model {
         $this->db->where('categoryname',$cat);
         return $this->db->get();
     }
+
+    public function getuser_by_username($username){
+        $this->db->select('*');
+        $this->db->from('admin');
+        $this->db->where('username',$username);
+        $query = $this->db->get();
+        return $query->result();
+    }
 	
+    public function getid_by_username($username){
+        $this->db->select('ID');
+        $this->db->from('admin');
+        $this->db->where('username',$username);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function update_username($newuserinfo){
+        $this->db->update('admin', $newuserinfo, array('ID' => $newuserinfo['ID']));
+    }
+
+    public function update_userpass($newuserinfo){
+        $this->db->update('admin', $newuserinfo, array('ID' => $newuserinfo['ID']));
+    }
 }
