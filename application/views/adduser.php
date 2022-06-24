@@ -58,8 +58,8 @@
                                             <div class="form-group">
                                                 <label for="username">Select Role:</label>
                                                 <select class="form-control " style = "max-width:100%;" name="adminrole" required>
-                                                    <option value="Accepted">Category 1</option>
-                                                    <option value="Rejected">Category 2</option>
+                                                    <option value="Administrator">Admin</option>
+                                                    <option value="Staff">Staff</option>
                                                 </select>
                                                 <span class="text-danger fontColor"><?php echo form_error('adminrole'); ?></span>
                                             </div>

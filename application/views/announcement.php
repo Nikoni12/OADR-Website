@@ -35,43 +35,44 @@
 		<main id="main">
 			<section class="features">
 				<div class="container">
-                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
-				<?php 
-                    foreach($announcement as $row) {
-				?>
+				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
 					<div class="row">
-                        <div class="row mb-12 border-bottom pb-2">
-                            <div class="col-md-3">
-								<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->announcement_image."' class='img-fluid shadow-1-strong rounded'>"."</td>"; ?>
-                            </div>
-                            <div class="col-md-9">
-                               	<?php echo "<p class='mb-2'><strong>$row->announcement_title</strong></p>" ?>
-                                <?php echo "<p style = 'text-align:justify;'> <u>$row->announcement_content</u></p>" ?>
-                                <button data-bs-toggle="modal" data-bs-target="#oadr1" type="button" class="btn btn-outline-info">View <i class="fa fa-eye" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
+						<?php foreach($announcement as $row) { ?> 
+							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->announcement_title) ?>" class="text-dark">
+							<div class="row mb-12 border-bottom pb-2">
+								<div class="col-md-3">
+									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->announcement_image."' class='img-fluid shadow-1-strong rounded' style='max-height:210px; width:100%;'>"."</td>"; ?>
+								</div>
+								<div class="col-md-9">
+									<?php echo "<p class='mb-2'><strong>$row->announcement_title</strong></p>" ?>
+									<?php echo "<p style = 'text-align:justify;'> <u>$row->announcement_content</u></p>" ?>
+									
+								</div>
+							</div>
+						</a>
+						<?php }?>
 					</div>
-					<?php
-					}
-					?>
-				</div>
-			</section>
+		</section>
+		</div>
 		</main>
-        <div class="modal fade" id="oadr1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+		<!--
+		<div class="modal fade" id="<?echo $row->announcement_title?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">TITLE</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $row->announcement_title?></h5>
                 </div>
                 <div class="modal-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <?php echo $row->announcement_content?>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
+
 		<?php $this->view('footer'); ?>
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 		<script src="<?php echo base_url('assets/vendor/purecounter/purecounter.js');?>"></script>
