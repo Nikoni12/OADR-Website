@@ -93,33 +93,36 @@
 										<section class="features">
 											<div class="container ">
 												<div class="row ">
+													<?php foreach(array_slice($news, 0, 1) as $row ){ ?>
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
+														<img class="img-fluid" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
 													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br>TITLE1</h2><br></div>
+														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
-															<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
-															<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+															<p style = "text-align:justify;"><?php echo $row->news_content?></p>
+															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 														</div>
 														<br><br>
 													</div>
+													<?php }?>
 												</div>
 											</div>
 										</section>
 									</div>
+									<?php foreach(array_slice($news, 1, 2) as $row ){?>
 									<div class="carousel-item">
 										<section class="features">
 											<div class="container">
 												<div class="row">
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" src="<?php echo base_url('assets/img/news1.jpg');?>">
+														<img class="img-fluid" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
 													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br>TITLE2</h2><br></div>
+														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
-															<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
-															<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+															<p style = "text-align:justify;"><?php echo $row->news_content?></p>
+															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 														</div>
 														<br><br>
 													</div>
@@ -127,26 +130,7 @@
 											</div>
 										</section>
 									</div>
-									<div class="carousel-item">
-										<section class="features">
-											<div class="container">
-												<div class="row">
-													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" src="<?php echo base_url('assets/img/news2.jpg');?>">
-													</div>
-													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br>TITLE3</h2><br></div>
-														<div style ="padding:20px;">
-															<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
-															<a href="http://localhost/OADR-Website/User/newstitle" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
-														</div>
-														<br><br>
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-								</div>
+									<?php  }?>
 								<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
 									<span class="carousel-control-prev-icon"></span>
 								</button>
@@ -200,30 +184,18 @@
                 <div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Upcoming Events</h1><br> 
 					<div class="row mt-4 ">
+						<?php foreach(array_slice($event, 0, 3) as $row ){ ?>
       					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
         					<div class="card border-0 mb-4 ">
-          						<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute">June<span class="d-block">15</span></div>
-          						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link">Event Title</a></h5>
-          						<p class="mt-3">Short Description</p>
+          						<img class="img-fluid" src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
+          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?>
+								<span class="d-block"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></span></div>
+          						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link"><?php echo $row->event_title?></a></h5>
+          						<p class="mt-3"><?php echo $row->event_content?></p>
         					</div>
       					</div>
-      					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
-						  	<div class="card border-0 mb-4 ">
-          						<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute">June<span class="d-block">15</span></div>
-          						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link">Event Title</a></h5>
-          						<p class="mt-3">Short Description</p>
-        					</div>
-      					</div>
-      					<div class="col-md-4 on-hover shadow-lg p-3 mb-5 bg-body rounded">
-						  	<div class="card border-0 mb-4 ">
-          						<img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute">June<span class="d-block">15</span></div>
-          						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link">Event Title</a></h5>
-          						<p class="mt-3">Short Description</p>
-        					</div>
-      					</div>
+						<?php } ?>
+
 						<div class="col-md-4 mx-auto text-center">
 							<a href="http://localhost/OADR-Website/User/events"><button type="button" class="btn btn-warning">View All Events</button></a>
       					</div> 

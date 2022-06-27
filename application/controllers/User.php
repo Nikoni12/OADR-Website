@@ -17,7 +17,9 @@ class User extends CI_Controller {
 	
 	public function index(){
 		$this->load->helper('url');
-		$this->load->view('home');
+		$data['event'] = $this->users_model->getevent();
+		$data['news'] = $this->users_model->getnews();
+		$this->load->view('home',$data);
 	}
 	public function about(){
 		$this->load->view('about');
@@ -141,8 +143,7 @@ class User extends CI_Controller {
 			$new = array(
 				'news_title' => $this->input->post('news_title'),
 				'news_content' => $this->input->post('news_content'),
-				'news_image' => $news_image,
-				'date_added' => $this->input->post('date_added')
+				'news_image' => $news_image
 			);
 			$this->users_model->insertnews($new);
 		}
@@ -326,13 +327,14 @@ class User extends CI_Controller {
 			'Username' => $this->input->post('usernameadmin')
 		);
 		$this->users_model->update_username($newuserinfo);
-		$this->session->set_flashdata('message', 'Username/Name has been changed, Please Login Again.');
-		redirect(base_url() . 'User/login');
+		echo "<script>
+		alert('Username has successfully been changed, Please Login Again');
+		window.location.href='http://localhost/OADR-Website/User/login';
+		</script>";
 		
 	}
 	public function updateuserpass(){
         
-		
 		$username = $this->session->userdata('username');
 		$userid = $this->users_model->getid_by_username($username);
 

@@ -37,11 +37,13 @@
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Employees</h1><br> 
                     <div class="row ">
                         <div class="col-md-3 sidebar" style = "">
-                            <nav>
+								<nav>
                                 <h4 style="font-weight:bold;">ABOUT</h4>
                                 <a href="http://localhost/OADR-Website/User/about">Who we are</a>
                                 <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
                                 <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
+                                <a href="http://localhost/OADR-Website/User/orgstructure">Organizational Struture</a>
+                                <a href="http://localhost/OADR-Website/User/director">Director</a>
                                 <a href="http://localhost/OADR-Website/User/employees">Employees</a>
                                 </nav>
                             </div>
