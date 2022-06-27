@@ -74,8 +74,8 @@
           <div class="row gx-5">
             <?php foreach (array_slice($news, 0, 3) as $row ){ ?> 
           <div class="col-lg-4 mb-4 mb-lg-0">
-              <div class=""><img class="img-fluid" style = "max-width:350px;"  src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'></i></div><br>
-              <a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>"><h5 class="fw-bolder"><?php echo $row->news_title ?></h5></a>
+              <div class=""><img class="img-fluid" style="height:250px; width:306px;"  src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'></i></div><br>
+              <a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>"><h10 class="fw-bolder"><?php echo $row->news_title ?></h10></a>
           </div>
           <?php } ?>
         </div>

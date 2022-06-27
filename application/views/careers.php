@@ -42,7 +42,7 @@
 						<a href="http://localhost/OADR-Website/User/chiefofficer" >
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12">
-									<p class="mb-2" style="color:#031261;"><strong>Chief Administrative Officer</strong></p></a>
+									<p class="mb-2" style="color:#031261;"><strong><u>Chief Administrative Officer</u></strong></p></a>
                         
 									<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
@@ -53,8 +53,8 @@
                         <a href="http://localhost/OADR-Website/User/trainingspecialist"  >
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12">
-									<p class="mb-2" style="color:#031261;"><strong>Training Specialist 1</strong></p></a>
-									<p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
+									<p class="mb-2" style="color:#031261;"><strong><u>Training Specialist 1</u></strong></p></a>
+									<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 									<a href="http://localhost/OADR-Website/User/chiefofficer"  style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>
@@ -63,8 +63,8 @@
                         <a href="http://localhost/OADR-Website/User/administrativeassistant" >
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12">
-									<p class="mb-2" style="color:#031261;"><strong>Administrative Assistant (Secretary 1)</strong></p></a>
-									<p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
+									<p class="mb-2" style="color:#031261;"><strong><u>Administrative Assistant (Secretary 1)</u></strong></p></a>
+									<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>
@@ -73,8 +73,8 @@
                         <a href="http://localhost/OADR-Website/User/technicalconsultant" >
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12">
-									<p class="mb-2" style="color:#031261;"><strong>Technical Consultant</strong></p></a>
-									<p style = "text-align:justify;"> <u>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</u></p>
+									<p class="mb-2" style="color:#031261;"><strong><u>Technical Consultant</strong></u></p></a>
+									<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>

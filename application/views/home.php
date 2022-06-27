@@ -34,7 +34,7 @@
 		</section>
 		<div class="topnav" style = "position: -webkit-sticky; position: sticky; top: 0;">
 			<a href="#adr">ADR</a>
-			<a href="#announcement">Announcement</a>
+			<a href="#announcement">News</a>
 			<a href="#upcomingevent">Upcoming Events</a>
 			<a href="#mediafeed">Media Feed</a>
 			<div class="search-container">
@@ -197,7 +197,7 @@
 						<?php } ?>
 
 						<div class="col-md-4 mx-auto text-center">
-							<a href="http://localhost/OADR-Website/User/events"><button type="button" class="btn btn-warning">View All Events</button></a>
+							<a href="<?php echo base_url('User/events');?>"><button type="button" class="btn btn-warning">View All Events</button></a>
       					</div> 
     				</div>
                 </div>
@@ -208,13 +208,13 @@
                     <div class="row ">
                         <div class="col-md-3 sidenav"	style = "border-right:1px solid #031261;">
 							<nav>
-								<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
-								<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
-								<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
-								<a><img class="img-fluid" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+								<a href="https://www.dbm.gov.ph/index.php/about-us/philippine-transparency-seal"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
+								<a href="https://www.foi.gov.ph/"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/foi.jpg');?>"></a>
+								<a href="<?php echo base_url('User/resources/7');?>"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/citizenscharter.jpg');?>"></a>
+								<a href="https://op-proper.gov.ph/"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/bannerpresident.png');?>"></a>
 							</nav>
                         </div>&ensp;
-						<div class="col-md-8" style = "overflow-y: scroll; height:600px; background:skyblue;">
+						<div class="col-md-8" style = "overflow-y: scroll; height:800px; background:skyblue;">
 							<a class="twitter-timeline" href="https://twitter.com/DOJPH?ref_src=twsrc%5Etfw">Tweets by DOJPH</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 						</div>
                     </div>
