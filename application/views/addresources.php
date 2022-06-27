@@ -42,7 +42,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">File: (PDF Format)</label>
-                                                <input type="file" class="form-control" id="adminname" name="files[]"  placeholder="Enter Article Title" multiple>
+                                                <input type="file" class="form-control" accept="application/pdf" id="adminname" name="files[]"  placeholder="Enter Article Title" multiple>
                                             </div>
                                             <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                                         </form>

@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="username">CV or Resume (PDF)</label>
-                                        <input type="file" class="form-control" id="adminname" name="resume">
+                                        <input type="file" class="form-control" accept='application/pdf' id="adminname" name="resume">
                                     </div><br>
                                     <button type="submit" style = " border-radius:10rem; width:100%;"class="btn btn-outline-primary">Submit</button>
                                 </form>
@@ -158,7 +158,18 @@
 					confirmButtonColor: 'gold'
 				})
 		</script>
-<?php $this->session->unset_userdata('sent');}?>
+<?php $this->session->unset_userdata('sent');} else if($this->session->userdata('invalid')){ ?>
+ 
+    <script>
+		Swal.fire({
+                    title: 'Invalid File',
+					text: "Please upload PDF File Only",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('invalid');}?>
 </body>
 
 </html>
