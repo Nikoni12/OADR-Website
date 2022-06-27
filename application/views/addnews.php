@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="news_image" name="news_image" required>
+                            <input type="file" class="form-control" id="news_image" name="news_image" accept="image/*" required>
                         </div>
                         <input type="hidden" class="form-control" id="date_added" name="date_added" value=<?php echo date("m-d-y");?>>
 
@@ -103,4 +103,15 @@
 				})
 		</script>
 <?php $this->session->unset_userdata('added');}?>
+<?php if($this->session->userdata('invalid')){   ?>
+    <script>
+		Swal.fire({
+                    title: 'Invalid Details',
+					text: "Please try again.",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('invalid');}?>
 </html>

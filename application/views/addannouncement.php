@@ -14,6 +14,9 @@
         <link href="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
     </head>
     <body id="page-top">
         <div id="wrapper">
@@ -40,7 +43,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="announcement_image" name="announcement_image" required>
+                            <input type="file" class="form-control" id="announcement_image" name="announcement_image" accept="image/*"  required>
                         </div>
                         <input type="hidden" class="form-control" id="date_added" name="date_added" value=<?php echo date("m-d-y");?>>
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
@@ -88,4 +91,16 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
     </body>
+    <?php if($this->session->userdata('invalid')){ ?>
+ 
+ <script>
+     Swal.fire({
+                 title: 'Invalid File',
+                 text: "Please upload PDF File Only",
+                 icon: 'success',
+                 iconColor: 'gold',
+                 confirmButtonColor: 'gold'
+             })
+     </script>
+ <?php $this->session->unset_userdata('invalid');}?>
 </html>
