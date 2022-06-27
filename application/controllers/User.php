@@ -172,8 +172,7 @@ class User extends CI_Controller {
 			$ann = array(
 				'announcement_title' => $this->input->post('announcement_title'),
 				'announcement_content' => $this->input->post('announcement_content'),
-				'announcement_image' => $announcement_image,
-				'date_added' => $this->input->post('date_added'),
+				'announcement_image' => $announcement_image
 			);
 			$this->users_model->insertannouncement($ann);
 			

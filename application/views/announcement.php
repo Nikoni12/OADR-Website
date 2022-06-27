@@ -17,10 +17,21 @@
 		<link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<style>
+            .container-scroll {max-height: 300px; max-width: 500px;overflow: hidden; overflow-y: scroll;}
+            .crop {        		height: 20%;
+                                width: 95%;
+                                padding: 0;
+                                overflow: hidden;
+                                position: relative;
+                                display: inline-block;
+                                margin: 0 5px 0 5px;
+                                text-align: center;
+                                text-decoration: none;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+ }
+        </style>
 		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 	</head>
 	<body style = "background-color:#fff5ee;">
@@ -41,26 +52,48 @@
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
 					<div class="row">
-						<?php foreach($announcement as $row) { ?> 
-							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->announcement_title) ?>" class="text-dark">
+						<?php $i=1; foreach($announcement as $row) { ?>
+							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->announcement_title) ?>" class="text-dark"></a>
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-3">
-									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->announcement_image."' class='img-fluid shadow-1-strong rounded' style='max-height:210px; width:100%;'>"."</td>"; ?>
+									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->announcement_image."' class='img-fluid shadow-1-strong rounded' style='max-height:300px; width:100%;'>"."</td>"; ?>
 								</div>
 								<div class="col-md-9">
-									<?php echo "<p class='mb-2'><strong>$row->announcement_title</strong></p>" ?>
-									<?php echo "<p style = 'text-align:justify;'> <u>$row->announcement_content</u></p>" ?>
-									
+									<tr>
+										<td><p class='mb-2'><strong><?php echo $row->announcement_title?></strong></p></td>
+										<td><p style = 'text-align:justify;' class="crop"> <u><?php echo $row->announcement_content?></u></p></td>
+										<td><p><?php echo $row->date_added?></p></td>
+									</tr>
+									<button id="myBtn<?php echo $i?>" class="btn" style="background:#68A4C4; color:white;"><i class="fa fa-eye" style="color:white;" aria-hidden="true"></i> View </button>
 								</div>
 							</div>
-						</a>
-						<?php }?>
+						
+						<?php $i++; }?>
 					</div>
 		</section>
 		</div>
 		</main>
-		
-		<!--
+
+		    <?php $i=1; foreach($announcement as $row) { ?>
+
+			<div id="myModal<?php echo $i?>" class="modal">
+			<!-- Modal content -->
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header"><p><b><?php echo $row->announcement_title?></b></p></div>
+						<div class="modal-body"><p><?php echo $row->announcement_content?></p></div>
+						<div class="modal-footer">
+							<span class="close<?php echo $i?>"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></span>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			
+			<?php $i++; }?>
+
+					<!--
 		<div class="modal fade" id="<?echo $row->announcement_title?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -76,6 +109,41 @@
             </div>
         </div>
     </div>-->
+		
+		
+			<script>
+			<?php $i=1; foreach($announcement as $row) { ?>
+				// Get the modal
+				var modal<?php echo $i?> = document.getElementById("myModal<?php echo $i?>");
+
+				// Get the button that opens the modal
+				var btn<?php echo $i?> = document.getElementById("myBtn<?php echo $i?>");
+				
+
+				// Get the <span> element that closes the modal
+				var span<?php echo $i?> = document.getElementsByClassName("close<?php echo $i?>")[0];
+
+				// When the user clicks the button, open the modal 
+				btn<?php echo $i?>.onclick = function() {
+				modal<?php echo $i?>.style.display = "block";
+				}
+
+				// When the user clicks on <span> (x), close the modal
+				span<?php echo $i?>.onclick = function() {
+				modal<?php echo $i?>.style.display = "none";
+				}
+
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				if (event.target == modal<?php echo $i?>) {
+					modal<?php echo $i?>.style.display = "none";
+				}
+			}
+			<?php $i++; }?>
+			</script>
+
+		
+
 
 		<?php $this->view('footer'); ?>
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

@@ -95,7 +95,7 @@
 												<div class="row ">
 													<?php foreach(array_slice($news, 0, 1) as $row ){ ?>
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
+														<img class="img-fluid" style="width:1200px; height:600px;"src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
 													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
 														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br><?php echo $row->news_title?></h2><br></div>
@@ -116,7 +116,7 @@
 											<div class="container">
 												<div class="row">
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
+														<img class="img-fluid" style="width:1200px; height:600px;" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
 													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
 														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br><?php echo $row->news_title?></h2><br></div>
@@ -187,7 +187,7 @@
 						<?php foreach(array_slice($event, 0, 3) as $row ){ ?>
       					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
         					<div class="card border-0 mb-4 ">
-          						<img class="img-fluid" src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
+          						<img class="img-fluid" style="width:408px; height:255px;"src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
           						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?>
 								<span class="d-block"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></span></div>
           						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link"><?php echo $row->event_title?></a></h5>

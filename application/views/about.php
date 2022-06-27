@@ -50,7 +50,7 @@
                             <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
                                 <br>
                                 <img class="img-fluid" src="<?php echo base_url('assets/img/doj.jpg');?>">
-                                <h2 class="text-center">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION</h2><br>
+                                <br><br><h2 class="text-center">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION</h2><br>
                                 <p style = "text-align:justify;">The Office for Alternative Dispute Resolution (OADR) is an attached agency of the Department of Justice created pursuant to Republic Act (R.A.) No. 9285 or the Alternative Dispute Resolution (ADR) Act of 2004.</p><br>
                                 <p style = "text-align:justify;">It is mandated to promote, develop and expand the use of ADR in the private and public sectors; assist the government in monitoring, studying and evaluating the use of ADR by the public and private sectors; and recommend to Congress needful statutory changes to develop, strengthen and improve ADR practices in accordance with world standards.</p>
                             </div>
