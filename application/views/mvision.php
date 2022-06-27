@@ -39,12 +39,12 @@
                         <div class="col-md-3 sidebar" style = "">
                                 <nav>
                                 <h4 style="font-weight:bold;">ABOUT</h4>
-                                <a href="http://localhost/OADR-Website/User/about">Who we are</a>
-                                <a href="http://localhost/OADR-Website/User/mvision">Mission and Vision</a>
-                                <a href="http://localhost/OADR-Website/User/quality">Quality Policy</a>
-                                <a href="http://localhost/OADR-Website/User/orgstructure">Organizational Struture</a>
-                                <a href="http://localhost/OADR-Website/User/director">Director</a>
-                                <a href="http://localhost/OADR-Website/User/employees">Employees</a>
+                                <a href="<?php echo base_url('User/about');?>">Who we are</a>
+                                <a href="<?php echo base_url('User/mvision');?>">Mission and Vision</a>
+                                <a href="<?php echo base_url('User/quality');?>">Quality Policy</a>
+                                <a href="<?php echo base_url('User/orgstructure');?>">Organizational Struture</a>
+                                <a href="<?php echo base_url('User/director');?>">Director</a>
+                                <a href="<?php echo base_url('User/employees');?>">Employees</a>
                                 </nav>
                             </div>
                             <div class="col-md-8"  style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
