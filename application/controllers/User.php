@@ -327,10 +327,9 @@ class User extends CI_Controller {
 			'Username' => $this->input->post('usernameadmin')
 		);
 		$this->users_model->update_username($newuserinfo);
-		echo "<script>
-		alert('Username has successfully been changed, Please Login Again');
-		window.location.href='http://localhost/OADR-Website/User/login';
-		</script>";
+			$this->session->unset_userdata('username');
+			$this->session->set_userdata('account','account');
+		redirect("./User/adminlogin/","refresh"); 
 		
 	}
 	public function updateuserpass(){
@@ -342,35 +341,32 @@ class User extends CI_Controller {
 		$oldpassword = md5($this->input->post('oldpassword'));
 		$newpassword = md5($this->input->post('newpassword'));
 		$confirmpassword = md5($this->input->post('confirmpassword'));
-		/*
+		
 		$this->load->helper(array('form','url'));
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('currentpassword', 'Admin Password', 'required');
 		$this->form_validation->set_rules('oldpassword', 'Admin Password', 'required');
 		$this->form_validation->set_rules('newpassword', 'Admin Password', 'required');
-		$this->form_validation->set_rules('confirmpassword', 'Admin Confirm Password', 'required|matches[oldpassword]');
-		*/
-
-		if ($currentpassword == $oldpassword){
-
-			$newuserinfo = array(
-				'ID' => $this->input->post('ID'),
-				'Password' => md5($this->input->post('newpassword')),
-			);
-			$this->users_model->update_userpass($newuserinfo);
-			echo "<script>
-			alert('Sucessfully Updated Password, Please Login Again');
-			window.location.href='http://localhost/OADR-Website/User/login';
-			</script>";
-		}
-
-		else {
-			echo "<script>
-			alert('Password is Incorrect');
-			window.location.href='http://localhost/OADR-Website/User/edituser';
-			</script>";
+		$this->form_validation->set_rules('confirmpassword', 'Admin Confirm Password', 'required|matches[newpassword]');
+		$result=$this->users_model->fetchaccount($username)->row();
+		$curpass = $result->Password;
+		if($this->form_validation->run()){
+			if ($curpass == $oldpassword){
+				$newuserinfo = array(
+					'ID' => $this->input->post('ID'),
+					'Password' => md5($this->input->post('newpassword')),
+				);
+				$this->users_model->update_userpass($newuserinfo);
+				$this->session->unset_userdata('username');
+				$this->session->set_userdata('password','password');
+				redirect("./User/adminlogin/","refresh"); 
+			} else {
+				$this->session->set_userdata('oldpass','oldpass');
+				redirect("./User/edituser/","refresh"); 
 			}
-		
+		} else {
+			$this->session->set_userdata('invalid','invalid');
+				redirect("./User/edituser/","refresh");
+		}
 	}
 	
 	public function deleteuser(){
@@ -661,7 +657,7 @@ class User extends CI_Controller {
 		if($this->form_validation->run()){
 			$this->users_model->insertuser($add);
 			$this->session->set_userdata('added','added');
-		redirect("./User/adminusers/","refresh"); 
+			redirect("./User/adminusers/","refresh"); 
 			
 		} else {
 			$this->adduser();
@@ -1072,5 +1068,11 @@ class User extends CI_Controller {
 			}
 		}
 	}
+	public function logout()
+    {
+		$this->session->unset_userdata('username');
+        $this->session->set_userdata('logout','logout');
+		redirect("./User/adminlogin/","refresh"); 
+    }
 }
 

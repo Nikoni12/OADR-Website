@@ -18,7 +18,10 @@
 		<link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
 		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-	</head>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
+    </head>
 	<body style = "background-color:white;">
         <div class="container">
             <div class="row justify-content-center">
@@ -66,4 +69,35 @@
 		<script src="<?php echo base_url('assets/js/main.js');?>"></script>
 		<script src="<?php echo base_url('assets/js/script.js');?>"></script>
 	</body> 
+    <?php if($this->session->userdata('account')){   ?>
+    <script>
+		Swal.fire({
+					title: 'Account Changed',
+					text: "Your account has been updated. Please Login again.",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('account');} else if($this->session->userdata('password')){?>
+        <script>
+		Swal.fire({
+					title: 'Password Changed',
+					text: "You successfully changed your password. Please login again.",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('password');} else if($this->session->userdata('logout')){?>
+        <script>
+		Swal.fire({
+					title: 'Thank you',
+					text: "You successfully logged out from the system.",
+					icon: 'success',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('logout');}?>
 </html>
