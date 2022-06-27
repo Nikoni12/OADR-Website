@@ -332,4 +332,11 @@ class Users_model extends CI_Model {
     public function update_userpass($newuserinfo){
         $this->db->update('admin', $newuserinfo, array('ID' => $newuserinfo['ID']));
     }
+    public function fetchaccount($username){
+        $this->db->select('Password');
+        $this->db->from('admin');
+        $this->db->where('UserName',$username);
+        return $this->db->get();
+    } 
+    
 }
