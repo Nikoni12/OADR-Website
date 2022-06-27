@@ -39,7 +39,7 @@
                     <?php foreach($pics as $row) { ?>
                         <div class="col-md-4 mt-3 col-lg-3">
                         <?php echo $row->album_title; ?>
-                            <a href="#" class="d-block mb-4 h-100">
+                            <a href="<?php echo base_url() . 'uploads/' . $row->album_image; ?>" class="d-block mb-4 h-100" data-toggle="lightbox" data-caption="<?php echo $row->album_title; ?>">
                                 <img class=" img-fluid img-thumbnail" src='<?php echo base_url() . 'uploads/' . $row->album_image; ?>'>
                             </a>
                         </div>
@@ -59,5 +59,6 @@
         <script src="<?php echo base_url('assets/vendor/waypoints/noframework.waypoints.js');?>"></script>
         <script src="<?php echo base_url('assets/vendor/php-email-form/validate.js');?>"></script>
         <script src="<?php echo base_url('assets/js/main.js');?>"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.0/dist/index.bundle.min.js"></script>
     </body>
 </html>
