@@ -17,6 +17,21 @@
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="sweetalert2.min.js"></script>
         <link rel="stylesheet" href="sweetalert2.min.css">
+        <style>
+            .container-scroll {max-height: 300px; max-width: 500px;overflow: hidden; overflow-y: scroll;}
+            .crop {        height: 18px;
+                                width: 300px;
+                                padding: 0;
+                                overflow: hidden;
+                                position: relative;
+                                display: inline-block;
+                                margin: 0 5px 0 5px;
+                                text-align: center;
+                                text-decoration: none;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+ }
+        </style>
     </head>
     <body id="page-top">
         <div id="wrapper">
@@ -62,7 +77,7 @@
                                                 echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$row->ID."'></td>";
                                                 echo "<td>".$row->ID."</td>";
                                                 echo "<td>".$row->announcement_title."</td>";
-                                                echo "<td>".$row->announcement_content."</td>";
+                                                echo "<td class='crop'>".$row->announcement_content."</td>";
                                                 echo "<td>".$row->date_added."</td>";
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">

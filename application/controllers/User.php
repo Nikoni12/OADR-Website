@@ -17,7 +17,9 @@ class User extends CI_Controller {
 	
 	public function index(){
 		$this->load->helper('url');
-		$this->load->view('home');
+		$data['event'] = $this->users_model->getevent();
+		$data['news'] = $this->users_model->getnews();
+		$this->load->view('home',$data);
 	}
 	public function about(){
 		$this->load->view('about');
@@ -170,8 +172,7 @@ class User extends CI_Controller {
 			$ann = array(
 				'announcement_title' => $this->input->post('announcement_title'),
 				'announcement_content' => $this->input->post('announcement_content'),
-				'announcement_image' => $announcement_image,
-				'date_added' => $this->input->post('date_added'),
+				'announcement_image' => $announcement_image
 			);
 			$this->users_model->insertannouncement($ann);
 			
@@ -332,7 +333,6 @@ class User extends CI_Controller {
 	}
 	public function updateuserpass(){
         
-		
 		$username = $this->session->userdata('username');
 		$userid = $this->users_model->getid_by_username($username);
 
