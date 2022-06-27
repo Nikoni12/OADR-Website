@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="event_image" name="event_image"  placeholder="Enter Image Title" required>
+                            <input type="file" class="form-control" id="event_image" name="event_image" accept="image/*"  placeholder="Enter Image Title" required>
                         </div>
                         <div class="form-group">
                             <label for="id_start_datetime">Start Date</label>

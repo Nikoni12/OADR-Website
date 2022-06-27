@@ -47,7 +47,6 @@ class User extends CI_Controller {
 		$data['ress'] = $this->users_model->fetchcategory(intval($category));
 		$this->load->view('resources',$data);
 	}
-	
 	public function news(){
 		$data['news'] = $this->users_model->getnews();
 		$this->load->view('news',$data);
@@ -86,82 +85,124 @@ class User extends CI_Controller {
 	public function trainingspecialist(){
 		$this->load->view('trainingspecialist');
 	}
-	
 	public function gallery(){
 		$this->load->model('Users_model');
 		$data['album'] = $this->users_model->fetchalbum();
 		$data['pics'] = $this->users_model->getalbum();
 		$this->load->view('gallery',$data);
 	}
-	
 	public function newsadmin(){
-		$data['news'] = $this->users_model->getnews();
-		$this->load->view('newsadmin', $data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['news'] = $this->users_model->getnews();
+			$this->load->view('newsadmin', $data);
+		}
 	}
 	public function announcementsadmin(){
-		$data['announcement'] = $this->users_model->getannouncement();
-		$this->load->view('announcementsadmin', $data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['announcement'] = $this->users_model->getannouncement();
+			$this->load->view('announcementsadmin', $data);
+		}
+		
 	}
 	public function eventadmin(){
-		$data['event'] = $this->users_model->getevent();
-		$this->load->view('eventsadmin',$data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['event'] = $this->users_model->getevent();
+			$this->load->view('eventsadmin',$data);
+		}
+		
 	}
 	public function adminresources(){
-		$data['res'] = $this->users_model->resources();
-		$this->load->view('adminresources',$data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['res'] = $this->users_model->resources();
+			$this->load->view('adminresources',$data);
+		}
+		
 	}
 	public function announcement(){
 		$data['announcement'] = $this->users_model->getannouncement();
 		$this->load->view('announcement', $data);
 	}
 	public function admininquiries(){
-		$data['inq'] = $this->users_model->inquiries();
-		$this->load->view('admininquiries', $data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['inq'] = $this->users_model->inquiries();
+			$this->load->view('admininquiries', $data);
+		}
+		
 	}
 	public function adminapplications(){
-		$data['app'] = $this->users_model->applications();
-		$this->load->view('adminapplications', $data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['app'] = $this->users_model->applications();
+			$this->load->view('adminapplications', $data);
+		}
+		
 	}
 	public function adminusers(){
-		$data['users'] = $this->users_model->view_users();
-		$this->load->view('adminusers', $data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['users'] = $this->users_model->view_users();
+			$this->load->view('adminusers', $data);
+		}
+		
 	}
 	public function admincatresources(){
-		$data['cat'] = $this->users_model->resourcescat();
-		$this->load->view('admincatresources', $data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['cat'] = $this->users_model->resourcescat();
+			$this->load->view('admincatresources', $data);
+		}
+		
 	}
 	public function addnews(){
-		$this->load->view('addnews');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addnews');
+		}
+		
 	}
 	public function submitnews(){
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './uploads/';
-		$config['encrypt_name'] = true;
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('news_image')) {
-			$news_image = $this->upload->data('file_name');
-			$new = array(
-				'news_title' => $this->input->post('news_title'),
-				'news_content' => $this->input->post('news_content'),
-				'news_image' => $news_image
-			);
-			$this->users_model->insertnews($new);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('news_image')) {
+				$news_image = $this->upload->data('file_name');
+				$new = array(
+					'news_title' => $this->input->post('news_title'),
+					'news_content' => $this->input->post('news_content'),
+					'news_image' => $news_image
+				);
+				$this->users_model->insertnews($new);
+				$this->session->set_userdata('added','added');
+				redirect("./User/newsadmin/","refresh"); 
+			}
+			
 		}
-		$this->session->set_userdata('added','added');
-		redirect("./User/newsadmin/","refresh"); 
-
 	}
-
-	public function deletenews(){
-		$id = $_POST['delete_id'];
-		$this->users_model->delete_news($id);
-		redirect(base_url() . 'User/newsadmin');
-	}
-
 	public function addannouncement(){
-		$this->load->view('addannouncement');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addannouncement');
+		}
 	}
-
 	public function submitannouncement(){
 		$config['allowed_types'] = 'jpg|png';
 		$config['upload_path'] = './uploads/';
@@ -175,151 +216,177 @@ class User extends CI_Controller {
 				'announcement_image' => $announcement_image
 			);
 			$this->users_model->insertannouncement($ann);
-			
+			$this->session->set_userdata('added','added');
+				redirect("./User/announcementsadmin/","refresh"); 
+		} else {
+			$this->session->set_userdata('invalid','invalid');
+			redirect("./User/addannouncement/","refresh");
 		}
-		$this->session->set_userdata('added','added');
-		redirect("./User/announcementsadmin/","refresh"); 
-
 	}
-
 	public function editannouncement(){
-		$id = $_POST['edit_id'];
-		$data["announcement"] = $this->users_model->get_announcement_edit($id);
-		$this->load->view('editannouncement',$data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["announcement"] = $this->users_model->get_announcement_edit($id);
+			$this->load->view('editannouncement',$data);
+		}
 	}
-
 	public function editnews(){
-		$id = $_POST['edit_id'];
-		$data["news"] = $this->users_model->get_news_edit($id);
-		$this->load->view('editnews',$data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["news"] = $this->users_model->get_news_edit($id);
+			$this->load->view('editnews',$data);
+		}
 	}
-
 	public function editevents(){
-		$id = $_POST['edit_id'];
-		$data["event"] = $this->users_model->get_event_edit($id);
-		$this->load->view('editevents',$data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["event"] = $this->users_model->get_event_edit($id);
+			$this->load->view('editevents',$data);
+		}
 	}
-
 	public function editalbum(){
-		$id = $_POST['edit_id'];
-		$data["album"] = $this->users_model->get_album_edit($id);
-		$this->load->view('editalbum',$data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["album"] = $this->users_model->get_album_edit($id);
+			$this->load->view('editalbum',$data);
+		}
 	}
-
 	public function updateannouncement(){
-		$id = $_POST['edit_id'];
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './uploads/';
-		$config['encrypt_name'] = true;
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('announcement_image')) {
-			$announcement_image = $this->upload->data('file_name');
-			$ann = array(
-				'announcement_title' => $this->input->post('announcement_title'),
-				'announcement_content' => $this->input->post('announcement_content'),
-				'announcement_image' => $announcement_image
-			);
-			$this->users_model->update_announcement($id,$ann);
-			$this->session->set_userdata('updated','updated');
-			redirect("./User/announcementsadmin/","refresh"); 
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('announcement_image')) {
+				$announcement_image = $this->upload->data('file_name');
+				$ann = array(
+					'announcement_title' => $this->input->post('announcement_title'),
+					'announcement_content' => $this->input->post('announcement_content'),
+					'announcement_image' => $announcement_image
+				);
+				$this->users_model->update_announcement($id,$ann);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/announcementsadmin/","refresh"); 
+			}
+		}
 	}
-
-	}
-
 	public function updatenews(){
-		$id = $_POST['edit_id'];
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './uploads/';
-		$config['encrypt_name'] = true;
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('news_image')) {
-			$news_image = $this->upload->data('file_name');
-			$new = array(
-				'news_title' => $this->input->post('news_title'),
-				'news_content' => $this->input->post('news_content'),
-				'news_image' => $news_image
-			);
-			$this->users_model->update_news($id,$new);
-			$this->session->set_userdata('updated','updated');
-			redirect(base_url() . 'User/newsadmin'); 
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('news_image')) {
+				$news_image = $this->upload->data('file_name');
+				$new = array(
+					'news_title' => $this->input->post('news_title'),
+					'news_content' => $this->input->post('news_content'),
+					'news_image' => $news_image
+				);
+				$this->users_model->update_news($id,$new);
+				$this->session->set_userdata('updated','updated');
+				redirect(base_url() . 'User/newsadmin'); 
+			}
+		}
 	}
-
-	}
-
 	public function updateevent(){
-		$id = $_POST['edit_id'];
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './uploads/';
-		$config['encrypt_name'] = true;
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('event_image')) {
-			$event_image = $this->upload->data('file_name');
-			$eve = array(
-				'event_title' => $this->input->post('event_title'),
-				'event_content' => $this->input->post('event_content'),
-				'event_image' => $event_image,
-				'event_start' => $this->input->post('event_start'),
-				'event_end' => $this->input->post('event_end')
-			);
-			$this->users_model->update_event($id,$eve);
-			$this->session->set_userdata('updated','updated');
-		redirect("./User/eventadmin/","refresh"); 
-	}
-
-	}
-	public function deleteannouncement(){
-		$id = $_POST['delete_id'];
-		$this->users_model->delete_announcement($id);
-		redirect(base_url() . 'User/announcementsadmin');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('event_image')) {
+				$event_image = $this->upload->data('file_name');
+				$eve = array(
+					'event_title' => $this->input->post('event_title'),
+					'event_content' => $this->input->post('event_content'),
+					'event_image' => $event_image,
+					'event_start' => $this->input->post('event_start'),
+					'event_end' => $this->input->post('event_end')
+				);
+				$this->users_model->update_event($id,$eve);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/eventadmin/","refresh"); 
+			}
+		}
 	}
 	public function addevent(){
-		$this->load->view('addevent');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addevent');
+		}
 	}
 	public function submitevent(){
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './uploads/';
-		$config['encrypt_name'] = true;
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('event_image')) {
-			$event_image = $this->upload->data('file_name');
-			$eve = array(
-				'event_title' => $this->input->post('event_title'),
-				'event_content' => $this->input->post('event_content'),
-				'event_image' => $event_image,
-				'event_start' => $this->input->post('event_start'),
-				'event_end' => $this->input->post('event_end'),
-				'date_added' => $this->input->post('date_added')
-			);
-			$this->users_model->insertevent($eve);
-			$this->session->set_userdata('added','added');
-		redirect("./User/eventadmin/","refresh"); 
-			
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('event_image')) {
+				$event_image = $this->upload->data('file_name');
+				$eve = array(
+					'event_title' => $this->input->post('event_title'),
+					'event_content' => $this->input->post('event_content'),
+					'event_image' => $event_image,
+					'event_start' => $this->input->post('event_start'),
+					'event_end' => $this->input->post('event_end'),
+					'date_added' => $this->input->post('date_added')
+				);
+				$this->users_model->insertevent($eve);
+				$this->session->set_userdata('added','added');
+				redirect("./User/eventadmin/","refresh"); 
+			}
 		}
-
 	}
-
-	public function deleteevent(){
-		$id = $_POST['delete_id'];
-		$this->users_model->delete_event($id);
-		redirect(base_url() . 'User/eventadmin');
-	}
-
 	public function addcategory(){
-		$this->load->view('addcategory');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addcategory');
+		}
 	}
-	
 	public function adduser(){
-		$this->load->view('adduser');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('adduser');
+		}
 	}
 	public function edituser(){
-		$username = $this->session->userdata('username');
-		$data['userdata'] = $this->users_model->getuser_by_username($username);
-		$this->load->view('edituser', $data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$username = $this->session->userdata('username');
+			$data['userdata'] = $this->users_model->getuser_by_username($username);
+			$this->load->view('edituser', $data);
+		}
 	}
 	public function updateusername(){
-		$username = $this->session->userdata('username');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$username = $this->session->userdata('username');
 		$userid = $this->users_model->getid_by_username($username);
-		
 		$newuserinfo = array(
 			'ID' => $this->input->post('ID'),
 			'AdminName' => $this->input->post('nameadmin'),
@@ -329,103 +396,110 @@ class User extends CI_Controller {
 			$this->session->unset_userdata('username');
 			$this->session->set_userdata('account','account');
 		redirect("./User/adminlogin/","refresh"); 
-		
+		}
 	}
 	public function updateuserpass(){
-        
-		$username = $this->session->userdata('username');
-		$userid = $this->users_model->getid_by_username($username);
-
-		$currentpassword = $this->input->post('currentpassword');
-		$oldpassword = md5($this->input->post('oldpassword'));
-		$newpassword = md5($this->input->post('newpassword'));
-		$confirmpassword = md5($this->input->post('confirmpassword'));
-		
-		$this->load->helper(array('form','url'));
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('oldpassword', 'Admin Password', 'required');
-		$this->form_validation->set_rules('newpassword', 'Admin Password', 'required');
-		$this->form_validation->set_rules('confirmpassword', 'Admin Confirm Password', 'required|matches[newpassword]');
-		$result=$this->users_model->fetchaccount($username)->row();
-		$curpass = $result->Password;
-		if($this->form_validation->run()){
-			if ($curpass == $oldpassword){
-				$newuserinfo = array(
-					'ID' => $this->input->post('ID'),
-					'Password' => md5($this->input->post('newpassword')),
-				);
-				$this->users_model->update_userpass($newuserinfo);
-				$this->session->unset_userdata('username');
-				$this->session->set_userdata('password','password');
-				redirect("./User/adminlogin/","refresh"); 
+			$username = $this->session->userdata('username');
+			$userid = $this->users_model->getid_by_username($username);
+			$currentpassword = $this->input->post('currentpassword');
+			$oldpassword = md5($this->input->post('oldpassword'));
+			$newpassword = md5($this->input->post('newpassword'));
+			$confirmpassword = md5($this->input->post('confirmpassword'));
+			$this->load->helper(array('form','url'));
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('oldpassword', 'Admin Password', 'required');
+			$this->form_validation->set_rules('newpassword', 'Admin Password', 'required');
+			$this->form_validation->set_rules('confirmpassword', 'Admin Confirm Password', 'required|matches[newpassword]');
+			$result=$this->users_model->fetchaccount($username)->row();
+			$curpass = $result->Password;
+			if($this->form_validation->run()){
+				if ($curpass == $oldpassword){
+					$newuserinfo = array(
+						'ID' => $this->input->post('ID'),
+						'Password' => md5($this->input->post('newpassword')),
+					);
+					$this->users_model->update_userpass($newuserinfo);
+					$this->session->unset_userdata('username');
+					$this->session->set_userdata('password','password');
+					redirect("./User/adminlogin/","refresh"); 
+				} else {
+					$this->session->set_userdata('oldpass','oldpass');
+					redirect("./User/edituser/","refresh"); 
+				}
 			} else {
-				$this->session->set_userdata('oldpass','oldpass');
-				redirect("./User/edituser/","refresh"); 
-			}
-		} else {
-			$this->session->set_userdata('invalid','invalid');
+				$this->session->set_userdata('invalid','invalid');
 				redirect("./User/edituser/","refresh");
-		}
-	}
-	
-	public function deleteuser(){
-		$id = $this->uri->segment(3);
-		$this->load->model('Users_model');
-		$this->users_model->deleteuser(intval($id));
-		redirect(base_url().'User/adminusers'); 
+			}
 	}
 	public function admingallery(){
-		$data['album'] = $this->users_model->getalbum();
-		$this->load->view('admingallery', $data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['album'] = $this->users_model->getalbum();
+			$this->load->view('admingallery', $data);
+		}
 	}
 	public function adminalbum(){
-		$this->load->view('adminalbum');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('adminalbum');
+		}
+		
 	}
 	public function addalbum(){
-		$this->load->view('addalbum');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addalbum');
+		}
+		
 	}
 	public function submitalbum(){
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './uploads/';
-		$config['encrypt_name'] = true;
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('album_image')) {
-			$album_image = $this->upload->data('file_name');
-			$alb = array(
-				'album_title' => $this->input->post('album_title'),
-				'album_image' => $album_image
-			);
-			$this->users_model->insertalbum($alb);
-			$this->session->set_userdata('added','added');
-		redirect("./User/admingallery/","refresh"); 
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('album_image')) {
+				$album_image = $this->upload->data('file_name');
+				$alb = array(
+					'album_title' => $this->input->post('album_title'),
+					'album_image' => $album_image
+				);
+				$this->users_model->insertalbum($alb);
+				$this->session->set_userdata('added','added');
+			redirect("./User/admingallery/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/addalbum/","refresh");
+			}
 		}
 	}
-
 	public function updatealbum(){
-		$id = $_POST['edit_id'];
-		$config['allowed_types'] = 'jpg|png';
-		$config['upload_path'] = './uploads/';
-		$config['encrypt_name'] = true;
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('album_image')) {
-			$album_image = $this->upload->data('file_name');
-			$alb = array(
-				'album_title' => $this->input->post('album_title'),
-				'album_image' => $album_image
-			);
-			$this->users_model->update_album($id,$alb);
-			
-		}
-		$this->session->set_userdata('updated','updated');
-		redirect("./User/admingallery/","refresh"); 
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('album_image')) {
+				$album_image = $this->upload->data('file_name');
+				$alb = array(
+					'album_title' => $this->input->post('album_title'),
+					'album_image' => $album_image
+				);
+				$this->users_model->update_album($id,$alb);
+				
+			}
+			$this->session->set_userdata('updated','updated');
+			redirect("./User/admingallery/","refresh"); 
+		}	
 	}
-
-	public function deletealbum(){
-		$id = $_POST['delete_id'];
-		$this->users_model->delete_album($id);
-		redirect(base_url() . 'User/admingallery');
-	}
-
 	public function events(){
 		$data['event'] = $this->users_model->getevent();
 		$this->load->view('events',$data);
@@ -445,7 +519,6 @@ class User extends CI_Controller {
             if($this->users_model->check_login($username,$password)){
 				$this->session->set_userdata('username',$username);
 				redirect("./User/dashboard/","refresh");
-				
             } else {
 				echo "<script>alert('Invalid Username or Password');</script>";
                 $this->adminlogin();
@@ -488,8 +561,8 @@ class User extends CI_Controller {
 			$this->load->library('upload'); 
 			$this->upload->initialize($config1);
 			if (!$this->upload->do_upload('resume')) {
-				$error = array('error' => $this->upload->display_errors());
-				print_r($error);
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/careerform/","refresh");
 			} else {
 				$this->load->model('users_model');
 				$name = $this->input->post('name');
@@ -633,272 +706,127 @@ class User extends CI_Controller {
 		}
     }
 	public function add_user(){
-        $this->load->model('Users_model');
-        $adminName = $this->input->post('adminName');
-        $adminUsername = $this->input->post('adminUsername');
-		$adminPassword = $this->input->post('adminPassword');
-		$adminconfirmpass = $this->input->post('adminconfirmpass');
-		$adminrole = $this->input->post('adminrole');
-		$adminnumber = $this->input->post('adminnumber');
-        $this->load->helper(array('form','url'));
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('adminName', 'Admin Name', 'required');
-        $this->form_validation->set_rules('adminUsername', 'Admin Username', 'required|is_unique[admin.UserName]');
-		$this->form_validation->set_rules('adminnumber', 'Admin Phone Number', 'required|numeric');
-		$this->form_validation->set_rules('adminPassword', 'Admin Password', 'required');
-		$this->form_validation->set_rules('adminconfirmpass', 'Admin Confirm Password', 'required|matches[adminPassword]');
-		$this->form_validation->set_rules('adminrole', 'Admin Role', 'required');
-		$add['AdminName'] = $adminName;
-		$add['UserName'] = $adminUsername;
-		$add['MobileNumber'] = $adminnumber;
-		$add['Password'] = md5($adminPassword);
-		$add['role'] = $adminrole;
-		if($this->form_validation->run()){
-			$this->users_model->insertuser($add);
-			$this->session->set_userdata('added','added');
-			redirect("./User/adminusers/","refresh"); 
-			
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
 		} else {
-			$this->adduser();
+			$this->load->model('Users_model');
+			$adminName = $this->input->post('adminName');
+			$adminUsername = $this->input->post('adminUsername');
+			$adminPassword = $this->input->post('adminPassword');
+			$adminconfirmpass = $this->input->post('adminconfirmpass');
+			$adminrole = $this->input->post('adminrole');
+			$adminnumber = $this->input->post('adminnumber');
+			$this->load->helper(array('form','url'));
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('adminName', 'Admin Name', 'required');
+			$this->form_validation->set_rules('adminUsername', 'Admin Username', 'required|is_unique[admin.UserName]');
+			$this->form_validation->set_rules('adminnumber', 'Admin Phone Number', 'required|numeric');
+			$this->form_validation->set_rules('adminPassword', 'Admin Password', 'required');
+			$this->form_validation->set_rules('adminconfirmpass', 'Admin Confirm Password', 'required|matches[adminPassword]');
+			$this->form_validation->set_rules('adminrole', 'Admin Role', 'required');
+			$add['AdminName'] = $adminName;
+			$add['UserName'] = $adminUsername;
+			$add['MobileNumber'] = $adminnumber;
+			$add['Password'] = md5($adminPassword);
+			$add['role'] = $adminrole;
+			if($this->form_validation->run()){
+				$this->users_model->insertuser($add);
+				$this->session->set_userdata('added','added');
+				redirect("./User/adminusers/","refresh"); 
+				
+			} else {
+				$this->adduser();
+			}
 		}
     }
 	public function editaccount(){
-        $this->load->model('Users_model');
-        $nameadmin = $this->input->post('nameadmin');
-        $usernameadmin = $this->input->post('usernameadmin');
-        $this->load->helper(array('form','url'));
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('nameadmin', 'Admin Name', 'required');
-        $this->form_validation->set_rules('usernameadmin', 'Admin Username', 'required|is_unique[admin.UserName]');
-        if($this->form_validation->run()){
-            if($this->users_model->check_login($username,$password)){
-				redirect("./User/dashboard/","refresh");
-				$this->session->set_flashdata('username',$username);
-            } else {
-				echo "<script>alert('Invalid Username or Password');</script>";
-                $this->adminlogin();
-            }
-        } else {
-            $this->adminlogin();
-        }
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$nameadmin = $this->input->post('nameadmin');
+			$usernameadmin = $this->input->post('usernameadmin');
+			$this->load->helper(array('form','url'));
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('nameadmin', 'Admin Name', 'required');
+			$this->form_validation->set_rules('usernameadmin', 'Admin Username', 'required|is_unique[admin.UserName]');
+			if($this->form_validation->run()){
+				if($this->users_model->check_login($username,$password)){
+					redirect("./User/dashboard/","refresh");
+					$this->session->set_flashdata('username',$username);
+				} else {
+					echo "<script>alert('Invalid Username or Password');</script>";
+					$this->adminlogin();
+				}
+			} else {
+				$this->adminlogin();
+			}
+		}
     }
-
-	public function deleteinquiry(){
-		$ticket = $this->uri->segment(3);
-		$this->load->model('Users_model');
-		$this->users_model->deleteaninquiry(intval($ticket));
-		redirect(base_url().'User/admininquiries'); 
-	}
 	public function viewinquiry(){
-		$this->load->model('Users_model');
-		$ticket = $this->uri->segment(3);
-		$data['inquiries'] = $this->users_model->fetchrowinquiry(intval($ticket));
-		$this->load->view('viewinquiry',$data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$ticket = $this->uri->segment(3);
+			$data['inquiries'] = $this->users_model->fetchrowinquiry(intval($ticket));
+			$this->load->view('viewinquiry',$data);
+		}
 	}
 	public function addressstatus(){
-		$this->load->model('Users_model');
-		$ticket = $this->uri->segment(3);
-		$data = array(
-			'status'=>'Addressed',
-		 );
-		 $data = array_filter($data);
-		 $this->Users_model->updatestatus(intval($ticket),$data);
-		 $this->session->set_userdata('addressed','addressed');
-		redirect("./User/admininquiries/","refresh");
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$ticket = $this->uri->segment(3);
+			$data = array(
+				'status'=>'Addressed',
+			);
+			$data = array_filter($data);
+			$this->Users_model->updatestatus(intval($ticket),$data);
+			$this->session->set_userdata('addressed','addressed');
+			redirect("./User/admininquiries/","refresh");
+		}
 	}
 	public function notaddressstatus(){
-		$this->load->model('Users_model');
-		$ticket = $this->uri->segment(3);
-		$data = array(
-			'status'=>'Not Addressed',
-		 );
-		 $data = array_filter($data);
-		 $this->Users_model->updatestatus(intval($ticket),$data);
-		 $this->session->set_userdata('notaddressed','notaddressed');
-		redirect("./User/admininquiries/","refresh"); 
-	}
-	public function deleteapplication(){
-		$appnum = $this->uri->segment(3);
-		$this->load->model('Users_model');
-		$this->users_model->deleteapplication(intval($appnum));
-		redirect(base_url().'User/adminapplications'); 
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$ticket = $this->uri->segment(3);
+			$data = array(
+				'status'=>'Not Addressed',
+			);
+			$data = array_filter($data);
+			$this->Users_model->updatestatus(intval($ticket),$data);
+			$this->session->set_userdata('notaddressed','notaddressed');
+			redirect("./User/admininquiries/","refresh"); 
+		}
 	}
 	public function viewapplication(){
-		$this->load->model('Users_model');
-		$appnum = $this->uri->segment(3);
-		$data['applications'] = $this->users_model->fetchapplication(intval($appnum));
-		$this->load->view('viewapplication',$data);
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$appnum = $this->uri->segment(3);
+			$data['applications'] = $this->users_model->fetchapplication(intval($appnum));
+			$this->load->view('viewapplication',$data);
+		}
 	}
 	public function acceptapp(){
-		$this->load->model('Users_model');
-		$appnum = $this->uri->segment(3);
-		$data = array(
-			'status'=>'Accepted',
-		 );
-		 $data = array_filter($data);
-		 $this->Users_model->updateapplication(intval($appnum),$data);
-		 $result=$this->Users_model->fetchemail(intval($appnum))->row();
-		$emaill=$result->Email;
-		$message = file_get_contents('accepted.html');
-		require_once('vendor/autoload.php');
-		require_once('class-db.php');
-		$mail = new PHPMailer();
-		$mail->isSMTP();
-		$mail->Host = 'smtp.gmail.com';
-		$mail->Port = 465;
-		$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-		$mail->SMTPAuth = true;
-		$mail->AuthType = 'XOAUTH2';
-		$email = 'cobratest27@gmail.com'; // the email used to register google app
-		$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
-		$clientSecret = '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';
-		$db = new DB();
-		$refreshToken = $db->get_refersh_token();
-		$provider = new Google(
-			[
-			'clientId' => $clientId,
-			'clientSecret' => $clientSecret,
-			]
-			);
-			//Pass the OAuth provider instance to PHPMailer
-			$mail->setOAuth(
-			new OAuth(
-			[
-			'provider' => $provider,
-			'clientId' => $clientId,
-			'clientSecret' => $clientSecret,
-			'refreshToken' => $refreshToken,
-			'userName' => $email,
-			]
-			)
-			);
-		
-		$mail->setFrom($email, 'Test');
-		$mail->addAddress($emaill, 'TestTest');
-		$mail->isHTML(true);
-		$mail->Subject = 'OADR Application Status';
-		$mail->Body = $message;
-		if (!$mail->send()) {
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
 		} else {
-			$this->session->set_userdata('accepted','accepted');
-		redirect("./User/adminapplications/","refresh"); 
-		}
-		
-	}
-	public function rejectapp(){
-		$this->load->model('Users_model');
-		$appnum = $this->uri->segment(3);
-		$data = array(
-			'status'=>'Rejected',
-		 );
-		 $data = array_filter($data);
-		 $this->Users_model->updateapplication(intval($appnum),$data);
-		 $result=$this->Users_model->fetchemail(intval($appnum))->row();
-		$emaill=$result->Email;
-		$message = file_get_contents('rejected.html');
-		require_once('vendor/autoload.php');
-		require_once('class-db.php');
-		$mail = new PHPMailer();
-		$mail->isSMTP();
-		$mail->Host = 'smtp.gmail.com';
-		$mail->Port = 465;
-		$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-		$mail->SMTPAuth = true;
-		$mail->AuthType = 'XOAUTH2';
-		$email = 'cobratest27@gmail.com'; // the email used to register google app
-		$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
-		$clientSecret = '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';
-		$db = new DB();
-		$refreshToken = $db->get_refersh_token();
-		$provider = new Google(
-			[
-			'clientId' => $clientId,
-			'clientSecret' => $clientSecret,
-			]
+			$this->load->model('Users_model');
+			$appnum = $this->uri->segment(3);
+			$data = array(
+				'status'=>'Accepted',
 			);
-			//Pass the OAuth provider instance to PHPMailer
-			$mail->setOAuth(
-			new OAuth(
-			[
-			'provider' => $provider,
-			'clientId' => $clientId,
-			'clientSecret' => $clientSecret,
-			'refreshToken' => $refreshToken,
-			'userName' => $email,
-			]
-			)
-			);
-		
-		$mail->setFrom($email, 'Test');
-		$mail->addAddress($emaill, 'TestTest');
-		$mail->isHTML(true);
-		$mail->Subject = 'OADR Application Status';
-		$mail->Body = $message;
-		if (!$mail->send()) {
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		} else {
-			$this->session->set_userdata('rejected','rejected');
-		redirect("./User/adminapplications/","refresh"); 
-		}
-		  
-	}
-	public function addcat(){
-        $this->load->model('Users_model');
-        $catname = $this->input->post('catname');
-		$this->load->helper(array('form','url'));
-        $this->load->library('form_validation');
-		$this->form_validation->set_rules('catname', 'Category', 'required');
-		if($this->form_validation->run()){
-				$alb = array(
-					'categoryname' => $catname,
-				);
-				$this->users_model->insert_cat($alb);
-				$this->session->set_userdata('added','added');
-				redirect("./User/admincatresources/","refresh"); 
-		} else {
-			$this->addcategory();
-		}
-		
-    }
-	public function editcat(){
-		$this->load->model('Users_model');
-		$cat = $this->uri->segment(3);
-		$data['cat'] = $this->users_model->fetchcat(intval($cat));
-		$this->load->view('editcategory',$data);
-	}
-	
-	public function deletecat(){
-		$cat = $this->uri->segment(3);
-		$this->load->model('Users_model');
-		$this->users_model->deletecategory(intval($cat));
-		redirect(base_url().'User/admincatresources'); 
-	}
-	public function addresourcefile(){
-        $this->load->model('Users_model');
-        $catname = $this->input->post('catname');
-		$this->form_validation->set_rules('reply', 'Reply', 'required');
-		if($this->form_validation->run()){
-				$alb = array(
-					'categoryname' => $catname,
-				);
-				$this->users_model->insert_cat($id,$alb);
-				redirect("./User/admincatresources/","refresh"); 
-		} else {
-			$this->addcategory();
-		}
-		
-    }
-	public function sendreply(){
-		$reply = $this->input->post('reply');
-		$emaill = $this->input->post('email');
-		$this->load->helper(array('form','url'));
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('reply', 'Reply', 'required');
-		if($this->form_validation->run()){
-			$message = file_get_contents('reply.html'); 
-			$message = str_replace('%reply%', $reply, $message); 
-			
+			$data = array_filter($data);
+			$this->Users_model->updateapplication(intval($appnum),$data);
+			$result=$this->Users_model->fetchemail(intval($appnum))->row();
+			$emaill=$result->Email;
+			$message = file_get_contents('accepted.html');
 			require_once('vendor/autoload.php');
 			require_once('class-db.php');
 			$mail = new PHPMailer();
@@ -908,7 +836,7 @@ class User extends CI_Controller {
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 			$mail->SMTPAuth = true;
 			$mail->AuthType = 'XOAUTH2';
-							$email = 'cobratest27@gmail.com'; // the email used to register google app
+			$email = 'cobratest27@gmail.com'; // the email used to register google app
 			$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
 			$clientSecret = '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';
 			$db = new DB();
@@ -935,17 +863,186 @@ class User extends CI_Controller {
 			$mail->setFrom($email, 'Test');
 			$mail->addAddress($emaill, 'TestTest');
 			$mail->isHTML(true);
-			$mail->Subject = 'OADR Inquiry Form';
+			$mail->Subject = 'OADR Application Status';
 			$mail->Body = $message;
 			if (!$mail->send()) {
 				echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
-				$this->session->set_userdata('sent','sent');
-				redirect("./User/admininquiries/","refresh"); ; 
+				$this->session->set_userdata('accepted','accepted');
+				redirect("./User/adminapplications/","refresh"); 
 			}
-			
+		}	
+	}
+	public function rejectapp(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
 		} else {
-			$this->adduser();
+			$this->load->model('Users_model');
+			$appnum = $this->uri->segment(3);
+			$data = array(
+				'status'=>'Rejected',
+			);
+			$data = array_filter($data);
+			$this->Users_model->updateapplication(intval($appnum),$data);
+			$result=$this->Users_model->fetchemail(intval($appnum))->row();
+			$emaill=$result->Email;
+			$message = file_get_contents('rejected.html');
+			require_once('vendor/autoload.php');
+			require_once('class-db.php');
+			$mail = new PHPMailer();
+			$mail->isSMTP();
+			$mail->Host = 'smtp.gmail.com';
+			$mail->Port = 465;
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+			$mail->SMTPAuth = true;
+			$mail->AuthType = 'XOAUTH2';
+			$email = 'cobratest27@gmail.com'; // the email used to register google app
+			$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
+			$clientSecret = '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';
+			$db = new DB();
+			$refreshToken = $db->get_refersh_token();
+			$provider = new Google(
+				[
+				'clientId' => $clientId,
+				'clientSecret' => $clientSecret,
+				]
+				);
+				//Pass the OAuth provider instance to PHPMailer
+				$mail->setOAuth(
+				new OAuth(
+				[
+				'provider' => $provider,
+				'clientId' => $clientId,
+				'clientSecret' => $clientSecret,
+				'refreshToken' => $refreshToken,
+				'userName' => $email,
+				]
+				)
+				);
+			
+			$mail->setFrom($email, 'Test');
+			$mail->addAddress($emaill, 'TestTest');
+			$mail->isHTML(true);
+			$mail->Subject = 'OADR Application Status';
+			$mail->Body = $message;
+			if (!$mail->send()) {
+				echo 'Mailer Error: ' . $mail->ErrorInfo;
+			} else {
+				$this->session->set_userdata('rejected','rejected');
+				redirect("./User/adminapplications/","refresh"); 
+			}
+		} 
+	}
+	public function addcat(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$catname = $this->input->post('catname');
+			$this->load->helper(array('form','url'));
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('catname', 'Category', 'required');
+			if($this->form_validation->run()){
+					$alb = array(
+						'categoryname' => $catname,
+					);
+					$this->users_model->insert_cat($alb);
+					$this->session->set_userdata('added','added');
+					redirect("./User/admincatresources/","refresh"); 
+			} else {
+				$this->addcategory();
+			}
+		}
+    }
+	public function editcat(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$cat = $this->uri->segment(3);
+			$data['cat'] = $this->users_model->fetchcat(intval($cat));
+			$this->load->view('editcategory',$data);
+		}
+	}
+	public function addresourcefile(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$catname = $this->input->post('catname');
+			$this->form_validation->set_rules('reply', 'Reply', 'required');
+			if($this->form_validation->run()){
+					$alb = array(
+						'categoryname' => $catname,
+					);
+					$this->users_model->insert_cat($id,$alb);
+					redirect("./User/admincatresources/","refresh"); 
+			} else {
+				$this->addcategory();
+			}
+		}
+    }
+	public function sendreply(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$reply = $this->input->post('reply');
+			$emaill = $this->input->post('email');
+			$this->load->helper(array('form','url'));
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('reply', 'Reply', 'required');
+			if($this->form_validation->run()){
+				$message = file_get_contents('reply.html'); 
+				$message = str_replace('%reply%', $reply, $message); 
+				
+				require_once('vendor/autoload.php');
+				require_once('class-db.php');
+				$mail = new PHPMailer();
+				$mail->isSMTP();
+				$mail->Host = 'smtp.gmail.com';
+				$mail->Port = 465;
+				$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+				$mail->SMTPAuth = true;
+				$mail->AuthType = 'XOAUTH2';
+								$email = 'cobratest27@gmail.com'; // the email used to register google app
+				$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
+				$clientSecret = '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';
+				$db = new DB();
+				$refreshToken = $db->get_refersh_token();
+				$provider = new Google(
+					[
+					'clientId' => $clientId,
+					'clientSecret' => $clientSecret,
+					]
+					);
+					//Pass the OAuth provider instance to PHPMailer
+					$mail->setOAuth(
+					new OAuth(
+					[
+					'provider' => $provider,
+					'clientId' => $clientId,
+					'clientSecret' => $clientSecret,
+					'refreshToken' => $refreshToken,
+					'userName' => $email,
+					]
+					)
+					);
+				
+				$mail->setFrom($email, 'Test');
+				$mail->addAddress($emaill, 'TestTest');
+				$mail->isHTML(true);
+				$mail->Subject = 'OADR Inquiry Form';
+				$mail->Body = $message;
+				if (!$mail->send()) {
+					echo 'Mailer Error: ' . $mail->ErrorInfo;
+				} else {
+					$this->session->set_userdata('sent','sent');
+					redirect("./User/admininquiries/","refresh"); ; 
+				}
+				
+			} else {
+				$this->adduser();
+			}
 		}
 	}
 	public function deleteAllinquiry()
@@ -953,7 +1050,6 @@ class User extends CI_Controller {
         $ids = $this->input->post('ids');
         $this->db->where_in('ID', explode(",", $ids));
         $this->db->delete('inquiries');
- 
         redirect("./User/admininquiries/","refresh"); ; 
     }
 	public function deleteAllapplications()
@@ -1020,11 +1116,19 @@ class User extends CI_Controller {
         redirect("./User/adminusers/","refresh"); ; 
     }
 	public function addresources(){
-		$data['cat'] = $this->users_model->resources2();
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['cat'] = $this->users_model->resources2();
 		$this->load->view('addresources',$data);
+		}
+		
 	}
 	public function updatecat(){
-		$this->load->model('Users_model');
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
 		$rid = $this->input->post('rID');
 		$catname = $this->input->post('catname');
 		$data = array(
@@ -1066,6 +1170,8 @@ class User extends CI_Controller {
 				}
 			}
 		}
+		}
+		
 	}
 	public function logout()
     {
