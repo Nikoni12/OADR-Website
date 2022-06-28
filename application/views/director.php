@@ -39,7 +39,7 @@
         </section> 
         
 		<section class="features directcontain" style="padding:0;">
-                <div class="container direct_post">
+                <div class="container ">
                     <div class="row">
 					<div class="col-md-6"><img class="img-fluid" style="display:block; margin: 0 auto; max-width:100%;" src="<?php echo base_url('assets/img/atty.png');?>"></div>
                         <div class="col-md-6 sect_info">
@@ -61,7 +61,7 @@
                 </div>
             </section>
             <section class="features">
-            <div class="container direct_post">
+            <div class="container ">
                     <div class="row ">
                             <div class="col-md-16">
                                 <br>

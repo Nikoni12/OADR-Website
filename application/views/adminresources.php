@@ -45,7 +45,7 @@
                                                 <th>Category</th>
                                                 <th>Name</th>
                                                 <th>Date Added</th>
-                                                <th>Action</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -58,11 +58,7 @@
                                                 echo "<td>".$lp->ResourcesName."</td>";
                                                 echo "<td>".$lp->DateAdded."</td>";
                                                 ?>
-                                                <td style = 'text-align:center; font-size:20px;'>
-                                                    <a href="<?php echo base_url();?>User/editcat/<?php echo $lp->ID;?>">
-                                                        <i class='fa fa-pencil' aria-hidden='true'></i>
-                                                    </a>
-                                                </td>
+                                                
                                                 </tr>
                                             <?php }?>
                                         </tbody>
