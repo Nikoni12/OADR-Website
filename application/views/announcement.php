@@ -61,7 +61,7 @@
 								<div class="col-md-9">
 									<tr>
 										<td><p class='mb-2'><strong><?php echo $row->announcement_title?></strong></p></td>
-										<td><p style = 'text-align:justify;' class="crop"> <u><?php echo $row->announcement_content?></u></p></td>
+										<td><p style = 'text-align:justify;' class="limit"> <u><?php echo $row->announcement_content?></u></p></td>
 										<td><p><?php echo $row->date_added?></p></td>
 									</tr>
 									<button id="myBtn<?php echo $i?>" class="btn" style="background:#68A4C4; color:white;"><i class="fa fa-eye" style="color:white;" aria-hidden="true"></i> View </button>
@@ -77,7 +77,6 @@
 		    <?php $i=1; foreach($announcement as $row) { ?>
 
 			<div id="myModal<?php echo $i?>" class="modal">
-			<!-- Modal content -->
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<div class="modal-header"><p><b><?php echo $row->announcement_title?></b></p></div>
@@ -92,48 +91,24 @@
 			</div>
 			
 			<?php $i++; }?>
-
-					<!--
-		<div class="modal fade" id="<?echo $row->announcement_title?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $row->announcement_title?></h5>
-                </div>
-                <div class="modal-body">
-                <?php echo $row->announcement_content?>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>-->
-		
 		
 			<script>
 			<?php $i=1; foreach($announcement as $row) { ?>
-				// Get the modal
+
 				var modal<?php echo $i?> = document.getElementById("myModal<?php echo $i?>");
 
-				// Get the button that opens the modal
 				var btn<?php echo $i?> = document.getElementById("myBtn<?php echo $i?>");
 				
-
-				// Get the <span> element that closes the modal
 				var span<?php echo $i?> = document.getElementsByClassName("close<?php echo $i?>")[0];
 
-				// When the user clicks the button, open the modal 
 				btn<?php echo $i?>.onclick = function() {
 				modal<?php echo $i?>.style.display = "block";
 				}
 
-				// When the user clicks on <span> (x), close the modal
 				span<?php echo $i?>.onclick = function() {
 				modal<?php echo $i?>.style.display = "none";
 				}
-
-				// When the user clicks anywhere outside of the modal, close it
+				
 				window.onclick = function(event) {
 				if (event.target == modal<?php echo $i?>) {
 					modal<?php echo $i?>.style.display = "none";

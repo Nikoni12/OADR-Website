@@ -349,8 +349,7 @@ class User extends CI_Controller {
 					'event_content' => $this->input->post('event_content'),
 					'event_image' => $event_image,
 					'event_start' => $this->input->post('event_start'),
-					'event_end' => $this->input->post('event_end'),
-					'date_added' => $this->input->post('date_added')
+					'event_end' => $this->input->post('event_end')
 				);
 				$this->users_model->insertevent($eve);
 				$this->session->set_userdata('added','added');
@@ -1172,6 +1171,15 @@ class User extends CI_Controller {
 		}
 		}
 		
+	}
+
+	public function search(){
+		$searchdata = $this->input->post('searchdata');
+		$data['news'] = $this->users_model->search_news($searchdata);
+		$data['announcements'] = $this->users_model->search_announcements($searchdata);
+		$data['events'] = $this->users_model->search_events($searchdata);
+		$this->load->view('searchresult',$data);
+	
 	}
 	public function logout()
     {

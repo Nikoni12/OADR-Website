@@ -41,6 +41,7 @@ class Users_model extends CI_Model {
     public function getannouncement(){
         $this->db->select('*');
         $this->db->from('announcements');
+        $this->db->order_by('date_added', 'desc');
         $query = $this->db->get();
         return $query->result();
 	}
@@ -49,6 +50,7 @@ class Users_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('announcements');
         $this->db->where('ID',$id);
+        $this->db->order_by('date_added', 'desc');
         $query = $this->db->get();
         return $query->result();
 	}
@@ -71,6 +73,7 @@ class Users_model extends CI_Model {
     public function getnews(){
         $this->db->select('*');
         $this->db->from('news');
+        $this->db->order_by('date_added', 'desc');
         $query = $this->db->get();
         return $query->result();
 	}
@@ -87,6 +90,7 @@ class Users_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('news');
         $this->db->where('news_title',$newstitle);
+        $this->db->order_by('date_added', 'desc');
         $query = $this->db->get();
         return $query->result();
 	}
@@ -145,6 +149,7 @@ class Users_model extends CI_Model {
     public function getevent(){
         $this->db->select('*');
         $this->db->from('events');
+        $this->db->order_by('event_start', 'desc');
         $query = $this->db->get();
         return $query->result();
 	}
@@ -337,6 +342,30 @@ class Users_model extends CI_Model {
         $this->db->from('admin');
         $this->db->where('UserName',$username);
         return $this->db->get();
-    } 
+    }
+
+    public function search_news($searchdata){
+        $this->db->select('*');
+        $this->db->from('news');
+        $this->db->like('news_title',$searchdata);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function search_announcements($searchdata){
+        $this->db->select('*');
+        $this->db->from('announcements');
+        $this->db->like('announcement_title',$searchdata);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function search_events($searchdata){
+        $this->db->select('*');
+        $this->db->from('events');
+        $this->db->like('event_title',$searchdata);
+        $query = $this->db->get();
+        return $query->result();
+    }
     
 }
