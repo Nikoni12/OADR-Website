@@ -31,6 +31,7 @@
                                 text-overflow: ellipsis;
                                 white-space: nowrap;
  }
+
         </style>
 		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 	</head>
@@ -52,7 +53,8 @@
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Recent News</h1><br> 
 					<div class="row">
-						<?php foreach($news as $row) { ?> 
+						<?php $counter = 0;foreach($news as $row) { ?>
+							<?php if ($counter < 4){ ?> 
 							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark">
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-3">
@@ -61,14 +63,29 @@
 								<div class="col-md-9">
 									<tr>
 									<td><?php echo "<p class='mb-2'><strong>$row->news_title</strong></p>" ?></td>
-									<td > <p style = "text-align=justify;" class="crop"><u><?php echo$row->news_content?></u></p></td>
+									<td> <p style = "text-align=justify;" class="limit"><u><?php echo$row->news_content?></u></p></td>
 									<td><?php echo "<p>$row->date_added</p>" ?></td>
 									<p style="color:skyblue;"><b>Read More..</b></p>
-						</tr>
+									</tr>
 								</div>
 							</div>
 						</a>
-						<?php }?>
+							<?php }
+							else {  
+									if ($counter == 4) {?>
+									
+									<h2 class = "archivenews_title" style="padding:30px; padding-left:10px;" >Archive</h2><br>
+									<?php } ?>
+
+										<div class="col-md-9">
+										<tr class="archivenews">
+											<td><?php echo "<p class='mb-2'>$row->date_added<a href='' style='color:#031261'>&nbsp; &nbsp; &nbsp;$row->news_title</p></a>" ?></td>
+										</tr>
+										</div>
+
+							<?php } ?>
+						
+						<?php $counter++; }?>
 					</div>
 				</div>
 			</section>

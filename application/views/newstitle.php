@@ -61,8 +61,8 @@
         <div class="infodiv">
             <img class="infoimg" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>' style="width:100%; height:auto;">
             <p class="infohead"><br><?php echo $row->news_title ?></p>
-            <p class="infotext">
-            <?php echo $row->news_content ?>
+            <p class="infotext"> 
+            <?php echo nl2br($row->news_content);?>
             </p>
         </div>
         <?php } ?>

@@ -17,8 +17,18 @@
 		<link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+		<style>
+			.limit {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 7; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+		</style>
 		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 	</head>
+
 	<body style = "background-color:#fff5ee;">
 		<?php include_once('header.php');?>
 		<section id="hero" class="d-flex justify-cntent-center align-items-center">
@@ -38,8 +48,8 @@
 			<a href="#upcomingevent">Upcoming Events</a>
 			<a href="#mediafeed">Media Feed</a>
 			<div class="search-container">
-				<form action="">
-				<input type="text" placeholder="Search.." name="search">
+				<form method="POST" action="<?php echo base_url();?>User/search" enctype="multipart/form-data">
+				<input type="text" placeholder="Search.." name="searchdata">
 				<button type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
@@ -59,8 +69,10 @@
 						<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>
 				<div class="border"></div>
 				<p class="sect_text">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Alternative dispute resolution (ADR) refers to the different ways people can resolve disputes without a trial. Common ADR processes include mediation, arbitration, and neutral evaluation. These processes are generally confidential, less formal, and less stressful than traditional court proceedings.
 				</p>
+				<p class ="sect_text">ADR often saves money and speeds settlement. In mediation, parties play an important role in resolving their own disputes. This often results in creative solutions, longer-lasting outcomes, greater satisfaction, and improved relationships.
+					</p>
                         </div>
                     </div>
                 </div>
@@ -79,8 +91,8 @@
 			<br><br><br><br>
 			<section class="features" id="announcement">
 				<div class="container">
-				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
-					<div class="row ">
+				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">News</h1><br> 
+					<div class="row" >
 						<div class="col-md-12 " >
 							<div id="demo" class="carousel slide" data-bs-ride="carousel">
 								<div class="carousel-indicators">
@@ -98,9 +110,9 @@
 														<img class="img-fluid" style="width:1200px; height:600px;"src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
 													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br><?php echo $row->news_title?></h2><br></div>
+														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
-															<p style = "text-align:justify;"><?php echo $row->news_content?></p>
+															<p style = "text-align:justify;" class="carouselimit carouseltext"><?php echo $row->news_content?></p>
 															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 														</div>
 														<br><br>
@@ -119,9 +131,9 @@
 														<img class="img-fluid" style="width:1200px; height:600px;" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
 													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center"><br><?php echo $row->news_title?></h2><br></div>
+														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
-															<p style = "text-align:justify;"><?php echo $row->news_content?></p>
+															<p style = "text-align:justify;" class="carouselimit carouseltext"><?php echo $row->news_content?></p>
 															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 														</div>
 														<br><br>
@@ -190,8 +202,8 @@
           						<img class="img-fluid" style="width:408px; height:255px;"src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
           						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?>
 								<span class="d-block"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></span></div>
-          						<h5 class="font-weight-medium mt-3"><a href="#" class="text-decoration-none link"><?php echo $row->event_title?></a></h5>
-          						<p class="mt-3"><?php echo $row->event_content?></p>
+          						<h5 class="font-weight-medium mt-3"><a href="<?php echo base_url('User/events');?>" class="text-decoration-none link"><?php echo $row->event_title?></a></h5>
+          						<p class="mt-3 limithomevent"><?php echo $row->event_content?></p>
         					</div>
       					</div>
 						<?php } ?>
