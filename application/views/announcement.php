@@ -79,7 +79,7 @@
 			<div id="myModal<?php echo $i?>" class="modal">
 			<!-- Modal content -->
 				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
+					<div class="modal-content" style = " background-color: #fefefe; margin: auto; padding: 20px; border: 1px solid #888; width: 80%;"> 
 						<div class="modal-header"><p><b><?php echo $row->announcement_title?></b></p></div>
 						<div class="modal-body"><p><?php echo $row->announcement_content?></p></div>
 						<div class="modal-footer">
