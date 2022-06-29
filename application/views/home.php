@@ -42,7 +42,7 @@
 				</div>
 			</div>
 		</section>
-		<div class="topnav" style = "position: -webkit-sticky; position: sticky; top: 0;">
+		<div class="topnav poppinsfont" style = "position: -webkit-sticky; position: sticky; top: 0;">
 			<a href="#adr">ADR</a>
 			<a href="#announcement">News</a>
 			<a href="#upcomingevent">Upcoming Events</a>
@@ -106,12 +106,12 @@
 												<div class="row ">
 													<?php foreach(array_slice($news, 0, 1) as $row ){ ?>
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" style="width:1200px; height:600px;"src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
+														<img class="img-fluid" style="width:1200px; height:600px; "src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
-													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
+													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0; border-radius:0.25rem;">
+														<div style = "background-color:#002244; border-radius:0.25rem;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
-															<p style = "text-align:justify;" class="carouselimit carouseltext"><?php echo $row->news_content?></p>
+															<p style = "text-align:justify;" class="carouselimit carouseltext "><?php echo $row->news_content?></p>
 															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 														</div>
 														<br><br>
@@ -129,8 +129,8 @@
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
 														<img class="img-fluid" style="width:1200px; height:600px;" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
-													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
+													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0; border-radius:0.25rem;">
+														<div style = "background-color:#002244; border-radius:0.25rem;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
 															<p style = "text-align:justify;" class="carouselimit carouseltext"><?php echo $row->news_content?></p>
 															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
@@ -197,7 +197,7 @@
 					<div class="row mt-4 ">
 						<?php foreach(array_slice($event, 0, 3) as $row ){ ?>
       					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
-        					<div class="card border-0 mb-4 ">
+        					<div class="card border-0 mb-4">
           						<img class="img-fluid" style="width:408px; height:255px;"src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
           						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?>
 								<span class="d-block"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></span></div>

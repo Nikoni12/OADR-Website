@@ -53,21 +53,21 @@
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
 					<div class="row">
 						<?php $i=1; foreach($announcement as $row) { ?>
-							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->announcement_title) ?>" class="text-dark"></a>
-							<div class="row mb-12 border-bottom pb-2">
-								<div class="col-md-3">
-									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->announcement_image."' class='img-fluid shadow-1-strong rounded' style='max-height:300px; width:100%;'>"."</td>"; ?>
+							<a href="/" onclick="return false;" class="text-dark">
+							<div class="row mb-12 border-bottom pb-2 newsrow" style="height:95%; padding-left:0;"  >
+								<div class="col-md-3" style="padding-left:0">
+								<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->announcement_image."' class='img-fluid shadow-1-strong rounded newsimg' style='max-height:300px; width:306px;'>"."</td>"; ?>
 								</div>
 								<div class="col-md-9">
 									<tr>
 										<td><p class='mb-2'><strong><?php echo $row->announcement_title?></strong></p></td>
-										<td><p style = 'text-align:justify;' class="limit"> <u><?php echo $row->announcement_content?></u></p></td>
+										<td><p style = 'text-align:justify;' class="limit poppinsfont"> <u><?php echo $row->announcement_content?></u></p></td>
 										<td><p><?php echo $row->date_added?></p></td>
 									</tr>
 									<button id="myBtn<?php echo $i?>" class="btn" style="background:#68A4C4; color:white;"><i class="fa fa-eye" style="color:white;" aria-hidden="true"></i> View </button>
 								</div>
 							</div>
-						
+							</a>
 						<?php $i++; }?>
 					</div>
 		</section>
@@ -79,8 +79,8 @@
 			<div id="myModal<?php echo $i?>" class="modal">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content" style = " background-color: #fefefe; margin: auto; padding: 20px; border: 1px solid #888; width: 80%;"> 
-						<div class="modal-header"><p><b><?php echo $row->announcement_title?></b></p></div>
-						<div class="modal-body"><p><?php echo $row->announcement_content?></p></div>
+						<div class="modal-header"><p style="poppinsfont"><b><?php echo $row->announcement_title?></b></p></div>
+						<div class="modal-body"><p style="poppinsfont"><?php echo $row->announcement_content?></p></div>
 						<div class="modal-footer">
 							<span class="close<?php echo $i?>"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></span>
 						</div>
