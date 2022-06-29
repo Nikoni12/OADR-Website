@@ -41,6 +41,13 @@
         
         <section class="features">
 				<div class="container">
+                <div class="search-container">
+                    <form method="POST" action="<?php echo base_url();?>User/search" enctype="multipart/form-data">
+                        <input type="text" placeholder="Search.." name="searchdata" style="width:400px;" value="<?php echo $searchdata ?>" >
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                        <br>
+                    </div>
 					<div class="row">
                         <?php $a=0;foreach($news as $row) {?>
                             <?php if ($a == 0)
@@ -90,7 +97,7 @@
 									<p style = "text-align:justify;" class="limit"><?php echo $row->event_content?></p>
                                     <?php echo "<p>Start: $row->event_start</p>"?>
 								    <?php echo "<p>End: $row->event_end</p>"?>
-									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
+									<a href="<?php echo base_url('User/events');?>"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>
                             <hr>

@@ -56,16 +56,16 @@
 						<?php $counter = 0;foreach($news as $row) { ?>
 							<?php if ($counter < 4){ ?> 
 							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark">
-							<div class="row mb-12 border-bottom pb-2">
-								<div class="col-md-3">
-									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->news_image."' class='img-fluid shadow-1-strong rounded' style='max-height:300px; width:306px;'>"."</td>"; ?>
+							<div class="row mb-12 border-bottom pb-2 newsrow" style="height:95%">
+								<div class="col-md-3" style="padding-left:0">
+									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->news_image."' class='img-fluid shadow-1-strong rounded newsimg' style='max-height:300px; width:306px;'>"."</td>"; ?>
 								</div>
 								<div class="col-md-9">
 									<tr>
 									<td><?php echo "<p class='mb-2'><strong>$row->news_title</strong></p>" ?></td>
-									<td> <p style = "text-align=justify;" class="limit"><u><?php echo$row->news_content?></u></p></td>
+									<td> <p style = "text-align=justify;" class="limit poppinsfont"><u><?php echo$row->news_content?></u></p></td>
 									<td><?php echo "<p>$row->date_added</p>" ?></td>
-									<p style="color:skyblue;"><b>Read More..</b></p>
+									<td><p style="color:skyblue;"><b>Read More..</b></p></td>
 									</tr>
 								</div>
 							</div>

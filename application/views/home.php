@@ -42,7 +42,7 @@
 				</div>
 			</div>
 		</section>
-		<div class="topnav" style = "position: -webkit-sticky; position: sticky; top: 0;">
+		<div class="topnav poppinsfont" style = "position: -webkit-sticky; position: sticky; top: 0;">
 			<a href="#adr">ADR</a>
 			<a href="#announcement">News</a>
 			<a href="#upcomingevent">Upcoming Events</a>
@@ -70,9 +70,8 @@
 				<div class="border"></div>
 				<p class="sect_text">
 					Alternative dispute resolution (ADR) refers to the different ways people can resolve disputes without a trial. Common ADR processes include mediation, arbitration, and neutral evaluation. These processes are generally confidential, less formal, and less stressful than traditional court proceedings.
+					<p class="sect_text">ADR often saves money and speeds settlement. In mediation, parties play an important role in resolving their own disputes. This often results in creative solutions, longer-lasting outcomes, greater satisfaction, and improved relationships.</p>
 				</p>
-				<p class ="sect_text">ADR often saves money and speeds settlement. In mediation, parties play an important role in resolving their own disputes. This often results in creative solutions, longer-lasting outcomes, greater satisfaction, and improved relationships.
-					</p>
                         </div>
                     </div>
                 </div>
@@ -107,12 +106,12 @@
 												<div class="row ">
 													<?php foreach(array_slice($news, 0, 1) as $row ){ ?>
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" style="width:1200px; height:600px;"src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
+														<img class="img-fluid" style="width:1200px; height:600px; "src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
-													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
+													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0; border-radius:0.25rem;">
+														<div style = "background-color:#002244; border-radius:0.25rem;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
-															<p style = "text-align:justify;" class="carouselimit carouseltext"><?php echo $row->news_content?></p>
+															<p style = "text-align:justify;" class="carouselimit carouseltext "><?php echo $row->news_content?></p>
 															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 														</div>
 														<br><br>
@@ -130,8 +129,8 @@
 													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
 														<img class="img-fluid" style="width:1200px; height:600px;" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
 													</div>
-													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0;">
-														<div style = "background-color:#002244;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
+													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0; border-radius:0.25rem;">
+														<div style = "background-color:#002244; border-radius:0.25rem;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
 															<p style = "text-align:justify;" class="carouselimit carouseltext"><?php echo $row->news_content?></p>
 															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
@@ -198,7 +197,7 @@
 					<div class="row mt-4 ">
 						<?php foreach(array_slice($event, 0, 3) as $row ){ ?>
       					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
-        					<div class="card border-0 mb-4 ">
+        					<div class="card border-0 mb-4">
           						<img class="img-fluid" style="width:408px; height:255px;"src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
           						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?>
 								<span class="d-block"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></span></div>
@@ -216,7 +215,7 @@
             </section>
 			<section class="features" id="mediafeed">
             	<div class="container">
-                	<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Twitter Feed</h1><br> 
+                	<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Media Feed</h1><br> 
                     <div class="row ">
                         <div class="col-md-3 sidenav"	style = "border-right:1px solid #031261;">
 							<nav>

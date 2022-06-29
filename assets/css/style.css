@@ -8,6 +8,8 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap'); 
 html,body{
   overflow-x: hidden;
 }
@@ -2474,6 +2476,7 @@ align-items: center;
 
 .topnav a:hover {
   background-color: #031261;
+  transition: 0.5s;
   color: white;
 }
 
@@ -2674,7 +2677,7 @@ align-items: center;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4; 
+  -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical;
   /* for news, announcements, events pages*/
 }
@@ -2697,13 +2700,13 @@ align-items: center;
 }
 
 .carouseltext{
-  font-family: Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  line-height: 2;
+  line-height: 1.9;
 }
 
 .carouseltitle{
-    font-family: Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
     font-size: 20px;
 
 }
@@ -2711,7 +2714,7 @@ align-items: center;
   font-size: 28px;
   font-weight: 500;
   color: white;
-  font-family: Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 
@@ -2719,4 +2722,31 @@ align-items: center;
   font-size: 28px;
   font-weight: 900;
   color: #031261;
+}
+
+.newsrow{
+ border-left:4px solid #031261; /* #ffd700;*/
+ border-radius:0.35rem;
+ 
+}
+
+.newsimg{
+  padding:2px 0 2px 0;
+}
+
+.newstitle{
+  color:#031261;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.poppinsfont{
+  font-family: "Poppins", sans-serif;
+}
+
+.opensansfont{
+  font-family: 'Open Sans', sans-serif;
 }
