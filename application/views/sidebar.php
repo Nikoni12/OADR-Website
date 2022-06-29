@@ -67,6 +67,7 @@
             ?>
         </a>
     </li>
+    <?php if($this->session->userdata('role') == "Administrator" ){   ?>
     <div class="sidebar-heading"> Account </div>
     <li class="nav-item">
         <a class="nav-link" href="http://localhost/OADR-Website/User/adminusers">
@@ -74,5 +75,6 @@
             <span>Users</span>
         </a>
     </li>
+    <?php } ?>
     <hr class="sidebar-divider">
 </ul>
