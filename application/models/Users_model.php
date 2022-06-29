@@ -367,5 +367,10 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
-    
+    public function fetchrole($username){
+        $this->db->select('role');
+        $this->db->from('admin');
+        $this->db->where('UserName',$username);
+        return $this->db->get();
+    }
 }
