@@ -516,6 +516,9 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required');
         if($this->form_validation->run()){
             if($this->users_model->check_login($username,$password)){
+				$result=$this->users_model->fetchrole($username)->row();
+				$role=$result->role;
+				$this->session->set_userdata('role',$role);
 				$this->session->set_userdata('username',$username);
 				redirect("./User/dashboard/","refresh");
             } else {
@@ -1184,6 +1187,7 @@ class User extends CI_Controller {
 	public function logout()
     {
 		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('role');
         $this->session->set_userdata('logout','logout');
 		redirect("./User/adminlogin/","refresh"); 
     }
