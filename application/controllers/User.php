@@ -1175,6 +1175,7 @@ class User extends CI_Controller {
 
 	public function search(){
 		$searchdata = $this->input->post('searchdata');
+		$data['searchdata'] = $searchdata;
 		$data['news'] = $this->users_model->search_news($searchdata);
 		$data['announcements'] = $this->users_model->search_announcements($searchdata);
 		$data['events'] = $this->users_model->search_events($searchdata);

@@ -70,9 +70,8 @@
 				<div class="border"></div>
 				<p class="sect_text">
 					Alternative dispute resolution (ADR) refers to the different ways people can resolve disputes without a trial. Common ADR processes include mediation, arbitration, and neutral evaluation. These processes are generally confidential, less formal, and less stressful than traditional court proceedings.
+					<p class="sect_text">ADR often saves money and speeds settlement. In mediation, parties play an important role in resolving their own disputes. This often results in creative solutions, longer-lasting outcomes, greater satisfaction, and improved relationships.</p>
 				</p>
-				<p class ="sect_text">ADR often saves money and speeds settlement. In mediation, parties play an important role in resolving their own disputes. This often results in creative solutions, longer-lasting outcomes, greater satisfaction, and improved relationships.
-					</p>
                         </div>
                     </div>
                 </div>
@@ -216,7 +215,7 @@
             </section>
 			<section class="features" id="mediafeed">
             	<div class="container">
-                	<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Twitter Feed</h1><br> 
+                	<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Media Feed</h1><br> 
                     <div class="row ">
                         <div class="col-md-3 sidenav"	style = "border-right:1px solid #031261;">
 							<nav>
