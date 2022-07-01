@@ -55,7 +55,7 @@
                             ?>
 						<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>">
 							<div class="row mb-12 border-bottom pb-2">
-								<div class="col-md-12">
+								<div class="col-md-12" style="border-left:2px solid #031261;">
 									<p class="mb-2" style="color:#031261;"><strong><u><?php echo $row->news_title?></u></strong></p></a>
                         
 									<p style = "text-align:justify;" class="limit"><?php echo $row->news_content?></p>
@@ -73,7 +73,7 @@
                             ?>
 						<a href="<?php echo base_url('User/announcement');?>">
 							<div class="row mb-12 border-bottom pb-2">
-								<div class="col-md-12">
+								<div class="col-md-12" style="border-left:2px solid #031261;">
 									<p class="mb-2" style="color:#031261;"><strong><u><?php echo $row->announcement_title?></u></strong></p></a>
                         
 									<p style = "text-align:justify;" class="limit"><?php echo $row->announcement_content?></p>
@@ -91,7 +91,7 @@
                             ?>
 						<a href="<?php echo base_url('User/events');?>">
 							<div class="row mb-12 border-bottom pb-2">
-								<div class="col-md-12">
+								<div class="col-md-12" style="border-left:2px solid #031261;">
 									<p class="mb-2" style="color:#031261;"><strong><u><?php echo $row->event_title?></u></strong></p></a>
                         
 									<p style = "text-align:justify;" class="limit"><?php echo $row->event_content?></p>
