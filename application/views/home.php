@@ -195,7 +195,14 @@
                 <div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Upcoming Events</h1><br> 
 					<div class="row mt-4 ">
-						<?php foreach(array_slice($event, 0, 3) as $row ){ ?>
+						<?php foreach(array_slice($event, 0, 3) as $row ){ 
+							$s = explode(" ", $row->event_start);
+							unset($s[1]);
+							unset($s[2]);
+							$s = implode(" ", $s);
+							$date_now = new DateTime();
+ 							$date2    = new DateTime($s);
+							 if ($date2 > $date_now){?>
       					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
         					<div class="card border-0 mb-4">
           						<img class="img-fluid" style="width:408px; height:255px;"src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
@@ -205,12 +212,13 @@
           						<p class="mt-3 limithomevent"><?php echo $row->event_content?></p>
         					</div>
       					</div>
-						<?php } ?>
+						<?php } }?>
 
-						<div class="col-md-4 mx-auto text-center">
+						
+    				</div>
+					<div class="col-md-4 mx-auto text-center">
 							<a href="<?php echo base_url('User/events');?>"><button type="button" class="btn btn-warning">View All Events</button></a>
       					</div> 
-    				</div>
                 </div>
             </section>
 			<section class="features" id="mediafeed">
