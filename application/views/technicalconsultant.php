@@ -46,7 +46,7 @@
 								<a href="http://localhost/OADR-Website/User/careerform">Careers Form</a>
                                 </nav>
                             </div>
-                            <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
+                            <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px; line-height:2;">
 							<div class="newscarhead"><h1>Technical Consultant</h1><br></div> 
 							<h4>OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</h4>
 							<div id=""><b>Place of Assignment:</b>Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
