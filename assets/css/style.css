@@ -2743,3 +2743,11 @@ a.disabled {
 .opensansfont{
   font-family: 'Open Sans', sans-serif;
 }
+
+.infoimg{
+    width: 100%;
+    max-width: 600px; /* Original width of the logo image */ 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

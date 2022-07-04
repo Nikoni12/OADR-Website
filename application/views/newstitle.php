@@ -54,12 +54,12 @@
         <?php echo "<h1>$row->news_title</h1>"?>
         <h8 style="color:#828386;"><?php echo $row->date_added?></h8><br><br>
         <div class="containbox">
-                <div class="nutritionheader"><a href="http://localhost/OADR-Website/User/news" style="text-decoration: none;">News & Announcements</a> > 
+                <div><a href="http://localhost/OADR-Website/User/news" style="text-decoration: none;">News & Announcements</a> > 
                 <a href="" style="text-decoration: none;"><?php echo $row->news_title?></a></div>
         </div>
         <h2 id="border"></h2>
         <div class="infodiv">
-            <img class="infoimg" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>' style="width:100%; height:auto;">
+            <img class="infoimg" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>' style="max-width:600px; height:auto;">
             <p class="infohead"><br><?php echo $row->news_title ?></p>
             <p class="infotext"> 
             <?php echo nl2br($row->news_content);?>
@@ -70,7 +70,8 @@
 
     <section>
         <div class="container px-3 my-3">
-        <a href="http://localhost/OADR-Website/User/news" style="text-decoration:none; color:black;"><h2>More News</h2></a> <br><br>
+        <div class="direct_border"></div><br>
+        <a href="http://localhost/OADR-Website/User/news" style="text-decoration:none; color:#031261;"><h2>More News</h2></a> <br><br>
           <div class="row gx-5">
             <?php foreach (array_slice($news, 0, 3) as $row ){ ?> 
           <div class="col-lg-4 mb-4 mb-lg-0">
