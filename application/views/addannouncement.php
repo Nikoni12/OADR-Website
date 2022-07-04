@@ -96,7 +96,7 @@
  <script>
      Swal.fire({
                  title: 'Invalid File',
-                 text: "Please upload PDF File Only",
+                 text: "Please upload JPG or PNG File Only",
                  icon: 'success',
                  iconColor: 'gold',
                  confirmButtonColor: 'gold'

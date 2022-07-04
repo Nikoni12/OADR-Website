@@ -28,8 +28,12 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="retro1 retroshadow">Resources</h1>
                         </div>
-                        <br><br>
-                         
+                        <a href="http://localhost/OADR-Website/User/addresources" class="btn btn-warning btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i style = "color:black;" class="fas fa-plus"></i>
+                            </span>
+                            <span style = "color:black;" class="text">Add Resources</span>
+                        </a><br><br> 
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"></div>
                             <div class="card-body">

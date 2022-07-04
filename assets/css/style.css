@@ -16,7 +16,7 @@ html,body{
 body {
   font-family: "Open Sans", sans-serif;
   color: #444;
-  
+
 }
 
 ::-webkit-scrollbar {
@@ -2466,12 +2466,13 @@ align-items: center;
 .topnav a {
   float: left;
   display: block;
-  color: black;
+  color: rgba(9, 8, 30, 0.76);
   text-align: center;
   width: 20%;
   padding: 14px 26px;
   text-decoration: none;
   font-size: 17px;
+  font-weight: bold;
 }
 
 .topnav a:hover {
@@ -2541,10 +2542,10 @@ align-items: center;
  .carousel-control-next-icon {
    background-image: url("https://cdn-icons-png.flaticon.com/512/44/44567.png") !important;
  }
-
+/* 
  .home-main::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
-}
+  display: none; 
+}*/
 
 .directcontain{
 	position: relative;
@@ -2717,7 +2718,7 @@ align-items: center;
 }
 
 .newsrow{
- border-left:4px solid #031261; /* #ffd700;*/
+ border-left:5px solid #031261; /* #ffd700;*/
  border-radius:0.35rem;
  
 }
@@ -2741,4 +2742,12 @@ a.disabled {
 
 .opensansfont{
   font-family: 'Open Sans', sans-serif;
+}
+
+.infoimg{
+    width: 100%;
+    max-width: 600px; /* Original width of the logo image */ 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

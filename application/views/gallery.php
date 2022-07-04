@@ -38,7 +38,7 @@
                     <div class="row">
                     <?php foreach($pics as $row) { ?>
                         <div class="col-md-4 mt-3 col-lg-3">
-                        <?php echo $row->album_title; ?>
+                        <?php ?>
                             <a href="<?php echo base_url() . 'uploads/' . $row->album_image; ?>" class="d-block mb-4 h-100" data-toggle="lightbox" data-caption="<?php echo $row->album_title; ?>">
                                 <img class=" img-fluid img-thumbnail" src='<?php echo base_url() . 'uploads/' . $row->album_image; ?>'>
                             </a>

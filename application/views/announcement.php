@@ -52,7 +52,8 @@
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Announcements</h1><br> 
 					<div class="row">
-						<?php $i=1; foreach($announcement as $row) { ?>
+						<?php $counter=0;$i=1; foreach($announcement as $row) { ?>
+							<?php if ($counter < 4){ ?> 
 							<a href="/" onclick="return false;" class="text-dark">
 							<div class="row mb-12 border-bottom pb-2 newsrow" style="height:95%; padding-left:0;"  >
 								<div class="col-md-3" style="padding-left:0">
@@ -68,7 +69,21 @@
 								</div>
 							</div>
 							</a>
-						<?php $i++; }?>
+							<?php }
+							else {  
+									if ($counter == 4) {?>
+									
+									<h2 class = "archivenews_title" style="padding:30px; padding-left:10px;" >Archive</h2><br>
+									<?php } ?>
+
+										<div class="col-md-9">
+										<tr class="archivenews">
+											<td><?php echo "<p class='mb-2'>$row->date_added<h10 style='color:#031261' id='myBtn$i' class='btn'>&nbsp; &nbsp; &nbsp;$row->announcement_title<h10></p>" ?><a></a></td> 
+										</tr>
+										</div>
+
+							<?php } ?>
+						<?php $counter++; $i++; }?>
 					</div>
 		</section>
 		</div>
