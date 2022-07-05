@@ -18,7 +18,7 @@ class User extends CI_Controller {
 	public function index(){
 		$this->load->helper('url');
 		$data['event'] = $this->users_model->getevent();
-		$data['news'] = $this->users_model->getnews();
+		$data['news'] = $this->users_model->getnews(); 
 		$this->load->view('home',$data);
 	}
 	public function about(){
@@ -268,12 +268,22 @@ class User extends CI_Controller {
 			$config['upload_path'] = './uploads/';
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
-			if ($this->upload->do_upload('announcement_image')) {
-				$announcement_image = $this->upload->data('file_name');
+			if (!empty($_FILES['announcement_image']['name'])){
+				if ($this->upload->do_upload('announcement_image')) {
+					$announcement_image = $this->upload->data('file_name');
+					$ann = array(
+						'announcement_title' => $this->input->post('announcement_title'),
+						'announcement_content' => $this->input->post('announcement_content'),
+						'announcement_image' => $announcement_image
+					);
+					$this->users_model->update_announcement($id,$ann);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/announcementsadmin/","refresh"); 
+				}
+			} else {
 				$ann = array(
 					'announcement_title' => $this->input->post('announcement_title'),
-					'announcement_content' => $this->input->post('announcement_content'),
-					'announcement_image' => $announcement_image
+					'announcement_content' => $this->input->post('announcement_content')
 				);
 				$this->users_model->update_announcement($id,$ann);
 				$this->session->set_userdata('updated','updated');
@@ -290,12 +300,22 @@ class User extends CI_Controller {
 			$config['upload_path'] = './uploads/';
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
-			if ($this->upload->do_upload('news_image')) {
-				$news_image = $this->upload->data('file_name');
+			if (!empty($_FILES['news_image']['name'])){
+				if ($this->upload->do_upload('news_image')) {
+					$news_image = $this->upload->data('file_name');
+					$new = array(
+						'news_title' => $this->input->post('news_title'),
+						'news_content' => $this->input->post('news_content'),
+						'news_image' => $news_image
+					);
+					$this->users_model->update_news($id,$new);
+					$this->session->set_userdata('updated','updated');
+					redirect(base_url() . 'User/newsadmin'); 
+				}
+			} else {
 				$new = array(
 					'news_title' => $this->input->post('news_title'),
-					'news_content' => $this->input->post('news_content'),
-					'news_image' => $news_image
+					'news_content' => $this->input->post('news_content')
 				);
 				$this->users_model->update_news($id,$new);
 				$this->session->set_userdata('updated','updated');
@@ -312,12 +332,24 @@ class User extends CI_Controller {
 			$config['upload_path'] = './uploads/';
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
-			if ($this->upload->do_upload('event_image')) {
-				$event_image = $this->upload->data('file_name');
+			if (!empty($_FILES['announcement_image']['name']) ){
+				if ($this->upload->do_upload('event_image')) {
+					$event_image = $this->upload->data('file_name');
+					$eve = array(
+						'event_title' => $this->input->post('event_title'),
+						'event_content' => $this->input->post('event_content'),
+						'event_image' => $event_image,
+						'event_start' => $this->input->post('event_start'),
+						'event_end' => $this->input->post('event_end')
+					);
+					$this->users_model->update_event($id,$eve);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/eventadmin/","refresh"); 
+				}
+			} else {
 				$eve = array(
 					'event_title' => $this->input->post('event_title'),
 					'event_content' => $this->input->post('event_content'),
-					'event_image' => $event_image,
 					'event_start' => $this->input->post('event_start'),
 					'event_end' => $this->input->post('event_end')
 				);
@@ -325,6 +357,7 @@ class User extends CI_Controller {
 				$this->session->set_userdata('updated','updated');
 				redirect("./User/eventadmin/","refresh"); 
 			}
+			
 		}
 	}
 	public function addevent(){
@@ -486,17 +519,25 @@ class User extends CI_Controller {
 			$config['upload_path'] = './uploads/';
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
-			if ($this->upload->do_upload('album_image')) {
-				$album_image = $this->upload->data('file_name');
+			if (!empty($_FILES['album_image']['name']) ){
+				if ($this->upload->do_upload('album_image')) {
+					$album_image = $this->upload->data('file_name');
+					$alb = array(
+						'album_title' => $this->input->post('album_title'),
+						'album_image' => $album_image
+					);
+					$this->users_model->update_album($id,$alb);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/admingallery/","refresh"); 
+				}
+			} else {
 				$alb = array(
 					'album_title' => $this->input->post('album_title'),
-					'album_image' => $album_image
 				);
 				$this->users_model->update_album($id,$alb);
-				
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/admingallery/","refresh"); 
 			}
-			$this->session->set_userdata('updated','updated');
-			redirect("./User/admingallery/","refresh"); 
 		}	
 	}
 	public function events(){
@@ -538,7 +579,7 @@ class User extends CI_Controller {
 		$mess = $this->input->post('message');
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('name', 'Name', 'required|alpha');
+        $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('pnum', 'Phone Number', 'required|numeric');
 		$this->form_validation->set_rules('category', 'Category', 'required');
@@ -637,7 +678,7 @@ class User extends CI_Controller {
 		$mess = $this->input->post('message');
         $this->load->helper(array('form','url'));
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('fullname', 'Full Name', 'required|alpha');
+        $this->form_validation->set_rules('fullname', 'Full Name', 'required');
         $this->form_validation->set_rules('emailaddress', 'Email Address', 'required|valid_email');
 		$this->form_validation->set_rules('subject', 'Subject', 'required');
 		$this->form_validation->set_rules('message', 'Message', 'required');
@@ -1131,47 +1172,51 @@ class User extends CI_Controller {
 			$this->load->view('administrator-panel-login');
 		} else {
 			$this->load->model('Users_model');
-		$rid = $this->input->post('rID');
-		$catname = $this->input->post('catname');
-		$data = array(
-			'categoryname' => $this->input->post('catname')
-		 );
-		 $data = array_filter($data);
-		$this->form_validation->set_rules('catname', 'Category Name', 'required');
-		if($this->form_validation->run()){
-			 if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
-				$filesCount = count($_FILES['files']['name']); 
-				for($i = 0; $i < $filesCount; $i++){ 
-					$_FILES['file']['name'] = $_FILES['files']['name'][$i]; 
-					$_FILES['file']['type'] = $_FILES['files']['type'][$i]; 
-					$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i]; 
-					$_FILES['file']['error'] = $_FILES['files']['error'][$i]; 
-					$_FILES['file']['size'] = $_FILES['files']['size'][$i]; 
-					$config['upload_path'] = './resources/';
-					$config['allowed_types'] = 'pdf'; 
-					$this->load->library('upload', $config); 
-					$this->upload->initialize($config);
-					if($this->upload->do_upload('file')){ 
-						$fileData = $this->upload->data(); 
-						$filename = $fileData['file_name']."pdf";
-						$uploadData[$i]['ResourcesCat'] =  $catname;
-						$uploadData[$i]['ResourcesName'] = $filename; 
-						$uploadData[$i]['cat_id'] = $rid; 
-					}else{  
-						$errorUploadType .= $_FILES['file']['name'].' | ';  
-					} 
-				}
-				$errorUploadType = !empty($errorUploadType)?'<br/>File Type Error: '.trim($errorUploadType, ' | '):'';
-				if(!empty($uploadData)){ 
-					/* Insert files data into the database */
-					$insert = $this->users_model->insert_res($uploadData); 
+			$rid = $this->input->post('rID');
+			$catname = $this->input->post('catname');
+			$data = array(
+				'categoryname' => $this->input->post('catname')
+			);
+			$data = array_filter($data);
+			$this->form_validation->set_rules('catname', 'Category Name', 'required');
+			if($this->form_validation->run()){
+				if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
+					$filesCount = count($_FILES['files']['name']); 
+					for($i = 0; $i < $filesCount; $i++){ 
+						$_FILES['file']['name'] = $_FILES['files']['name'][$i]; 
+						$_FILES['file']['type'] = $_FILES['files']['type'][$i]; 
+						$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i]; 
+						$_FILES['file']['error'] = $_FILES['files']['error'][$i]; 
+						$_FILES['file']['size'] = $_FILES['files']['size'][$i]; 
+						$config['upload_path'] = './resources/';
+						$config['allowed_types'] = 'pdf'; 
+						$this->load->library('upload', $config); 
+						$this->upload->initialize($config);
+						if($this->upload->do_upload('file')){ 
+							$fileData = $this->upload->data(); 
+							$filename = $fileData['file_name']."pdf";
+							$uploadData[$i]['ResourcesCat'] =  $catname;
+							$uploadData[$i]['ResourcesName'] = $filename; 
+							$uploadData[$i]['cat_id'] = $rid; 
+						}else{  
+							$errorUploadType .= $_FILES['file']['name'].' | ';  
+						} 
+					}
+					$errorUploadType = !empty($errorUploadType)?'<br/>File Type Error: '.trim($errorUploadType, ' | '):'';
+					if(!empty($uploadData)){ 
+						/* Insert files data into the database */
+						$insert = $this->users_model->insert_res($uploadData); 
+						$this->Users_model->updatecat($rid,$data);
+						$this->session->set_userdata('updated','updated');
+						redirect("./User/admincatresources/","refresh"); 
+						/* Upload status message */
+					}
+				} else {
 					$this->Users_model->updatecat($rid,$data);
 					$this->session->set_userdata('updated','updated');
 					redirect("./User/admincatresources/","refresh"); 
-					/* Upload status message */
 				}
 			}
-		}
 		}
 		
 	}

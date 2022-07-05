@@ -17,6 +17,7 @@
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="sweetalert2.min.js"></script>
         <link rel="stylesheet" href="sweetalert2.min.css">
+        
     </head>
     <body id="page-top">
         <div id="wrapper">
@@ -49,6 +50,7 @@
                                                 <th>ID</th> 
                                                 <th>Category Name</th>
                                                 <th>Date Added</th>
+                                                <th>Date Edited</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -60,10 +62,11 @@
                                                 echo "<td>".$lp->ID."</td>";
                                                 echo "<td>".$lp->categoryname."</td>";
                                                 echo "<td>".$lp->date_added."</td>";
+                                                echo "<td>".$lp->date_updated."</td>";
                                                 ?>
                                                 <td style = 'text-align:center; font-size:20px;'>
                                                     <a href="<?php echo base_url();?>User/editcat/<?php echo $lp->ID;?>">
-                                                        <i class='fa fa-pencil' aria-hidden='true'></i>
+                                                    <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                                     </a>
                                                 </td>
                                                 </tr>
@@ -154,7 +157,11 @@
  
             if(allVals.length <=0)  
             {  
-                alert("Please select row.");  
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please Select A row',
+                    text: 'You did not select any row',
+                })
             }  else {  
                 Swal.fire({
                         title: 'Are you sure?',

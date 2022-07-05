@@ -64,6 +64,8 @@
                                                 <th>Content</th>
                                                 <th>Event Start</th>
                                                 <th>Event End</th>
+                                                <th>Date Added</th>
+                                                <th>Date Updated</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -79,6 +81,8 @@
                                                 echo "<td class='crop'>".$row->event_content."</td>";
                                                 echo "<td>".$row->event_start."</td>";
                                                 echo "<td>".$row->event_end."</td>";
+                                                echo "<td>".$row->date_added."</td>";
+                                                echo "<td>".$row->date_edited."</td>";
                                                 /*echo "<td>2022-01-01 12:00 NN</td>";*/
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
@@ -179,7 +183,11 @@
  
             if(allVals.length <=0)  
             {  
-                alert("Please select row.");  
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please Select A row',
+                    text: 'You did not select any row',
+                })
             }  else {  
                 Swal.fire({
                         title: 'Are you sure?',

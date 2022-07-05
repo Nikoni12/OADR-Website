@@ -66,6 +66,7 @@
                                                 <th>Title</th>
                                                 <th>Content</th>
                                                 <th>Date Added</th>
+                                                <th>Date Edited</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -77,9 +78,10 @@
                                             <?php 
                                             echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$row->ID."'></td>";
                                                 echo "<td>".$row->ID."</td>";
-                                                echo "<td>".$row->news_title."</td>";
+                                                echo "<td >".$row->news_title."</td>";
                                                 echo "<td class='crop'>".$row->news_content."</td>";
                                                 echo "<td>".$row->date_added."</td>";
+                                                echo "<td>".$row->date_edited."</td>";
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
                                                 <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editnews">
@@ -198,7 +200,11 @@
  
             if(allVals.length <=0)  
             {  
-                alert("Please select row.");  
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please Select A row',
+                    text: 'You did not select any row',
+                })
             }  else {  
                 Swal.fire({
                         title: 'Are you sure?',

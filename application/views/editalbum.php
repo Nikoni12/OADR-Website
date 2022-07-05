@@ -37,11 +37,11 @@
                         <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                         <div class="form-group">
                             <label for="username">Album Title:</label>
-                            <input type="text" class="form-control" id="album_title" name="album_title"  value="<?php echo $row->album_title?>" required>
+                            <input type="text" class="form-control" id="album_title" name="album_title"  value="<?php echo $row->album_title?>" >
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="album_image" name="album_image" required>
+                            <input type="file" class="form-control" id="album_image" name="album_image" >
                         </div>
                         <?php
                             }

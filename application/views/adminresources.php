@@ -151,7 +151,11 @@
  
             if(allVals.length <=0)  
             {  
-                alert("Please select row.");  
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please Select A row',
+                    text: 'You did not select any row',
+                })
             }  else {  
                 Swal.fire({
                         title: 'Are you sure?',
@@ -174,10 +178,11 @@
                                     $(this).parents("tr").remove();
                                 });
                                 Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                            )
+                                    'Deleted!',
+                                    'Your file has been deleted.',
+                                    'success'
+                                    )
+                                    
                                 },
                                 error: function (data) {
                                     alert(data.responseText);

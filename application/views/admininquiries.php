@@ -44,7 +44,8 @@
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Subject</th>
-                                                <th>Date</th>
+                                                <th>Date Sent</th>
+                                                <th>Date Updated</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
@@ -58,7 +59,8 @@
                                                     echo "<td align = 'center'>".$lp->Name."</td>";
                                                     echo "<td align = 'center'>".$lp->Email."</td>";
                                                     echo "<td align = 'center'>".$lp->Subject."</td>";
-                                                    echo "<td align = 'center'>".$lp->date."</td>";
+                                                    echo "<td align = 'center'>".$lp->date_sent."</td>";
+                                                    echo "<td align = 'center'>".$lp->date_edited."</td>";
                                                     echo "<td align = 'center'>
                                                         <div class='btn-group btn-group-sm'>
                                                             <a href='#' class='btn btn-warning'>".$lp->status."</a>
@@ -174,7 +176,11 @@
  
             if(allVals.length <=0)  
             {  
-                alert("Please select row.");  
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please Select A row',
+                    text: 'You did not select any row',
+                })
             }  else {  
                 Swal.fire({
                         title: 'Are you sure?',

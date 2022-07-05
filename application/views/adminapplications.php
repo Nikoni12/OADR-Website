@@ -44,6 +44,7 @@
                                                 <th>Email</th>
                                                 <th>Position</th>
                                                 <th>Date Applied</th>
+                                                <th>Date Updated</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
@@ -57,7 +58,8 @@
                                                     echo "<td align = 'center'>".$lp->Name."</td>";
                                                     echo "<td align = 'center'>".$lp->Email."</td>";
                                                     echo "<td align = 'center'>".$lp->Category."</td>";
-                                                    echo "<td align = 'center'>".$lp->date."</td>";
+                                                    echo "<td align = 'center'>".$lp->date_applied."</td>";
+                                                    echo "<td align = 'center'>".$lp->date_edited."</td>";
                                                     echo "<td align = 'center'>
                                                         <div class='btn-group btn-group-sm'>
                                                             <a href='#' class='btn btn-warning'>".$lp->status."</a>
@@ -133,7 +135,7 @@
     <?php $this->session->unset_userdata('accepted');} else if($this->session->userdata('rejected')){?>
         <script>
 		Swal.fire({
-					title: 'Applicant Accepted',
+					title: 'Applicant Rejected',
 					text: "You successfully rejected an applicant.",
 					icon: 'success',
 					iconColor: 'gold',
@@ -162,7 +164,11 @@
  
             if(allVals.length <=0)  
             {  
-                alert("Please select row.");  
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please Select A row',
+                    text: 'You did not select any row',
+                })
             }  else {  
                 Swal.fire({
                         title: 'Are you sure?',

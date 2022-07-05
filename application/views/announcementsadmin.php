@@ -65,6 +65,7 @@
                                                 <th>Title</th>
                                                 <th>Content</th>
                                                 <th>Date Added</th>
+                                                <th>Date Updated</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -79,6 +80,7 @@
                                                 echo "<td>".$row->announcement_title."</td>";
                                                 echo "<td class='crop'>".$row->announcement_content."</td>";
                                                 echo "<td>".$row->date_added."</td>";
+                                                echo "<td>".$row->date_updated."</td>";
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
                                                     <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editannouncement">
@@ -179,7 +181,11 @@
  
             if(allVals.length <=0)  
             {  
-                alert("Please select row.");  
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please Select A row',
+                    text: 'You did not select any row',
+                })
             }  else {  
                 Swal.fire({
                         title: 'Are you sure?',

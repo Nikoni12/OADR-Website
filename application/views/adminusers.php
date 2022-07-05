@@ -52,7 +52,7 @@
                                                 <th>Username</th>
                                                 <th>Mobile Number</th>
                                                 <th>Role</th>
-                                                
+                                                <th>Date Added</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -64,7 +64,9 @@
                                                     echo "<td align = 'center'>".$lp->AdminName."</td>";
                                                     echo "<td align = 'center'>".$lp->UserName."</td>";
                                                     echo "<td align = 'center'>".$lp->MobileNumber."</td>";
-                                                    echo "<td align = 'center'>".$lp->role."</td>";?>
+                                                    echo "<td align = 'center'>".$lp->role."</td>";
+                                                    echo "<td align = 'center'>".$lp->date_added."</td>";?>
+                                                    
                                                     
                                                     </tr>
                                                 <?php } ?>
@@ -145,7 +147,11 @@
  
             if(allVals.length <=0)  
             {  
-                alert("Please select row.");  
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please Select A row',
+                    text: 'You did not select any row',
+                })
             }  else {  
                 Swal.fire({
                         title: 'Are you sure?',
