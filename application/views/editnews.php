@@ -39,7 +39,7 @@
                         <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                         <div class="form-group">
                             <label for="username">Title:</label>
-                            <input type="text" class="form-control" id="news_title" name="news_title"  value="<?php echo $row->news_title?>" required>
+                            <input type="text" class="form-control" id="news_title" name="news_title"  value="<?php echo $row->news_title?>" >
                         </div>
                         <div class="form-group">
                             <label for="username">Content:</label>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="news_image" name="news_image" required>
+                            <input type="file" class="form-control" id="news_image" name="news_image">
                         </div>
                         <?php
                             }
