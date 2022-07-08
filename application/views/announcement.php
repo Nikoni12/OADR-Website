@@ -76,7 +76,7 @@
 									<h2 class = "archivenews_title" style="padding:30px; padding-left:10px;" >Archive</h2><br>
 									<?php } ?>
 
-										<div class="col-md-9">
+										<div class="col-md-12">
 										<tr class="archivenews">
 											<td><?php echo "<p class='mb-2'>$row->date_added<h10 style='color:#031261' id='myBtn$i' class='btn'>&nbsp; &nbsp; &nbsp;$row->announcement_title<h10></p>" ?><a></a></td> 
 										</tr>

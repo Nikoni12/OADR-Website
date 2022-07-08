@@ -53,7 +53,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="event_image" name="event_image">
+                            <input type="file" class="form-control" id="event_image" name="event_image" accept="image/*">
                         </div>
                         <div class="form-group">
                             <label for="id_start_datetime">Start Date</label>

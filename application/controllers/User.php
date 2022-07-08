@@ -192,6 +192,9 @@ class User extends CI_Controller {
 				$this->users_model->insertnews($new);
 				$this->session->set_userdata('added','added');
 				redirect("./User/newsadmin/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/addannouncement/","refresh");
 			}
 			
 		}
@@ -312,6 +315,12 @@ class User extends CI_Controller {
 					$this->session->set_userdata('updated','updated');
 					redirect(base_url() . 'User/newsadmin'); 
 				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["news"] = $this->users_model->get_news_edit($id);
+					$this->load->view('editnews',$data);
+				}
 			} else {
 				$new = array(
 					'news_title' => $this->input->post('news_title'),
@@ -387,6 +396,9 @@ class User extends CI_Controller {
 				$this->users_model->insertevent($eve);
 				$this->session->set_userdata('added','added');
 				redirect("./User/eventadmin/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/addevent/","refresh");
 			}
 		}
 	}

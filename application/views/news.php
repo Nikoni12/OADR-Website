@@ -77,7 +77,7 @@
 									<h2 class = "archivenews_title" style="padding:30px; padding-left:10px;" >Archive</h2><br>
 									<?php } ?>
 
-										<div class="col-md-9">
+										<div class="col-md-12">
 										<tr class="archivenews">
 											<td><p class="mb-2"><?php echo$row->date_added?><a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>"
 											 style="color:#031261">&nbsp; &nbsp; &nbsp;<?php echo$row->news_title?></p></a></td>
