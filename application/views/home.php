@@ -194,7 +194,7 @@
 
 			<section class="features" id="upcomingevent">
                 <div class="container">
-				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;"> Upcoming Events&nbsp<i class='fas fa-bell' style='font-size:40px'></i></h1><br> 
+				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Upcoming Events</h1><br> 
 					<div class="row mt-4 ">
 						<?php foreach(array_slice($event, 0, 3) as $row ){ 
 							$s = explode(" ", $row->event_start);
@@ -206,7 +206,7 @@
 							 if ($date2 > $date_now){?>
       					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
         					<div class="card border-0 mb-4">
-          						<img class="img-fluid" style="width:408px; height:255px; border-left:3px solid yellow;"src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
+          						<img class="img-fluid" style="width:408px; height:255px;"src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
           						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?>
 								<span class="d-block"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></span></div>
           						<h5 class="font-weight-medium mt-3"><a href="<?php echo base_url('User/events');?>" class="text-decoration-none link"><?php echo $row->event_title?></a></h5>

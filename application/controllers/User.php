@@ -341,7 +341,7 @@ class User extends CI_Controller {
 			$config['upload_path'] = './uploads/';
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
-			if (!empty($_FILES['announcement_image']['name']) ){
+			if (!empty($_FILES['event_image']['name']) ){
 				if ($this->upload->do_upload('event_image')) {
 					$event_image = $this->upload->data('file_name');
 					$eve = array(
@@ -641,9 +641,9 @@ class User extends CI_Controller {
 				$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 				$mail->SMTPAuth = true;
 				$mail->AuthType = 'XOAUTH2';
-								$email = 'cobratest27@gmail.com'; // the email used to register google app
-				$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
-				$clientSecret = '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';
+				$email = 'group5website2022@gmail.com'; // the email used to register google app
+				$clientId = '224844710230-6obm4jlj01a98n2eqk8a6eo5o7av96l7.apps.googleusercontent.com';
+				$clientSecret = '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';
 				$db = new DB();
 				$refreshToken = $db->get_refersh_token();
 				$provider = new Google(
@@ -721,9 +721,9 @@ class User extends CI_Controller {
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 			$mail->SMTPAuth = true;
 			$mail->AuthType = 'XOAUTH2';
-							$email = 'cobratest27@gmail.com'; // the email used to register google app
-			$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
-			$clientSecret = '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';
+			$email = 'group5website2022@gmail.com'; // the email used to register google app
+			$clientId = '224844710230-6obm4jlj01a98n2eqk8a6eo5o7av96l7.apps.googleusercontent.com';
+			$clientSecret = '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';
 			$db = new DB();
 			$refreshToken = $db->get_refersh_token();
 			$provider = new Google(
@@ -891,9 +891,9 @@ class User extends CI_Controller {
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 			$mail->SMTPAuth = true;
 			$mail->AuthType = 'XOAUTH2';
-			$email = 'cobratest27@gmail.com'; // the email used to register google app
-			$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
-			$clientSecret = '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';
+			$email = 'group5website2022@gmail.com'; // the email used to register google app
+			$clientId = '224844710230-6obm4jlj01a98n2eqk8a6eo5o7av96l7.apps.googleusercontent.com';
+			$clientSecret = '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';
 			$db = new DB();
 			$refreshToken = $db->get_refersh_token();
 			$provider = new Google(
@@ -1059,9 +1059,9 @@ class User extends CI_Controller {
 				$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 				$mail->SMTPAuth = true;
 				$mail->AuthType = 'XOAUTH2';
-								$email = 'cobratest27@gmail.com'; // the email used to register google app
-				$clientId = '139785739245-92557ppd1hbf9h25jek90rp2fju0futs.apps.googleusercontent.com';
-				$clientSecret = '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';
+				$email = 'group5website2022@gmail.com'; // the email used to register google app
+				$clientId = '224844710230-6obm4jlj01a98n2eqk8a6eo5o7av96l7.apps.googleusercontent.com';
+				$clientSecret = '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';
 				$db = new DB();
 				$refreshToken = $db->get_refersh_token();
 				$provider = new Google(
