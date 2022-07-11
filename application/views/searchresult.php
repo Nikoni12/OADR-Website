@@ -66,7 +66,8 @@
                             <hr>
                         <?php $a++; }?>
                         <br>
-
+                        
+                        <?php  if(is_array($announcements)){?>
                         <?php $a=0;foreach($announcements as $row) {?>
                             <?php if ($a == 0)
                                 echo "<div style='text-align:left;'><h2>Announcements</h2><br></div>"
@@ -78,11 +79,14 @@
                         
 									<p style = "text-align:justify;" class="limit"><?php echo $row->announcement_content?></p>
                                     <p style = "text-align:justify;" class="limit"><?php echo $row->date_added?></p>
-									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
+									<a href="http://localhost/OADR-Website/User/announcement"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>
                             <hr>
                         <?php $a++; }?>
+                        <?php }
+                        
+                        else echo "<p>No Results:</p>"?>
                         <br>
 
                         <?php $a=0;foreach($events as $row) {?>

@@ -17,6 +17,7 @@
 		<link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+		<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 	</head>
 	<body style = "background-color:#fff5ee;">
@@ -43,8 +44,9 @@
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12" style="border-left:2px solid #031261;">
 									<p class="mb-2" style="color:#031261;"><strong><u>Chief Administrative Officer</u></strong></p></a>
-                        
-									<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									<p class="mb-2"><i class='fas fa-briefcase' style='font-size:24px;color:#031261;'></i> Office For Alternative Dispute Resolution&nbsp&nbsp&nbsp&nbsp<i class='fas fa-map-marker-alt' style='font-size:24px; color:#031261;'></i> Manila, Metro Manila, Philippines</p>
+									<p><b>Place of Assignment:</b> Compliance and Monitoring Division, Policy, Compliance</p>
+									<p><b>Plantilla Item No. :</b> CADOF-5-2021</p>  
 									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>
@@ -54,7 +56,9 @@
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12" style="border-left:2px solid #031261;">
 									<p class="mb-2" style="color:#031261;"><strong><u>Training Specialist 1</u></strong></p></a>
-									<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									<p class="mb-2"><i class='fas fa-briefcase' style='font-size:24px;color:#031261;'></i> Office For Alternative Dispute Resolution&nbsp&nbsp&nbsp&nbsp<i class='fas fa-map-marker-alt' style='font-size:24px; color:#031261;'></i> Manila, Metro Manila, Philippines</p> 
+									<p><b>Place of Assignment:</b> Training and Program Development</p>
+									<p><b>Plantilla Item No. :</b> TRNSP1-7-2021 TRNSP1-8-2021</p>  
 									<a href="http://localhost/OADR-Website/User/chiefofficer"  style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>
@@ -64,7 +68,9 @@
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12" style="border-left:2px solid #031261;">
 									<p class="mb-2" style="color:#031261;"><strong><u>Administrative Assistant (Secretary 1)</u></strong></p></a>
-									<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									<p class="mb-2"><i class='fas fa-briefcase' style='font-size:24px;color:#031261;'></i> Office For Alternative Dispute Resolution&nbsp&nbsp&nbsp&nbsp<i class='fas fa-map-marker-alt' style='font-size:24px; color:#031261;'></i> Manila, Metro Manila, Philippines</p>
+									<p><b>Place of Assignment:</b> Office of the Director, Training, Accreditation and Promotion Service</p>
+									<p><b>Plantilla Item No. :</b> ADAS1-13-2021</p>    
 									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>
@@ -74,7 +80,9 @@
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12" style="border-left:2px solid #031261;">
 									<p class="mb-2" style="color:#031261;"><strong><u>Technical Consultant</strong></u></p></a>
-									<p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									<p class="mb-2"><i class='fas fa-briefcase' style='font-size:24px;color:#031261;'></i> Office For Alternative Dispute Resolution&nbsp&nbsp&nbsp&nbsp<i class='fas fa-map-marker-alt' style='font-size:24px; color:#031261;'></i> Manila, Metro Manila, Philippines</p>
+									<p><b>Place of Assignment:</b> Training and Program Development</p>
+									<p><b>Plantilla Item No. :</b> TRNSP1-7-2021 TRNSP1-8-2021</p>    	
 									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>

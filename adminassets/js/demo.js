@@ -6,7 +6,7 @@
             showClear: true,
             showTodayButton: true,
             minDate: new Date(),
-            format: "MM/DD/YYYY HH:mm:ss A"
+            format: "MM/DD/YYYY hh:mm:ss A"
         }).on('dp.change', function(e) {
             $('#id_1').data("DateTimePicker").minDate(e.date)
         });

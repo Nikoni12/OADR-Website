@@ -119,4 +119,16 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
     </body>
+    <?php if($this->session->userdata('invalid')){ ?>
+ 
+ <script>
+     Swal.fire({
+                 title: 'Invalid File',
+                 text: "Please upload JPG or PNG File Only",
+                 icon: 'success',
+                 iconColor: 'gold',
+                 confirmButtonColor: 'gold'
+             })
+     </script>
+ <?php $this->session->unset_userdata('invalid');}?>
 </html>

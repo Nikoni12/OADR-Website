@@ -49,15 +49,16 @@
                             <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px; line-height:2;">
 							<div class="newscarhead"><h1>Administrative Assistant</h1><br></div> 
 							<h4>OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</h4>
-							<div id=""><b>Place of Assignment:</b>Compliance and Monitoring Division, Policy, Compliance and Monitoring Service</div>
+							<div id=""><b>Place of Assignment:</b> Office of the Director, Training, Accreditation and Promotion Service</div>
 							<div id=""><b>Position Title :</b> Administrative Assistant</div>
-							<div id=""><b>Plantilla Item No. :</b> CADOF-5-2021</div>
-							<div id=""><b>Salary/Job/Pay Grade :</b> 24</div>
-							<div id=""><b>Monthly Salary :</b> Php 88,410.00</div>
-							<div id=""><b>Eligibility :</b> CS Professional/ Second Level Eligibility</div>
-							<div id=""><b>Education :</b> Master`s Degree or Certificate in Leadership and Management from the CSC</div>
-							<div id=""><b>Training :</b> 40 hours of supervisory and management learning and development</div>
-							<div id=""><b>Work Experience :</b> 4 years of supervisory and management experience</div>
+							<div id=""><b>Plantilla Item No. :</b> ADAS1-13-2021</div>
+							<div id=""><b>Salary/Job/Pay Grade :</b> 7</div>
+							<div id=""><b>Monthly Salary :</b> Php 17,899.00</div>
+							<div id=""><b>Eligibility :</b> CS Subprofessional/ First Level Eligibility</div>
+							<div id=""><b>Education :</b> Completion of 2 years studies in College</div>
+							<div id=""><b>Training :</b> None required</div>
+							<div id=""><b>Work Experience :</b> None required</div>
+                            <div id=""><b>Work Experience :</b> N/A</div>
                             </div>
                         </div>
                     </div>

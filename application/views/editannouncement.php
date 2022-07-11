@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>
-                            <input type="file" class="form-control" id="announcement_image" name="announcement_image">
+                            <input type="file" class="form-control" id="announcement_image" name="announcement_image" accept="image/*">
                         </div>
                         <?php
                             }
