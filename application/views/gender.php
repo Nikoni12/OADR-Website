@@ -34,68 +34,49 @@
         <main id="main">
         <section class="features">
             <div class="container">
-                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Gender and Development Corner</h1><br> 
-                    <div class="row ">
-                        <div class="col-md-3 sidebar" style = "">
-                                <nav>
-                                <h4 style="font-weight:bold;">ABOUT</h4>
-                                <a href="<?php echo base_url('User/about');?>">Overview</a>
-                                <a href="<?php echo base_url('User/mvision');?>">GAD Plan and Budget</a>
-                                <a href="<?php echo base_url('User/quality');?>">GAD Accomplishment Report</a>
-                                <a href="<?php echo base_url('User/orgstructure');?>">GAD Activities</a>
-                                <a href="<?php echo base_url('User/director');?>">Information, Education, and Communication Materials on GAD</a>
-                                </nav>
-                            </div>
-                            <div class="col-md-8"  style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px;">
-                                <div class="row ">
-                                    <div class="col-xl-6 col-md-7 mb-5" >
-                                        <div class="card shadow h-100 py-2" style = "border: 2px solid #E0AA3E;">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">M</span>ission</h5>
-                                                    <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-md-7 mb-5" >
-                                        <div class="card shadow h-100 py-2" style = "border: 2px solid #E0AA3E;">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">V</span>ision</h5>
-                                                    <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-12 col-md-7 mb-5" >
-                                        <div class="card shadow h-100 py-2" style = "border: 2px solid #E0AA3E;">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                <h1 class = "h1title" style = "font-size:24px;">OADR GAD Agenda</h1><br> 
-                                                <p style = "font-size:20px;"><span style = "font-size: 30px;">O</span>rganization-focused goal statments</p>
-                                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                                <p style = "font-size:20px;"><span style = "font-size: 30px;">C</span>lient-focused goal statments</p>
-                                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-12 col-md-7 mb-5" >
-                                        <div class="card shadow h-100 py-2" style = "border: 2px solid #E0AA3E;">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                <h1 class = "h1title" style = "font-size:24px;">GFPS Directory</h1><br> 
-                                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Overview</h1><br> 
+                <div class="row ">
+                    <div class="col-md-6" style = "border: 2px solid red;">
+                    <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">M</span>ission</h5>
+                                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                    </div>
+                    <div class="col-md-6" style = "border: 2px solid red;">
+                    <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">V</span>ision</h5>
+                                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                    </div>
+                    <div class="col-md-12" style = "border: 2px solid red;"><br>
+                        <h5 class="h1title" style = "font-size:24px;">OADR GAD Agenda</h5>
+                        <p style = "font-size:20px;"><span style = "font-size: 30px;">O</span>rganization-focused goal statments</p>
+                        <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        <p style = "font-size:20px;"><span style = "font-size: 30px;">C</span>lient-focused goal statments</p>
+                        <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                    </div>
+                    <div class="col-md-12" style = "border: 2px solid red;"><br>
+                        <h5 class="h1title" style = "font-size:24px;">GFPS Directory</h5>
+                        <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
                     </div>
                 </div>
+                <br>
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Plan and Budget</h1><br> 
+                <div class="row">
+                    <div class="col-md-2 mt-2 col-lg-2" style = "border: 2px solid red;">
+                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
+                        <img class="img-fluid" style="display:block; margin: 0 auto; max-width:100%;" src="<?php echo base_url('assets/img/pdflogo.png');?>">
+                        <p style = "text-align:justify;">Annual Gender and Development Plan and Budget FY 2023</p>
+                    </a>
+                    </div>
+                </div>
+                <br>
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Accomplishment Report</h1><br> 
+                <div class="row">
+                    <div class="col-md-2 mt-2 col-lg-2" style = "border: 2px solid red;">
+                    <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank"class="d-block mb-4 h-100">
+                        <img class="img-fluid" style="display:block; margin: 0 auto; max-width:100%;" src="<?php echo base_url('assets/img/pdflogo.png');?>">
+                        <p style = "text-align:justify;">2022 Gender and Development Accomplishment Report</p>
+                    </a>
+                    </div>
+                </div>
+            </div>
         </section>
             <section class="page-section" id="services">
 				<div class="container px-4 px-lg-5">
