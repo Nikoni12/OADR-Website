@@ -2753,5 +2753,8 @@ a.disabled {
     text-align: center;
 }
 
-
+.swiper {
+  width: 600px;
+  height: 300px;
+}
 

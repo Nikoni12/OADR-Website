@@ -283,6 +283,12 @@ class User extends CI_Controller {
 					$this->session->set_userdata('updated','updated');
 					redirect("./User/announcementsadmin/","refresh"); 
 				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["announcement"] = $this->users_model->get_announcement_edit($id);
+					$this->load->view('editannouncement',$data);
+				}
 			} else {
 				$ann = array(
 					'announcement_title' => $this->input->post('announcement_title'),
@@ -354,6 +360,12 @@ class User extends CI_Controller {
 					$this->users_model->update_event($id,$eve);
 					$this->session->set_userdata('updated','updated');
 					redirect("./User/eventadmin/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["event"] = $this->users_model->get_event_edit($id);
+					$this->load->view('editevents',$data);
 				}
 			} else {
 				$eve = array(
@@ -541,6 +553,12 @@ class User extends CI_Controller {
 					$this->users_model->update_album($id,$alb);
 					$this->session->set_userdata('updated','updated');
 					redirect("./User/admingallery/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["album"] = $this->users_model->get_album_edit($id);
+					$this->load->view('editalbum',$data);
 				}
 			} else {
 				$alb = array(
@@ -1171,6 +1189,22 @@ class User extends CI_Controller {
  
         redirect("./User/adminusers/","refresh"); ; 
     }
+	public function deleteAllPlan()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('planbudget');
+ 
+        redirect("./User/gadplan/","refresh"); ; 
+    }
+	public function deleteAllReport()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('accomplishmentreport');
+ 
+        redirect("./User/gadreport/","refresh"); ; 
+    }
 	public function addresources(){
 		if(!$this->session->userdata('username')){ 
 			$this->load->view('administrator-panel-login');
@@ -1253,5 +1287,182 @@ class User extends CI_Controller {
 	public function gender(){
 		$this->load->view('gender');
 	}
+
+	public function gadplan(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['plan'] = $this->users_model->getgadplan();
+			$this->load->view('gadplan', $data);
+		}
+	}
+
+	public function addgadplan(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addgadplan');
+		}
+	}
+
+	public function submitgadplan(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'pdf';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('plan_file')) {
+				$plan_file = $this->upload->data('file_name');
+				$plan = array(
+					'plan_title' => $this->input->post('plan_title'),
+					'plan_file' => $plan_file
+				);
+				$this->users_model->insertgadplan($plan);
+				$this->session->set_userdata('added','added');
+			redirect("./User/gadplan/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/addgadplan/","refresh");
+			}
+		}
+	}
+
+	public function editgadplan(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["plan"] = $this->users_model->get_gadplan_edit($id);
+			$this->load->view('editgadplan',$data);
+		}
+	}
+
+	public function updategadplan(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'pdf';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if (!empty($_FILES['plan_file']['name']) ){
+				if ($this->upload->do_upload('plan_file')) {
+					$plan_file = $this->upload->data('file_name');
+					$plan = array(
+						'plan_title' => $this->input->post('plan_title'),
+						'plan_file' => $plan_file
+					);
+					$this->users_model->update_gadplan($id,$plan);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/gadplan/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["plan"] = $this->users_model->get_gadplan_edit($id);
+					$this->load->view('editgadplan',$data);
+				}
+			} else {
+				$plan = array(
+					'plan_title' => $this->input->post('plan_title'),
+				);
+				$this->users_model->update_gadplan($id,$plan);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/gadplan/","refresh"); 
+			}
+		}	
+	}
+
+	public function gadreport(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['report'] = $this->users_model->getgadreport();
+			$this->load->view('gadreport', $data);
+		}
+	}
+
+	public function addgadreport(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addgadreport');
+		}
+	}
+
+	public function submitgadreport(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'pdf';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('report_file')) {
+				$report_file = $this->upload->data('file_name');
+				$plan = array(
+					'report_title' => $this->input->post('report_title'),
+					'report_file' => $report_file
+				);
+				$this->users_model->insertgadreport($plan);
+				$this->session->set_userdata('added','added');
+			redirect("./User/gadreport/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/addgadreport/","refresh");
+			}
+		}
+	}
+
+	public function editgadreport(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["report"] = $this->users_model->get_gadreport_edit($id);
+			$this->load->view('editgadreport',$data);
+		}
+	}
+
+	public function updategadreport(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'pdf';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if (!empty($_FILES['report_file']['name']) ){
+				if ($this->upload->do_upload('report_file')) {
+					$report_file = $this->upload->data('file_name');
+					$report = array(
+						'report_title' => $this->input->post	('report_title'),
+						'report_file' => $report_file
+					);
+					$this->users_model->update_gadreport($id,$report);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/gadreport/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["report"] = $this->users_model->get_gadreport_edit($id);
+					$this->load->view('editgadreport',$data);
+				}
+			} else {
+				$report = array(
+					'report_title' => $this->input->post('report_title'),
+				);
+				$this->users_model->update_gadreport($id,$report);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/gadreport/","refresh"); 
+			}
+		}	
+	}
+
 }
 

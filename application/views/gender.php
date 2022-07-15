@@ -17,6 +17,7 @@
         <link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+
     </head>
     <body>
         <?php include_once('header.php');?>
@@ -55,7 +56,7 @@
                         <h5 class="h1title" style = "font-size:24px;">GFPS Directory</h5>
                         <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
                     </div>
-                </div>
+
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Plan and Budget</h1><br> 
                 <div class="row">
@@ -148,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
         </section>
             <section class="page-section" id="services">
 				<div class="container px-4 px-lg-5">

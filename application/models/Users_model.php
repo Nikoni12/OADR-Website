@@ -373,4 +373,54 @@ class Users_model extends CI_Model {
         $this->db->where('UserName',$username);
         return $this->db->get();
     }
+
+    public function getgadplan(){
+        $this->db->select('*');
+        $this->db->from('planbudget');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function insertgadplan($data){
+		$this->db->insert('planbudget', $data);
+        return $this->db->insert_id(); 
+	}
+
+    public function get_gadplan_edit($id){
+        $this->db->select('*');
+        $this->db->from('planbudget');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+    public function update_gadplan($id,$plan){
+        $this->db->where('id', $id);
+        $this->db->update('planbudget', $plan);
+	}
+
+    public function getgadreport(){
+        $this->db->select('*');
+        $this->db->from('accomplishmentreport');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function insertgadreport($data){
+		$this->db->insert('accomplishmentreport', $data);
+        return $this->db->insert_id(); 
+	}
+
+    public function get_gadreport_edit($id){
+        $this->db->select('*');
+        $this->db->from('accomplishmentreport');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+    public function update_gadreport($id,$report){
+        $this->db->where('id', $id);
+        $this->db->update('accomplishmentreport', $report);
+	}
 }
