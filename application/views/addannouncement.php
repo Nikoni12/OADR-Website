@@ -35,7 +35,7 @@
                         <form method="POST" action="<?php echo base_url();?>User/submitannouncement" enctype="multipart/form-data" class="user">
                         <div class="form-group">
                             <label for="username">Title:</label>
-                            <input type="text" class="form-control" id="announcement_title" name="announcement_title"  placeholder="Enter Article Title" required>
+                            <input type="text" class="form-control" id="announcement_title" name="announcement_title"  placeholder="Enter Announcement Title" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Content:</label>

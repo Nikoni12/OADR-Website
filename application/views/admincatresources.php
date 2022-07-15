@@ -183,12 +183,13 @@
                                 $(".sub_chk:checked").each(function() {  
                                     $(this).parents("tr").remove();
                                 });
-                                Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                            )
-                                },
+                                SSwal.fire(
+                                    'Deleted!',
+                                    'Your deleted this data',
+                                    'success'
+                                ).then(function(){
+                                     location.reload();
+                                });},
                                 error: function (data) {
                                     alert(data.responseText);
                                 }
