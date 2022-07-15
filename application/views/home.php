@@ -153,7 +153,6 @@
 								</button>
 							</div>
 						</div>
-						<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02JkPoWhgctJKffJfQe6PK8rDPCArGWvHkw1gkuNAcyJqwcqfdvEPCUAfrhTsPCGEZl%26id%3D100064519667093&show_text=true&width=500" width="500" height="735" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 					</div>
 				</div>
 			</section>
@@ -231,13 +230,13 @@
                     <div class="row ">
                         <div class="col-md-3 sidenav"	style = "border-right:1px solid #031261;">
 							<nav>
-							<div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100064519667093"
+							<!--<div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100064519667093"
 							 data-width="305"
 							 data-height="800"
                              data-tabs="timeline" data-small-header="false"
                              data-adapt-container-width="false"
                              data-hide-cover="false" data-show-facepile="true">
-					</div>
+					</div>-->
 								<a href="https://www.dbm.gov.ph/index.php/about-us/philippine-transparency-seal"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
 								<a href="https://www.foi.gov.ph/"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/foi.jpg');?>"></a>
 								<a href="<?php echo base_url('User/resources/7');?>"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/citizenscharter.jpg');?>"></a>
