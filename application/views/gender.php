@@ -38,22 +38,22 @@
             <div class="container">
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Overview</h1><br> 
                 <div class="row ">
-                    <div class="col-md-6" style = "border: 2px solid red;">
-                    <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">M</span>ission</h5>
-                                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                    <div class="col-md-6">
+                        <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">M</span>ission</h5>
+                        <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
                     </div>
-                    <div class="col-md-6" style = "border: 2px solid red;">
+                    <div class="col-md-6">
                     <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">V</span>ision</h5>
-                                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                        <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
                     </div>
-                    <div class="col-md-12" style = "border: 2px solid red;"><br>
+                    <div class="col-md-12"><br>
                         <h5 class="h1title" style = "font-size:24px;">OADR GAD Agenda</h5>
                         <p style = "font-size:20px;"><span style = "font-size: 30px;">O</span>rganization-focused goal statments</p>
                         <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <p style = "font-size:20px;"><span style = "font-size: 30px;">C</span>lient-focused goal statments</p>
                         <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
                     </div>
-                    <div class="col-md-12" style = "border: 2px solid red;"><br>
+                    <div class="col-md-12" ><br>
                         <h5 class="h1title" style = "font-size:24px;">GFPS Directory</h5>
                         <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
                     </div>
@@ -61,21 +61,93 @@
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Plan and Budget</h1><br> 
                 <div class="row">
-                    <div class="col-md-2 mt-2 col-lg-2" style = "border: 2px solid red;">
-                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
-                        <img class="img-fluid" style="display:block; margin: 0 auto; max-width:100%;" src="<?php echo base_url('assets/img/pdflogo.png');?>">
-                        <p style = "text-align:justify;">Annual Gender and Development Plan and Budget FY 2023</p>
-                    </a>
+                    <div class="col-md-2 mt-2 col-lg-2">
+                        <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
+                            <div class="card-body">
+                                <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
+                                    <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                    <p style = "text-align:justify;">Annual Gender and Development Plan and Budget FY 2023</p>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Accomplishment Report</h1><br> 
                 <div class="row">
-                    <div class="col-md-2 mt-2 col-lg-2" style = "border: 2px solid red;">
-                    <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank"class="d-block mb-4 h-100">
-                        <img class="img-fluid" style="display:block; margin: 0 auto; max-width:100%;" src="<?php echo base_url('assets/img/pdflogo.png');?>">
-                        <p style = "text-align:justify;">2022 Gender and Development Accomplishment Report</p>
-                    </a>
+                    <div class="col-md-2 mt-2 col-lg-2">
+                        <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
+                            <div class="card-body">
+                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                    <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                    <p style = "text-align:justify;">2022 Gender and Development Accomplishment Report</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Activities</h1><br> 
+                <div class="row">
+                    <div class="col-md-3 mt-3 col-lg-3"  >
+                        <div class="card" style="width: 18rem;" >
+                            <img class="img-fluid" src='<?php echo base_url()?>assets/img/orgstructure.png'>
+                            <div class="card-body" style = "border: 2px solid #E0AA3E;">
+                                <h5 class="card-title">Pilot Program on Gender-Sensitive ADR Skills Training</h5>
+                                <p class="card-text" style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <button type="button" class="btn btn-outline-warning">Read More >></button>
+                            </div>
+                        </div>
+                    </div>
+    			</div>
+                <br>
+                <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Information, Education, and Communication Materials on GAD</h1><br> 
+                <div class="row">
+                    <div class="col-md-12" style = "padding-left:40px;">
+                        <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">P</span>ublications</h5>
+                        <div class="col-md-2 mt-2 col-lg-2">
+                            <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                    <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:justify;">2022 Gender and Development Accomplishment Report</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style = "padding-left:40px;">
+                        <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">A</span>udio Visual Materials</h5>
+                        <div class="col-md-2 mt-2 col-lg-2">
+                            <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style = "padding-left:40px;">
+                        <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">I</span>nfographics</h5>
+                        <div class="row">
+                            <div class="col-md-4 mt-3 col-lg-3">
+                                <a href="<?php echo base_url()?>assets/img/orgstructure.png" class="d-block mb-4 h-100" data-toggle="lightbox" data-caption="Test">
+                                    <img class=" img-fluid img-thumbnail" src='<?php echo base_url()?>assets/img/orgstructure.png'>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style = "padding-left:40px;">
+                        <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">P</span>CW Publications</h5>
+                        <div class="col-md-2 mt-2 col-lg-2">
+                            <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                    <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:justify;">2022 Gender and Development Accomplishment Report</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="swiper">
@@ -152,7 +224,7 @@
 <script src="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.js');?>"></script>
 <script src="<?php echo base_url('assets/vendor/waypoints/noframework.waypoints.js');?>"></script>
 <script src="<?php echo base_url('assets/vendor/php-email-form/validate.js');?>"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.0/dist/index.bundle.min.js"></script>
 <script src="<?php echo base_url('assets/js/main.js');?>"></script>
 
 <script>
