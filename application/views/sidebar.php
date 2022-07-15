@@ -44,6 +44,23 @@
         </div>
     </li>
     <hr class="sidebar-divider">
+    <div class="sidebar-heading"> Gender and Development Corner </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            <i style = "color:black;" class="fa fa-pencil-square-o"></i>
+            <span>Files</span>
+        </a>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+            <div class="bg-white py-2 collapse-inner rounded"  style = "border-left:.25rem solid black!important;">
+                <h6 class="collapse-header">Select:</h6>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/gadplan"><i style = "color:black;"class="fa fa-newspaper-o"></i> Plan and Budget </a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/gadreport"> <i style = "color:black;"class="fa fa-bullhorn"></i> Accomplishment Report</a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/gadactivities"><i style = "color:black;"class="fa fa-calendar"></i> Activities</a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/admingallery"><i style = "color:black;"class="fa fa-file-image-o"></i> Gallery</a>
+            </div>
+        </div>
+    </li>
+    <hr class="sidebar-divider">
     <div class="sidebar-heading"> Inquiries </div>
     <li class="nav-item">
         <a class="nav-link" href="http://localhost/OADR-Website/User/admininquiries">
