@@ -17,8 +17,7 @@
         <link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
     </head>
     <body>
         <?php include_once('header.php');?>
@@ -150,27 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            ...
-                        </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
 
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-
-                        <!-- If we need scrollbar -->
-                        <div class="swiper-scrollbar"></div>
-                        </div>
-                </div>
-            </div>
         </section>
             <section class="page-section" id="services">
 				<div class="container px-4 px-lg-5">
@@ -226,30 +205,6 @@
 <script src="<?php echo base_url('assets/vendor/php-email-form/validate.js');?>"></script>
 <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.0/dist/index.bundle.min.js"></script>
 <script src="<?php echo base_url('assets/js/main.js');?>"></script>
-
-<script>
-    const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-</script>
 
 </body>
 

@@ -56,7 +56,7 @@
                 <a class="collapse-item" href="http://localhost/OADR-Website/User/gadplan"><i style = "color:black;"class="fa fa-newspaper-o"></i> Plan and Budget </a>
                 <a class="collapse-item" href="http://localhost/OADR-Website/User/gadreport"> <i style = "color:black;"class="fa fa-bullhorn"></i> Accomplishment Report</a>
                 <a class="collapse-item" href="http://localhost/OADR-Website/User/gadactivities"><i style = "color:black;"class="fa fa-calendar"></i> Activities</a>
-                <a class="collapse-item" href="http://localhost/OADR-Website/User/admingallery"><i style = "color:black;"class="fa fa-file-image-o"></i> Gallery</a>
+                <a class="collapse-item" href="http://localhost/OADR-Website/User/admingallery"><i style = "color:black;"class="fa fa-file-image-o"></i>Materials</a>
             </div>
         </div>
     </li>
