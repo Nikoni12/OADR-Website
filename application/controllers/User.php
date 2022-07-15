@@ -283,6 +283,12 @@ class User extends CI_Controller {
 					$this->session->set_userdata('updated','updated');
 					redirect("./User/announcementsadmin/","refresh"); 
 				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["announcement"] = $this->users_model->get_announcement_edit($id);
+					$this->load->view('editannouncement',$data);
+				}
 			} else {
 				$ann = array(
 					'announcement_title' => $this->input->post('announcement_title'),
@@ -354,6 +360,12 @@ class User extends CI_Controller {
 					$this->users_model->update_event($id,$eve);
 					$this->session->set_userdata('updated','updated');
 					redirect("./User/eventadmin/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["event"] = $this->users_model->get_event_edit($id);
+					$this->load->view('editevents',$data);
 				}
 			} else {
 				$eve = array(
@@ -541,6 +553,12 @@ class User extends CI_Controller {
 					$this->users_model->update_album($id,$alb);
 					$this->session->set_userdata('updated','updated');
 					redirect("./User/admingallery/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["album"] = $this->users_model->get_album_edit($id);
+					$this->load->view('editalbum',$data);
 				}
 			} else {
 				$alb = array(

@@ -207,8 +207,8 @@
       					<div class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
         					<div class="card border-0 mb-4">
           						<img class="img-fluid" style="width:408px; height:255px;"src='<?php echo base_url() . 'uploads/' . $row->event_image; ?>'>
-          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?>
-								<span class="d-block"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></span></div>
+          						<div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded  position-absolute"><?php echo strtoupper(date("F", strtotime($s)))."\n"?>
+								<span class="d-block"><?php echo strtoupper(date("d", strtotime($s)))."\n"?></span></div>
           						<h5 class="font-weight-medium mt-3"><a href="<?php echo base_url('User/events');?>" class="text-decoration-none link"><?php echo $row->event_title?></a></h5>
           						<p class="mt-3 limithomevent"><?php echo $row->event_content?></p>
         					</div>
