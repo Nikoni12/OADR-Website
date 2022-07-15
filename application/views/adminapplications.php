@@ -76,7 +76,7 @@
                                                         <a href="<?php echo base_url();?>User/viewapplication/<?php echo $lp->appnum;?>">
                                                             <i class='fa fa-eye' aria-hidden='true'></i>
                                                         </a>
-                                                    </td>
+                                                    </td> 
                                                     </tr>
                                                 <?php } ?>
                                         </tbody>
@@ -191,11 +191,12 @@
                                     $(this).parents("tr").remove();
                                 });
                                 Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                            )
-                                },
+                                    'Deleted!',
+                                    'Your deleted this data',
+                                    'success'
+                                ).then(function(){
+                                     location.reload();
+                                });},
                                 error: function (data) {
                                     alert(data.responseText);
                                 }
