@@ -99,5 +99,15 @@
 					confirmButtonColor: 'gold'
 				})
 		</script>
-    <?php $this->session->unset_userdata('logout');}?>
+    <?php $this->session->unset_userdata('logout');} else if($this->session->userdata('invalid')){?>
+        <script>
+		Swal.fire({
+					title: 'Invalid',
+					text: "Invalid Username or Password",
+					icon: 'error',
+					iconColor: 'gold',
+					confirmButtonColor: 'gold'
+				})
+		</script>
+    <?php $this->session->unset_userdata('invalid');}?>
 </html>

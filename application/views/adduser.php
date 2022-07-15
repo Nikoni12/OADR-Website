@@ -35,27 +35,27 @@
                                     <form method="post"  class = "user" action="<?php echo base_url();?>User/add_user" >
                                             <div class="form-group">
                                                 <label for="username">Name:</label>
-                                                <input name = "adminName" type="text" class="form-control" id="adminname"  placeholder="Enter Name">
+                                                <input name = "adminName" type="text" class="form-control" id="adminname"  placeholder="Enter Name" required>
                                                 <span class="text-danger fontColor"><?php echo form_error('adminName'); ?></span>
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">Username:</label>
-                                                <input name = "adminUsername"type="text" class="form-control" id="adminname" placeholder="Enter Username">
+                                                <input name = "adminUsername"type="text" class="form-control" id="adminname" placeholder="Enter Username" required>
                                                 <span class="text-danger fontColor"><?php echo form_error('adminUsername'); ?></span>
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">Phone Number:</label>
-                                                <input name = "adminnumber"type="text" class="form-control" id="adminname"  placeholder="Enter Phone Number" >
+                                                <input name = "adminnumber"type="text" class="form-control" id="adminname"  placeholder="Enter Phone Number" required>
                                                 <span class="text-danger fontColor"><?php echo form_error('adminnumber'); ?></span>
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">Password:</label>
-                                                <input name = "adminPassword"type="password" class="form-control" id="adminname" placeholder="Enter Password" >
+                                                <input name = "adminPassword"type="password" class="form-control" id="adminname" placeholder="Enter Password" required>
                                                 <span class="text-danger fontColor"><?php echo form_error('adminPassword'); ?></span>
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">Confirm Password:</label>
-                                                <input name = "adminconfirmpass"type="password" class="form-control" id="adminname" placeholder="Confirm Password" >
+                                                <input name = "adminconfirmpass"type="password" class="form-control" id="adminname" placeholder="Confirm Password" required>
                                                 <span class="text-danger fontColor"><?php echo form_error('adminconfirmpass'); ?></span>
                                             </div>
                                             <div class="form-group">

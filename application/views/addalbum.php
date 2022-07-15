@@ -35,7 +35,7 @@
                         <form method="POST" action="<?php echo base_url();?>User/submitalbum" enctype="multipart/form-data" class="user">
                         <div class="form-group">
                             <label for="username">Image Title:</label>
-                            <input type="text" class="form-control" id="album_title" name="album_title"  placeholder="Enter Album Title">
+                            <input type="text" class="form-control" id="album_title" name="album_title"  placeholder="Enter Album Title" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Image:</label>

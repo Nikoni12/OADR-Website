@@ -35,7 +35,7 @@
                                 <form method="post"  action="<?php echo base_url();?>User/addcat">
                         <div class="form-group">
                             <label for="username">Category Name:</label>
-                            <input type="text" class="form-control" id="adminname" name="catname"  placeholder="Enter Category Name">
+                            <input type="text" class="form-control" id="adminname" name="catname"  placeholder="Enter Category Name" required>
                             <span class="text-danger fontColor"><?php echo form_error('catname'); ?></span>
                         </div>
                         

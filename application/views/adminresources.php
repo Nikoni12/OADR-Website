@@ -179,11 +179,11 @@
                                 });
                                 Swal.fire(
                                     'Deleted!',
-                                    'Your file has been deleted.',
+                                    'Your deleted this data',
                                     'success'
-                                    )
-                                    
-                                },
+                                ).then(function(){
+                                     location.reload();
+                                });},
                                 error: function (data) {
                                     alert(data.responseText);
                                 }
