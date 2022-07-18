@@ -24,7 +24,7 @@ class Users_model extends CI_Model {
         $this->db->where('appnum', $appnum);
         $query = $this->db->get();
         if($query->num_rows() > 0){
-            return true;
+            return true; 
         } else {
             return false;
         }
@@ -380,6 +380,31 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    public function publications(){
+        $this->db->select('*');
+        $this->db->from('publications');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function avm(){
+        $this->db->select('*');
+        $this->db->from('avm');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function infographics(){
+        $this->db->select('*');
+        $this->db->from('infographics');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function pcw(){
+        $this->db->select('*');
+        $this->db->from('pcw');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 
     public function insertgadplan($data){
 		$this->db->insert('planbudget', $data);
@@ -405,9 +430,49 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    public function getgadpub(){
+        $this->db->select('*');
+        $this->db->from('publications');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function getgadavm(){
+        $this->db->select('*');
+        $this->db->from('avm');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function getgadinfo(){
+        $this->db->select('*');
+        $this->db->from('infographics');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function getgadpcw(){
+        $this->db->select('*');
+        $this->db->from('pcw');
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     public function insertgadreport($data){
 		$this->db->insert('accomplishmentreport', $data);
+        return $this->db->insert_id(); 
+	}
+    public function insertgadpublication($data){
+		$this->db->insert('publications', $data);
+        return $this->db->insert_id(); 
+	}
+    public function insertgadavm($data){
+		$this->db->insert('avm', $data);
+        return $this->db->insert_id(); 
+	}
+    public function insertgadinfographics($data){
+		$this->db->insert('infographics', $data);
+        return $this->db->insert_id(); 
+	}
+    public function insertgadpcw($data){
+		$this->db->insert('pcw', $data);
         return $this->db->insert_id(); 
 	}
 
@@ -418,9 +483,53 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
 	}
+    public function get_gadpublication_edit($id){
+        $this->db->select('*');
+        $this->db->from('publications');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function get_gadpcw_edit($id){
+        $this->db->select('*');
+        $this->db->from('pcw');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function get_gadavm_edit($id){
+        $this->db->select('*');
+        $this->db->from('avm');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function get_gadinfographics_edit($id){
+        $this->db->select('*');
+        $this->db->from('infographics');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
 
     public function update_gadreport($id,$report){
         $this->db->where('id', $id);
         $this->db->update('accomplishmentreport', $report);
+	}
+    public function update_gadpublication($id,$report){
+        $this->db->where('id', $id);
+        $this->db->update('publications', $report);
+	}
+    public function update_gadavm($id,$report){
+        $this->db->where('id', $id);
+        $this->db->update('avm', $report);
+	}
+    public function update_gadinfographics($id,$report){
+        $this->db->where('id', $id);
+        $this->db->update('infographics', $report);
+	}
+    public function update_gadpcw($id,$report){
+        $this->db->where('id', $id);
+        $this->db->update('pcw', $report);
 	}
 }

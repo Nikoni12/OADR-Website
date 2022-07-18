@@ -1205,6 +1205,35 @@ class User extends CI_Controller {
  
         redirect("./User/gadreport/","refresh"); ; 
     }
+	public function deleteallpub()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('publications');
+ 
+        redirect("./User/gadplan/","refresh"); ; 
+    }
+	public function deleteAllavm()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('avm');
+        redirect("./User/gadavm/","refresh"); ; 
+    }
+	public function deleteAllinfographics()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('infographics');
+        redirect("./User/gadavm/","refresh"); ; 
+    }
+	public function deleteAllpcw()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('pcw');
+        redirect("./User/gadavm/","refresh"); ; 
+    }
 	public function addresources(){
 		if(!$this->session->userdata('username')){ 
 			$this->load->view('administrator-panel-login');
@@ -1285,7 +1314,14 @@ class User extends CI_Controller {
 		redirect("./User/adminlogin/","refresh"); 
     }
 	public function gender(){
-		$this->load->view('gender');
+		$this->load->model('Users_model');
+		$data['plan'] = $this->users_model->getgadplan();
+		$data['report'] = $this->users_model->getgadreport();
+		$data['pub'] = $this->users_model->getgadpub();
+		$data['avm'] = $this->users_model->getgadavm();
+		$data['info'] = $this->users_model->getgadinfo();
+		$data['pcw'] = $this->users_model->getgadpcw();
+		$this->load->view('gender', $data);
 	}
 
 	public function gadplan(){
@@ -1463,6 +1499,305 @@ class User extends CI_Controller {
 			}
 		}	
 	}
-
+	public function gadpublications(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['pub'] = $this->users_model->publications();
+			$this->load->view('gadpublications', $data);
+		}
+	}
+	public function addgadpublication(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addgadpublication');
+		}
+	}
+	public function submitgadpublication(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'pdf';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('pub_file')) {
+				$pub_file = $this->upload->data('file_name');
+				$plan = array(
+					'pub_title' => $this->input->post('pub_title'),
+					'pub_file' => $pub_file
+				);
+				$this->users_model->insertgadpublication($plan);
+				$this->session->set_userdata('added','added');
+			redirect("./User/gadpublications/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/gadpublications/","refresh");
+			}
+		}
+	}
+	public function editgadpublication(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["pub"] = $this->users_model->get_gadpublication_edit($id);
+			$this->load->view('editgadpublication',$data);
+		}
+	}
+	public function updategadpublication(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'pdf';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if (!empty($_FILES['report_file']['name']) ){
+				if ($this->upload->do_upload('pub_file')) {
+					$pub_file = $this->upload->data('file_name');
+					$report = array(
+						'pub_title' => $this->input->post('pub_title'),
+						'pub_file' => $pub_file
+					);
+					$this->users_model->update_gadpublication($id,$report);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/gadpublications/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["report"] = $this->users_model->get_gadpublication_edit($id);
+					$this->load->view('gadpublications',$data);
+				}
+			} else {
+				$report = array(
+					'pub_title' => $this->input->post('pub_title'),
+				);
+				$this->users_model->update_gadpublication($id,$report);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/gadpublications/","refresh"); 
+			}
+		}	
+	}
+	public function gadavm(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['avm'] = $this->users_model->avm();
+			$this->load->view('gadavm', $data);
+		}
+	}
+	public function addgadavm(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addgadavm');
+		}
+	}
+	public function submitgadavm(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$plan = array(
+				'vid_title' => $this->input->post('vid_title'),
+				'vid_link' =>  $this->input->post('vid_link'),
+			);
+			$this->users_model->insertgadavm($plan);
+			$this->session->set_userdata('added','added');
+			redirect("./User/gadavm/","refresh"); 
+		}
+	}
+	public function editgadavm(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["avm"] = $this->users_model->get_gadavm_edit($id);
+			$this->load->view('editgadavm',$data);
+		}
+	}
+	public function updategadavm(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$report = array(
+				'vid_title' => $this->input->post('vid_title'),
+				'vid_link' => $this->input->post('vid_link'),
+			);
+			$this->users_model->update_gadavm($id,$report);
+			$this->session->set_userdata('updated','updated');
+			redirect("./User/gadavm/","refresh"); 
+		}	
+	}
+	public function gadinfographics(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['info'] = $this->users_model->infographics();
+			$this->load->view('gadinfographics', $data);
+		}
+	}
+	public function addgadinfographics(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addgadinfographics');
+		}
+	}
+	public function submitgadinfographics(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('img_file')) {
+				$img_file = $this->upload->data('file_name');
+				$plan = array(
+					'img_title' => $this->input->post('img_title'),
+					'img_file' => $img_file
+				);
+				$this->users_model->insertgadinfographics($plan);
+				$this->session->set_userdata('added','added');
+			redirect("./User/gadinfographics/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/gadinfographics/","refresh");
+			}
+		}
+	}
+	public function editgadinfographics(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["info"] = $this->users_model->get_gadinfographics_edit($id);
+			$this->load->view('editgadinfographics',$data);
+		}
+	}
+	public function updategadinfographics(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if (!empty($_FILES['img_file']['name']) ){
+				if ($this->upload->do_upload('pub_file')) {
+					$img_file = $this->upload->data('file_name');
+					$report = array(
+						'img_title' => $this->input->post('img_title'),
+						'img_file' => $img_file
+					);
+					$this->users_model->update_gadinfographics($id,$report);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/gadinfographics/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["report"] = $this->users_model->get_gadinfographics_edit($id);
+					$this->load->view('gadinfographics',$data);
+				}
+			} else {
+				$report = array(
+					'img_title' => $this->input->post('img_title'),
+				);
+				$this->users_model->update_gadinfographics($id,$report);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/gadinfographics/","refresh"); 
+			}
+		}	
+	}
+	public function gadpcw(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['pcw'] = $this->users_model->pcw();
+			$this->load->view('gadpcw', $data);
+		}
+	}
+	public function addgadpcw(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addgadpcw');
+		}
+	}
+	public function submitgadpcw(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'pdf';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('pcw_file')) {
+				$pcw_file = $this->upload->data('file_name');
+				$plan = array(
+					'pcw_title' => $this->input->post('pcw_title'),
+					'pcw_file' => $pcw_file
+				);
+				$this->users_model->insertgadpcw($plan);
+				$this->session->set_userdata('added','added');
+			redirect("./User/gadpcw/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/gadpcw/","refresh");
+			}
+		}
+	}
+	public function editgadpcw(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["pcw"] = $this->users_model->get_gadpcw_edit($id);
+			$this->load->view('editgadpcw',$data);
+		}
+	}
+	public function updategadpcw(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'pdf';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if (!empty($_FILES['pcw_file']['name']) ){
+				if ($this->upload->do_upload('pub_file')) {
+					$pcw_file = $this->upload->data('file_name');
+					$report = array(
+						'pcw_title' => $this->input->post('pcw_title'),
+						'pcw_file' => $pub_file
+					);
+					$this->users_model->update_gadpcw($id,$report);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/gadpcw/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["report"] = $this->users_model->get_gadpcw_edit($id);
+					$this->load->view('gadpcw',$data);
+				}
+			} else {
+				$report = array(
+					'pcw_title' => $this->input->post('pcw_title'),
+				);
+				$this->users_model->update_gadpcw($id,$report);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/gadpcw/","refresh"); 
+			}
+		}	
+	}
 }
 
