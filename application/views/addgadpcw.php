@@ -32,14 +32,14 @@
                         <div class="col-xl-6 col-lg-10 col-md-6">
                             <div class="card o-hidden border-0 shadow-lg my-5">
                                 <div class="card-body " data-aos="slide-up">
-                        <form method="POST" action="<?php echo base_url();?>User/submitgadplan" enctype="multipart/form-data" class="user">
+                        <form method="POST" action="<?php echo base_url();?>User/submitgadpcw" enctype="multipart/form-data" class="user">
                         <div class="form-group">
-                            <label for="username">Plan and Budget Title:</label>
-                            <input type="text" class="form-control" id="plan_title" name="plan_title"  placeholder="Enter File Title" required>
+                            <label for="username">PCW File Title:</label>
+                            <input type="text" class="form-control" id="report_title" name="pcw_title"  placeholder="Enter File Title" required>
                         </div>
                         <div class="form-group">
                             <label for="username">File:</label>
-                            <input type="file" class="form-control"  accept="application/pdf" id="plan_file" name="plan_file">
+                            <input type="file" class="form-control" accept="application/pdf" id="report_file" name="pcw_file">
                         </div>
 
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
