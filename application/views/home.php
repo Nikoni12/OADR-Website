@@ -57,7 +57,7 @@
 				</form>
 			</div>
 		</div>
-		<main id="main" class = "home-main" style = "overflow-x: hidden;overflow-y: scroll; height:590px;">
+		<main id="main" class = "home-main" style = "overflow-x: hidden;overflow-y: scroll; height:520px;">
 	
 		<section class="features adrcontain" style="padding:0;" id="adr">
 		
@@ -108,17 +108,18 @@
 											<div class="container ">
 												<div class="row ">
 													<?php foreach(array_slice($news, 0, 1) as $row ){ ?>
-													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" style="width:1200px; height:600px; "src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
+													<div class="col-md-11" style = "padding-right:0; padding-left:0; float:none;margin:auto;">
+													<a href="<?php echo $row->news_link?>" target="_blank"><img class="img-fluid " style="width:1200px; max-height:600px; "src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
+														<div style = "background-color:#002244; border-radius:0rem;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div></a>
 													</div>
-													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0; border-radius:0.25rem;">
+													<!--<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0; border-radius:0.25rem;">
 														<div style = "background-color:#002244; border-radius:0.25rem;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
 															<p style = "text-align:justify;" class="carouselimit carouseltext "><?php echo $row->news_content?></p>
-															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+															-<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>class="text-dark" ><a href="<?php echo $row->news_link?>"><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 														</div>
 														<br><br>
-													</div>
+													</div>-->
 													<?php }?>
 												</div>
 											</div>
@@ -129,17 +130,18 @@
 										<section class="features">
 											<div class="container">
 												<div class="row">
-													<div class="col-md-8" style = "padding-right:0; padding-left:0;">
-														<img class="img-fluid" style="width:1200px; height:600px;" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
+													<div class="col-md-11" style = "padding-right:0; padding-left:0; float:none;margin:auto;">
+													<a href="<?php echo $row->news_link?>" target="_blank"><img class="img-fluid" style="width:1200px; height:600px;" src='<?php echo base_url() . 'uploads/' . $row->news_image; ?>'>
+														<div style = "background-color:#002244; border-radius:0rem;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div></a>
 													</div>
-													<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0; border-radius:0.25rem;">
+													<!--<div class="col-md-4" style = "background-color:#E0FFFF;color:black;padding-right:0; padding-left:0; border-radius:0.25rem;">
 														<div style = "background-color:#002244; border-radius:0.25rem;"><h2 style = "color:white;"class="text-center carouseltitle"><br><?php echo $row->news_title?></h2><br></div>
 														<div style ="padding:20px;">
 															<p style = "text-align:justify;" class="carouselimit carouseltext"><?php echo $row->news_content?></p>
-															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" ><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+															<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" ><a href="<?php echo $row->news_link?>"><button type="button" class="btn btn-outline-dark">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
 														</div>
 														<br><br>
-													</div>
+													</div>-->
 												</div>
 											</div>
 										</section>

@@ -186,6 +186,7 @@ class User extends CI_Controller {
 				$news_image = $this->upload->data('file_name');
 				$new = array(
 					'news_title' => $this->input->post('news_title'),
+					'news_link' => $this->input->post('news_link'),
 					'news_content' => $this->input->post('news_content'),
 					'news_image' => $news_image
 				);
@@ -315,6 +316,7 @@ class User extends CI_Controller {
 					$new = array(
 						'news_title' => $this->input->post('news_title'),
 						'news_content' => $this->input->post('news_content'),
+						'news_link' => $this->input->post('news_link'),
 						'news_image' => $news_image
 					);
 					$this->users_model->update_news($id,$new);
@@ -330,7 +332,8 @@ class User extends CI_Controller {
 			} else {
 				$new = array(
 					'news_title' => $this->input->post('news_title'),
-					'news_content' => $this->input->post('news_content')
+					'news_content' => $this->input->post('news_content'),
+					'news_link' => $this->input->post('news_link')
 				);
 				$this->users_model->update_news($id,$new);
 				$this->session->set_userdata('updated','updated');
