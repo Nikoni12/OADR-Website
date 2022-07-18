@@ -17,7 +17,8 @@
         <link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     </head>
     <body>
         <?php include_once('header.php');?>
@@ -37,13 +38,27 @@
             <div class="container">
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Overview</h1><br> 
                 <div class="row ">
-                    <div class="col-md-6">
-                        <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">M</span>ission</h5>
-                        <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                    <div class="col-md-6" style = "background-color:#e5e4e2; padding:20px;">
+                        <div class="row ">
+                            <div class="col-md-1" style = "text-align:center;padding: 30px 0;">
+                                <i class="fa fa-bullseye" style = "color:#031261;font-size:40px;"aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-11">
+                                <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">M</span>ission</h5>
+                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                    <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">V</span>ision</h5>
-                        <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                    <div class="col-md-6" style = "background-color:#e5e4e2; padding:10px;">
+                    <div class="row ">
+                            <div class="col-md-1" style = "text-align:center;padding: 30px 0;">
+                                <i class="fa fa-eye" style = "color:#031261;font-size:40px;"aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-11">
+                                <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">V</span>ision</h5>
+                                <p style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><br>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-12"><br>
                         <h5 class="h1title" style = "font-size:24px;">OADR GAD Agenda</h5>
@@ -59,31 +74,111 @@
 
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Plan and Budget</h1><br> 
-                <div class="row">
-                    <div class="col-md-2 mt-2 col-lg-2">
-                        <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
-                            <div class="card-body">
-                                <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
-                                    <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                    <p style = "text-align:justify;">Annual Gender and Development Plan and Budget FY 2023</p>
-                                </a>
+                <div class="row" style = "--bs-gutter-x:0;">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                    <script>
+                        var swiper = new Swiper(".mySwiper", {
+                            effect: "cube",
+                            grabCursor: true,
+                            loop: true,
+                            cubeEffect: {
+                                shadow: true,
+                                slideShadows: true,
+                                shadowOffset: 20,
+                                shadowScale: 0.94,
+                            },
+                            pagination: {
+                                el: ".swiper-pagination",
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    </script>
                 </div>
-                <br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Accomplishment Report</h1><br> 
-                <div class="row">
-                    <div class="col-md-2 mt-2 col-lg-2">
-                        <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
-                            <div class="card-body">
+                <div class="row" style = "--bs-gutter-x:0;">
+                    <div class="col clearfix">
+                        <span class="title-section d-flex justify-content-end">
+                            <button class="btn btn-outline-warning btn-sm prev-btn" type="button"><i class="fa fa-arrow-left"></i>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <span class="mx-1">&nbsp;</span>
+                            <button class="btn btn-outline-warning btn-sm next-btn" type="button"><i class="fa fa-arrow-right"></i>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </span>
+                    </div><br><br>
+                    <div class="swiper mySwiper2" style = " width:100%;">
+                        <div class="swiper-wrapper">
+                            <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">1 Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
                                 <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
-                                    <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                    <p style = "text-align:justify;">2022 Gender and Development Accomplishment Report</p>
-                                </a>
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">2 Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">3 Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <div class="swiper-pagination"></div>
                     </div>
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                    <script>
+                        var swiper = new Swiper('.mySwiper2', {
+                            slidesPerView: 2,
+                            centeredSlides: true,
+                            spaceBetween: 30,
+                            pagination: {
+                                el: '.swiper-pagination',
+                                type: 'fraction',
+                            },
+                            navigation: {
+                                nextEl: '.next-btn',
+                                prevEl: '.prev-btn',
+                            },
+                        });
+                    </script>
                 </div>
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Activities</h1><br> 
@@ -101,28 +196,67 @@
     			</div>
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Information, Education, and Communication Materials on GAD</h1><br> 
-                <div class="row">
-                    <div class="col-md-12" style = "padding-left:40px;">
+                <div class="row" >
+                    <div class="col-md-12 " style = "--bs-gutter-x:0;" >
                         <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">P</span>ublications</h5>
-                        <div class="col-md-2 mt-2 col-lg-2">
-                            <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
+                        <div class="swiper mySwiper3" style = " width:100%;">
+                        <div class="swiper-wrapper">
+                            <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E; width: 300px;height: 300px;">
                                 <div class="card-body">
-                                    <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
                                         <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:justify;">2022 Gender and Development Accomplishment Report</p>
+                                        <p style = "text-align:center;">1 Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;width: 300px;height: 300px;">
+                                <div class="card-body">
+                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">2 Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;width: 300px;height: 300px;">
+                                <div class="card-body">
+                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">3 Annual Gender and Development Plan and Budget FY 2023</p>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                    <script>
+                        var swiper = new Swiper(".mySwiper3", {
+                            effect: "coverflow",
+                            grabCursor: true,
+                            centeredSlides: true,
+                            slidesPerView: "auto",
+                            coverflowEffect: {
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows: true,
+                            },
+                            pagination: {
+                                el: ".swiper-pagination",
+                            },
+                        });
+                    </script>
                     </div>
                     <div class="col-md-12" style = "padding-left:40px;">
                         <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">A</span>udio Visual Materials</h5>
-                        <div class="col-md-2 mt-2 col-lg-2">
-                            <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
-                                <div class="card-body">
-                                    
-                                </div>
-                            </div>
+                        <div class="row" style = " overflow-x: hidden;overflow-y: scroll; height:500px;">
+                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
+                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
+                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
+                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
+                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
+                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
                         </div>
                     </div>
                     <div class="col-md-12" style = "padding-left:40px;">
@@ -130,23 +264,69 @@
                         <div class="row">
                             <div class="col-md-4 mt-3 col-lg-3">
                                 <a href="<?php echo base_url()?>assets/img/orgstructure.png" class="d-block mb-4 h-100" data-toggle="lightbox" data-caption="Test">
-                                    <img class=" img-fluid img-thumbnail" src='<?php echo base_url()?>assets/img/orgstructure.png'>
+                                    <img class="img-fluid img-thumbnail" src='<?php echo base_url()?>assets/img/orgstructure.png'>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12" style = "padding-left:40px;">
                         <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">P</span>CW Publications</h5>
-                        <div class="col-md-2 mt-2 col-lg-2">
-                            <div class="card shadow h-100" style = "border: 2px solid #E0AA3E;">
+                        <div class="col clearfix">
+                        <span class="title-section d-flex justify-content-end">
+                            <button class="btn btn-outline-warning btn-sm prev-btn2" type="button"><i class="fa fa-arrow-left"></i>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <span class="mx-1">&nbsp;</span>
+                            <button class="btn btn-outline-warning btn-sm next-btn2" type="button"><i class="fa fa-arrow-right"></i>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </span>
+                    </div><br>
+                        <div class="swiper mySwiper4" style = " width:100%;">
+                        <div class="swiper-wrapper">
+                            <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
                                 <div class="card-body">
-                                    <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
                                         <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:justify;">2022 Gender and Development Accomplishment Report</p>
+                                        <p style = "text-align:center;">1 Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">2 Annual Gender and Development Plan and Budget FY 2023</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                <div class="card-body">
+                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;">3 Annual Gender and Development Plan and Budget FY 2023</p>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                    <script>
+                        var swiper = new Swiper('.mySwiper4', {
+                            slidesPerView: 2,
+                            centeredSlides: true,
+                            spaceBetween: 30,
+                            pagination: {
+                                el: '.swiper-pagination',
+                                type: 'fraction',
+                            },
+                            navigation: {
+                                nextEl: '.next-btn2',
+                                prevEl: '.prev-btn2',
+                            },
+                        });
+                    </script>
                     </div>
                 </div>
 
