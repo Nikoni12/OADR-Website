@@ -77,22 +77,16 @@
                 <div class="row" style = "--bs-gutter-x:0;">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                            <?php foreach($plan as $row) { ?>
+                                <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
                                 <div class="card-body">
-                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
+                                    <a href="<?php echo base_url().'uploads/'.$row->plan_file;?>" target="_blank">
                                         <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
+                                        <p style = "text-align:center;"><?php echo $row->plan_title;?></p>
+                                    </a> 
                                 </div>
                             </div>
-                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
-                                <div class="card-body">
-                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
+                            <?php }?>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -136,6 +130,16 @@
                     </div><br><br>
                     <div class="swiper mySwiper2" style = " width:100%;">
                         <div class="swiper-wrapper">
+                            <?php foreach($report as $row) { ?>
+                                <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                    <div class="card-body">
+                                        <a href="<?php echo base_url().'uploads/'.$row->report_file;?>" target="_blank">
+                                            <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                            <p style = "text-align:center;"><?php echo $row->report_title;?></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php }?>
                             <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
                                 <div class="card-body">
                                     <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
@@ -201,6 +205,16 @@
                         <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">P</span>ublications</h5>
                         <div class="swiper mySwiper3" style = " width:100%;">
                         <div class="swiper-wrapper">
+                            <?php foreach($pub as $row) { ?>
+                                <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E; width: 300px;height: 300px;">
+                                <div class="card-body">
+                                    <a href="<?php echo base_url().'uploads/'.$row->pub_file;?>" target="_blank">
+                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                        <p style = "text-align:center;"><?php echo $row->pub_title;?></p>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php }?>
                             <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E; width: 300px;height: 300px;">
                                 <div class="card-body">
                                     <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
@@ -251,6 +265,9 @@
                     <div class="col-md-12" style = "padding-left:40px;">
                         <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">A</span>udio Visual Materials</h5>
                         <div class="row" style = " overflow-x: hidden;overflow-y: scroll; height:500px;">
+                            <?php foreach($avm as $row) { ?>
+                                <iframe class="col-md-4 mt-3 col-lg-3" src="<?php echo $row->vid_link;?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
+                            <?php } ?>
                             <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
                             <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
                             <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
@@ -262,11 +279,13 @@
                     <div class="col-md-12" style = "padding-left:40px;">
                         <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">I</span>nfographics</h5>
                         <div class="row">
-                            <div class="col-md-4 mt-3 col-lg-3">
-                                <a href="<?php echo base_url()?>assets/img/orgstructure.png" class="d-block mb-4 h-100" data-toggle="lightbox" data-caption="Test">
-                                    <img class="img-fluid img-thumbnail" src='<?php echo base_url()?>assets/img/orgstructure.png'>
-                                </a>
-                            </div>
+                            <?php foreach($info as $row) { ?>
+                                <div class="col-md-4 mt-3 col-lg-3">
+                                    <a href="<?php echo base_url().'uploads/'.$row->img_file;?>" class="d-block mb-4 h-100" data-toggle="lightbox" data-caption="<?php echo $row->img_title;?>">
+                                        <img class="img-fluid img-thumbnail" src='<?php echo base_url().'uploads/'.$row->img_file;?>'>
+                                    </a>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="col-md-12" style = "padding-left:40px;">
@@ -284,6 +303,16 @@
                     </div><br>
                         <div class="swiper mySwiper4" style = " width:100%;">
                         <div class="swiper-wrapper">
+                            <?php foreach($pcw as $row) { ?>
+                                <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
+                                    <div class="card-body">
+                                        <a href="<?php echo base_url().'uploads/'.$row->pcw_file;?>" target="_blank">
+                                            <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                                            <p style = "text-align:center;"><?php echo $row->pcw_title;?></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php } ?>
                             <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
                                 <div class="card-body">
                                     <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">

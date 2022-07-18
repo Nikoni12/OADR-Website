@@ -26,22 +26,29 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">Add File</h1>
+                            <h1 class="retro1 retroshadow">Edit File</h1>
                         </div>
                         <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-10 col-md-6">
                             <div class="card o-hidden border-0 shadow-lg my-5">
                                 <div class="card-body " data-aos="slide-up">
-                        <form method="POST" action="<?php echo base_url();?>User/submitgadplan" enctype="multipart/form-data" class="user">
+                        <?php
+                            foreach ($avm as $row) {
+                        ?>
+                        
+                        <form method="POST" action="<?php echo base_url();?>User/updategadavm" enctype="multipart/form-data" class="user">
+                        <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                         <div class="form-group">
-                            <label for="username">Plan and Budget Title:</label>
-                            <input type="text" class="form-control" id="plan_title" name="plan_title"  placeholder="Enter File Title" required>
+                            <label for="username">AVM Title:</label>
+                            <input type="text" class="form-control" id="report_title" name="vid_title"  value="<?php echo $row->vid_title?>" >
                         </div>
                         <div class="form-group">
-                            <label for="username">File:</label>
-                            <input type="file" class="form-control"  accept="application/pdf" id="plan_file" name="plan_file">
+                            <label for="username">AVM Link:</label>
+                            <input type="text" class="form-control" id="report_title" name="vid_link"  value="<?php echo $row->vid_link?>" >
                         </div>
-
+                        <?php
+                            }
+                        ?>
                         <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
                         </form>
                                 </div>
@@ -92,7 +99,7 @@
  <script>
      Swal.fire({
                  title: 'Invalid File',
-                 text: "Please upload PDF File Only",
+                 text: "Please upload PDF File only",
                  icon: 'success',
                  iconColor: 'gold',
                  confirmButtonColor: 'gold'
