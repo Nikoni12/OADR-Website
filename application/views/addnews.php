@@ -38,6 +38,10 @@
                             <input type="text" class="form-control" id="news_title" name="news_title"  placeholder="Enter Article Title" required>
                         </div>
                         <div class="form-group">
+                            <label for="username">Link:</label>
+                            <input type="text" class="form-control" id="news_link" name="news_link"  placeholder="Enter News Link" required>
+                        </div>
+                        <div class="form-group">
                             <label for="username">Content:</label>
                             <textarea class="form-control" id="news_content" name="news_content" rows="3"></textarea>
                         </div>

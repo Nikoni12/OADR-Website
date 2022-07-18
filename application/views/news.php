@@ -55,7 +55,7 @@
 					<div class="row">
 						<?php $counter = 0;foreach($news as $row) { ?>
 							<?php if ($counter < 4){ ?> 
-							<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>" class="text-dark">
+								<a href="<?php echo $row->news_link?>" target="_blank" class="text-dark">
 							<div class="row mb-12 border-bottom pb-2 newsrow" style="height:95%">
 								<div class="col-md-3" style="padding-left:0">
 									<?php echo "<td>"."<img src='".base_url().'uploads/'.$row->news_image."' class='img-fluid shadow-1-strong rounded newsimg' style='max-height:300px; width:306px;'>"."</td>"; ?>
