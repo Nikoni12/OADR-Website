@@ -57,7 +57,7 @@
 				</form>
 			</div>
 		</div>
-		<main id="main" class = "home-main" style = "overflow-x: hidden;overflow-y: scroll; height:525px;">
+		<main id="main" class = "home-main" style = "overflow-x: hidden;overflow-y: scroll; height:520px;">
 	
 		<section class="features adrcontain" style="padding:0;" id="adr">
 		

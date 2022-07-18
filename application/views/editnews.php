@@ -45,10 +45,11 @@
                             <label for="username">Link:</label>
                             <input type="text" class="form-control" id="news_link" name="news_link"  value="<?php echo $row->news_link?>" >
                         </div>
+                        <!--
                         <div class="form-group">
                             <label for="username">Content:</label>
                             <textarea class="form-control" id="news_content" name="news_content" rows="3"  required><?php echo $row->news_content?></textarea>
-                        </div>
+                        </div>-->
                         <div class="form-group">
                             <label for="username">Image:</label>
                             <input type="file" class="form-control" id="news_image" name="news_image" accept="image/*">
