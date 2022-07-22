@@ -75,7 +75,7 @@
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Plan and Budget</h1><br> 
                 <div class="row" style = "--bs-gutter-x:0;">
-                    <div class="swiper mySwiper">
+                    <div class="swiper mySwiper" style = "max-width:50%;">
                         <div class="swiper-wrapper">
                             <?php foreach($plan as $row) { ?>
                                 <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
@@ -191,9 +191,9 @@
                         <div class="card" style="width: 18rem;" >
                             <img class="img-fluid" src='<?php echo base_url()?>assets/img/orgstructure.png'>
                             <div class="card-body" style = "border: 2px solid #E0AA3E;">
-                                <h5 class="card-title">Pilot Program on Gender-Sensitive ADR Skills Training</h5>
+                                <h5 class="card-title">2022 18-Day Campaign to End Violence Against Women and their Children</h5>
                                 <p class="card-text" style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <button type="button" class="btn btn-outline-warning">Read More >></button>
+                                <a href = "https://pcw.gov.ph/18-day-campaign-to-end-vaw/" target = "_blank"><button type="button" class="btn btn-outline-warning">Read More >></button></a>
                             </div>
                         </div>
                     </div>

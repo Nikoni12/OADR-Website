@@ -76,6 +76,14 @@
         </a>
     </li>
     <hr class="sidebar-divider">
+    <div class="sidebar-heading"> T.P.D Division </div>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>User/admintraining">
+            <i style = "color:black;"class="fa fa-calendar"></i>
+            <span>T.P.D Division</span> 
+        </a>
+    </li>
+    <hr class="sidebar-divider">
     <div class="sidebar-heading"> Job Applications </div>
     <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>User/adminapplications">
