@@ -37,30 +37,94 @@
 				<div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Events</h1><br> 
 					<div class="row">
-					<?php 
-                        foreach($event as $row) {
-                    ?>
-                        <div class="row mb-12 border-bottom pb-2">
+						<?php $counter=0;$i=1; foreach($event as $row) { ?>
+							<?php if ($counter < 4){ ?> 
+							<a href="/" onclick="return false;" class="text-dark">
+							<div class="row mb-12 border-bottom pb-2 " style="height:95%; padding-left:0;"  >
                             <div class="col-md-3">
                                 <figure class = "figurecal img-fluid">
                                     <header class = "headercal"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?></header>
                                     <section class = "sectioncal"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></section>
                                 </figure>
                             </div>
-                            <div class="col-md-9">
-								<?php echo "<p class='mb-2'><strong>$row->event_title</strong></p>" ?>
-                                <?php echo "<p style = 'text-align:justify;'>$row->event_content</p>"?>
-								<?php echo "<p>Start: $row->event_start</p>"?>
-								<?php echo "<p>End: $row->event_end</p>"?>
-                            </div>
-                        </div>
-						<?php
-                            }
-                        ?>
+								<div class="col-md-9">
+									<tr>
+										<td><p class='mb-2'><strong><?php echo $row->event_title?></strong></p></td>
+										<td><p style = 'text-align:justify;' class="limit poppinsfont"><?php echo $row->event_content?></p></td>
+										<td><p>Start:<?php echo $row->event_start?></p></td>
+										<td><p>End:<?php echo $row->event_end?></p></td>
+									</tr>
+									<button id="myBtn<?php echo $i?>" class="btn" style="background:#68A4C4; color:white;"><i class="fa fa-eye" style="color:white;" aria-hidden="true"></i> View </button>
+								</div>
+							</div>
+							</a>
+							&nbsp;
+							<?php }
+							else {  
+									if ($counter == 4) {?>
+									
+									<h2 class = "archivenews_title" style="padding:30px; padding-left:10px;" >Archive</h2><br>
+									<?php } ?>
+
+										<div class="col-md-12">
+										<tr class="archivenews">
+											<td><?php echo "<p class='mb-2'>$row->date_added<h10 style='color:#031261' id='myBtn$i' class='btn'>&nbsp; &nbsp; &nbsp;$row->event_title<h10></p>" ?><a></a></td> 
+										</tr>
+										</div>
+
+							<?php } ?>
+						<?php $counter++; $i++; }?>
+					</div>
+		</section>
+		</div>
+		</main>
+
+		    <?php $i=1; foreach($event as $row) { ?>
+
+			<div id="myModal<?php echo $i?>" class="modal">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content" style = " background-color: #fefefe; margin: auto; padding: 20px; border: 1px solid #888; width: 80%;"> 
+						<div class="modal-header"><p style="poppinsfont"><b><?php echo $row->event_title?></b></p></div>
+						<div class="modal-body"><p style="poppinsfont"><?php echo $row->event_content?></p>
+							<td><p> Start:<?php echo $row->event_start?></p></td>
+							<td><p> End:<?php echo $row->event_end?></p></td>
+						</div>
+						<div class="modal-footer">
+							<span class="close<?php echo $i?>"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></span>
+						</div>
+
 					</div>
 				</div>
-			</section>
-		</main>
+
+			</div>
+			
+			<?php $i++; }?>
+		
+			<script>
+			<?php $i=1; foreach($event as $row) { ?>
+
+				var modal<?php echo $i?> = document.getElementById("myModal<?php echo $i?>");
+
+				var btn<?php echo $i?> = document.getElementById("myBtn<?php echo $i?>");
+				
+				var span<?php echo $i?> = document.getElementsByClassName("close<?php echo $i?>")[0];
+
+				btn<?php echo $i?>.onclick = function() {
+				modal<?php echo $i?>.style.display = "block";
+				}
+
+				span<?php echo $i?>.onclick = function() {
+				modal<?php echo $i?>.style.display = "none";
+				}
+				
+				window.onclick = function(event) {
+				if (event.target == modal<?php echo $i?>) {
+					modal<?php echo $i?>.style.display = "none";
+				}
+			}
+			<?php $i++; }?>
+			</script>
+
 		<?php $this->view('footer'); ?>
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 		<script src="<?php echo base_url('assets/vendor/purecounter/purecounter.js');?>"></script>
