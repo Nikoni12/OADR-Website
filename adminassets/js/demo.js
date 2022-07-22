@@ -23,7 +23,7 @@
             showClear: true,
             showTodayButton: true,
             minDate: new Date(),
-            format: "MM/DD/YYYY",
+            format: "MMMM DD, YYYY",
         }).on('dp.change', function(e) {
             $('#id_4').data("DateTimePicker").minDate(e.date);
         });
@@ -32,7 +32,7 @@
             showClose: true,
             showClear: true,
             showTodayButton: true,
-            format: "MM/DD/YYYY",
+            format: "MMMM DD, YYYY",
         });
     });
 })(jQuery);

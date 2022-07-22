@@ -33,28 +33,34 @@
 			</div>
 		</section>
 		<main id="main">
+        <section class="features">
+            <div class="container">
+                <h1 class = "direct_head" >TRAINING AND PROGRAM DEVELOPMENT DIVISION</h1><br>
+                <h3 class="direct_head" style="color:black";>Training and Program Development Division CY 2022 TRAINING CALENDAR</h3>
+            </div>
+        </section>
+        <br><br> 
 			<section class="features">
 				<div class="container">
-				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Events</h1><br> 
+				<!--<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Training and Program Development Division</h1><br>-->
 					<div class="row">
-						<?php $counter=0;$i=1; foreach($event as $row) { ?>
+						<?php $counter=0;$i=1; foreach($training as $row) { ?>
 							<?php if ($counter < 4){ ?> 
 							<a href="/" onclick="return false;" class="text-dark">
 							<div class="row mb-12 border-bottom pb-2 " style="height:95%; padding-left:0;"  >
                             <div class="col-md-3">
                                 <figure class = "figurecal img-fluid">
-                                    <header class = "headercal"><?php echo strtoupper(date("F", strtotime($row->event_start)))."\n"?></header>
-                                    <section class = "sectioncal"><?php echo strtoupper(date("d", strtotime($row->event_start)))."\n"?></section>
+                                    <header class = "headercal"><?php echo strtoupper(date("F", strtotime($row->start_date)))."\n"?></header>
+                                    <section class = "sectioncal"><?php echo strtoupper(date("d", strtotime($row->start_date)))."\n"?></section>
                                 </figure>
                             </div>
 								<div class="col-md-9">
 									<tr>
-										<td><p class='mb-2'><strong><?php echo $row->event_title?></strong></p></td>
-										<td><p style = 'text-align:justify;' class="limit poppinsfont"><?php echo $row->event_content?></p></td>
-										<td><p>Start:<?php echo $row->event_start?></p></td>
-										<td><p>End:<?php echo $row->event_end?></p></td>
+										<td><p class='mb-2' style="color:#031261;"><strong><?php echo $row->title?></strong></p></td>
+                                        <td><p class='mb-2'><b><i>Course Dates: <?php echo $row->start_date?> - <?php echo $row->end_date?></i></b></p></td>
+										<td><p style = 'text-align:justify;' class="limit poppinsfont"><?php echo $row->description?></p></td>
 									</tr>
-									<button id="myBtn<?php echo $i?>" class="btn" style="background:#68A4C4; color:white;"><i class="fa fa-eye" style="color:white;" aria-hidden="true"></i> View </button>
+									<!--<button id="myBtn<?php echo $i?>" class="btn" style="background:#68A4C4; color:white;"><i class="fa fa-eye" style="color:white;" aria-hidden="true"></i> View </button>-->
 								</div>
 							</div>
 							</a>
@@ -68,7 +74,7 @@
 
 										<div class="col-md-12">
 										<tr class="archivenews">
-											<td><?php echo "<p class='mb-2'>$row->date_added<h10 style='color:#031261' id='myBtn$i' class='btn'>&nbsp; &nbsp; &nbsp;$row->event_title<h10></p>" ?><a></a></td> 
+											<td><?php echo "<p class='mb-2'>$row->date_added<h10 style='color:#031261' id='myBtn$i' class='btn'>&nbsp; &nbsp; &nbsp;$row->title<h10></p>" ?><a></a></td> 
 										</tr>
 										</div>
 
@@ -77,17 +83,37 @@
 					</div>
 		</section>
 		</div>
+        <section class="features">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-md-5" style="margin-left:10px;">
+                    <img style = "max-width:150px;"class="img-fluid" src="<?php echo base_url('assets/img/dojlogo.png');?>">
+                    <img style = "max-width:250px;"class="img-fluid" src="<?php echo base_url('assets/img/OADRNOBG.png');?>">
+                    </div>
+                    
+                        <div class="col-md-6" style = "padding-right:0; ">
+                        <b><p style="color:black";>For questions related to the above training courses, please contact:</p></b><br>
+                        <i><p>Training and Program Development Division 
+                        Training, 
+                        Accreditation and Promotion Service </p>
+                        <p>Department of Justice - Office for Alternative Dispute Resolution</p>
+                        <p>4F NFA New Building, NFA Compound, Visayas Avenue, Brgy. Vasra, 1128 Quezon City</p>
+                        <p>(63) 915-783-2641 | training.oadr@gmail.com</p></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
 		</main>
-
-		    <?php $i=1; foreach($event as $row) { ?>
+        <!---
+		    <?php $i=1; foreach($training as $row) { ?>
 
 			<div id="myModal<?php echo $i?>" class="modal">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content" style = " background-color: #fefefe; margin: auto; padding: 20px; border: 1px solid #888; width: 80%;"> 
-						<div class="modal-header"><p style="poppinsfont"><b><?php echo $row->event_title?></b></p></div>
-						<div class="modal-body"><p style="poppinsfont"><?php echo $row->event_content?></p>
-							<td><p> Start:<?php echo $row->event_start?></p></td>
-							<td><p> End:<?php echo $row->event_end?></p></td>
+						<div class="modal-header"><p style="poppinsfont"><b><?php echo $row->title?></b></p></div>
+						<div class="modal-body"><p style="poppinsfont"><?php echo $row->description?></p>
+							<td><p> Start:<?php echo $row->start_date?></p></td>
+							<td><p> End:<?php echo $row->end_date?></p></td>
 						</div>
 						<div class="modal-footer">
 							<span class="close<?php echo $i?>"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></span>
@@ -101,7 +127,7 @@
 			<?php $i++; }?>
 		
 			<script>
-			<?php $i=1; foreach($event as $row) { ?>
+			<?php $i=1; foreach($training as $row) { ?>
 
 				var modal<?php echo $i?> = document.getElementById("myModal<?php echo $i?>");
 
@@ -123,7 +149,7 @@
 				}
 			}
 			<?php $i++; }?>
-			</script>
+			</script>--->
 
 		<?php $this->view('footer'); ?>
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

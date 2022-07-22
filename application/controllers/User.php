@@ -1904,5 +1904,10 @@ class User extends CI_Controller {
 			redirect("./User/admintraining/","refresh"); 
 		}
 	}
+
+	public function tpd(){
+		$data['training'] = $this->users_model->gettpd(); 
+		$this->load->view('tpd', $data);
+	}
 }
 
