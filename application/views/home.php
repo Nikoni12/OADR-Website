@@ -67,6 +67,7 @@
 								<div class="mb-2"><img style = "max-width:150px;"class="img-fluid" src="<?php echo base_url('assets/img/dojlogo.png');?>"></div>
 								<div class="mb-2"><img style = "max-width:250px;"class="img-fluid" src="<?php echo base_url('assets/img/OADRNOBG.png');?>"></div>
 					</div>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					<iframe class="col-md-6" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
                         <div class="col-md-6 sect_info">
 						<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>

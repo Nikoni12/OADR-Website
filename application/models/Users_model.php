@@ -560,4 +560,11 @@ class Users_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('training', $eve);
     }
+
+    public function gettpd(){
+        $this->db->select('*');
+        $this->db->from('training');
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
