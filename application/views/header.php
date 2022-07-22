@@ -30,8 +30,8 @@
 						<li><a href="<?php echo base_url();?>User/gallery">Photo Gallery</a></li>
 					</ul>
 				</li>
-				<li ><a style = "text-decoration: none;" href="<?php echo base_url();?>User/gender">Gender and Development Corner</a></li>
-				<li ><a style = "text-decoration: none;" href="<?php echo base_url();?>User/gender">Training and Program Development</a></li>
+				<li ><a style = "text-decoration: none;" href="<?php echo base_url();?>User/gender">G.A.D Corner</a></li>
+				<li ><a style = "text-decoration: none;" href="<?php echo base_url();?>User/gender">T.P.D Division</a></li>
 				<li><a style = "text-decoration: none;" href="<?php echo base_url();?>User/contact">Contact Us</a></li>
 				<li><a style = "text-decoration: none;" href="<?php echo base_url();?>User/resources">Resources</a></li>
 				<li ><a style = "text-decoration: none;" href="https://cobraitechmoodle.com" target="_blank">Online Learning System</a></li>
