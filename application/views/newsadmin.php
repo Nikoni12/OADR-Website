@@ -64,7 +64,7 @@
                                                 <th><input type="checkbox" id="master"></th>
                                                 <th>ID</th>
                                                 <th>Title</th>
-                                                <th>Content</th>
+                                                <th>News Link</th>
                                                 <th>Date Added</th>
                                                 <th>Date Edited</th>
                                                 <th>Action</th>
@@ -79,7 +79,7 @@
                                             echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$row->ID."'></td>";
                                                 echo "<td>".$row->ID."</td>";
                                                 echo "<td >".$row->news_title."</td>";
-                                                echo "<td class='crop'>".$row->news_content."</td>";
+                                                echo "<td class='crop'>".$row->news_link."</td>";
                                                 echo "<td>".$row->date_added."</td>";
                                                 echo "<td>".$row->date_edited."</td>";
                                             ?>

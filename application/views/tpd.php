@@ -49,10 +49,7 @@
 							<a href="/" onclick="return false;" class="text-dark">
 							<div class="row mb-12 border-bottom pb-2 " style="height:95%; padding-left:0;"  >
                             <div class="col-md-3">
-                                <figure class = "figurecal img-fluid">
-                                    <header class = "headercal"><?php echo strtoupper(date("F", strtotime($row->start_date)))."\n"?></header>
-                                    <section class = "sectioncal"><?php echo strtoupper(date("d", strtotime($row->start_date)))."\n"?></section>
-                                </figure>
+								<p class="calendar"><?php echo strtoupper(date("d", strtotime($row->start_date)))."\n"?> <em><?php echo strtoupper(date("F", strtotime($row->start_date)))."\n"?></em></p>
                             </div>
 								<div class="col-md-9">
 									<tr>
@@ -61,7 +58,7 @@
 										<td><p style = 'text-align:justify;' class="limit poppinsfont"><?php echo $row->description?></p></td>
 									</tr>
 									<!--<button id="myBtn<?php echo $i?>" class="btn" style="background:#68A4C4; color:white;"><i class="fa fa-eye" style="color:white;" aria-hidden="true"></i> View </button>-->
-								</div>
+								</div>&nbsp;
 							</div>
 							</a>
 							&nbsp;

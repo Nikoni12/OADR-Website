@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2022 at 07:40 AM
+-- Generation Time: Jul 22, 2022 at 08:37 AM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,6 +45,21 @@ INSERT INTO `accomplishmentreport` (`ID`, `report_title`, `report_file`, `date_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `activities`
+--
+
+CREATE TABLE `activities` (
+  `ID` int(100) NOT NULL,
+  `act_title` varchar(300) NOT NULL,
+  `act_file` varchar(300) NOT NULL,
+  `act_overview` varchar(1000) NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_edited` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `admin`
 --
 
@@ -75,7 +90,7 @@ INSERT INTO `admin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Password`, 
 
 CREATE TABLE `announcements` (
   `ID` int(100) NOT NULL,
-  `announcement_title` varchar(300) NOT NULL,
+  `announcement_title` varchar(100) NOT NULL,
   `announcement_content` varchar(300) NOT NULL,
   `announcement_image` varchar(100) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -140,7 +155,7 @@ CREATE TABLE `careers` (
 
 CREATE TABLE `events` (
   `ID` int(100) NOT NULL,
-  `event_title` varchar(300) NOT NULL,
+  `event_title` varchar(100) NOT NULL,
   `event_content` varchar(1000) NOT NULL,
   `event_image` varchar(100) NOT NULL,
   `event_start` varchar(300) NOT NULL,
@@ -154,14 +169,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`ID`, `event_title`, `event_content`, `event_image`, `event_start`, `event_end`, `date_added`, `date_edited`) VALUES
-(2, 'OADR Team Building Event', 'We will be having a team building event  that includes all the department next week monday.', '3812b84eb9d5e755d01f16a97e517fef.jpg', '07/04/2022 03:39:18 PM', '07/04/2022 06:39:18 PM', '2022-07-04 09:55:43', '2022-07-04 09:55:43'),
-(4, 'Important Holiday Event', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat', 'b92ac6639aa0fa90fdd7a50b51902b87.jpg', '06/30/2022 01:02:05 PM', '07/01/2022 01:02:05 PM', '2022-07-04 09:55:43', '2022-07-04 09:55:43'),
-(5, 'New Event', 'Event', '767e403b1ba8f0d2248b875a215be06b.jpg', '07/15/2022 12:00:00 PM', '07/15/2022 01:00:00 PM', '2022-07-08 05:46:16', '2022-07-08 05:46:16'),
-(6, 'dasd', 'asdasdsa', 'ddbf2daa75be2e3da1770f3797668fd6.jpg', '07/12/2022 15:14:44 PM', '07/12/2022 03:14:44 PM', '2022-07-08 07:14:53', '2022-07-08 07:14:53'),
-(7, 'dsadas', 'asdas', '561b18d32e155f9c224b590ce47b5eba.jpg', '07/12/2022 08:00:00 AM', '07/19/2022 09:00:00 AM', '2022-07-08 07:16:22', '2022-07-08 07:16:22'),
-(8, 'dasdas', 'das', '180eee88c980c84b43978ec3a0af9ffd.jpg', '07/12/2022 03:22:40 PM', '07/12/2022 06:22:40 PM', '2022-07-08 07:23:00', '2022-07-08 07:23:00'),
-(9, 'Neww Event Title', 'Event Content', '29a949eecb55671d6748c29988a02f55.jpg', '07/09/2022 04:26:12 PM', '07/10/2022 04:11:27 PM', '2022-07-09 08:11:52', '2022-07-09 08:26:18'),
-(10, 'dsad', 'dasdsa', '564ff2463c121b9e75c5618295e13db6.jpg', '07/09/2022 04:20:05 PM', '07/10/2022 04:20:05 PM', '2022-07-09 08:20:11', '2022-07-09 08:20:11');
+(2, 'OADR Team Building Event', 'We will be having a team building event  that includes all the department next week monday.', '3812b84eb9d5e755d01f16a97e517fef.jpg', '08/30/2022 01:00:00 PM', '08/31/2022 06:00:00 PM', '2022-07-04 09:55:43', '2022-07-22 06:33:14'),
+(4, 'Important Holiday Event', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat', 'b92ac6639aa0fa90fdd7a50b51902b87.jpg', '06/30/2022 01:02:05 PM', '07/01/2022 01:02:05 PM', '2022-07-04 09:55:43', '2022-07-04 09:55:43');
 
 -- --------------------------------------------------------
 
@@ -245,7 +254,6 @@ INSERT INTO `inquiries` (`ID`, `Name`, `Email`, `Subject`, `status`, `message`, 
 CREATE TABLE `news` (
   `ID` int(100) NOT NULL,
   `news_title` varchar(300) NOT NULL,
-  `news_content` varchar(1000) DEFAULT NULL,
   `news_link` varchar(300) NOT NULL,
   `news_image` varchar(100) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -256,12 +264,10 @@ CREATE TABLE `news` (
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`ID`, `news_title`, `news_content`, `news_link`, `news_image`, `date_added`, `date_edited`) VALUES
-(1, 'President Rodrigo Duterte Greets OADR on its 18th Anniversary', 'President Rodrigo Duterte took time to greet the Office of Alternative Dispute Resolution as it celebrates the Republic Act No. 9285, the Alternative Dispute Resolution Act of 2004.\r\n\r\nAccording to President Duterte \"As a Unit of the Department of Justice, the OADR has faithfully performed its mandate to promote and facilitate alternative means of dispute resolution in adherence to the landmark legislation passed decades ago. I commend the agency for helping the Filipino public settle their conflicts in the most amicable manner to free them from the burdens of litigation\".\r\n\r\nAdditionally President Duterte said that    \"Let this occasion prompt you to reassess the established means of dispute resolution and explore new ways to handle the complex battles of a multifaceted, technology-driven and diverse society that is currently recovering from a global crisis. Diligence in your duty is a fulfillment of the government\'s promise to practice the speedy dispensation of justice. May we, as d', '', '4d464de9953306032d830784d5cc3399.png', '2022-07-04 09:50:27', '2022-07-04 09:50:27'),
-(2, 'Lorem Ipsum Ipsum dolor sit amet News', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum', '', '660cb082d4b2205f7d2b4df462d6fd0b.jpg', '2022-07-04 09:50:27', '2022-07-04 09:50:27'),
-(8, 'Completion of the Comprehensive Course on Mediation', NULL, 'https://www.facebook.com/permalink.php?story_fbid=pfbid02PynFFRFqR3SmLpUHH3csTiJcjeTK2ZJvY9h7sx7GoKsxUH9f2fjJgNuKMB9tuqYal&id=100064519667093', '8f62f55d3618583865f80e0a8640e5fd.jpg', '2022-07-18 08:37:37', '2022-07-18 08:37:37'),
-(9, 'Congratulations to former Justice Secretary Menardo I. Guevarra for his appointment as Solicitor General.', NULL, 'https://www.facebook.com/permalink.php?story_fbid=pfbid02Q76fLETqTQoUPjWA3a1c33nyWKYhyF4puAADfh9Njwo4bqUo6eGaAmY7Atz7z1DBl&id=100064519667093', '8c03f02c1201cbaa4d2f85081a056831.jpg', '2022-07-18 08:38:14', '2022-07-18 08:38:14'),
-(10, 'Atty. Irene De Torres Alogoc, CESO I, has been shortlisted as one of the nominees of the 2021 Presidential Gawad CES.', NULL, 'https://www.facebook.com/permalink.php?story_fbid=pfbid06SvirqTYdtnLjfpdZZPRq5SgvV42RAB69Ts7BSCcfLinVWur9fGccSi8SQDGXX98l&id=100064519667093', '7dca3f64f91686c6d2ddd0fd1e5f5045.jpg', '2022-07-18 08:38:55', '2022-07-18 08:38:55');
+INSERT INTO `news` (`ID`, `news_title`, `news_link`, `news_image`, `date_added`, `date_edited`) VALUES
+(1, 'Completion of the Comprehensive Course on Mediation', 'https://www.facebook.com/permalink.php?story_fbid=pfbid02PynFFRFqR3SmLpUHH3csTiJcjeTK2ZJvY9h7sx7GoKsxUH9f2fjJgNuKMB9tuqYal&id=100064519667093', '8f62f55d3618583865f80e0a8640e5fd.jpg', '2022-07-22 06:18:10', '2022-07-22 06:18:10'),
+(3, 'Atty. Irene De Torres Alogoc, CESO I, has been shortlisted as one of the nominees of the 2021 Presidential Gawad CES.', 'https://www.facebook.com/permalink.php?story_fbid=pfbid06SvirqTYdtnLjfpdZZPRq5SgvV42RAB69Ts7BSCcfLinVWur9fGccSi8SQDGXX98l&id=100064519667093', '7dca3f64f91686c6d2ddd0fd1e5f5045.jpg', '2022-07-22 06:19:48', '2022-07-22 06:19:48'),
+(4, 'Congratulations to former Justice Secretary Menardo I. Guevarra for his appointment as Solicitor General.', 'https://www.facebook.com/permalink.php?story_fbid=pfbid02Q76fLETqTQoUPjWA3a1c33nyWKYhyF4puAADfh9Njwo4bqUo6eGaAmY7Atz7z1DBl&id=100064519667093', '8c03f02c1201cbaa4d2f85081a056831.jpg', '2022-07-22 06:20:11', '2022-07-22 06:20:11');
 
 -- --------------------------------------------------------
 
@@ -435,6 +441,32 @@ CREATE TABLE `tokens` (
 INSERT INTO `tokens` (`id`, `provider`, `provider_value`) VALUES
 (1, 'google', '1//0evpT4CjDQbeoCgYIARAAGA4SNwF-L9Irv4r2qMsuSIRcZB50oaH23RScYcOKvQaeWL50pNS3vxgd5Mc49ERiyiOamNLLgkaVDM4');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `training`
+--
+
+CREATE TABLE `training` (
+  `ID` int(100) NOT NULL,
+  `title` varchar(300) NOT NULL,
+  `description` varchar(300) NOT NULL,
+  `start_date` varchar(300) NOT NULL,
+  `end_date` varchar(300) NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_edited` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `training`
+--
+
+INSERT INTO `training` (`ID`, `title`, `description`, `start_date`, `end_date`, `date_added`, `date_edited`) VALUES
+(1, 'Comprehensive Course on Mediation', 'This training course aims to enable practitioners to acquire competencies that will allow them to resolve eligible cases through mediation and perform related services. It is designed for participants from government agencies who handle dispute resolution. The course features lectures, discussions, ', 'August 22, 2022', 'August 26, 2022', '2022-07-22 04:38:46', '2022-07-22 06:27:19'),
+(2, 'Course on Mediation for Negosyo Centers and MSMEs', 'This course aims to provide the knowledge and basic skills needed to effectively handle eligible business and consumer-related disputes through mediation. It is designed for officers of the Department of Trade and Industry handling consumer-related issues and participants from the Micro, Small, and ', 'October 24, 2022', 'October 28, 2022', '2022-07-22 06:07:56', '2022-07-22 06:07:56'),
+(3, 'Comprehensive Course on Arbitration ', 'This training course introduces participants to the legal framework of commercial arbitration in the Philippines. It focuses on developing knowledge and practical skills through lectures, case studies, exercises and simulation or mock commercial dispute arbitration.  It is designed for participants ', 'August 22, 2022', 'August 26, 2022', '2022-07-22 06:24:50', '2022-07-22 06:24:50'),
+(4, 'Course on ADR Mechanisms under the Katarungang Pambarangay (KP) Law', 'This course is designed to enhance the skills of barangay officials, members of the Lupong Tagapamayapa and/or the Pangkat ng Tagapagkasundo of local government units identified under the Justice Sector Convergence Program on the interest-based mediation-conciliation process. It also includes a brie', 'August 09, 2022', 'August 11, 2022', '2022-07-22 06:25:25', '2022-07-22 06:25:25');
+
 --
 -- Indexes for dumped tables
 --
@@ -443,6 +475,12 @@ INSERT INTO `tokens` (`id`, `provider`, `provider_value`) VALUES
 -- Indexes for table `accomplishmentreport`
 --
 ALTER TABLE `accomplishmentreport`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `activities`
+--
+ALTER TABLE `activities`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -536,6 +574,12 @@ ALTER TABLE `tokens`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `training`
+--
+ALTER TABLE `training`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -544,6 +588,12 @@ ALTER TABLE `tokens`
 --
 ALTER TABLE `accomplishmentreport`
   MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `activities`
+--
+ALTER TABLE `activities`
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -597,7 +647,7 @@ ALTER TABLE `inquiries`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pcw`
@@ -634,6 +684,12 @@ ALTER TABLE `resources_category`
 --
 ALTER TABLE `tokens`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `training`
+--
+ALTER TABLE `training`
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -74,6 +74,8 @@
 
 							<?php } ?>
 						<?php $counter++; $i++; }?>
+                            
+						
 					</div>
 		</section>
 		</div>

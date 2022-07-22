@@ -564,6 +564,7 @@ class Users_model extends CI_Model {
     public function gettpd(){
         $this->db->select('*');
         $this->db->from('training');
+        $this->db->order_by('start_date', 'asc');
         $query = $this->db->get();
         return $query->result();
     }
