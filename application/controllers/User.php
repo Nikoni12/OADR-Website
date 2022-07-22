@@ -583,9 +583,9 @@ class User extends CI_Controller {
 	public function login(){
         $this->load->model('Users_model');
         $username = $this->input->post('username');
-        $password = md5($this->input->post('password'));
+        $password = md5($this->input->post('password') ?? '');
         $this->load->helper(array('form','url'));
-        $this->load->library('form_validation');
+        $this->load->library('form_validation'); 
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
         if($this->form_validation->run()){
@@ -1237,6 +1237,13 @@ class User extends CI_Controller {
         $this->db->delete('pcw');
         redirect("./User/gadavm/","refresh"); ; 
     }
+	public function deleteAlltraining()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('training');
+        redirect("./User/admintraining/","refresh"); ; 
+    }
 	public function addresources(){
 		if(!$this->session->userdata('username')){ 
 			$this->load->view('administrator-panel-login');
@@ -1801,6 +1808,101 @@ class User extends CI_Controller {
 				redirect("./User/gadpcw/","refresh"); 
 			}
 		}	
+	}
+	public function gadactivities(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['act'] = $this->users_model->act();
+			$this->load->view('gadactivities', $data);
+		}
+	}
+	public function addgadact(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addgadact');
+		}
+	}
+	public function submitgadact(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('img_file')) {
+				$pcw_file = $this->upload->data('file_name');
+				$plan = array(
+					'act_title' => $this->input->post('act_title'),
+					'act_overview' => $this->input->post('act_title'),
+					'pcw_file' => $pcw_file
+				);
+				$this->users_model->insertgadpcw($plan);
+				$this->session->set_userdata('added','added');
+			redirect("./User/gadpcw/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/gadpcw/","refresh");
+			}
+		}
+	}
+	public function admintraining(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['tpd'] = $this->users_model->gettraining();
+			$this->load->view('admintraining',$data);
+		}
+		
+	}
+	public function addtraining(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addtraining');
+		}
+	}
+	public function submittraining(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$tpd = array(
+				'title' => $this->input->post('title'),
+				'description' => $this->input->post('description'),
+				'start_date' => $this->input->post('start_date'),
+				'end_date' => $this->input->post('end_date')
+			);
+			$this->users_model->inserttraining($tpd);
+			$this->session->set_userdata('added','added');
+			redirect("./User/admintraining/","refresh"); 
+		}
+	}
+	public function edittraining(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["tpd"] = $this->users_model->get_training_edit($id);
+			$this->load->view('edittraining',$data);
+		}
+	}
+	public function updatetraining(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$eve = array(
+				'title' => $this->input->post('title'),
+				'description' => $this->input->post('description'),
+				'start_date' => $this->input->post('start_date'),
+				'end_date' => $this->input->post('end_date')
+			);
+			$this->users_model->update_training($id,$eve);
+			$this->session->set_userdata('updated','updated');
+			redirect("./User/admintraining/","refresh"); 
+		}
 	}
 }
 

@@ -161,6 +161,13 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
 	}
+    public function get_training_edit($id){
+        $this->db->select('*');
+        $this->db->from('training');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
 
 
     public function update_event($id,$eve){
@@ -404,6 +411,12 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    public function act(){
+        $this->db->select('*');
+        $this->db->from('activities');
+        $query = $this->db->get();
+        return $query->result();
+    }
 
 
     public function insertgadplan($data){
@@ -532,4 +545,19 @@ class Users_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('pcw', $report);
 	}
+    public function gettraining(){
+        $this->db->select('*');
+        $this->db->from('training');
+        $this->db->order_by('start_date', 'desc');
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function inserttraining($tpd){
+		$this->db->insert('training', $tpd);
+        return $this->db->insert_id(); 
+	}
+    public function update_training($id,$eve){
+        $this->db->where('id', $id);
+        $this->db->update('training', $eve);
+    }
 }

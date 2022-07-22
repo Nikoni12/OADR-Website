@@ -17,6 +17,20 @@
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="sweetalert2.min.js"></script>
         <link rel="stylesheet" href="sweetalert2.min.css">
+        <style>
+            .crop {        height: 18px;
+                                width: 300px;
+                                padding: 0;
+                                overflow: hidden;
+                                position: relative;
+                                display: inline-block;
+                                margin: 0 5px 0 5px;
+                                text-align: center;
+                                text-decoration: none;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+ }
+        </style>
     </head>
     <body id="page-top">
         <div id="wrapper">
@@ -26,49 +40,53 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">Accomplishment Report</h1>
+                            <h1 style = "font-size:40px;"class="retro1 retroshadow">Training and Program Development Division</h1>
                         </div>
-                        <a href="http://localhost/OADR-Website/User/addgadreport" class="btn btn-warning btn-icon-split">
+                        <a href="http://localhost/OADR-Website/User/addtraining" class="btn btn-warning btn-icon-split">
                             <span class="icon text-white-50">
                                 <i style = "color:black;" class="fas fa-plus"></i>
                             </span>
-                            <span style = "color:black;" class="text">Add File</span>
-                        </a>
-                        <br><br>
+                            <span style = "color:black;" class="text">Add T.P.D</span>
+                        </a><br><br>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"></div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead style = "text-align:center;">
-                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteAllReport"><span class="icon text-white-50">
+                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteAlltraining"><span class="icon text-white-50">
                                                     <i style = "color:black;" class="fas fa-trash"></i>
                                                 </span><span style = "color:black;" class="text">Delete Selected</span></button>
                                             <tr>
                                             <th><input type="checkbox" id="master"></th>
                                                 <th>ID</th>
                                                 <th>Title</th>
-                                                <th>Content</th>
+                                                <th>Description</th>
+                                                <th>Start Date</th>
+                                                <th>End Date</th>
                                                 <th>Date Added</th>
                                                 <th>Date Updated</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php  
-                                            foreach($report as $row) {
+                                        <?php 
+                                            foreach($tpd as $row) {
                                             ?>
                                             <tr>
                                             <?php 
-                                            echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$row->ID."'></td>";
+                                                echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$row->ID."'></td>";
                                                 echo "<td>".$row->ID."</td>";
-                                                echo "<td>".$row->report_title."</td>";
-                                                echo "<td>".$row->report_file."</td>";
+                                                echo "<td>".$row->title."</td>";
+                                                echo "<td class='crop'>".$row->description."</td>";
+                                                echo "<td>".$row->start_date."</td>";
+                                                echo "<td>".$row->end_date."</td>";
                                                 echo "<td>".$row->date_added."</td>";
                                                 echo "<td>".$row->date_edited."</td>";
+                                                /*echo "<td>2022-01-01 12:00 NN</td>";*/
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editgadreport">
+                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/edittraining">
                                                             <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                                                             <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                                     </form>
@@ -77,6 +95,7 @@
                                              } 
                                              ?>
                                             </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -124,8 +143,8 @@
     <?php if($this->session->userdata('added')){   ?>
     <script>
 		Swal.fire({
-					title: 'File Added',
-					text: "You successfully added an File.",
+					title: 'Program Added',
+					text: "You successfully added an event.",
 					icon: 'success',
 					iconColor: 'gold',
 					confirmButtonColor: 'gold'
@@ -134,14 +153,15 @@
     <?php $this->session->unset_userdata('added');} else if($this->session->userdata('updated')){?>
         <script>
 		Swal.fire({
-					title: 'File Updated',
-					text: "You successfully updated an File.",
+					title: 'Program Updated',
+					text: "You successfully updated an event.",
 					icon: 'success',
 					iconColor: 'gold',
 					confirmButtonColor: 'gold'
 				})
 		</script>
     <?php $this->session->unset_userdata('updated');} ?>
+   
     <script type="text/javascript">
     $(document).ready(function () {
  

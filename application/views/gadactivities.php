@@ -26,9 +26,9 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">Accomplishment Report</h1>
+                            <h1 class="retro1 retroshadow">Activities</h1>
                         </div>
-                        <a href="http://localhost/OADR-Website/User/addgadreport" class="btn btn-warning btn-icon-split">
+                        <a href="http://localhost/OADR-Website/User/addgadact" class="btn btn-warning btn-icon-split">
                             <span class="icon text-white-50">
                                 <i style = "color:black;" class="fas fa-plus"></i>
                             </span>
@@ -41,14 +41,13 @@
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead style = "text-align:center;">
-                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteAllReport"><span class="icon text-white-50">
+                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteallpub"><span class="icon text-white-50">
                                                     <i style = "color:black;" class="fas fa-trash"></i>
                                                 </span><span style = "color:black;" class="text">Delete Selected</span></button>
                                             <tr>
                                             <th><input type="checkbox" id="master"></th>
                                                 <th>ID</th>
                                                 <th>Title</th>
-                                                <th>Content</th>
                                                 <th>Date Added</th>
                                                 <th>Date Updated</th>
                                                 <th>Action</th>
@@ -56,19 +55,18 @@
                                         </thead>
                                         <tbody>
                                         <?php  
-                                            foreach($report as $row) {
+                                            foreach($act as $row) {
                                             ?>
                                             <tr>
                                             <?php 
                                             echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$row->ID."'></td>";
                                                 echo "<td>".$row->ID."</td>";
-                                                echo "<td>".$row->report_title."</td>";
-                                                echo "<td>".$row->report_file."</td>";
+                                                echo "<td>".$row->act_title."</td>";
                                                 echo "<td>".$row->date_added."</td>";
                                                 echo "<td>".$row->date_edited."</td>";
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editgadreport">
+                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editgadpublication">
                                                             <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                                                             <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                                     </form>
