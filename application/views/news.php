@@ -63,7 +63,6 @@
 								<div class="col-md-9">
 									<tr>
 									<td><?php echo "<p class='mb-2'><strong>$row->news_title</strong></p>" ?></td>
-									<td> <p style = "text-align=justify;" class="limit poppinsfont"><u><?php echo$row->news_content?></u></p></td>
 									<td><?php echo "<p>$row->date_added</p>" ?></td>
 									<td><p style="color:skyblue;"><b>Read More..</b></p></td>
 									</tr>

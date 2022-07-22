@@ -30,6 +30,7 @@
     <body id="page-top">
         <div id="wrapper">
             <?php $this->view('sidebar'); ?>
+            
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     <?php $this->view('navbar'); ?>

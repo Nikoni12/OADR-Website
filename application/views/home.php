@@ -17,7 +17,6 @@
 		<link href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-		<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 		<div id="fb-root"></div>
 		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="11fU4RAl"></script>
 		<style>
@@ -94,7 +93,7 @@
 			<br><br><br><br>
 			<section class="features" id="announcement">
 				<div class="container">
-				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">News <i class='far fa-newspaper' style='font-size:40px'></i></h1><br> 
+				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">News</h1><br> 
 					<div class="row" >
 						<div class="col-md-12 " >
 							<div id="demo" class="carousel slide" data-bs-ride="carousel">
