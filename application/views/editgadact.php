@@ -33,18 +33,22 @@
                             <div class="card o-hidden border-0 shadow-lg my-5">
                                 <div class="card-body " data-aos="slide-up">
                         <?php
-                            foreach ($avm as $row) {
+                            foreach ($act as $row) {
                         ?>
                         
-                        <form method="POST" action="<?php echo base_url();?>User/updategadavm" enctype="multipart/form-data" class="user">
+                        <form method="POST" action="<?php echo base_url();?>User/updategadact" enctype="multipart/form-data" class="user">
                         <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                         <div class="form-group">
                             <label for="username">AVM Title:</label>
-                            <input type="text" class="form-control" id="report_title" name="vid_title"  value="<?php echo $row->vid_title?>" >
+                            <input type="text" class="form-control" id="report_title" name="act_title"  value="<?php echo $row->act_title?>" >
                         </div>
                         <div class="form-group">
-                            <label for="username">AVM Link:</label>
-                            <input type="text" class="form-control" id="report_title" name="vid_link"  value="<?php echo $row->vid_link?>" >
+                            <label for="username">Description:</label>
+                            <textarea class="form-control" id="event_content" name="act_overview" rows="3" ><?php echo $row->act_overview?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">File:</label>
+                            <input type="file" class="form-control" id="report_file"accept="image/png, image/gif" name="act_file" accept="">
                         </div>
                         <?php
                             }

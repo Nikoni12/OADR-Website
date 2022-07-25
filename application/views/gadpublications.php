@@ -48,7 +48,6 @@
                                             <th><input type="checkbox" id="master"></th>
                                                 <th>ID</th>
                                                 <th>Title</th>
-                                                <th>Content</th>
                                                 <th>Date Added</th>
                                                 <th>Date Updated</th>
                                                 <th>Action</th>
@@ -63,7 +62,6 @@
                                             echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$row->ID."'></td>";
                                                 echo "<td>".$row->ID."</td>";
                                                 echo "<td>".$row->pub_title."</td>";
-                                                echo "<td>".$row->pub_file."</td>";
                                                 echo "<td>".$row->date_added."</td>";
                                                 echo "<td>".$row->date_edited."</td>";
                                             ?>

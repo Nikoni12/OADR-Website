@@ -1230,6 +1230,13 @@ class User extends CI_Controller {
         $this->db->delete('infographics');
         redirect("./User/gadavm/","refresh"); ; 
     }
+	public function deleteAllact()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('activities');
+        redirect("./User/gadavm/","refresh"); ; 
+    }
 	public function deleteAllpcw()
     {
         $ids = $this->input->post('ids');
@@ -1331,6 +1338,7 @@ class User extends CI_Controller {
 		$data['avm'] = $this->users_model->getgadavm();
 		$data['info'] = $this->users_model->getgadinfo();
 		$data['pcw'] = $this->users_model->getgadpcw();
+		$data['act'] = $this->users_model->getgadact();
 		$this->load->view('gender', $data);
 	}
 
@@ -1833,18 +1841,18 @@ class User extends CI_Controller {
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
 			if ($this->upload->do_upload('img_file')) {
-				$pcw_file = $this->upload->data('file_name');
+				$img_file = $this->upload->data('file_name');
 				$plan = array(
 					'act_title' => $this->input->post('act_title'),
-					'act_overview' => $this->input->post('act_title'),
-					'pcw_file' => $pcw_file
+					'act_overview' => $this->input->post('act_overview'),
+					'act_file' => $img_file
 				);
-				$this->users_model->insertgadpcw($plan);
+				$this->users_model->insertgadact($plan);
 				$this->session->set_userdata('added','added');
-			redirect("./User/gadpcw/","refresh"); 
+			redirect("./User/gadactivities/","refresh");  
 			} else {
 				$this->session->set_userdata('invalid','invalid');
-				redirect("./User/gadpcw/","refresh");
+				redirect("./User/gadactivities/","refresh");
 			}
 		}
 	}
@@ -1908,6 +1916,53 @@ class User extends CI_Controller {
 	public function tpd(){
 		$data['training'] = $this->users_model->gettpd(); 
 		$this->load->view('tpd', $data);
+	}
+	public function editgadact(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["act"] = $this->users_model->get_gadact_edit($id);
+			$this->load->view('editgadact',$data);
+		}
+	}
+	public function updategadact(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if (!empty($_FILES['act_file']['name']) ){
+				if ($this->upload->do_upload('act_file')) {
+					$img_file = $this->upload->data('file_name');
+					$report = array(
+						'act_title' => $this->input->post('act_title'),
+						'act_overview' => $this->input->post('act_overview'),
+						'act_file' => $img_file
+					);
+					$this->users_model->update_gadact($id,$report);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/gadactivities/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["act"] = $this->users_model->get_gadact_edit($id);
+					$this->load->view('gadactivities',$data);
+				}
+			} else {
+				$report = array(
+					'act_title' => $this->input->post('act_title'),
+					'act_overview' => $this->input->post('act_overview'),
+				);
+				$this->users_model->update_gadact($id,$report);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/gadactivities/","refresh"); 
+			}
+		}	
 	}
 }
 

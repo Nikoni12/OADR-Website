@@ -46,7 +46,7 @@
                             <input type="file" class="form-control"  accept="image/png, image/gif"id="plan_file" name="img_file">
                         </div>
 
-                        <button type="submit" class="btn btn-outline-warning">SUBMIT</button>
+                        <button type="submit" class="btn btn-outline-warning">SUBMIT</button> 
                         </form>
                                 </div>
                             </div>
