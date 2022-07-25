@@ -387,6 +387,12 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    public function getgadact(){
+        $this->db->select('*');
+        $this->db->from('activities');
+        $query = $this->db->get();
+        return $query->result();
+    }
     public function publications(){
         $this->db->select('*');
         $this->db->from('publications');
@@ -480,6 +486,10 @@ class Users_model extends CI_Model {
 		$this->db->insert('avm', $data);
         return $this->db->insert_id(); 
 	}
+    public function insertgadact($data){
+		$this->db->insert('activities', $data);
+        return $this->db->insert_id(); 
+	}
     public function insertgadinfographics($data){
 		$this->db->insert('infographics', $data);
         return $this->db->insert_id(); 
@@ -517,6 +527,13 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
 	}
+    public function get_gadact_edit($id){
+        $this->db->select('*');
+        $this->db->from('activities');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
     public function get_gadinfographics_edit($id){
         $this->db->select('*');
         $this->db->from('infographics');
@@ -540,6 +557,10 @@ class Users_model extends CI_Model {
     public function update_gadinfographics($id,$report){
         $this->db->where('id', $id);
         $this->db->update('infographics', $report);
+	}
+    public function update_gadact($id,$report){
+        $this->db->where('id', $id);
+        $this->db->update('activities', $report);
 	}
     public function update_gadpcw($id,$report){
         $this->db->where('id', $id);

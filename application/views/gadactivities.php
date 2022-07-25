@@ -41,7 +41,7 @@
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead style = "text-align:center;">
-                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteallpub"><span class="icon text-white-50">
+                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteAllact"><span class="icon text-white-50">
                                                     <i style = "color:black;" class="fas fa-trash"></i>
                                                 </span><span style = "color:black;" class="text">Delete Selected</span></button>
                                             <tr>
@@ -66,7 +66,7 @@
                                                 echo "<td>".$row->date_edited."</td>";
                                             ?>
                                                 <td style = "text-align:center; font-size:20px;">
-                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editgadpublication">
+                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editgadact">
                                                             <input type ="hidden" name = "edit_id" value = "<?php  echo $row->ID;?>">
                                                             <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                                     </form>

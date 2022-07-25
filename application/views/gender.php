@@ -140,30 +140,7 @@
                                     </div>
                                 </div>
                             <?php }?>
-                            <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
-                                <div class="card-body">
-                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">1 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
-                                <div class="card-body">
-                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">2 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
-                                <div class="card-body">
-                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">3 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -187,16 +164,19 @@
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">GAD Activities</h1><br> 
                 <div class="row">
-                    <div class="col-md-3 mt-3 col-lg-3"  >
-                        <div class="card" style="width: 18rem;" >
-                            <img class="img-fluid" src='<?php echo base_url()?>assets/img/orgstructure.png'>
-                            <div class="card-body" style = "border: 2px solid #E0AA3E;">
-                                <h5 class="card-title">2022 18-Day Campaign to End Violence Against Women and their Children</h5>
-                                <p class="card-text" style = "text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <a href = "https://pcw.gov.ph/18-day-campaign-to-end-vaw/" target = "_blank"><button type="button" class="btn btn-outline-warning">Read More >></button></a>
+                    <?php foreach($act as $row) { ?>
+                        <div class="col-md-3 mt-3 col-lg-3"  >
+                            <div class="card" style="width: 18rem;" >
+                                <img class="img-fluid" src='<?php echo base_url()?>uploads/<?php echo $row->act_file?>'>
+                                <div class="card-body" style = "border: 2px solid #E0AA3E;">
+                                    <h5 class="card-title"><?php echo $row->act_title?></h5>
+                                    <p class="card-text" style = "text-align:justify;"><?php echo $row->act_overview?></p>
+                                    <a href = "https://pcw.gov.ph/18-day-campaign-to-end-vaw/" target = "_blank"><button type="button" class="btn btn-outline-warning">Read More >></button></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php }?>
+                    
     			</div>
                 <br>
                 <h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Information, Education, and Communication Materials on GAD</h1><br> 
@@ -215,30 +195,7 @@
                                 </div>
                             </div>
                             <?php }?>
-                            <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E; width: 300px;height: 300px;">
-                                <div class="card-body">
-                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">1 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;width: 300px;height: 300px;">
-                                <div class="card-body">
-                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">2 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;width: 300px;height: 300px;">
-                                <div class="card-body">
-                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">3 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -264,16 +221,10 @@
                     </div>
                     <div class="col-md-12" style = "padding-left:40px;">
                         <h5 class="h1title" style = "font-size:24px;"><span style = "font-size: 40px;">A</span>udio Visual Materials</h5>
-                        <div class="row" style = " overflow-x: hidden;overflow-y: scroll; height:500px;">
+                        <div class="row" style = " overflow-x: hidden;overflow-y: scroll; height:300px;">
                             <?php foreach($avm as $row) { ?>
                                 <iframe class="col-md-4 mt-3 col-lg-3" src="<?php echo $row->vid_link;?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
                             <?php } ?>
-                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
-                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
-                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
-                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
-                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
-                            <iframe class="col-md-4 mt-3 col-lg-3" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "height:300px;"></iframe>
                         </div>
                     </div>
                     <div class="col-md-12" style = "padding-left:40px;">
@@ -313,30 +264,6 @@
                                     </div>
                                 </div>
                             <?php } ?>
-                            <div class=" swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
-                                <div class="card-body">
-                                    <a href="https://dfa.gov.ph/images/2022/GAD/SIGNED_AND_DATED_DFA_FY_2022_GAD_Plan_and_Budget.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">1 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
-                                <div class="card-body">
-                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">2 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card shadow h-100 swiper-slide mx-auto" style = "border: 2px solid #E0AA3E;">
-                                <div class="card-body">
-                                <a href="https://cfo.gov.ph/wp-content/uploads/2022/04/Signed-and-Reviewed-2021-GAD-Accomplishment-Report_0001_reduced.pdf" target="_blank">
-                                        <p style = "text-align:center; font-size:100px; color:red;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
-                                        <p style = "text-align:center;">3 Annual Gender and Development Plan and Budget FY 2023</p>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
