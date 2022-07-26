@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2022 at 08:37 AM
+-- Generation Time: Jul 26, 2022 at 12:17 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,6 +56,13 @@ CREATE TABLE `activities` (
   `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_edited` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `activities`
+--
+
+INSERT INTO `activities` (`ID`, `act_title`, `act_file`, `act_overview`, `date_added`, `date_edited`) VALUES
+(1, '2022 18-Day Campaign to End Violence Against Women and their Children', 'cfba20b13a2c369b073c49d97cc38a11.png', '2022 18-Day Campaign to End Violence Against Women and their Children', '2022-07-25 06:29:32', '2022-07-25 06:29:32');
 
 -- --------------------------------------------------------
 
@@ -244,6 +251,41 @@ INSERT INTO `inquiries` (`ID`, `Name`, `Email`, `Subject`, `status`, `message`, 
 (5, 'dasdas', 'iamjimuel06@gmail.com', 'dadasd', 'Not Addressed', 'sadsadas', '900867886657\n', '2022-07-07 05:08:48', '2022-07-07 05:08:48'),
 (8, 'dasdas', 'iamjimuel06@gmail.com', 'dasd', 'Not Addressed', 'dasdas', '530669547251\n', '2022-07-10 02:36:56', '2022-07-10 02:36:56'),
 (9, 'Test', 'iamjimuel06@gmail.com', 'Test', 'Not Addressed', 'Test', '39585402764\n', '2022-07-10 02:37:48', '2022-07-10 02:37:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `job`
+--
+
+CREATE TABLE `job` (
+  `ID` int(100) NOT NULL,
+  `position_title` varchar(300) NOT NULL,
+  `plantilla` varchar(300) NOT NULL,
+  `paygrade` varchar(300) NOT NULL,
+  `salary` varchar(300) NOT NULL,
+  `education` varchar(300) NOT NULL,
+  `training` varchar(300) NOT NULL,
+  `experience` varchar(300) NOT NULL,
+  `eligibility` varchar(300) NOT NULL,
+  `competency` varchar(300) NOT NULL,
+  `place` varchar(300) NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_edited` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `job`
+--
+
+INSERT INTO `job` (`ID`, `position_title`, `plantilla`, `paygrade`, `salary`, `education`, `training`, `experience`, `eligibility`, `competency`, `place`, `date_added`, `date_edited`) VALUES
+(1, 'Chief Administrative Officer', 'OADRB-CADOF-5-2021', '24', '88410', 'Master\'s Degree or Certificate in Leadership and Management from the CSC', '40 hours of supervisory/ management learning and development intervenion', '4 years of supervisory/ management experience', 'Career Service (Professional)/Second Level Eligibility', 'N/A', 'Compliance and Monitoring Division', '2022-07-26 09:17:01', '2022-07-26 10:06:13'),
+(3, 'Information Officer III', 'OADRB-INFO3-16-2021', '18', '45203', 'Bachelor\'s degree', '8 hours of relevant training', '2 years of relevant experience', 'Career Service (Professional)/\r\nSecond Level Eligibility', 'N/A', 'Public Information and Promotion Division', '2022-07-26 09:34:34', '2022-07-26 09:34:34'),
+(5, 'Training Specialist I', 'OADRB-TRNSP1-7-2021', '11', '25439', 'Bachelor\'s degree', 'None required', 'None required', 'Career Service (Professional)/ Second Level Eligibility', 'N/A', 'Training and Program Development Division', '2022-07-26 10:03:10', '2022-07-26 10:03:10'),
+(6, 'Information Officer V', 'OADRB-INFO5-6-2021', '24', '88410', 'Master\'s Degree or Certificate in Leadership and Management from the CSC', '40 hours of supervisory/ management learning and development intervenion', '4 years of supervisory/ management experience', 'Career Service (Professional)/ Second Level Eligibility', 'N/A', 'Training and Program Development Division', '2022-07-26 10:04:30', '2022-07-26 10:04:30'),
+(7, 'Training Specialist V', 'OADRB-TRNSP5-23-2021', '24', '88410', 'Master\'s Degree or Certificate in Leadership and Management from the CSC', '40 hours of supervisory/ management learning and development intervenion', '4 years of supervisory/ management experience', 'Career Service (Professional)/ Second Level Eligibility', 'N/A', 'Training and Program Development Division', '2022-07-26 10:07:03', '2022-07-26 10:07:03'),
+(8, 'Chief Administrative Officer (Anticipated Vacancy)', 'OADRB-CADOF-7-2021', '24', '88410', 'Master\'s Degree or Certificate in Leadership and Management from the CSC', '40 hours of supervisory/ management learning and development intervenion', '4 years of supervisory/ management experience', 'Career Service (Professional)/ Second Level Eligibility', 'N/A', 'Finance and Administrative Division', '2022-07-26 10:07:45', '2022-07-26 10:07:45'),
+(9, 'Administrative Assistant II', 'OADRB-ADAS2-15-2021', '8', '18998', 'Completion of two (2) years in college or High School Graduate with relevant vocational/trade course', '4 hours of relevant training', '1 year of relevant experience', 'Career Service (Sub-Professional)/ First Level Eligibility/ Relevant MC 11 s. 1996', 'N/A', 'Office of the Executive Director', '2022-07-26 10:08:28', '2022-07-26 10:08:28');
 
 -- --------------------------------------------------------
 
@@ -532,6 +574,12 @@ ALTER TABLE `inquiries`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `job`
+--
+ALTER TABLE `job`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
@@ -593,7 +641,7 @@ ALTER TABLE `accomplishmentreport`
 -- AUTO_INCREMENT for table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -641,6 +689,12 @@ ALTER TABLE `infographics`
 -- AUTO_INCREMENT for table `inquiries`
 --
 ALTER TABLE `inquiries`
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `job`
+--
+ALTER TABLE `job`
   MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
