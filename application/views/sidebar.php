@@ -84,7 +84,7 @@
         </a>
     </li>
     <hr class="sidebar-divider">
-    <div class="sidebar-heading"> Job Applications </div>
+    <div class="sidebar-heading">Careers</div>
     <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>User/adminapplications">
             <i style = "color:black;"class="fa fa-file"></i>

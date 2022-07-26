@@ -589,4 +589,18 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+
+    public function getjobtitle(){
+        $this->db->select('*');
+        $this->db->from('job');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function getjobbytitle($jobtitle){
+        $this->db->select('*');
+        $this->db->from('job');
+        $this->db->where('position_title',$jobtitle);
+        $query = $this->db->get();
+        return $query->result();
+	}
 }
