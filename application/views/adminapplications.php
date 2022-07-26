@@ -28,55 +28,51 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="retro1 retroshadow">APPLICATIONS</h1>
                         </div>
+                        <a href="http://localhost/OADR-Website/User/addjob" class="btn btn-warning btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i style = "color:black;" class="fas fa-plus"></i>
+                            </span>
+                            <span style = "color:black;" class="text">Add Job Opening</span>
+                        </a>
+                        <br><br>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"></div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead style = "text-align:center;">
-                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteAllapplications"><span class="icon text-white-50">
+                                        <button type="button" class="btn btn-warning delete_all" data-url="<?php echo base_url();?>User/deleteAlljob"><span class="icon text-white-50">
                                                     <i style = "color:black;" class="fas fa-trash"></i>
                                                 </span><span style = "color:black;" class="text">Delete Selected</span></button>
                                             <tr>
                                                 <th><input type="checkbox" id="master"></th>
                                                 <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Position</th>
-                                                <th>Date Applied</th>
+                                                <th>Position Title</th>
+                                                <th>Plantilla Number</th>
+                                                <th>Pay Grade</th>
+                                                <th>Date Added</th>
                                                 <th>Date Updated</th>
-                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php
-                                                foreach($app->result() as $lp){
+                                                foreach($job->result() as $lp){
                                                     echo "<tr>";
                                                     echo "<td align = 'center'><input type='checkbox' class='sub_chk' data-id='".$lp->ID."'></td>";
                                                     echo "<td align = 'center'>".$lp->ID."</td>";
-                                                    echo "<td align = 'center'>".$lp->Name."</td>";
-                                                    echo "<td align = 'center'>".$lp->Email."</td>";
-                                                    echo "<td align = 'center'>".$lp->Category."</td>";
-                                                    echo "<td align = 'center'>".$lp->date_applied."</td>";
+                                                    echo "<td align = 'center'>".$lp->position_title."</td>";
+                                                    echo "<td align = 'center'>".$lp->plantilla."</td>";
+                                                    echo "<td align = 'center'>".$lp->paygrade."</td>";
+                                                    echo "<td align = 'center'>".$lp->date_added."</td>";
                                                     echo "<td align = 'center'>".$lp->date_edited."</td>";
-                                                    echo "<td align = 'center'>
-                                                        <div class='btn-group btn-group-sm'>
-                                                            <a href='#' class='btn btn-warning'>".$lp->status."</a>
-                                                            <button type='button' class='btn btn-warning dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                                                                <span class='sr-only'>Toggle Dropdown</span>
-                                                            </button>
-                                                            <div class='dropdown-menu dropdown-menu-right'>
-                                                                <a class='dropdown-item' href='".base_url()."User/acceptapp/".$lp->appnum."'>Accepted</a>
-                                                                <a class='dropdown-item' href='".base_url()."User/rejectapp/".$lp->appnum."'>Rejected</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>"; ?>
-                                                    <td style = 'text-align:center; font-size:20px;'>
-                                                        <a href="<?php echo base_url();?>User/viewapplication/<?php echo $lp->appnum;?>">
-                                                            <i class='fa fa-eye' aria-hidden='true'></i>
-                                                        </a>
-                                                    </td> 
+                                                     ?>
+                                                    <td style = "text-align:center; font-size:20px;">
+                                                <form style="display: inline;" method="post" action="<?php echo base_url();?>User/editjob">
+                                                            <input type ="hidden" name = "edit_id" value = "<?php  echo $lp->ID;?>">
+                                                            <button type ="submit" class="btn btn-primary" name="edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                                    </form>
+                                                </td>
                                                     </tr>
                                                 <?php } ?>
                                         </tbody>
@@ -122,27 +118,27 @@
         <script src="<?php echo base_url('adminassets/vendor/datatables/jquery.dataTables.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
         <script src="<?php echo base_url('adminassets/js/demo/datatables-demo.js');?>"></script>
-        <?php if($this->session->userdata('accepted')){   ?>
+        <?php if($this->session->userdata('added')){   ?>
     <script>
 		Swal.fire({
-					title: 'Applicant Accepted',
-					text: "You successfully accepted an applicant.",
+					title: 'Job Added',
+					text: "You successfully added a job oppurtunity.",
 					icon: 'success',
 					iconColor: 'gold',
 					confirmButtonColor: 'gold'
 				})
 		</script>
-    <?php $this->session->unset_userdata('accepted');} else if($this->session->userdata('rejected')){?>
+    <?php $this->session->unset_userdata('added');} else if($this->session->userdata('updated')){ ?>
         <script>
 		Swal.fire({
-					title: 'Applicant Rejected',
-					text: "You successfully rejected an applicant.",
+					title: 'Job updated!',
+					text: "You successfully updated a job oppurtunity.",
 					icon: 'success',
 					iconColor: 'gold',
 					confirmButtonColor: 'gold'
 				})
 		</script>
-    <?php $this->session->unset_userdata('rejected');} ?>
+    <?php $this->session->unset_userdata('updated');}?>
     <script type="text/javascript">
     $(document).ready(function () {
  

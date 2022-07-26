@@ -104,6 +104,10 @@ class Users_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('news', $new);
     }
+    public function update_job($id,$new){
+        $this->db->where('id', $id);
+        $this->db->update('job', $new);
+    }
 
     public function delete_news($id){
         $this->db->where('ID',$id);
@@ -125,6 +129,13 @@ class Users_model extends CI_Model {
     public function get_album_edit($id){
         $this->db->select('*');
         $this->db->from('gallery');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function get_job_edit($id){
+        $this->db->select('*');
+        $this->db->from('job');
         $this->db->where('ID',$id);
         $query = $this->db->get();
         return $query->result();
@@ -203,6 +214,10 @@ class Users_model extends CI_Model {
 		$this->db->insert('admin', $add);
 		return $this->db->insert_id(); 
 	}
+    public function insertjob($add){
+		$this->db->insert('job', $add);
+		return $this->db->insert_id(); 
+	}
     public function updateuser($uname,$data){
         $this->db->where('UserName',$uname);
         $this->db->update('users',$data);
@@ -212,8 +227,8 @@ class Users_model extends CI_Model {
         $result = $this->db->get('inquiries');
         return $result;
     }
-    public function applications(){
-        $result = $this->db->get('careers');
+    public function job(){
+        $result = $this->db->get('job');
         return $result;
     }
     function deleteaninquiry($ticket){  

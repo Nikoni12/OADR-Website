@@ -150,7 +150,7 @@ class User extends CI_Controller {
 		if(!$this->session->userdata('username')){ 
 			$this->load->view('administrator-panel-login');
 		} else {
-			$data['app'] = $this->users_model->applications();
+			$data['job'] = $this->users_model->job();
 			$this->load->view('adminapplications', $data);
 		}
 		
@@ -1136,6 +1136,13 @@ class User extends CI_Controller {
         $this->db->delete('inquiries');
         redirect("./User/admininquiries/","refresh"); ; 
     }
+	public function deleteAlljob()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('job');
+        redirect("./User/admininquiries/","refresh"); ; 
+    }
 	public function deleteAllapplications()
     {
         $ids = $this->input->post('ids');
@@ -1970,6 +1977,75 @@ class User extends CI_Controller {
 				redirect("./User/gadactivities/","refresh"); 
 			}
 		}	
+	}
+	public function addjob(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addjob');
+		}
+	}
+	public function addjobop(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$postitle = $this->input->post('position_title');
+			$plantilla = $this->input->post('plantilla');
+			$paygrade = $this->input->post('paygrade');
+			$salary = $this->input->post('salary');
+			$education = $this->input->post('education');
+			$training = $this->input->post('training');
+			$experience = $this->input->post('experience');
+			$eligibility = $this->input->post('eligibility');
+			$competency = $this->input->post('competency');
+			$place = $this->input->post('place');
+			$add['position_title'] = $postitle;
+			$add['plantilla'] = $plantilla;
+			$add['paygrade'] = $paygrade;
+			$add['salary'] = $salary;
+			$add['education'] = $education;
+			$add['training'] = $training;
+			$add['experience'] = $experience;
+			$add['eligibility'] = $eligibility;
+			$add['competency'] = $competency;
+			$add['place'] = $place;
+			$this->users_model->insertjob($add);
+			$this->session->set_userdata('added','added');
+			redirect("./User/adminapplications/","refresh"); 
+		}
+    }
+	public function editjob(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["job"] = $this->users_model->get_job_edit($id);
+			$this->load->view('editjob',$data);
+		}
+	}
+	public function updatejob(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		}
+		else {
+			$id = $_POST['edit_id'];
+			$eve = array(
+				'position_title' => $this->input->post('position_title'),
+				'plantilla' => $this->input->post('plantilla'),
+				'paygrade' => $this->input->post('paygrade'),
+				'salary' => $this->input->post('salary'),
+				'education' => $this->input->post('education'),
+				'training' => $this->input->post('training'),
+				'experience' => $this->input->post('experience'),
+				'eligibility' => $this->input->post('eligibility'),
+				'competency' => $this->input->post('competency'),
+				'place' => $this->input->post('place')
+			);
+			$this->users_model->update_job($id,$eve);
+			$this->session->set_userdata('updated','updated');
+			redirect("./User/adminapplications/","refresh"); 
+		}
 	}
 }
 
