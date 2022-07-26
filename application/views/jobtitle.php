@@ -47,16 +47,16 @@
                             <div class="col-md-8" style = "border-left:1px solid #031261; padding-left:20px;padding-right:20px; line-height:2;">
 							<div class="newscarhead"><h1><?php echo $row->position_title?></h1><br></div> 
 							<h4>OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION | NCR</h4><br>
-							<div id=""><b>Position Title :</b> <?php echo $row->position_title?></div><br>
-							<div id=""><b>Plantilla Item No. :</b> <?php echo $row->plantilla?></div><br>
-							<div id=""><b>Salary/Job/Pay Grade :</b> <?php echo $row->paygrade?></div><br>
-							<div id=""><b>Monthly Salary :</b> <?php echo $row->salary?></div><br>
-                            <div id=""><b>Education :</b> <?php echo $row->education?></div><br>
-                            <div id=""><b>Training :</b> <?php echo $row->training?></div><br>
-                            <div id=""><b>Work Experience :</b> <?php echo $row->experience?></div><br>
-							<div id=""><b>Eligibility :</b> <?php echo $row->eligibility?></div><br>
-							<div id=""><b>Competency :</b> <?php echo $row->competency?></div><br>
-                            <div id=""><b>Place of Assignment:</b><?php echo $row->place?></div><br>
+							<div id=""><b>Position Title :</b> <?php echo $row->position_title?></div>
+							<div id=""><b>Plantilla Item No. :</b> <?php echo $row->plantilla?></div>
+							<div id=""><b>Salary/Job/Pay Grade :</b> <?php echo $row->paygrade?></div>
+							<div id=""><b>Monthly Salary :</b> <?php echo $row->salary?></div>
+                            <div id=""><b>Education :</b> <?php echo $row->education?></div>
+                            <div id=""><b>Training :</b> <?php echo $row->training?></div>
+                            <div id=""><b>Work Experience :</b> <?php echo $row->experience?></div>
+							<div id=""><b>Eligibility :</b> <?php echo $row->eligibility?></div>
+							<div id=""><b>Competency :</b> <?php echo $row->competency?></div>
+                            <div id=""><b>Place of Assignment:</b><?php echo $row->place?></div>
                             </div>
                         </div>
                     </div>
@@ -69,8 +69,8 @@
                     </div>
                         <div class="col-md-12" style = "padding-right:0; ">
                         <b><p style="color:black";>The OADR highly encourages all interested and qualified applicants, including persons with disability (PWD) and members of the indigenous communities, irrespective of sexual orientation and gender identity to apply for the above vacant positions. Interested and qualified applicants should signify their interest in writing, 
-                        and through OADR Online Recruitment Form at <a href="https://bit.ly/OADRJuly62022">https://bit.ly/OADRJuly62022</a> and upload the following documents not later than August 5, 2022</p></b><br>
-                        <i><p>1. Fully accomplished under oath Personal Data Sheet (CS Form 212 Revised 2017) with recent passport-sized picture (3.5cm x 4.5cm) and Work Experience Sheet which can be downloaded at <a href="www.csc.gov.ph">www.csc.gov.ph;</a></p>
+                        and through OADR Online Recruitment Form at <a href="https://bit.ly/OADRJuly62022" target="_blank">https://bit.ly/OADRJuly62022</a> and upload the following documents not later than August 5, 2022</p></b><br>
+                        <i><p>1. Fully accomplished under oath Personal Data Sheet (CS Form 212 Revised 2017) with recent passport-sized picture (3.5cm x 4.5cm) and Work Experience Sheet which can be downloaded at <a href="http://www.csc.gov.ph/"target="_blank">www.csc.gov.ph</a></p>
                         <p>2. Performance rating in the last rating period (if applicable);</p>
                         <p>3. Photocopy of certificate of eligibility/rating/license; and</p>
                         <p>4. Photocopy of Transcript of Records and Diploma</p></i>
@@ -90,13 +90,14 @@
                         <p>Visayas Avenue, Brgy. Vasra, </p></i>
                         <p>Diliman, Quezon City</p></i>
                         <p>psb.secretariat.oadr@gmail.com</p></i>
+                        <b><p style="color:black";>APPLICATIONS WITH INCOMPLETE DOCUMENTS SHALL NOT BE ENTERTAINED.</p></b><br>
                         </div>
-                        <div class="col-md-5">
-                    <br><br><br>
+                        <div class="col-md-5" style="margin-left:70px;">
                     <img style = "max-width:150px;"class="img-fluid" src="<?php echo base_url('assets/img/dojlogo.png');?>">
                     <img style = "max-width:250px;"class="img-fluid" src="<?php echo base_url('assets/img/OADRNOBG.png');?>">
                     </div>
                     </div>
+                <hr class="divider" />
                 </div>
             </section>
             <br>
