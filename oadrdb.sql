@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 26, 2022 at 12:17 PM
+-- Generation Time: Jul 26, 2022 at 12:28 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -40,7 +40,8 @@ CREATE TABLE `accomplishmentreport` (
 --
 
 INSERT INTO `accomplishmentreport` (`ID`, `report_title`, `report_file`, `date_added`, `date_edited`) VALUES
-(1, '2021 Gender and Development Accomplishment Report', '71887873978b33e03a3ad08e97124557.pdf', '2022-07-18 03:56:53', '2022-07-18 03:56:53');
+(1, '2021 Gender and Development Accomplishment Report', '71887873978b33e03a3ad08e97124557.pdf', '2022-07-18 03:56:53', '2022-07-18 03:56:53'),
+(2, '2021 Gender and Development Accomplishment Report', '679263e59229b6f1e1ae516ccf249048.pdf', '2022-07-26 10:22:43', '2022-07-26 10:22:43');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,7 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`ID`, `act_title`, `act_file`, `act_overview`, `date_added`, `date_edited`) VALUES
-(1, '2022 18-Day Campaign to End Violence Against Women and their Children', 'cfba20b13a2c369b073c49d97cc38a11.png', '2022 18-Day Campaign to End Violence Against Women and their Children', '2022-07-25 06:29:32', '2022-07-25 06:29:32');
+(1, '2022 18-Day Campaign to End Violence Against Women and their Children', '0127b1979ebebd2d952b8bb5ee8fd91d.png', '2022 18-Day Campaign to End Violence Against Women and their Children', '2022-07-25 06:29:32', '2022-07-26 10:23:03');
 
 -- --------------------------------------------------------
 
@@ -330,7 +331,8 @@ CREATE TABLE `pcw` (
 --
 
 INSERT INTO `pcw` (`ID`, `pcw_title`, `pcw_file`, `date_added`, `date_edited`) VALUES
-(1, 'PCW File 1', '439f2b853ff3b7a484436f418858a04e.pdf', '2022-07-18 06:08:20', '2022-07-18 06:14:29');
+(1, 'PCW File 1', '439f2b853ff3b7a484436f418858a04e.pdf', '2022-07-18 06:08:20', '2022-07-18 06:14:29'),
+(2, 'PCW FILE 2', 'f310c94db1002454c76ee27c11cda4d0.pdf', '2022-07-26 10:28:23', '2022-07-26 10:28:23');
 
 -- --------------------------------------------------------
 
@@ -351,7 +353,8 @@ CREATE TABLE `planbudget` (
 --
 
 INSERT INTO `planbudget` (`ID`, `plan_title`, `plan_file`, `date_added`, `date_edited`) VALUES
-(1, 'Annual Gender and Development Plan and Budget FY 2022', 'b5479cc52c2858f20fff2eb4eb5edfc7.pdf', '2022-07-18 03:29:06', '2022-07-18 03:29:06');
+(1, 'Annual Gender and Development Plan and Budget FY 2022', 'b5479cc52c2858f20fff2eb4eb5edfc7.pdf', '2022-07-18 03:29:06', '2022-07-18 03:29:06'),
+(2, '2021 Gender and Development Accomplishment Report', '77f50dba2e4fa959aa07f879c28f8fef.pdf', '2022-07-26 10:22:13', '2022-07-26 10:22:13');
 
 -- --------------------------------------------------------
 
@@ -372,7 +375,9 @@ CREATE TABLE `publications` (
 --
 
 INSERT INTO `publications` (`ID`, `pub_title`, `pub_file`, `date_added`, `date_edited`) VALUES
-(1, 'Publication 1', '7999208ffbad9c23048e07b15bef783a.pdf', '2022-07-18 05:02:11', '2022-07-18 05:09:04');
+(1, 'Publication 1', '7999208ffbad9c23048e07b15bef783a.pdf', '2022-07-18 05:02:11', '2022-07-18 05:09:04'),
+(2, 'Publication 2', '4a98dc11cbf743e040dc23cd1fc79918.pdf', '2022-07-26 10:27:18', '2022-07-26 10:27:18'),
+(3, 'Publication 3', '9e838602a336ce8abff02eb86c9b9ad2.pdf', '2022-07-26 10:27:36', '2022-07-26 10:27:36');
 
 -- --------------------------------------------------------
 
@@ -635,7 +640,7 @@ ALTER TABLE `training`
 -- AUTO_INCREMENT for table `accomplishmentreport`
 --
 ALTER TABLE `accomplishmentreport`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `activities`
@@ -707,19 +712,19 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `pcw`
 --
 ALTER TABLE `pcw`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `planbudget`
 --
 ALTER TABLE `planbudget`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `publications`
 --
 ALTER TABLE `publications`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `resources`
