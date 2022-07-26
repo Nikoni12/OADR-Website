@@ -40,53 +40,19 @@
 					<div class="row">
                     <div class="newscarhead"><h1>Careers</h1><br></div>
 						<hr/>
-						<a href="http://localhost/OADR-Website/User/chiefofficer" >
+						<?php foreach($job as $row) {?>
+						<a href="<?php echo base_url('user/jobtitle/?jobtitle=' . $row->position_title) ?>"   style="color:#1499db" >
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12" style="border-left:2px solid #031261;">
-									<p class="mb-2" style="color:#031261;"><strong><u>Chief Administrative Officer</u></strong></p></a>
+									<p class="mb-2" style="color:#031261;"><strong><u><?php echo $row->position_title?></u></strong></p></a>
 									<p class="mb-2"><i class='fas fa-briefcase' style='font-size:24px;color:#031261;'></i> Office For Alternative Dispute Resolution&nbsp&nbsp&nbsp&nbsp<i class='fas fa-map-marker-alt' style='font-size:24px; color:#031261;'></i> Manila, Metro Manila, Philippines</p>
-									<p><b>Place of Assignment:</b> Compliance and Monitoring Division, Policy, Compliance</p>
-									<p><b>Plantilla Item No. :</b> CADOF-5-2021</p>  
-									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
+									<p><b>Place of Assignment:</b> <?php echo $row->place?></p>
+									<p><b>Plantilla Item No. :</b> <?php echo $row->plantilla?></p>  
+									<a href="<?php echo base_url('user/jobtitle/?jobtitle=' . $row->position_title) ?>"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
 							</div>
                             <hr>
-						
-                        <a href="http://localhost/OADR-Website/User/trainingspecialist"  >
-							<div class="row mb-12 border-bottom pb-2">
-								<div class="col-md-12" style="border-left:2px solid #031261;">
-									<p class="mb-2" style="color:#031261;"><strong><u>Training Specialist 1</u></strong></p></a>
-									<p class="mb-2"><i class='fas fa-briefcase' style='font-size:24px;color:#031261;'></i> Office For Alternative Dispute Resolution&nbsp&nbsp&nbsp&nbsp<i class='fas fa-map-marker-alt' style='font-size:24px; color:#031261;'></i> Manila, Metro Manila, Philippines</p> 
-									<p><b>Place of Assignment:</b> Training and Program Development</p>
-									<p><b>Plantilla Item No. :</b> TRNSP1-7-2021 TRNSP1-8-2021</p>  
-									<a href="http://localhost/OADR-Website/User/chiefofficer"  style="color:#1499db"><p>More Details...</p></a>
-								</div>
-							</div>
-                            <hr>
-						
-                        <a href="http://localhost/OADR-Website/User/administrativeassistant" >
-							<div class="row mb-12 border-bottom pb-2">
-								<div class="col-md-12" style="border-left:2px solid #031261;">
-									<p class="mb-2" style="color:#031261;"><strong><u>Administrative Assistant (Secretary 1)</u></strong></p></a>
-									<p class="mb-2"><i class='fas fa-briefcase' style='font-size:24px;color:#031261;'></i> Office For Alternative Dispute Resolution&nbsp&nbsp&nbsp&nbsp<i class='fas fa-map-marker-alt' style='font-size:24px; color:#031261;'></i> Manila, Metro Manila, Philippines</p>
-									<p><b>Place of Assignment:</b> Office of the Director, Training, Accreditation and Promotion Service</p>
-									<p><b>Plantilla Item No. :</b> ADAS1-13-2021</p>    
-									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
-								</div>
-							</div>
-                            <hr>
-						
-                        <a href="http://localhost/OADR-Website/User/technicalconsultant" >
-							<div class="row mb-12 border-bottom pb-2">
-								<div class="col-md-12" style="border-left:2px solid #031261;">
-									<p class="mb-2" style="color:#031261;"><strong><u>Technical Consultant</strong></u></p></a>
-									<p class="mb-2"><i class='fas fa-briefcase' style='font-size:24px;color:#031261;'></i> Office For Alternative Dispute Resolution&nbsp&nbsp&nbsp&nbsp<i class='fas fa-map-marker-alt' style='font-size:24px; color:#031261;'></i> Manila, Metro Manila, Philippines</p>
-									<p><b>Place of Assignment:</b> Training and Program Development</p>
-									<p><b>Plantilla Item No. :</b> TRNSP1-7-2021 TRNSP1-8-2021</p>    	
-									<a href="http://localhost/OADR-Website/User/chiefofficer"   style="color:#1499db"><p>More Details...</p></a>
-								</div>
-							</div>
-                            <hr>
+						<?php }?>
 			
 					</div>
 				</div>

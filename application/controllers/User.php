@@ -57,6 +57,12 @@ class User extends CI_Controller {
 		$data['news'] = $this->users_model->getnews();
 		$this->load->view('newstitle',$data);
 	}
+	public function jobtitle(){
+		$jobtitle = $_GET['jobtitle'];
+		$data['titleofjob'] = $this->users_model->getjobbytitle($jobtitle);
+		$data['job'] = $this->users_model->getjobtitle();
+		$this->load->view('jobtitle',$data);
+	}
 	public function contact(){
 		$this->load->view('contactus');
 	}
@@ -71,7 +77,8 @@ class User extends CI_Controller {
 		}
 	}
 	public function careers(){
-		$this->load->view('careers');
+		$data['job'] = $this->users_model->getjobtitle();
+		$this->load->view('careers',$data);
 	}
 	public function chiefofficer(){
 		$this->load->view('chiefofficer');

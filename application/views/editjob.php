@@ -24,7 +24,7 @@
                     <div class="container-fluid">
                    
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">Edit Resources Category</h1>
+                            <h1 class="retro1 retroshadow">Edit Job</h1>
                         </div>
                         <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-10 col-md-6">

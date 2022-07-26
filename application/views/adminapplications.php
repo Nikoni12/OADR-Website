@@ -26,7 +26,7 @@
                     <?php $this->view('navbar'); ?>
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="retro1 retroshadow">APPLICATIONS</h1>
+                            <h1 class="retro1 retroshadow">Job Titles</h1>
                         </div>
                         <a href="http://localhost/OADR-Website/User/addjob" class="btn btn-warning btn-icon-split">
                             <span class="icon text-white-50">
