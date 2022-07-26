@@ -169,9 +169,9 @@
                             <div class="card" style="width: 18rem;" >
                                 <img class="img-fluid" src='<?php echo base_url()?>uploads/<?php echo $row->act_file?>'>
                                 <div class="card-body" style = "border: 2px solid #E0AA3E;">
-                                    <h5 class="card-title"><?php echo $row->act_title?></h5>
+                                    <h5 class="card-title" style="color:#031261"><b><?php echo $row->act_title?></h5></b>
                                     <p class="card-text" style = "text-align:justify;"><?php echo $row->act_overview?></p>
-                                    <a href = "https://pcw.gov.ph/18-day-campaign-to-end-vaw/" target = "_blank"><button type="button" class="btn btn-outline-warning">Read More >></button></a>
+                                    <!--<a href = "https://pcw.gov.ph/18-day-campaign-to-end-vaw/" target = "_blank"><button type="button" class="btn btn-outline-warning">Read More >></button></a>-->
                                 </div>
                             </div>
                         </div>
