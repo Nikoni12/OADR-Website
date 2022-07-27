@@ -618,17 +618,48 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
 	}
-    public function getcertification(){
-        $this->db->select('*');
-        $this->db->from('certifications');
-        $query = $this->db->get();
-        return $query->result();
-	}
-    public function getemployees(){
+
+    public function getemp(){
         $this->db->select('*');
         $this->db->from('employees');
         $query = $this->db->get();
         return $query->result();
 	}
 
+    public function insertemp($new){
+		$this->db->insert('employees', $new);
+        return $this->db->insert_id(); 
+	}
+    public function get_emp_edit($id){
+        $this->db->select('*');
+        $this->db->from('employees');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function update_employee($id,$ann){
+        $this->db->where('id', $id);
+        $this->db->update('employees', $ann);
+    }
+    public function getcert(){
+        $this->db->select('*');
+        $this->db->from('certifications');
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function insertncert($new){
+		$this->db->insert('certifications', $new);
+        return $this->db->insert_id(); 
+	}
+    public function get_cert_edit($id){
+        $this->db->select('*');
+        $this->db->from('certifications');
+        $this->db->where('ID',$id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function update_cert($id,$ann){
+        $this->db->where('id', $id);
+        $this->db->update('certifications', $ann);
+    }
 }

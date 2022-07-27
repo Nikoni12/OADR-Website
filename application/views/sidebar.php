@@ -91,6 +91,23 @@
             <span>Job Positions</span>
         </a>
     </li>
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading"> Website Updates </div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
+            <i style = "color:black;" class="fa fa-desktop"></i>
+            <span>Website Updates</span>
+        </a>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+            <div class="bg-white py-2 collapse-inner rounded"  style = "border-left:.25rem solid black!important;">
+                <h6 class="collapse-header">Select:</h6>
+                <a class="collapse-item" href="<?php echo base_url();?>User/employeesadmin"><i style = "color:black;"class="fa fa-user"></i> Employees </a>
+                <a class="collapse-item" href="<?php echo base_url();?>User/admincert"> <i style = "color:black;"class="fa fa-certificate"></i> Certifications</a>
+            </div>
+        </div>
+    </li>
+    
+    <hr class="sidebar-divider">
     <?php if($this->session->userdata('role') == "Administrator" ){   ?>
     <div class="sidebar-heading"> Account </div>
     <li class="nav-item">
