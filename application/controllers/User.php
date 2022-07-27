@@ -610,107 +610,7 @@ class User extends CI_Controller {
             $this->adminlogin();
         }
     }
-	public function applicationform(){
-        $this->load->model('Users_model');
-        $name = $this->input->post('name');
-        $emaill = $this->input->post('email');
-		$pnum = $this->input->post('pnum');
-		$category = $this->input->post('category');
-		$mess = $this->input->post('message');
-        $this->load->helper(array('form','url'));
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('pnum', 'Phone Number', 'required|numeric');
-		$this->form_validation->set_rules('category', 'Category', 'required');
-		$this->form_validation->set_rules('message', 'Message', 'required');
-		$app['Name'] = $name;
-		$app['Email'] = $emaill;
-		$app['PhoneNum'] = $pnum;
-		$app['Category'] = $category;
-		$app['status'] = 'Not Addressed';
-		$app['Message'] = $mess;
-		$appnum = sprintf("%'.09d\n", mt_rand(1,999999999999));
-		if($this->Users_model->checkappnum($appnum) == true){
-			$appnum = sprintf("%'.09d\n", mt_rand(1,999999999999));
-		}
-		$app['appnum'] = $appnum;
-		if($this->form_validation->run()){
-			$this->users_model->insertcareer($app);
-			$config1 = array('upload_path' => './uploads/', 
-                        'allowed_types' => 'pdf',
-                        'max_size' => 9999 ); 
-			$config1['encrypt_name'] = true;
-			$this->load->library('upload'); 
-			$this->upload->initialize($config1);
-			if (!$this->upload->do_upload('resume')) {
-				$this->session->set_userdata('invalid','invalid');
-				redirect("./User/careerform/","refresh");
-			} else {
-				$this->load->model('users_model');
-				$name = $this->input->post('name');
-				$file = $this->upload->data();
-				$filename = $file['file_name'];
-				$filepass = array('resume_name' => $filename);
-				$this->users_model->insertcareer2($name, $filepass);
-				$message = file_get_contents('careersemail.html'); 
-				$message = str_replace('%name%', $name, $message); 
-				$message = str_replace('%email%', $emaill, $message); 
-				$message = str_replace('%phone%', $pnum, $message); 
-				$message = str_replace('%cat%', $category, $message); 
-				$message = str_replace('%mess%', $mess, $message); 
-				$message = str_replace('%appnum%', $appnum, $message);  
-				require_once('vendor/autoload.php');
-				require_once('class-db.php');
-				$mail = new PHPMailer();
-				$mail->isSMTP();
-				$mail->Host = 'smtp.gmail.com';
-				$mail->Port = 465;
-				$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-				$mail->SMTPAuth = true;
-				$mail->AuthType = 'XOAUTH2';
-				$email = 'group5website2022@gmail.com'; // the email used to register google app
-				$clientId = '224844710230-6obm4jlj01a98n2eqk8a6eo5o7av96l7.apps.googleusercontent.com';
-				$clientSecret = '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';
-				
-				$db = new DB();
-				$refreshToken = $db->get_refersh_token();
-				$provider = new Google(
-					[
-					'clientId' => $clientId,
-					'clientSecret' => $clientSecret,
-					]
-					);
-					//Pass the OAuth provider instance to PHPMailer
-					$mail->setOAuth(
-					new OAuth(
-					[
-					'provider' => $provider,
-					'clientId' => $clientId,
-					'clientSecret' => $clientSecret,
-					'refreshToken' => $refreshToken,
-					'userName' => $email,
-					]
-					)
-					);
-				
-				$mail->setFrom($email, 'Test');
-				$mail->addAddress($emaill, 'TestTest');
-				$mail->isHTML(true);
-				$mail->Subject = 'OADR Application Form';
-				$mail->Body = $message;
-				if (!$mail->send()) {
-					echo 'Mailer Error: ' . $mail->ErrorInfo;
-				} else {
-					$this->session->set_userdata('sent','sent');
-					redirect("./User/careerform/","refresh"); 
-				}
-				
-			}
-		} else {
-			$this->careerform();
-		}
-    }
+	
 	public function inquiryform(){
         $this->load->model('Users_model');
         $fullname = $this->input->post('fullname');
@@ -887,136 +787,6 @@ class User extends CI_Controller {
 			redirect("./User/admininquiries/","refresh"); 
 		}
 	}
-	public function viewapplication(){
-		if(!$this->session->userdata('username')){ 
-			$this->load->view('administrator-panel-login');
-		} else {
-			$this->load->model('Users_model');
-			$appnum = $this->uri->segment(3);
-			$data['applications'] = $this->users_model->fetchapplication(intval($appnum));
-			$this->load->view('viewapplication',$data);
-		}
-	}
-	public function acceptapp(){
-		if(!$this->session->userdata('username')){ 
-			$this->load->view('administrator-panel-login');
-		} else {
-			$this->load->model('Users_model');
-			$appnum = $this->uri->segment(3);
-			$data = array(
-				'status'=>'Accepted',
-			);
-			$data = array_filter($data);
-			$this->Users_model->updateapplication(intval($appnum),$data);
-			$result=$this->Users_model->fetchemail(intval($appnum))->row();
-			$emaill=$result->Email;
-			$message = file_get_contents('accepted.html');
-			require_once('vendor/autoload.php');
-			require_once('class-db.php');
-			$mail = new PHPMailer();
-			$mail->isSMTP();
-			$mail->Host = 'smtp.gmail.com';
-			$mail->Port = 465;
-			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-			$mail->SMTPAuth = true;
-			$mail->AuthType = 'XOAUTH2';
-			$email = 'group5test2022@gmail.com'; // the email used to register google app
-			$clientId = '805520363839-hdfrnorn6o2hh22hikpdn54v65bnrtfk.apps.googleusercontent.com';
-			$clientSecret = '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';
-			$db = new DB();
-			$refreshToken = $db->get_refersh_token();
-			$provider = new Google(
-				[
-				'clientId' => $clientId,
-				'clientSecret' => $clientSecret,
-				]
-				);
-				//Pass the OAuth provider instance to PHPMailer
-				$mail->setOAuth(
-				new OAuth(
-				[
-				'provider' => $provider,
-				'clientId' => $clientId,
-				'clientSecret' => $clientSecret,
-				'refreshToken' => $refreshToken,
-				'userName' => $email,
-				]
-				)
-				);
-			
-			$mail->setFrom($email, 'Test');
-			$mail->addAddress($emaill, 'TestTest');
-			$mail->isHTML(true);
-			$mail->Subject = 'OADR Application Status';
-			$mail->Body = $message;
-			if (!$mail->send()) {
-				echo 'Mailer Error: ' . $mail->ErrorInfo;
-			} else {
-				$this->session->set_userdata('accepted','accepted');
-				redirect("./User/adminapplications/","refresh"); 
-			}
-		}	
-	}
-	public function rejectapp(){
-		if(!$this->session->userdata('username')){ 
-			$this->load->view('administrator-panel-login');
-		} else {
-			$this->load->model('Users_model');
-			$appnum = $this->uri->segment(3);
-			$data = array(
-				'status'=>'Rejected',
-			);
-			$data = array_filter($data);
-			$this->Users_model->updateapplication(intval($appnum),$data);
-			$result=$this->Users_model->fetchemail(intval($appnum))->row();
-			$emaill=$result->Email;
-			$message = file_get_contents('rejected.html');
-			require_once('vendor/autoload.php');
-			require_once('class-db.php');
-			$mail = new PHPMailer();
-			$mail->isSMTP();
-			$mail->Host = 'smtp.gmail.com';
-			$mail->Port = 465;
-			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-			$mail->SMTPAuth = true;
-			$mail->AuthType = 'XOAUTH2';
-			$email = 'group5test2022@gmail.com'; // the email used to register google app
-			$clientId = '805520363839-hdfrnorn6o2hh22hikpdn54v65bnrtfk.apps.googleusercontent.com';
-			$clientSecret = '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';
-			$db = new DB();
-			$refreshToken = $db->get_refersh_token();
-			$provider = new Google(
-				[
-				'clientId' => $clientId,
-				'clientSecret' => $clientSecret,
-				]
-				);
-				//Pass the OAuth provider instance to PHPMailer
-				$mail->setOAuth(
-				new OAuth(
-				[
-				'provider' => $provider,
-				'clientId' => $clientId,
-				'clientSecret' => $clientSecret,
-				'refreshToken' => $refreshToken,
-				'userName' => $email,
-				]
-				)
-				);
-			
-			$mail->setFrom($email, 'Test');
-			$mail->addAddress($emaill, 'TestTest');
-			$mail->isHTML(true);
-			$mail->Subject = 'OADR Application Status';
-			$mail->Body = $message;
-			if (!$mail->send()) {
-				echo 'Mailer Error: ' . $mail->ErrorInfo;
-			} else {
-				$this->session->set_userdata('rejected','rejected');
-				redirect("./User/adminapplications/","refresh"); 
-			}
-		} 
-	}
 	public function addcat(){
 		if(!$this->session->userdata('username')){ 
 			$this->load->view('administrator-panel-login');
@@ -1135,6 +905,20 @@ class User extends CI_Controller {
         $this->db->where_in('ID', explode(",", $ids));
         $this->db->delete('inquiries');
         redirect("./User/admininquiries/","refresh"); ; 
+    }
+	public function deleteAllemp()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('employees');
+        redirect("./User/employeesadmin/","refresh"); ; 
+    }
+	public function deleteAllcert()
+    {
+        $ids = $this->input->post('ids');
+        $this->db->where_in('ID', explode(",", $ids));
+        $this->db->delete('certifications');
+        redirect("./User/employeesadmin/","refresh"); ; 
     }
 	public function deleteAlljob()
     {
@@ -2045,6 +1829,183 @@ class User extends CI_Controller {
 			$this->users_model->update_job($id,$eve);
 			$this->session->set_userdata('updated','updated');
 			redirect("./User/adminapplications/","refresh"); 
+		}
+	}
+	public function employeesadmin(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['emp'] = $this->users_model->getemp();
+			$this->load->view('adminemployees',$data);
+		}
+	}
+	public function addemployee(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addemployee');
+		}
+	}
+	public function submitemp(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('image')) {
+				$image = $this->upload->data('file_name');
+				$new = array(
+					'name' => $this->input->post('name'),
+					'place' => $this->input->post('place'),
+					'email' => $this->input->post('email'),
+					'position' => $this->input->post('position'),
+					'image' => $image
+				);
+				$this->users_model->insertemp($new);
+				$this->session->set_userdata('added','added');
+				redirect("./User/employeesadmin/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/employeesadmin/","refresh");
+			}
+			
+		}
+	}
+	public function editemployee(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["emp"] = $this->users_model->get_emp_edit($id);
+			$this->load->view('editemployee',$data);
+		}
+	}
+	public function updateemployee(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if (!empty($_FILES['image']['name'])){
+				if ($this->upload->do_upload('image')) {
+					$image = $this->upload->data('file_name');
+					$ann = array(
+						'name' => $this->input->post('name'),
+						'place' => $this->input->post('place'),
+						'email' => $this->input->post('email'),
+						'position' => $this->input->post('position'),
+						'image' => $image
+					);
+					$this->users_model->update_employee($id,$ann);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/employeesadmin/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["emp"] = $this->users_model->get_emp_edit($id);
+					$this->load->view('editemployee',$data);
+				}
+			} else {
+				$ann = array(
+					'name' => $this->input->post('name'),
+					'place' => $this->input->post('place'),
+					'email' => $this->input->post('email'),
+					'position' => $this->input->post('position'),
+				);
+				$this->users_model->update_employee($id,$ann);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/employeesadmin/","refresh"); 
+			}
+		}
+	}
+	public function admincert(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$data['cert'] = $this->users_model->getcert();
+			$this->load->view('admincert',$data);
+		}
+	}
+	public function addcert(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->view('addcert');
+		}
+	}
+	public function submitcert(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('image')) {
+				$image = $this->upload->data('file_name');
+				$new = array(
+					'name' => $this->input->post('name'),
+					'image' => $image
+				);
+				$this->users_model->insertncert($new);
+				$this->session->set_userdata('added','added');
+				redirect("./User/admincert/","refresh"); 
+			} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/admincert/","refresh");
+			}
+			
+		}
+	}
+	public function editcert(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$data["cert"] = $this->users_model->get_cert_edit($id);
+			$this->load->view('editcert',$data);
+		}
+	}
+	public function updatecert(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$id = $_POST['edit_id'];
+			$config['allowed_types'] = 'jpg|png';
+			$config['upload_path'] = './uploads/';
+			$config['encrypt_name'] = true;
+			$this->load->library('upload', $config);
+			if (!empty($_FILES['image']['name'])){
+				if ($this->upload->do_upload('image')) {
+					$image = $this->upload->data('file_name');
+					$ann = array(
+						'name' => $this->input->post('name'),
+						'image' => $image
+					);
+					$this->users_model->update_cert($id,$ann);
+					$this->session->set_userdata('updated','updated');
+					redirect("./User/admincert/","refresh"); 
+				}
+				else{
+					$this->session->set_userdata('invalid','invalid');
+					$id = $_POST['edit_id'];
+					$data["cert"] = $this->users_model->get_cert_edit($id);
+					$this->load->view('editcert',$data);
+				}
+			} else {
+				$ann = array(
+					'name' => $this->input->post('name'),
+				);
+				$this->users_model->update_cert($id,$ann);
+				$this->session->set_userdata('updated','updated');
+				redirect("./User/admincert/","refresh"); 
+			}
 		}
 	}
 }
