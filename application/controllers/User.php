@@ -19,7 +19,7 @@ class User extends CI_Controller {
 		$this->load->helper('url');
 		$data['event'] = $this->users_model->getevent();
 		$data['news'] = $this->users_model->getnews(); 
-		$data['cert'] = $this->users_model->getcertification();
+		$data['cert'] = $this->users_model->getcert();
 		$this->load->view('home',$data);
 	}
 	public function about(){
@@ -29,8 +29,8 @@ class User extends CI_Controller {
 		$this->load->view('mvision');
 	}
 	public function employees(){
-		$data['emp'] = $this->users_model->getemployees();
-		$data['cert'] = $this->users_model->getcertification();
+		$data['emp'] = $this->users_model->getemp();
+		$data['cert'] = $this->users_model->getcert();
 		$this->load->view('employees',$data);
 	}
 	public function director(){
