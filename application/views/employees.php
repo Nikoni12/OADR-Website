@@ -58,12 +58,12 @@
 								<div class="carousel-inner">
 								<?php foreach(array_slice($emp, 0, 1) as $row ){ ?>
 									<div class="carousel-item active">
-										<div class="col-xl-10 col-sm-8 mb-7 mx-auto">
+										<div class="col-xl-11 col-sm-8 mb-7 mx-auto">
 											<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
 											<h5 class="mb-0"><?php echo $row->place?></h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url("uploads/$row->image");?>">
+												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="30%" src="<?php echo base_url("uploads/$row->image");?>">
 												<h5 class="mb-0"><?php echo $row->name?></h5><span class="small text-uppercase text-muted"><?php echo $row->position?></span>
-												<h5><span class="small text-uppercase "><?php echo $row->email?></span></h5>
+												<h5><span class="small "><?php echo $row->email?></span></h5>
 												<!--
 												<ul class="social mb-0 list-inline mt-3">
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -78,12 +78,12 @@
 
 									<?php foreach(array_slice($emp,1) as $row) { ?>
 									<div class="carousel-item">
-									<div class="col-xl-10  col-sm-8 mb-7 mx-auto">
+									<div class="col-xl-11  col-sm-8 mb-7 mx-auto">
 											<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
 											<h5 class="mb-0"><?php echo $row->place?></h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url("uploads/$row->image");?>">
+												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="30%" src="<?php echo base_url("uploads/$row->image");?>">
 												<h5 class="mb-0"><?php echo $row->name?></h5><span class="small text-uppercase text-muted"><?php echo $row->position?></span>
-												<h5><span class="small text-uppercase "><?php echo $row->email?></span></h5>
+												<h5><span class="small "><?php echo $row->email?></span></h5>
 												<!--
 												<ul class="social mb-0 list-inline mt-3">
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -98,11 +98,11 @@
 									
 								</div>
 								<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-									<span class="carousel-control-prev-icon"></span>
+									<span class="carousel-control-prev-icon"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></span>
 									<span class="visually-hidden">Previous</span>
 								</button>
 								<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-									<span class="carousel-control-next-icon"></span>
+									<span class="carousel-control-next-icon"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></span>
 									<span class="visually-hidden">Next</span>
 								</button>
 							</div>
