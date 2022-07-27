@@ -618,12 +618,14 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
 	}
+
     public function getemp(){
         $this->db->select('*');
         $this->db->from('employees');
         $query = $this->db->get();
         return $query->result();
 	}
+
     public function insertemp($new){
 		$this->db->insert('employees', $new);
         return $this->db->insert_id(); 

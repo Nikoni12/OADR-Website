@@ -159,43 +159,6 @@
 				</div>
 			</section>
 
-
-
-			
-			<!-- <div class="adrcontain">
-	  			<div class="sect_post">
-					<div class="sect_img">
-						<iframe class="col-md-12" width="600" height="480" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="sect_info">
-						<h2 class ="sect_title">What is Alternative Dispute Resolution (ADR)?</h2>
-						<div class="border"></div>
-							<p class="sect_text">
-								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-							</p>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			<!--ADR-
-			<section class="features" style="background-color:lightskyblue;">
-                <div class="adrcontain">
-                    <div class="row text-center">
-                        <div class="col-md-5">
-                            <br>
-                            <h5 class="text-center">WHAT IS ADR?</h5>
-                            <h2 class="text-center">OFFICE FOR ALTERNATIVE DISPUTE RESOLUTION</h2><br>
-                            <p style = "text-align:justify;">The Office for Alternative Dispute Resolution (OADR) is an attached agency of the Department of Justice created pursuant to Republic Act (R.A.) No. 9285 or the Alternative Dispute Resolution (ADR) Act of 2004.</p><br>
-                            <p style = "text-align:justify;">It is mandated to promote, develop and expand the use of ADR in the private and public sectors; assist the government in monitoring, studying and evaluating the use of ADR by the public and private sectors; and recommend to Congress needful statutory changes to develop, strengthen and improve ADR practices in accordance with world standards.</p>
-                        </div>
-						<div class="col-md-6">
-                            <iframe class="responsive-iframe" width="800" height="480" src="https://www.youtube.com/embed/tGFijuVyzyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
-
-
 			<section class="features" id="upcomingevent">
                 <div class="container">
 				<h1 class = "h1title" style = "border-bottom: 2px solid currentColor;">Upcoming Events</h1><br> 
@@ -232,13 +195,6 @@
                     <div class="row ">
                         <div class="col-md-3 sidenav"	style = "border-right:1px solid #031261;">
 							<nav>
-							<!--<div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100064519667093"
-							 data-width="305"
-							 data-height="800"
-                             data-tabs="timeline" data-small-header="false"
-                             data-adapt-container-width="false"
-                             data-hide-cover="false" data-show-facepile="true">
-					</div>-->
 								<a href="https://www.dbm.gov.ph/index.php/about-us/philippine-transparency-seal"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/transparencyseal.png');?>"></a>
 								<a href="https://www.foi.gov.ph/"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/foi.jpg');?>"></a>
 								<a href="<?php echo base_url('User/resources/7');?>"><img class="img-fluid" style="width:305px; height:179px;" src="<?php echo base_url('assets/img/citizenscharter.jpg');?>"></a>
@@ -256,36 +212,13 @@
 					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
 					<hr class="divider" />
 					<div class="row gx-4 gx-lg-5">
+						<?php foreach ($cert as $row) {?>
 						<div class="col-lg-2 col-md-5 text-center">
 							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/1.png');?>"></div>
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url("uploads/$row->image");?>"></div>
 							</div>
 						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/2.png');?>"></div>
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/3.png');?>"></div>
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/4.png');?>"></div>
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/5.png');?>"></div>
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/6.png');?>"></div>
-							</div>
-						</div>
+						<?php }?>
 					</div>
 				</div>
 			</section>
