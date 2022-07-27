@@ -618,4 +618,17 @@ class Users_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
 	}
+    public function getcertification(){
+        $this->db->select('*');
+        $this->db->from('certifications');
+        $query = $this->db->get();
+        return $query->result();
+	}
+    public function getemployees(){
+        $this->db->select('*');
+        $this->db->from('employees');
+        $query = $this->db->get();
+        return $query->result();
+	}
+
 }

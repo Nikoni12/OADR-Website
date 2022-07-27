@@ -51,164 +51,51 @@
 							<div id="demo" class="carousel carousel-dark slide" data-bs-ride="carousel">
 								<div class="carousel-indicators">
 									<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-									<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-									<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-									<button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-									<button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
-									<button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
-									<button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
-									<button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
-									<button type="button" data-bs-target="#demo" data-bs-slide-to="8"></button>
+									<?php $counter = 1; foreach (array_slice($emp,1) as $row){ ?>
+									<button type="button" data-bs-target="#demo" data-bs-slide-to="<?php echo $counter?>"></button>
+									<?php $counter++; }?>
 								</div>
 								<div class="carousel-inner">
+								<?php foreach(array_slice($emp, 0, 1) as $row ){ ?>
 									<div class="carousel-item active">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
+										<div class="col-xl-10 col-sm-8 mb-7 mx-auto">
 											<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">DIRECTORY OF OFFICIALS</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatarboy.png');?>">
-												<h5 class="mb-0">MENARDO I. GUEVARRA</h5><span class="small text-uppercase text-muted">SECRETARY</span>
+											<h5 class="mb-0"><?php echo $row->place?></h5> <br>
+												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url("uploads/$row->image");?>">
+												<h5 class="mb-0"><?php echo $row->name?></h5><span class="small text-uppercase text-muted"><?php echo $row->position?></span>
+												<h5><span class="small text-uppercase "><?php echo $row->email?></span></h5>
+												<!--
 												<ul class="social mb-0 list-inline mt-3">
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
+												</ul>-->
 											</div>
 										</div>
 									</div>
-									<div class="carousel-item">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
-										<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">OFFICE OF THE EXECUTIVE DIRECTOR</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatargirl.png');?>">
-												<h5 class="mb-0">ATTY. IRENE D.T. ALOGOC, CESO I</h5><span class="small text-uppercase text-muted">Executive Director V</span>
-												<ul class="social mb-0 list-inline mt-3">
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="carousel-item">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
-										<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">FINANCE AND ADMINISTRATIVE DIVISION</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatarboy.png');?>">
-												<h5 class="mb-0">MR. PATRICK BENJAMINE B. CUNANAN</h5><span class="small text-uppercase text-muted">Chief Administrative Officer</span>
-												<ul class="social mb-0 list-inline mt-3">
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
+									<?php }?>
 
+									<?php foreach(array_slice($emp,1) as $row) { ?>
 									<div class="carousel-item">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
-										<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">TRAINING, ACCREDITATION AND PROMOTION SERVICE</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatargirl.png');?>">
-												<h5 class="mb-0">ATTY. ALI LORAINE V. MANRIQUE</h5>
-												<span class="small text-uppercase text-muted">OIC Director</span>
-												<span class="small text-uppercase text-muted">Training, Accreditation and Promotion Division</span>
+									<div class="col-xl-10  col-sm-8 mb-7 mx-auto">
+											<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
+											<h5 class="mb-0"><?php echo $row->place?></h5> <br>
+												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url("uploads/$row->image");?>">
+												<h5 class="mb-0"><?php echo $row->name?></h5><span class="small text-uppercase text-muted"><?php echo $row->position?></span>
+												<h5><span class="small text-uppercase "><?php echo $row->email?></span></h5>
+												<!--
 												<ul class="social mb-0 list-inline mt-3">
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
 													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
+												</ul>-->
 											</div>
 										</div>
 									</div>
-									<div class="carousel-item">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
-										<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">TRAINING, ACCREDITATION AND PROMOTION SERVICE</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatarboy.png');?>">
-												<h5 class="mb-0">MR. HOMER A. BUNYI</h5>
-												<span class="small text-uppercase text-muted">OIC Chief</span>
-												<span class="small text-uppercase text-muted">Training and Program Development Division</span>
-												<ul class="social mb-0 list-inline mt-3">
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="carousel-item">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
-										<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">TRAINING, ACCREDITATION AND PROMOTION SERVICE</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatargirl.png');?>">
-												<h5 class="mb-0">MS. LAURENCE P. GARCIA</h5>
-												<span class="small text-uppercase text-muted">OIC Chief</span>
-												<span class="small text-uppercase text-muted">Accreditation and Certification Division</span>
-												<ul class="social mb-0 list-inline mt-3">
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="carousel-item">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
-										<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">TRAINING, ACCREDITATION AND PROMOTION SERVICE</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatarboy.png');?>">
-												<h5 class="mb-0">MR. DARREL WINTHROP G. TORRES</h5>
-												<span class="small text-uppercase text-muted">OIC Chief</span>
-												<span class="small text-uppercase text-muted">Public Information and Promotion Division</span>
-												<ul class="social mb-0 list-inline mt-3">
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="carousel-item">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
-										<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">POLICY, COMPLIANCE AND MONITORING SERVICE</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatarboy.png');?>">
-												<h5 class="mb-0">MR. RYAN C. THOMAS</h5>
-												<span class="small text-uppercase text-muted">OIC Director, Policy Compliance and Monitoring Service</span>
-												<span class="small text-uppercase text-muted">Chief, Policy Formulation and Development Division</span>
-												<ul class="social mb-0 list-inline mt-3">
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="carousel-item">
-										<div class="col-xl-5 col-sm-8 mb-7 mx-auto">
-										<div class="bg-white shadow-lg p-3 mb-5 bg-body rounded">
-											<h5 class="mb-0">POLICY, COMPLIANCE AND MONITORING SERVICE</h5> <br>
-												<img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" width="100" src="<?php echo base_url('assets/img/avatargirl.png');?>">
-												<h5 class="mb-0">MS. KARLA KATRINA T. BACON</h5>
-												<span class="small text-uppercase text-muted">OIC Chief</span>
-												<span class="small text-uppercase text-muted">Compliance and Monitoring Division</span>
-												<ul class="social mb-0 list-inline mt-3">
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-													<li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
+									<?php }?>
+									
 								</div>
 								<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
 									<span class="carousel-control-prev-icon"></span>
@@ -224,41 +111,18 @@
                     </div>
                 </div>
         </section>
-            <section class="page-section" id="services">
+		<section class="page-section" id="services">
 				<div class="container px-4 px-lg-5">
 					<h2 class="text-center mt-0">We are ISO Certified  <img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/certification.png');?>"></h2>
 					<hr class="divider" />
 					<div class="row gx-4 gx-lg-5">
+						<?php foreach ($cert as $row) {?>
 						<div class="col-lg-2 col-md-5 text-center">
 							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/1.png');?>"></div>
+								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url("uploads/$row->image");?>"></div>
 							</div>
 						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/2.png');?>"></div>
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/3.png');?>"></div>
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/4.png');?>"></div>
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/5.png');?>"></div>
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-5 text-center">
-							<div class="mt-5">
-								<div class="mb-2"><img style = "max-width:100px;"class="img-fluid" src="<?php echo base_url('assets/img/6.png');?>"></div>
-							</div>
-						</div>
+						<?php }?>
 					</div>
 				</div>
 			</section>
