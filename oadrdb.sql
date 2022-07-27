@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 26, 2022 at 12:28 PM
+-- Generation Time: Jul 27, 2022 at 09:27 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -154,6 +154,64 @@ CREATE TABLE `careers` (
   `date_applied` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_edited` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certifications`
+--
+
+CREATE TABLE `certifications` (
+  `ID` int(100) NOT NULL,
+  `name` varchar(300) NOT NULL,
+  `image` varchar(300) NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_edited` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `certifications`
+--
+
+INSERT INTO `certifications` (`ID`, `name`, `image`, `date_added`, `date_edited`) VALUES
+(1, 'Philippine Transparency Seal', '1.png', '2022-07-27 06:01:52', '2022-07-27 06:01:52'),
+(2, 'DOJ Performance Management', '2.png', '2022-07-27 06:01:54', '2022-07-27 06:02:24'),
+(3, 'Gender and Development', '3.png', '2022-07-27 06:03:10', '2022-07-27 06:03:10'),
+(4, 'QMS', '4.png', '2022-07-27 06:03:32', '2022-07-27 06:04:51'),
+(5, 'National Privacy Commission', '5.png', '2022-07-27 06:04:00', '2022-07-27 06:04:58'),
+(6, 'Open Data Philippines', '6.png', '2022-07-27 06:04:26', '2022-07-27 06:05:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employees`
+--
+
+CREATE TABLE `employees` (
+  `ID` int(100) NOT NULL,
+  `name` varchar(300) NOT NULL,
+  `position` varchar(300) NOT NULL,
+  `place` varchar(300) NOT NULL,
+  `email` varchar(300) NOT NULL,
+  `image` varchar(300) NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_edited` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`ID`, `name`, `position`, `place`, `email`, `image`, `date_added`, `date_edited`) VALUES
+(1, 'ATTY. IRENE D.T. ALOGOC, CESO I', 'EXECUTIVE DIRECTOR V', 'OFFICE OF THE EXECUTIVE DIRECTOR', 'irene.oadr@gmail.com', '4f4d0125a758fa1d45b2d830d90cafe7.png', '2022-07-27 06:24:51', '2022-07-27 07:01:32'),
+(2, 'MENARDO I. GUEVARRA', 'Secretary', 'DIRECTORY OF OFFICIALS', 'osecmig@gmail.com', '4f4d0125a758fa1d45b2d830d90cafe7.png', '2022-07-27 06:24:53', '2022-07-27 07:03:58'),
+(3, 'PATRICK BENJAMINE B. CUNANAN', 'Chief Administrative Officer', 'FINANCE AND ADMINISTRATIVE DIVISION', 'email@gmail.com', '4f4d0125a758fa1d45b2d830d90cafe7.png', '2022-07-27 06:53:20', '2022-07-27 07:04:21'),
+(4, 'ATTY. ALI LORAINE V. MANRIQUE', 'OIC Director, Training, Accreditation and Promotion Division', 'TRAINING, ACCREDITATION AND PROMOTION SERVICE', 'oed.aliloraine@gmail.com', 'c5e394624947de46657d481bf1485e46.png', '2022-07-27 07:05:02', '2022-07-27 07:05:02'),
+(5, 'MR. HOMER A. BUNYI', 'OIC Chief', 'Training and Program Development Division', 'homerbunyi@gmail.com', 'e790111ca74c04b234517284622f5bb4.png', '2022-07-27 07:05:29', '2022-07-27 07:05:29'),
+(6, 'MS. LAURENCE P. GARCIA', 'OIC Chief', 'Accreditation and Certification Division', 'laurencepgarcia@gmail.com', 'b5af5f1e5f5a422e3127e449d6501e94.png', '2022-07-27 07:06:00', '2022-07-27 07:06:00'),
+(7, 'MR. DARREL WINTHROP G. TORRES', 'OIC Chief', 'Public Information and Promotion Division', 'darrelwinthrop@gmail.com', 'a9e1ef14f267dc17f9fe88a3e82839af.png', '2022-07-27 07:07:00', '2022-07-27 07:07:00'),
+(8, 'MR. RYAN C. THOMAS', 'OIC Director, Policy Compliance and Monitoring Service', 'Chief, Policy Formulation and Development Division', 'rcthomas@doj.gov.ph', '3a8f06f4caade21fae7df32e482f0ea2.png', '2022-07-27 07:07:37', '2022-07-27 07:07:37'),
+(9, 'MS. KARLA KATRINA T. BACON', 'OIC Chief', 'Compliance and Monitoring Division', 'kktbacon.oadr@gmail.com', '99da19e75965508b2883e901d6041c4d.png', '2022-07-27 07:08:02', '2022-07-27 07:08:02');
 
 -- --------------------------------------------------------
 
@@ -555,6 +613,18 @@ ALTER TABLE `careers`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `certifications`
+--
+ALTER TABLE `certifications`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `employees`
+--
+ALTER TABLE `employees`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
@@ -671,6 +741,18 @@ ALTER TABLE `avm`
 --
 ALTER TABLE `careers`
   MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `certifications`
+--
+ALTER TABLE `certifications`
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `employees`
+--
+ALTER TABLE `employees`
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `events`
