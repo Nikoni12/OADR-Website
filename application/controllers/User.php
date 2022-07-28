@@ -197,7 +197,7 @@ class User extends CI_Controller {
 				$new = array(
 					'news_title' => $this->input->post('news_title'),
 					'news_link' => $this->input->post('news_link'),
-					'news_content' => $this->input->post('news_content'),
+					/*'news_content' => $this->input->post('news_content'),*/
 					'news_image' => $news_image
 				);
 				$this->users_model->insertnews($new);
