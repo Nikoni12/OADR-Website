@@ -114,9 +114,9 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col">
-                                                <h5 class="card-title text-uppercase text-muted mb-0">Applications</h5>
+                                                <h5 class="card-title text-uppercase text-muted mb-0">Job Openings</h5>
                                                 <?php
-                                                    $query = $this->db->query('SELECT * FROM careers');
+                                                    $query = $this->db->query('SELECT * FROM job');
                                                     echo "<span class='h2 font-weight-bold mb-0'>".$query->num_rows()."</span>"
                                                 ?>
                                             </div>
