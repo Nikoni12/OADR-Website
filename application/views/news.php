@@ -78,8 +78,8 @@
 
 										<div class="col-md-12">
 										<tr class="archivenews">
-											<td><p class="mb-2"><?php echo$row->date_added?><a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>"
-											 style="color:#031261">&nbsp; &nbsp; &nbsp;<?php echo$row->news_title?></p></a></td>
+											<td><p class="mb-2"><?php echo$row->date_added?><a href="<?php echo $row->news_link ?>" 
+											 style="color:#031261" target="_blank">&nbsp; &nbsp; &nbsp;<?php echo$row->news_title?></p></a></td>
 										</tr>
 										</div>
 
