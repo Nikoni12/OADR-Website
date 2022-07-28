@@ -53,12 +53,11 @@
                             <?php if ($a == 0)
                                 echo "<div style='text-align:left;'><h2>News</h2><br></div>"
                             ?>
-						<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>">
+						<a href="<?php echo $row->news_link?>" target="_blank">
 							<div class="row mb-12 border-bottom pb-2">
 								<div class="col-md-12" style="border-left:2px solid #031261;">
 									<p class="mb-2" style="color:#031261;"><strong><u><?php echo $row->news_title?></u></strong></p></a>
                         
-									<p style = "text-align:justify;" class="limit"><?php echo $row->news_content?></p>
                                     <p style = "text-align:justify;" class="limit"><?php echo $row->date_added?></p>
 									<a href="<?php echo base_url('user/newstitle/?newstitle=' . $row->news_title) ?>"   style="color:#1499db"><p>More Details...</p></a>
 								</div>
