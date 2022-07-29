@@ -1394,7 +1394,7 @@ class User extends CI_Controller {
 					$this->session->set_userdata('invalid','invalid');
 					$id = $_POST['edit_id'];
 					$data["pub"] = $this->users_model->get_gadpublication_edit($id);
-					$this->load->view('gadpublications',$data);
+					$this->load->view('editgadpublications',$data);
 				}
 			} else {
 				$report = array(
