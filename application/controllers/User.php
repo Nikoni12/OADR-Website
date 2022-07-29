@@ -1061,6 +1061,49 @@ class User extends CI_Controller {
 		}
 		
 	}
+	public function resourcesadd(){
+		if(!$this->session->userdata('username')){ 
+			$this->load->view('administrator-panel-login');
+		} else {
+			$this->load->model('Users_model');
+			$resourcecat = $this->input->post('resourcecat');
+			$result=$this->users_model->fetchcatid($resourcecat)->row();
+			$catid=$result->ID;
+			if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
+				$filesCount = count($_FILES['files']['name']); 
+				for($i = 0; $i < $filesCount; $i++){ 
+					$_FILES['file']['name'] = $_FILES['files']['name'][$i]; 
+					$_FILES['file']['type'] = $_FILES['files']['type'][$i]; 
+					$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i]; 
+					$_FILES['file']['error'] = $_FILES['files']['error'][$i]; 
+					$_FILES['file']['size'] = $_FILES['files']['size'][$i]; 
+					$config['upload_path'] = './resources/';
+					$config['allowed_types'] = 'pdf'; 
+					$this->load->library('upload', $config); 
+					$this->upload->initialize($config);
+					if($this->upload->do_upload('file')){ 
+						$fileData = $this->upload->data(); 
+						$filename = $fileData['file_name'];
+						$uploadData[$i]['ResourcesCat'] =  $resourcecat;
+						$uploadData[$i]['ResourcesName'] = $filename;
+						$uploadData[$i]['cat_id'] = $catid;  
+					}
+				}
+
+				if(!empty($uploadData)){ 
+					/* Insert files data into the database */
+
+					$insert = $this->users_model->insert_res($uploadData); 
+					$this->session->set_userdata('added','added');
+					redirect("./User/adminresources/","refresh"); 
+					/* Upload status message */
+				} else {
+				$this->session->set_userdata('invalid','invalid');
+				redirect("./User/addresources/","refresh");
+			}
+			}
+		}
+	}
 	public function updatecat(){
 		if(!$this->session->userdata('username')){ 
 			$this->load->view('administrator-panel-login');
@@ -1072,47 +1115,10 @@ class User extends CI_Controller {
 				'categoryname' => $this->input->post('catname')
 			);
 			$data = array_filter($data);
-			$this->form_validation->set_rules('catname', 'Category Name', 'required');
-			if($this->form_validation->run()){
-				if(!empty($_FILES['files']['name']) && count(array_filter($_FILES['files']['name'])) > 0){ 
-					$filesCount = count($_FILES['files']['name']); 
-					for($i = 0; $i < $filesCount; $i++){ 
-						$_FILES['file']['name'] = $_FILES['files']['name'][$i]; 
-						$_FILES['file']['type'] = $_FILES['files']['type'][$i]; 
-						$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i]; 
-						$_FILES['file']['error'] = $_FILES['files']['error'][$i]; 
-						$_FILES['file']['size'] = $_FILES['files']['size'][$i]; 
-						$config['upload_path'] = './resources/';
-						$config['allowed_types'] = 'pdf'; 
-						$this->load->library('upload', $config); 
-						$this->upload->initialize($config);
-						if($this->upload->do_upload('file')){ 
-							$fileData = $this->upload->data(); 
-							$filename = $fileData['file_name']."pdf";
-							$uploadData[$i]['ResourcesCat'] =  $catname;
-							$uploadData[$i]['ResourcesName'] = $filename; 
-							$uploadData[$i]['cat_id'] = $rid; 
-						}else{  
-							$errorUploadType .= $_FILES['file']['name'].' | ';  
-						} 
-					}
-					$errorUploadType = !empty($errorUploadType)?'<br/>File Type Error: '.trim($errorUploadType, ' | '):'';
-					if(!empty($uploadData)){ 
-						/* Insert files data into the database */
-						$insert = $this->users_model->insert_res($uploadData); 
-						$this->Users_model->updatecat($rid,$data);
-						$this->session->set_userdata('updated','updated');
-						redirect("./User/admincatresources/","refresh"); 
-						/* Upload status message */
-					}
-				} else {
-					$this->Users_model->updatecat($rid,$data);
-					$this->session->set_userdata('updated','updated');
-					redirect("./User/admincatresources/","refresh"); 
-				}
-			}
+			$this->Users_model->updatecat($rid,$data);
+			$this->session->set_userdata('updated','updated');
+			redirect("./User/admincatresources/","refresh"); 
 		}
-		
 	}
 
 	public function search(){
@@ -1374,7 +1380,7 @@ class User extends CI_Controller {
 			$config['upload_path'] = './uploads/';
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
-			if (!empty($_FILES['report_file']['name']) ){
+			if (!empty($_FILES['pub_file']['name']) ){
 				if ($this->upload->do_upload('pub_file')) {
 					$pub_file = $this->upload->data('file_name');
 					$report = array(
@@ -1509,7 +1515,7 @@ class User extends CI_Controller {
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
 			if (!empty($_FILES['img_file']['name']) ){
-				if ($this->upload->do_upload('pub_file')) {
+				if ($this->upload->do_upload('img_file')) {
 					$img_file = $this->upload->data('file_name');
 					$report = array(
 						'img_title' => $this->input->post('img_title'),
@@ -1522,7 +1528,7 @@ class User extends CI_Controller {
 				else{
 					$this->session->set_userdata('invalid','invalid');
 					$id = $_POST['edit_id'];
-					$data["report"] = $this->users_model->get_gadinfographics_edit($id);
+					$data["info"] = $this->users_model->get_gadinfographics_edit($id);
 					$this->load->view('gadinfographics',$data);
 				}
 			} else {
@@ -1592,11 +1598,11 @@ class User extends CI_Controller {
 			$config['encrypt_name'] = true;
 			$this->load->library('upload', $config);
 			if (!empty($_FILES['pcw_file']['name']) ){
-				if ($this->upload->do_upload('pub_file')) {
+				if ($this->upload->do_upload('pcw_file')) {
 					$pcw_file = $this->upload->data('file_name');
 					$report = array(
 						'pcw_title' => $this->input->post('pcw_title'),
-						'pcw_file' => $pub_file
+						'pcw_file' => $pcw_file
 					);
 					$this->users_model->update_gadpcw($id,$report);
 					$this->session->set_userdata('updated','updated');
@@ -1605,7 +1611,7 @@ class User extends CI_Controller {
 				else{
 					$this->session->set_userdata('invalid','invalid');
 					$id = $_POST['edit_id'];
-					$data["report"] = $this->users_model->get_gadpcw_edit($id);
+					$data["pcw"] = $this->users_model->get_gadpcw_edit($id);
 					$this->load->view('gadpcw',$data);
 				}
 			} else {
@@ -1752,7 +1758,7 @@ class User extends CI_Controller {
 					$this->session->set_userdata('invalid','invalid');
 					$id = $_POST['edit_id'];
 					$data["act"] = $this->users_model->get_gadact_edit($id);
-					$this->load->view('gadactivities',$data);
+					$this->load->view('editgadact',$data);
 				}
 			} else {
 				$report = array(

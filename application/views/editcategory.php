@@ -39,10 +39,7 @@
                                             echo "<input type='text' class='form-control' id='adminname' name='catname'  value = '".$lp->categoryname."'>";
                                             echo "<span class='text-danger fontColor'>".form_error('catname')."</span>";
                                             echo "</div>";
-                                            echo "<div class='form-group'>
-                                            <label for='username'>File: (PDF Format)</label>
-                                            <input type='file' class='form-control' id='adminname' accept='application/pdf' name='files[]' multiple>
-                                        </div>";
+                                            
                                             echo "<button type='submit' class='btn btn-outline-warning'>SUBMIT</button>";
                                         }?>
                                     </form>

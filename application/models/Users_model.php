@@ -662,4 +662,10 @@ class Users_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('certifications', $ann);
     }
+    public function fetchcatid($catname){
+        $this->db->select('ID');
+        $this->db->from('resources_category');
+        $this->db->where('categoryname',$catname);
+        return $this->db->get();
+    }
 }

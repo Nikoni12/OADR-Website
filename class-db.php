@@ -37,5 +37,5 @@ class DB {
         } else {
             $this->db->query("UPDATE tokens SET provider_value = '$token' WHERE provider = 'google'");
         }
-    }
+    } 
 }
