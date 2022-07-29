@@ -325,7 +325,6 @@ class User extends CI_Controller {
 					$news_image = $this->upload->data('file_name');
 					$new = array(
 						'news_title' => $this->input->post('news_title'),
-						'news_content' => $this->input->post('news_content'),
 						'news_link' => $this->input->post('news_link'),
 						'news_image' => $news_image
 					);
