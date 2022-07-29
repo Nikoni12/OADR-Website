@@ -1357,7 +1357,7 @@ class User extends CI_Controller {
 			redirect("./User/gadpublications/","refresh"); 
 			} else {
 				$this->session->set_userdata('invalid','invalid');
-				redirect("./User/gadpublications/","refresh");
+				redirect("./User/addgadpublication/","refresh");
 			}
 		}
 	}
@@ -1393,7 +1393,7 @@ class User extends CI_Controller {
 				else{
 					$this->session->set_userdata('invalid','invalid');
 					$id = $_POST['edit_id'];
-					$data["report"] = $this->users_model->get_gadpublication_edit($id);
+					$data["pub"] = $this->users_model->get_gadpublication_edit($id);
 					$this->load->view('gadpublications',$data);
 				}
 			} else {
@@ -1491,7 +1491,7 @@ class User extends CI_Controller {
 			redirect("./User/gadinfographics/","refresh"); 
 			} else {
 				$this->session->set_userdata('invalid','invalid');
-				redirect("./User/gadinfographics/","refresh");
+				redirect("./User/addgadinfographics/","refresh");
 			}
 		}
 	}
@@ -1528,7 +1528,7 @@ class User extends CI_Controller {
 					$this->session->set_userdata('invalid','invalid');
 					$id = $_POST['edit_id'];
 					$data["info"] = $this->users_model->get_gadinfographics_edit($id);
-					$this->load->view('gadinfographics',$data);
+					$this->load->view('editgadinfographics',$data);
 				}
 			} else {
 				$report = array(
@@ -1574,7 +1574,7 @@ class User extends CI_Controller {
 			redirect("./User/gadpcw/","refresh"); 
 			} else {
 				$this->session->set_userdata('invalid','invalid');
-				redirect("./User/gadpcw/","refresh");
+				redirect("./User/addgadpcw/","refresh");
 			}
 		}
 	}
@@ -1611,7 +1611,7 @@ class User extends CI_Controller {
 					$this->session->set_userdata('invalid','invalid');
 					$id = $_POST['edit_id'];
 					$data["pcw"] = $this->users_model->get_gadpcw_edit($id);
-					$this->load->view('gadpcw',$data);
+					$this->load->view('editgadpcw',$data);
 				}
 			} else {
 				$report = array(
@@ -1658,7 +1658,7 @@ class User extends CI_Controller {
 			redirect("./User/gadactivities/","refresh");  
 			} else {
 				$this->session->set_userdata('invalid','invalid');
-				redirect("./User/gadactivities/","refresh");
+				redirect("./User/addgadact/","refresh");
 			}
 		}
 	}
